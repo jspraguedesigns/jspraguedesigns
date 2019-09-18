@@ -5,86 +5,89 @@ import {NavDropdown, Nav, Navbar} from 'react-bootstrap'
 import '../styles/global.css';
 const Header = () => {
   return(
-    <header>
-         <div className="w-100">
-    <div className="row">
-    </div>
-      <div className="row">
-        <div className="col pl-5">
-          
-          <Link to="/">
-            <div className="navbar-brand  d-flex align-items-center">
-              <h1 className="brand">ELC</h1>
-              <h2 className="tag">— Teacher Portal</h2>
-            </div>
+
+ <Navbar bg="light" expand="md" fixed="top">
+ <Navbar.Brand href="/">
+
+  <div className="navbar-brand  d-flex align-items-center">
+    <h1 className="brand">ELC</h1>
+    <h2 className="tag">— Teacher Portal</h2>
+</div>
+
+ </Navbar.Brand>
+
+
+
+<Nav className="ml-auto">
+
+  <Navbar.Toggle aria-controls="basic-navbar-nav" />
+<Navbar.Collapse>
+<Nav.Link href="/">
+    Home
+  </Nav.Link>
+<NavDropdown title="ELC Overview">
+
+    <NavDropdown.Item>
+      <Link to="/about">
+      <div className="dropdown-item">What Is ELC?</div>
+      </Link>
+      </NavDropdown.Item>
+      <NavDropdown.Item>
+      <Link to="/sample">
+      <div className="dropdown-item">Sample Questions</div>
+      </Link>
+      </NavDropdown.Item>
+   
+  
+</NavDropdown>
+<NavDropdown title="Teacher's Resources">
+      <NavDropdown.Item>
+      <Link to="/support">
+             <div className="dropdown-item">Support Materials</div>
           </Link>
-       
-       </div>
-          <div className="col">
-          <Navbar.Toggle aria-controls="basic-navbar-nav" />
-          <Navbar.Collapse id="basic-navbar-nav">
-        <Nav className="ml-auto">
-        <Nav.Link href="/">
-              Home
-            </Nav.Link>
-          
-          <NavDropdown title="ELC Overview">
+          </NavDropdown.Item>
+          <NavDropdown.Item>
+          <Link to="/teacher_training">
+      <div className="dropdown-item">Teacher Training</div>
+      </Link>
+          </NavDropdown.Item>
+          <NavDropdown.Item>
+          <Link to="/proctoring">
+          <div className="dropdown-item">Proctoring</div>
+      </Link>
+          </NavDropdown.Item>
 
-              <NavDropdown.Item>
-                <Link to="/about">
-                <div className="dropdown-item">What Is ELC?</div>
-                </Link>
-                </NavDropdown.Item>
-                <NavDropdown.Item>
-                <Link to="/sample">
-                <div className="dropdown-item">Sample Questions</div>
-                </Link>
-                </NavDropdown.Item>
-             
-            
-          </NavDropdown>
-          <NavDropdown title="Teacher's Resources">
-                <NavDropdown.Item>
-                <Link to="/support">
-                       <div className="dropdown-item">Support Materials</div>
-                    </Link>
-                    </NavDropdown.Item>
-                    <NavDropdown.Item>
-                    <Link to="/teacher_training">
-                <div className="dropdown-item">Teacher Training</div>
-                </Link>
-                    </NavDropdown.Item>
-                    <NavDropdown.Item>
-                    <Link to="/proctoring">
-                    <div className="dropdown-item">Proctoring</div>
-                </Link>
-                    </NavDropdown.Item>
+  </NavDropdown>
+ <NavDropdown title="Test Results">
+ <NavDropdown.Item>
+        <Link to="report"><div className="dropdown-item">Institutional Report</div></Link>
+        </NavDropdown.Item>  
+        <NavDropdown.Item>
+        <Link to="class-reports"><div className="dropdown-item">Class Reports</div></Link>
+        </NavDropdown.Item>     
 
-            </NavDropdown>
-           <NavDropdown title="Test Results">
-           <NavDropdown.Item>
-                  <Link to="report"><div className="dropdown-item">Institutional Report</div></Link>
-                  </NavDropdown.Item>     
+         <NavDropdown.Item>
+        <Link to="student-scores"><div className="dropdown-item">Student Scores</div></Link>
+        </NavDropdown.Item>  
+                     
+         
+                  </NavDropdown>
+                  <Nav.Link href="/feedback">
+        Feedback
+        </Nav.Link>
+        </Navbar.Collapse>
+        </Nav>
 
-                   <NavDropdown.Item>
-                  <Link to="student-scores"><div className="dropdown-item">Student Scores</div></Link>
-                  </NavDropdown.Item>  
-                               
-                   
-                            </NavDropdown>
-                            <Nav.Link href="/feedback">
-                  Feedback
-                  </Nav.Link>
-                  </Nav>
-                  </Navbar.Collapse>
-      
+
+
+
+
+
+</Navbar>
+
   
-  
-    </div>
-    </div>
-       
-       </div>
-    </header>
+        
+   
   )
  
 }

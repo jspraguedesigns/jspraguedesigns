@@ -11,7 +11,7 @@ const About = () => {
             <div className="container pt-4 pb-4">
                 <div className="row">
                     <div className="col-md-12">
-                    <h1>What Is ELC</h1>
+                    <h1>What Is ELC?</h1>
                     <hr />
                     <div className="image-what-is-elc">
             </div>

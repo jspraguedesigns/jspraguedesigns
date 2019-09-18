@@ -1,15 +1,16 @@
 import React from 'react'
 import Header from '../components/header'
 import Footer from '../components/footer'
+import {Link} from 'gatsby'
 
-const Report = () =>{
+const ClassReport = () =>{
     return(
     <div>
          <Header />
          <div className="container pt-4 pb-4">
          <div className="row pt-4">
         <div className="col-md-12 text-center">
-          <h1>Institutional Report</h1>
+          <h1>Class Report</h1>
   
         <p className="text-center">This test assesses student enabeling skills in English and places them into appropriate course level.</p>
         </div>
@@ -18,12 +19,16 @@ const Report = () =>{
             <thead>
                 <tr>
                 <th className="text-center" scope="col">School</th>
+                <th className="text-center" scope="col">Course</th>
+                <th className="text-center" scope="col">Group</th>
                 <th  className="text-center" scope="col">Report Date</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
                 <td class="text-center"><strong>Shanghai Jiading District</strong></td>
+                <td class="text-center"><strong>Level 1</strong></td>
+                <td class="text-center"><strong>Class 2</strong></td>
                 <td class="text-center"><strong>1-17-20</strong></td>
                 </tr>
            
@@ -35,7 +40,7 @@ const Report = () =>{
  
     <div className="row pt-4 pb-4">
         <div className="col-md-12 text-center headerdark">
-          <h2 className="white">Overall Institutional Performance</h2>
+          <h2 className="white">Overall Class Performance</h2>
         </div>
     </div>
     <div className="row">
@@ -61,7 +66,11 @@ const Report = () =>{
             </div>
         </div>
     </div>
-
+    <div className="row pt-4">
+        <div className="col-md-12 text-center">
+        <Link to="student-scores"><button type="button" class="btn btn-home-top btn btn-secondary mt-4">View Class Roster</button></Link>
+        </div>
+    </div>
     <div className="row pt-4">
         <div className="col-md-12">
         <p className="text-center">Average section scores (out of 20 points possible):</p>
@@ -96,4 +105,4 @@ const Report = () =>{
 
     )
 }
-export default Report
+export default ClassReport
