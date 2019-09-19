@@ -1,4 +1,5 @@
 import React from 'react'
+
 import Layout from '../components/layout'
 import { Link } from 'gatsby'
 import WeChat from "../components/image"
@@ -6,8 +7,8 @@ import QRCode from "../components/QR"
 
 const IndexPage = () => {
     return (
+        <Layout>
         <div>
-         <Layout>
          <div className="row d-flex align-items-center justify-content-center  banner">
          <div className="col-md-6 text-center animated fadeInUp">
                 
@@ -35,8 +36,8 @@ const IndexPage = () => {
                   </div>
               </div>
            </div>
-        </Layout>
         </div>
+        </Layout>
            
          
          
