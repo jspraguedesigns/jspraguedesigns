@@ -1,13 +1,15 @@
 import React from 'react'
-import Header from '../components/header'
-import Footer from '../components/footer'
+//import Header from '../components/header'
+//import Footer from '../components/footer'
+import Layout from '../components/layout'
 import { Link } from 'gatsby'
 
 
 const IndexPage = () => {
     return (
+        <Layout>
         <div>
-         <Header />
+
          <div className="row d-flex align-items-center justify-content-center  banner">
          <div className="col-md-6 text-center animated fadeInUp">
                 
@@ -29,8 +31,9 @@ const IndexPage = () => {
                   </div>
               </div>
            </div>
-        <Footer />
+
         </div>
+        </Layout>
            
          
          
