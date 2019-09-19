@@ -1,11 +1,12 @@
 import React from 'react'
-import Header from '../components/header'
-import Footer from '../components/footer'
-
+// import Header from '../components/header'
+// import Footer from '../components/footer'
+import Layout from '../components/layout';
 const Report = () =>{
     return(
+      <Layout>
     <div>
-         <Header />
+
          <div className="container pt-4 pb-4">
          <div className="row pt-4">
         <div className="col-md-12 text-center">
@@ -98,9 +99,9 @@ const Report = () =>{
     </div>
     </div>
 
-    <Footer />
-         </div>
 
+         </div>
+      </Layout>
 
     )
 }

@@ -1,11 +1,13 @@
 import React from 'react'
-import Header from '../components/header'
-import Footer from '../components/footer'
+// import Header from '../components/header'
+// import Footer from '../components/footer'
+import Layout from '../components/layout';
 
 const Training = () => {
     return(
+      <Layout>
         <div>
-        <Header />
+
             <div className="container">
                 <div className="row">
                     <div className="col-md-12">
@@ -14,8 +16,9 @@ const Training = () => {
                 </div>
             </div>
         
-        <Footer />
+
         </div>
+      </Layout>
     )
 }
 export default Training
