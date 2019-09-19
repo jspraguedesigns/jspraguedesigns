@@ -1,9 +1,8 @@
 import React from "react"
-import Header from '../components/header'
-import Footer from '../components/footer'
+import Layout from '../components/layout'
 export default ({ pageContext: { cls } }) => (
   <div>
-    <Header/>
+    <Layout>
       <div className="container">
         <div className="row mt-4">
           <div className="col-md-12">
@@ -12,7 +11,7 @@ export default ({ pageContext: { cls } }) => (
           </div>
         </div>
   </div>
-  <Footer />
+  </Layout>
   </div>
 
 )

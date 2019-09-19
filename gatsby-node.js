@@ -9,16 +9,22 @@ exports.createPages = ({ actions }) => {
     // pull in or use whatever data
     const studentsData = [
       {
-        name: "Wang,Jing",
+        name: "Wang, Jing",
         id: "001",
         score: "145",
         date: "2019-10-20",
+        dob: "2005-07-22",
+        grade: "10",
+        performance: "Students at this level typically understand little in some everyday English, both spoken and written, but would like to feel more confident in using English to communicate. Their knowledge of English vocabulary and grammatical structures could be strengthened so that they can understand complex, academic content."
       },
       {
-        name: "Yuxi,Yao",
+        name: "Yuxi, Yao",
         id: "002",
         score: "140",
         date: "2019-10-20",
+        dob: "2006-02-23",
+        grade: "9",
+        performance: "Students at this level typically understand little in some everyday English, both spoken and written, but would like to feel more confident in using English to communicate. Their knowledge of English vocabulary and grammatical structures could be strengthened so that they can understand complex, academic content."
       },
     ]
 

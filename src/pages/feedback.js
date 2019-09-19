@@ -1,11 +1,11 @@
 import React from 'react'
-import Header from '../components/header'
+import Layout from '../components/layout'
 import { Link } from 'gatsby'
 
 const feedback = () => {
     return(
         <div>
-            <Header />
+            <Layout>
 
             <div className="container pt-4 pb-4">
                 <div className="row">
@@ -17,7 +17,7 @@ const feedback = () => {
                 
                 </div>
             </div>
-
+        </Layout>
     </div>
     )
 

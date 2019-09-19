@@ -1,12 +1,11 @@
 import React from 'react'
-import Header from '../components/header'
-import Footer from '../components/footer'
+import Layout from '../components/Layout'
 import 'jquery/dist/jquery.js'
 
 const proctoring = () => {
     return (
         <div>
-             <Header />
+             <Layout>
              <div className="container">
              <h1>Proctoring</h1>
         <div class="row">
@@ -19,7 +18,7 @@ const proctoring = () => {
 </div>
 
              </div>
-        <Footer/>
+        </Layout>
 
     </div>
     )

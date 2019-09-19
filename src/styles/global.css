@@ -74,6 +74,7 @@ a{
 
 a:hover{
  color:  #003B46;
+ text-decoration: none;
 }
 button{
  transform: all .2s;
@@ -151,16 +152,9 @@ text-decoration:none;
 
 }
 
-ul li:hover {
-   box-shadow:0px 0px 8px #ffe3a0;
-   opacity:.75;
-  -moz-transition: all 0.2s ease-in-out;
-  -o-transition: all 0.2s ease-in-out;
-  -webkit-transition: all 0.2s ease-in-out;
-  transition: all 0.2s ease-in-out;
-
+.table-bordered td {
+  font-size: 1.2em;
 }
-
 span.match-word{
   border-radius: 5px;
   display: inline;
@@ -509,8 +503,8 @@ img{
 }
 
 
-a.dropdown-item {
-  color: #666 !important;
+.dropdown-item {
+  color: #666;
 }
 
 .banner{
@@ -576,11 +570,13 @@ h1.home-text{
   background-color: rebeccapurple !important;
 }
 
-.wechat-logo{
+.wechat-logo, .qr-code{
   width: 100px !important;
   display: block;
-  margin: 0 auto;
+  margin: 30px auto;
 }
+
+
 
 .btn-home-top{
   background-color:rebeccapurple !important;
@@ -625,4 +621,17 @@ svg {
 
 .score{
   width: 100%;
+}
+
+thead th {
+  background-color: rebeccapurple;
+  color: #fff;
+}
+
+.dropdown-item:hover {
+  color:rebeccapurple !important;
+}
+
+.dropdown-item:active{
+  background-color: #d5e6da;
 }

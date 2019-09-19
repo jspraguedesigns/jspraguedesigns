@@ -1,5 +1,4 @@
 import React from 'react'
-import Layout from '../components/layout'
 import {Link} from 'gatsby' 
 import {Table} from 'react-bootstrap'
 
@@ -15,8 +14,8 @@ const ClassScores = () => {
     return(
 
         <div>
-               <Layout>
-    <div className="container">
+            
+
     <div className = "row">
     <div className="col-md-12 mt-4 text-center mb-4">
     <h1>Class Reports</h1>
@@ -24,7 +23,7 @@ const ClassScores = () => {
     </div>
         <div className="row">
             <div className="col-md-12">
-            <Table bordered hover varient="dark">
+            <Table bordered hover>
             <thead>
                 <tr>
                 <th className="text-center" scope="col">Name</th>
@@ -60,9 +59,7 @@ const ClassScores = () => {
             </div>
         </div>
     </div>
-      
-        </Layout>
-        </div>
+
      
     )
 }

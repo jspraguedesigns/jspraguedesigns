@@ -1,13 +1,13 @@
 import React from 'react'
-import Header from '../components/header'
-import Footer from '../components/footer'
+import Layout from '../components/layout'
 import { Link } from 'gatsby'
-
+import WeChat from "../components/image"
+import QRCode from "../components/QR"
 
 const IndexPage = () => {
     return (
         <div>
-         <Header />
+         <Layout>
          <div className="row d-flex align-items-center justify-content-center  banner">
          <div className="col-md-6 text-center animated fadeInUp">
                 
@@ -22,14 +22,20 @@ const IndexPage = () => {
             <div className="wechat">
               <div className="row">
                   <div className="col-md-12 text-center pt-4 pb-4">
-                  <img className="wechat-logo" src={'img/clipart1841617.png'} alt="WeChat Logo"/>
+                  <div className="wechat-logo">
+                  <WeChat />
+                  </div>
+                  
                   <h2 className="home-text">Keep In Touch With Us</h2>
                   <p className="home-text">We need your feedback to make this test successful. Scan the QR code bellow to join our WeChat Group.</p>
-                  <img className="wechat-logo" src={'img/qrcode.jpg'} alt="QR Code"/>
+                  <div className="qr-code">
+                  <QRCode/>
+                  </div>
+                  
                   </div>
               </div>
            </div>
-        <Footer />
+        </Layout>
         </div>
            
          

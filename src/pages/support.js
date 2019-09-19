@@ -1,11 +1,9 @@
 import  React from 'react'
-import Header from '../components/header'
-import Footer from '../components/footer'
-
+import Layout from '../components/Layout'
 const Support = () => {
     return (
         <div>
-        <Header />
+        <Layout>
         <div className="container">
         <div className="row pt-4">
         <div className="col-md-12">
@@ -38,7 +36,7 @@ const Support = () => {
         </div>
         </div>
         
-        <Footer />
+        </Layout>
         </div>
     )
 }

@@ -1,12 +1,12 @@
 import React from 'react'
-import Header from '../components/header'
-import Footer from '../components/footer'
-import {Link} from 'gatsby'
+import Layout from '../components/layout'
+import ClassRoster from '../components/class-roster'
+import {Table} from 'react-bootstrap'
 
 const ClassReport = () =>{
     return(
     <div>
-         <Header />
+         <Layout>
          <div className="container pt-4 pb-4">
          <div className="row pt-4">
         <div className="col-md-12 text-center">
@@ -15,10 +15,9 @@ const ClassReport = () =>{
         <p className="text-center">This test assesses student enabeling skills in English and places them into appropriate course level.</p>
         </div>
 
-             <table className="table table-borderless table-data3">
+             <Table bordered varient="dark">
             <thead>
                 <tr>
-                <th className="text-center" scope="col">School</th>
                 <th className="text-center" scope="col">Course</th>
                 <th className="text-center" scope="col">Group</th>
                 <th  className="text-center" scope="col">Report Date</th>
@@ -26,7 +25,6 @@ const ClassReport = () =>{
             </thead>
             <tbody>
                 <tr>
-                <td class="text-center"><strong>Shanghai Jiading District</strong></td>
                 <td class="text-center"><strong>Level 1</strong></td>
                 <td class="text-center"><strong>Class 2</strong></td>
                 <td class="text-center"><strong>1-17-20</strong></td>
@@ -34,7 +32,7 @@ const ClassReport = () =>{
            
                
             </tbody>
-            </table>
+            </Table>
         </div>
 
  
@@ -66,15 +64,11 @@ const ClassReport = () =>{
             </div>
         </div>
     </div>
-    <div className="row pt-4">
-        <div className="col-md-12 text-center">
-        <Link to="student-scores"><button type="button" class="btn btn-home-top btn btn-secondary mt-4">View Class Roster</button></Link>
-        </div>
-    </div>
+
     <div className="row pt-4">
         <div className="col-md-12">
         <p className="text-center">Average section scores (out of 20 points possible):</p>
-         <table className="table table-borderless table-data3">
+        <Table bordered varient="dark">
             <thead>
                 <tr>
                 <th className="text-center" scope="col">Listening</th>
@@ -93,13 +87,14 @@ const ClassReport = () =>{
            
                
             </tbody>
-            </table>
+            </Table>
         </div>
 
     </div>
+    <ClassRoster/>
     </div>
 
-    <Footer />
+    </Layout>
          </div>
 
 

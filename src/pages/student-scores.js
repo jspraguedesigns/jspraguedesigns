@@ -1,7 +1,7 @@
 import React from 'react'
-import Header from '../components/header'
-import Footer from '../components/footer'
+import Layout from '../components/layout'
 import {Link} from 'gatsby' 
+import {Table} from 'react-bootstrap'
 
 
 const studentData= [
@@ -14,16 +14,16 @@ const StudentScores = () => {
     return(
 
         <div>
-               <Header/>
+               <Layout>
     <div className="container">
     <div className = "row">
-    <div className="col-md-12 mt-4 text-center">
+    <div className="col-md-12 mt-4 text-center mb-4">
     <h1>Student Scores</h1>
     </div>
     </div>
         <div className="row">
             <div className="col-md-12">
-            <table className="table table-borderless table-data3">
+            <Table hover bordered>
             <thead>
                 <tr>
                 <th className="text-center" scope="col">Name</th>
@@ -55,12 +55,12 @@ const StudentScores = () => {
      </tbody>
      );
     })}
- </table>
+ </Table>
             </div>
         </div>
     </div>
       
-        <Footer/>
+        </Layout>
         </div>
      
     )

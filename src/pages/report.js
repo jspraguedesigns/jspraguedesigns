@@ -1,11 +1,12 @@
 import React from 'react'
-import Header from '../components/header'
-import Footer from '../components/footer'
+import Layout from '../components/layout'
+import ClassScores from '../components/class-component'
+import {Table} from 'react-bootstrap'
 
 const Report = () =>{
     return(
     <div>
-         <Header />
+         <Layout>
          <div className="container pt-4 pb-4">
          <div className="row pt-4">
         <div className="col-md-12 text-center">
@@ -14,8 +15,8 @@ const Report = () =>{
         <p className="text-center">This test assesses student enabeling skills in English and places them into appropriate course level.</p>
         </div>
 
-             <table className="table table-borderless table-data3">
-            <thead>
+             <Table bordered varient="dark">
+            <thead >
                 <tr>
                 <th className="text-center" scope="col">School</th>
                 <th  className="text-center" scope="col">Report Date</th>
@@ -23,13 +24,13 @@ const Report = () =>{
             </thead>
             <tbody>
                 <tr>
-                <td class="text-center"><strong>Shanghai Jiading District</strong></td>
-                <td class="text-center"><strong>1-17-20</strong></td>
+                <td class="text-center">Shanghai Jiading District</td>
+                <td class="text-center">1-17-20</td>
                 </tr>
            
                
             </tbody>
-            </table>
+            </Table>
         </div>
 
  
@@ -65,7 +66,7 @@ const Report = () =>{
     <div className="row pt-4">
         <div className="col-md-12">
         <p className="text-center">Average section scores (out of 20 points possible):</p>
-         <table className="table table-borderless table-data3">
+         <Table bordered>
             <thead>
                 <tr>
                 <th className="text-center" scope="col">Listening</th>
@@ -84,13 +85,14 @@ const Report = () =>{
            
                
             </tbody>
-            </table>
+            </Table>
         </div>
 
     </div>
+    <ClassScores />
     </div>
-
-    <Footer />
+  
+    </Layout>
          </div>
 
 
