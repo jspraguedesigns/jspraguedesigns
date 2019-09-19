@@ -1,7 +1,7 @@
 import React from "react"
 import { Link } from "gatsby"
-import Header from './Header';
-import Footer from './Footer';
+import Header from './header';
+import Footer from './footer';
 
 import Amplify from "aws-amplify";
 import { withAuthenticator } from "aws-amplify-react";
