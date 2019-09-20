@@ -26,7 +26,7 @@ const ClassScores = () => {
             <Table bordered hover>
             <thead>
                 <tr>
-                <th className="text-center" scope="col">Name</th>
+                <th className="text-center" scope="col">Class</th>
                 <th className="text-center" scope="col">Score</th>
                 <th className="text-center" scope="col">Teacher</th>
                 </tr>

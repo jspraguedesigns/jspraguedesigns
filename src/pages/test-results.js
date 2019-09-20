@@ -2,10 +2,12 @@ import React from 'react'
 import {Link} from 'gatsby'
 import Layout from '../components/layout'
 import SVGIcon from "../components/SVGIcons";
+import Popup from "../components/popup";
 
 const TestResults = () => {
     return(
    <Layout>
+     <Popup />
        <div className="wrapper">
       <div className="row">
         <div className="w-100 mt-4 mb-4 text-center">
@@ -59,7 +61,7 @@ const TestResults = () => {
   <div className="disabled justify-content-center text-center d-flex align-items-center justify-content-center">
     <div className="label-icon">
     <SVGIcon name="badge" width={200} />   
-  <span className="label">ELC 3</span>
+  <span className="label">ELC 4</span>
     </div>
 
   </div>

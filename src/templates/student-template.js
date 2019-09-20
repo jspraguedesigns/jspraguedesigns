@@ -62,12 +62,12 @@ export default ({ pageContext: { students } }) => (
             <div className="card results">    
             <div className="card-body d-flex align-items-center justify-content-center">
             <div className="card-title audio-title">
-              <div className="score">
-                <h4 className="audio text-center mb-2">Audio Sample</h4>
+              <div className="score text-center">
+                <h4 className="audio mb-2">Audio Sample</h4>
              
                 <AudioPlayer/>
                 </div>
-                <div className="score">
+                <div className="score text-center">
                 <button className="btn btn-home-top btn btn-secondary text-center mt-4">Click to View Writing Sample</button>
              
                 </div>

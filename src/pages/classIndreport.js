@@ -18,14 +18,14 @@ const ClassReport = () =>{
              <Table bordered varient="dark">
             <thead>
                 <tr>
-                <th className="text-center" scope="col">Course</th>
+                <th className="text-center" scope="col">Class Name</th>
                 <th className="text-center" scope="col">Group</th>
                 <th  className="text-center" scope="col">Report Date</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
-                <td class="text-center"><strong>Level 1</strong></td>
+                <td class="text-center"><strong>English Level 1</strong></td>
                 <td class="text-center"><strong>Class 2</strong></td>
                 <td class="text-center"><strong>1-17-20</strong></td>
                 </tr>
@@ -38,7 +38,7 @@ const ClassReport = () =>{
  
     <div className="row pt-4 pb-4">
         <div className="col-md-12 text-center headerdark">
-          <h2 className="white">Overall Class Performance</h2>
+          <h2>Overall Class Performance</h2>
         </div>
     </div>
     <div className="row">

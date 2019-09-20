@@ -60,7 +60,7 @@ const Header = () => {
   </NavDropdown>
  
  <Nav.Link href="/test-results">
-    Test Results
+    Test Report <small>(Beta)</small>
   </Nav.Link>
 
                   <Nav.Link href="/feedback">

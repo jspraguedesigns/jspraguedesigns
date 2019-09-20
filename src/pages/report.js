@@ -24,7 +24,7 @@ const Report = () =>{
             </thead>
             <tbody>
                 <tr>
-                <td class="text-center">Shanghai Jiading District</td>
+                <td class="text-center">Shanghai Highschool</td>
                 <td class="text-center">1-17-20</td>
                 </tr>
            
@@ -36,7 +36,7 @@ const Report = () =>{
  
     <div className="row pt-4 pb-4">
         <div className="col-md-12 text-center headerdark">
-          <h2 className="white">Overall Institutional Performance</h2>
+          <h2>Overall Institutional Performance</h2>
         </div>
     </div>
     <div className="row">
