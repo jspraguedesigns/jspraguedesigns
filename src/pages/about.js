@@ -5,8 +5,7 @@ import { Link } from 'gatsby'
 
 const About = () => {
     return (
-        
-        <div>
+      
             <Layout>
             <div className="container pt-4 pb-4">
                 <div className="row">
@@ -53,7 +52,7 @@ const About = () => {
             
             </div>
             </Layout>
-        </div>
+      
     )
 }
 

@@ -14,7 +14,6 @@ const classData= [
 const ClassScores = () => {
     return(
 
-        <div>
                <Layout>
     <div className="container">
     <div className = "row">
@@ -62,7 +61,7 @@ const ClassScores = () => {
     </div>
       
         </Layout>
-        </div>
+   
      
     )
 }

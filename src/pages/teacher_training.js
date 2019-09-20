@@ -3,7 +3,7 @@ import Layout from '../components/layout'
 
 const Training = () => {
     return(
-        <div>
+   
         <Layout>
             <div className="container">
                 <div className="row">
@@ -14,7 +14,7 @@ const Training = () => {
             </div>
         
             </Layout>
-        </div>
+  
     )
 }
 export default Training

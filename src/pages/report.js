@@ -5,7 +5,7 @@ import {Table} from 'react-bootstrap'
 
 const Report = () =>{
     return(
-    <div>
+
          <Layout>
          <div className="container pt-4 pb-4">
          <div className="row pt-4">
@@ -93,7 +93,7 @@ const Report = () =>{
     </div>
   
     </Layout>
-         </div>
+     
 
 
     )

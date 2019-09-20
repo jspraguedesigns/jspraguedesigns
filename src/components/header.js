@@ -11,7 +11,7 @@ const Header = () => {
 
   <div className="navbar-brand  d-flex align-items-center">
     <h1 className="brand">ELC</h1>
-    <h2 className="tag">— Teacher Portal</h2>
+    <h2 className="tag">— Admin Portal</h2>
 </div>
 
  </Navbar.Brand>
@@ -58,20 +58,11 @@ const Header = () => {
           </NavDropdown.Item>
 
   </NavDropdown>
- <NavDropdown title="Test Results">
- <NavDropdown.Item>
-        <Link to="report"><div className="dropdown-item">Institutional Report</div></Link>
-        </NavDropdown.Item>  
-        <NavDropdown.Item>
-        <Link to="class-reports"><div className="dropdown-item">Class Reports</div></Link>
-        </NavDropdown.Item>     
+ 
+ <Nav.Link href="/test-results">
+    Test Results
+  </Nav.Link>
 
-         <NavDropdown.Item>
-        <Link to="student-scores"><div className="dropdown-item">Student Scores</div></Link>
-        </NavDropdown.Item>  
-                     
-         
-                  </NavDropdown>
                   <Nav.Link href="/feedback">
         Feedback
         </Nav.Link>

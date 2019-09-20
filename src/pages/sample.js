@@ -4,7 +4,7 @@ import 'jquery/dist/jquery.js'
 
 const sample = () => {
     return (
-        <div>
+ 
              <Layout>
              <div className="container">
              <h1>Sample Questions</h1>
@@ -24,7 +24,6 @@ const sample = () => {
              </div>
         </Layout>
 
-    </div>
     )
 
 }

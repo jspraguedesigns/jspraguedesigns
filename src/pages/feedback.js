@@ -4,7 +4,7 @@ import { Link } from 'gatsby'
 
 const feedback = () => {
     return(
-        <div>
+ 
             <Layout>
 
             <div className="container pt-4 pb-4">
@@ -18,7 +18,7 @@ const feedback = () => {
                 </div>
             </div>
         </Layout>
-    </div>
+
     )
 
 }

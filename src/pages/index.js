@@ -8,7 +8,6 @@ import QRCode from "../components/QR"
 const IndexPage = () => {
     return (
         <Layout>
-        <div>
          <div className="row d-flex align-items-center justify-content-center  banner">
          <div className="col-md-6 text-center animated fadeInUp">
                 
@@ -36,7 +35,6 @@ const IndexPage = () => {
                   </div>
               </div>
            </div>
-        </div>
         </Layout>
            
          

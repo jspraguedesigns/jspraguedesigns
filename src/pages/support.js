@@ -1,8 +1,8 @@
 import  React from 'react'
-import Layout from '../components/Layout'
+import Layout from '../components/layout'
 const Support = () => {
     return (
-        <div>
+ 
         <Layout>
         <div className="container">
         <div className="row pt-4">
@@ -37,7 +37,7 @@ const Support = () => {
         </div>
         
         </Layout>
-        </div>
+ 
     )
 }
 

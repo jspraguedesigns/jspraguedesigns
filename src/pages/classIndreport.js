@@ -5,7 +5,7 @@ import {Table} from 'react-bootstrap'
 
 const ClassReport = () =>{
     return(
-    <div>
+
          <Layout>
          <div className="container pt-4 pb-4">
          <div className="row pt-4">
@@ -95,9 +95,7 @@ const ClassReport = () =>{
     </div>
 
     </Layout>
-         </div>
-
-
+         
     )
 }
 export default ClassReport

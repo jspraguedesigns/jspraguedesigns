@@ -13,7 +13,6 @@ const studentData= [
 const StudentScores = () => {
     return(
 
-        <div>
                <Layout>
     <div className="container">
     <div className = "row">
@@ -61,7 +60,7 @@ const StudentScores = () => {
     </div>
       
         </Layout>
-        </div>
+     
      
     )
 }

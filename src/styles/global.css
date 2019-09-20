@@ -601,8 +601,9 @@ footer a:hover{
  font-size: .85em;
 }
 svg {
- height: 50px;
+ height: 100px;
  width: 80px;
+ display: block;
 }
 
 .container{
@@ -634,4 +635,63 @@ thead th {
 
 .dropdown-item:active{
   background-color: #d5e6da;
+}
+.track{
+background: #007c92;
+width: 100%;
+min-height: 100vh;
+padding: 4em;
+}
+
+.wrapper{
+  margin-top: 100px;
+  min-height: 100vh;
+}
+
+.square{
+  width: 300px;
+  height: 300px;
+  border: 1px #fff solid;
+  border-radius: 10px;
+  color: #fff;
+  font-size: 1.5em;
+  margin: .5%;
+  float: left;
+  transition: all .2s ease-in-out;
+  background-color: none;
+}
+
+.square:hover{
+  width: 600px;
+  height: 310px;
+  font-size: 1.65em;
+  background-color: #003B46;
+
+}
+
+.squareLink{
+  margin: 1%;
+}
+
+.disabled{
+  width: 300px;
+    height: 300px;
+    border: 1px #fff dotted;
+    border-radius: 10px;
+    color: rgba(255,255,255,.5);
+    font-size: 1.5em;
+    margin: .5%;
+    float: left;
+    -webkit-transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out;
+    background-color: rgba(255,255,255,.0);
+}
+
+.disabled svg{
+  opacity:.5;
+}
+
+.track .container{
+  max-width: 660px;
+  margin-top: 0;
 }
