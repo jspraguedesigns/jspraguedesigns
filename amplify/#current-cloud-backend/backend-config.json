@@ -1,0 +1,9 @@
+{
+	"auth": {
+		"elcwebapp41f396cd": {
+			"service": "Cognito",
+			"providerPlugin": "awscloudformation",
+			"dependsOn": []
+		}
+	}
+}

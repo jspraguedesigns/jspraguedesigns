@@ -1,13 +1,13 @@
 import React from 'react'
-import Header from '../components/header'
-import Footer from '../components/footer'
+// import Header from '../components/header'
+// import Footer from '../components/footer'
+import Layout from '../components/layout';
 import { Link } from 'gatsby'
 
 const About = () => {
     return (
-        
+        <Layout>
         <div>
-            <Header />
             <div className="container pt-4 pb-4">
                 <div className="row">
                     <div className="col-md-12">
@@ -52,8 +52,8 @@ const About = () => {
                 </div>
             
             </div>
-            <Footer />
         </div>
+        </Layout>
     )
 }
 
