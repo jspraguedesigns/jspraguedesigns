@@ -1,0 +1,7 @@
+{
+    "sb": {
+        "configLevel": "project",
+        "useProfile": true,
+        "profileName": "amplify-falcon-cli-user"
+    }
+}

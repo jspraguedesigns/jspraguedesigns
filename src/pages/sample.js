@@ -1,11 +1,14 @@
 import React from 'react'
-import Header from '../components/header'
+// import Header from '../components/header'
+
+import Layout from '../components/layout';
+
 import 'jquery/dist/jquery.js'
 
 const sample = () => {
     return (
+      <Layout>
         <div>
-             <Header />
         <h1>Sample Questions</h1>
         <div class="row">
   <div class="col-md-12 pt-4 pb-4 text-center">
@@ -18,6 +21,7 @@ const sample = () => {
 
 
     </div>
+      </Layout>
     )
 
 }
