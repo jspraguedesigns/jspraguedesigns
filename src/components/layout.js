@@ -1,12 +1,12 @@
 import React from "react"
 import { Link } from "gatsby"
-import Header from './header';
-import Footer from './footer';
+import Header from "./header"
+import Footer from "./footer"
 
-//import Amplify from "aws-amplify";
-//import { withAuthenticator } from "aws-amplify-react";
-//import config from "../aws-exports";
-//Amplify.configure(config);
+import Amplify from "aws-amplify";
+import { withAuthenticator } from "aws-amplify-react";
+import config from "../aws-exports";
+Amplify.configure(config);
 
 const ListLink = props => (
   <li style={{ display: `inline-block`, marginRight: `1rem` }}>
@@ -22,5 +22,5 @@ const Layout = ({ children }) => (
   </div>
 )
 
-//export default withAuthenticator(Layout, true);
-export default Layout;
+export default withAuthenticator(Layout, true);
+//export default Layout

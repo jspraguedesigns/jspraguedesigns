@@ -1,15 +1,15 @@
 import React from "react"
-import { Link } from 'gatsby'
-import { navigate } from '@reach/router'
-import { setUser, isLoggedIn } from '../utils/auth'
-import Error from './Error'
-import { Auth } from 'aws-amplify'
+import { Link } from "gatsby"
+import { navigate } from "@reach/router"
+import { isLoggedIn, setUser } from "../utils/auth"
+import Error from "./Error"
+import { Auth } from "aws-amplify"
 
 class Login extends React.Component {
   state = {
     username: ``,
     password: ``,
-    error: ``
+    error: ``,
   }
 
   handleUpdate = (event) => {
@@ -18,25 +18,25 @@ class Login extends React.Component {
     })
   }
 
-  login = async() => {
+  login = async () => {
     const { username, password } = this.state
     try {
       await Auth.signIn(username, password)
       const user = await Auth.currentAuthenticatedUser()
       const userInfo = {
         ...user.attributes,
-        username: user.username
+        username: user.username,
       }
       setUser(userInfo)
       navigate("/app/home")
     } catch (err) {
       this.setState({ error: err })
-      console.log('error...: ', err)
+      console.log("error...: ", err)
     }
   }
 
   render() {
-    if (isLoggedIn()) navigate('/app/profile')
+    if (isLoggedIn()) navigate("/app/profile")
     return (
       <div>
         <h1>Sign In</h1>
@@ -61,7 +61,7 @@ class Login extends React.Component {
             <span style={styles.buttonText}>Sign In</span>
           </div>
         </div>
-        <Link to="/app/signup">Sign Up</Link><br />
+        <Link to="/app/signup">Sign Up</Link><br/>
       </div>
     )
   }
@@ -69,17 +69,17 @@ class Login extends React.Component {
 
 const styles = {
   input: {
-    height: 40, margin: '10px 0px', padding: 7
+    height: 40, margin: "10px 0px", padding: 7,
   },
   formContainer: {
-    display: 'flex', flexDirection: 'column'
+    display: "flex", flexDirection: "column",
   },
   button: {
-    backgroundColor: 'rebeccapurple', padding: '15px 7px', cursor: 'pointer', textAlign: 'center', marginBottom: 10
+    backgroundColor: "rebeccapurple", padding: "15px 7px", cursor: "pointer", textAlign: "center", marginBottom: 10,
   },
   buttonText: {
-    color: 'white'
-  }
+    color: "white",
+  },
 }
 
 export default Login

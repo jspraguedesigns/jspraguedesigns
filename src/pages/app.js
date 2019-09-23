@@ -11,10 +11,10 @@ import PrivateRoute from "../components/PrivateRoute"
 const App = () => (
   <Layout>
     <Router>
-      <PrivateRoute path="/app/home" component={Home} />
-      <PrivateRoute path="/app/profile" component={Details} />
-      <Login path="/app/login" />
-      <SignUp path="/app/signup" />
+      <PrivateRoute path="/app/home" component={Home}/>
+      <PrivateRoute path="/app/profile" component={Details}/>
+      <Login path="/app/login"/>
+      <SignUp path="/app/signup"/>
     </Router>
   </Layout>
 )

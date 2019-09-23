@@ -1,16 +1,16 @@
 import React from "react"
-import { navigate} from "@reach/router"
-import { Link } from 'gatsby'
-import Error from './Error'
-import { Auth } from 'aws-amplify'
+import { navigate } from "@reach/router"
+import { Link } from "gatsby"
+import Error from "./Error"
+import { Auth } from "aws-amplify"
 
 const initialState = {
   username: ``,
   password: ``,
-  email: '',
-  authCode: '',
+  email: "",
+  authCode: "",
   stage: 0,
-  error: ''
+  error: "",
 }
 
 
@@ -23,26 +23,26 @@ class SignUp extends React.Component {
     })
   }
 
-  signUp = async() => {
+  signUp = async () => {
     const { username, password, email } = this.state
     try {
-      await Auth.signUp({ username, password, attributes: { email }})
+      await Auth.signUp({ username, password, attributes: { email } })
       this.setState({ stage: 1 })
     } catch (err) {
       this.setState({ error: err })
-      console.log('error signing up...', err)
+      console.log("error signing up...", err)
     }
   }
 
-  confirmSignUp = async() => {
+  confirmSignUp = async () => {
     const { username, authCode } = this.state
     try {
       await Auth.confirmSignUp(username, authCode)
-      alert('Successfully signed up!')
+      alert("Successfully signed up!")
       navigate("/app/login")
     } catch (err) {
       this.setState({ error: err })
-      console.log('error confirming signing up...', err)
+      console.log("error confirming signing up...", err)
     }
   }
 
@@ -107,17 +107,17 @@ class SignUp extends React.Component {
 
 const styles = {
   input: {
-    height: 40, margin: '10px 0px', padding: 7
+    height: 40, margin: "10px 0px", padding: 7,
   },
   formContainer: {
-    display: 'flex', flexDirection: 'column'
+    display: "flex", flexDirection: "column",
   },
   button: {
-    backgroundColor: 'rebeccapurple', padding: '15px 7px', cursor: 'pointer', textAlign: 'center', marginBottom: 10
+    backgroundColor: "rebeccapurple", padding: "15px 7px", cursor: "pointer", textAlign: "center", marginBottom: 10,
   },
   buttonText: {
-    color: 'white'
-  }
+    color: "white",
+  },
 }
 
 export default SignUp

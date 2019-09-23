@@ -1,6 +1,5 @@
-  
 import React from "react"
-import { useStaticQuery, graphql } from "gatsby"
+import { graphql, useStaticQuery } from "gatsby"
 import Img from "gatsby-image"
 
 /*
@@ -15,19 +14,19 @@ import Img from "gatsby-image"
  */
 
 const QRCode = () => {
-    const data = useStaticQuery(graphql`
+  const data = useStaticQuery(graphql`
       query {
-        placeholderImage: file(relativePath: { eq: "qrcode.jpg" }) {
-          childImageSharp {
-            fluid(maxWidth: 100) {
-              ...GatsbyImageSharpFluid
-            }
+          placeholderImage: file(relativePath: { eq: "qrcode.jpg" }) {
+              childImageSharp {
+                  fluid(maxWidth: 100) {
+                      ...GatsbyImageSharpFluid
+                  }
+              }
           }
-        }
       }
-    `)
-  
-    return <Img fluid={data.placeholderImage.childImageSharp.fluid} />
-  }
-  
-  export default QRCode
+  `)
+
+  return <Img fluid={data.placeholderImage.childImageSharp.fluid}/>
+}
+
+export default QRCode

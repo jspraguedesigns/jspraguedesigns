@@ -1,6 +1,5 @@
-  
 import React from "react"
-import { useStaticQuery, graphql } from "gatsby"
+import { graphql, useStaticQuery } from "gatsby"
 import Img from "gatsby-image"
 
 /*
@@ -16,18 +15,18 @@ import Img from "gatsby-image"
 
 const WeChat = () => {
   const data = useStaticQuery(graphql`
-    query {
-      placeholderImage: file(relativePath: { eq: "wechat.png" }) {
-        childImageSharp {
-          fluid(maxWidth: 100) {
-            ...GatsbyImageSharpFluid
+      query {
+          placeholderImage: file(relativePath: { eq: "wechat.png" }) {
+              childImageSharp {
+                  fluid(maxWidth: 100) {
+                      ...GatsbyImageSharpFluid
+                  }
+              }
           }
-        }
       }
-    }
   `)
 
-  return <Img fluid={data.placeholderImage.childImageSharp.fluid} />
+  return <Img fluid={data.placeholderImage.childImageSharp.fluid}/>
 }
 
 export default WeChat
