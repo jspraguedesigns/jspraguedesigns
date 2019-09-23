@@ -1,51 +1,52 @@
 import React from 'react'
-import Layout from '../components/layout'
 import {Link} from 'gatsby' 
 import {Table} from 'react-bootstrap'
 
 
-const studentData= [
-    { student: [{ name: "Wang, Jing", id: "001", score:"145" }] },
-    { student: [{ name: "Yuxi, Yao", id: "002", score:"147" }] }
+const classData= [
+    { classes: [{ names: "English Level 1", score:"90", teacher: "Mrs. Smith" }] },
+    { classes: [{ names: "English Level 2", score:"97",  teacher: "Mrs. Smith"}] },
+    { classes: [{ names: "English Level 3", score:"124", teacher: "Mrs. Adams" }] }
    ];
      
 
-const StudentScores = () => {
+const ClassScores = () => {
     return(
 
-               <Layout>
-    <div className="container">
+        <div>
+            
+
     <div className = "row">
     <div className="col-md-12 mt-4 text-center mb-4">
-    <h1>Student Scores</h1>
+    <h1>Class Reports</h1>
     </div>
     </div>
         <div className="row">
             <div className="col-md-12">
-            <Table hover bordered>
+            <Table bordered hover>
             <thead>
                 <tr>
-                <th className="text-center" scope="col">Name</th>
-                <th className="text-center" scope="col">ID</th>
+                <th className="text-center" scope="col">Class</th>
                 <th className="text-center" scope="col">Score</th>
+                <th className="text-center" scope="col">Teacher</th>
                 </tr>
               
             </thead>
-            {studentData.map(e => {
+            {classData.map(e => {
     return (
      <tbody>
       
-      {e.student.map(item => {
+      {e.classes.map(item => {
      return (
         <tr>
       <td className="text-center">
-      <Link to={item.name}>{item.name}</Link>
-      </td>
-      <td className="text-center">
-      {item.id}
+      <Link to="/classIndreport">{item.names}</Link>
       </td>
       <td className="text-center">
       {item.score}
+      </td>
+      <td className="text-center">
+      {item.teacher}
       </td>
       </tr>
       );
@@ -58,11 +59,9 @@ const StudentScores = () => {
             </div>
         </div>
     </div>
-      
-        </Layout>
-     
+
      
     )
 }
 
-export default StudentScores
+export default ClassScores

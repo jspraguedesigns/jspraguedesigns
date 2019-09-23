@@ -1,5 +1,4 @@
 import React from 'react'
-import Layout from '../components/layout'
 import {Link} from 'gatsby' 
 import {Table} from 'react-bootstrap'
 
@@ -10,19 +9,19 @@ const studentData= [
    ];
      
 
-const StudentScores = () => {
+const ClassRoster = () => {
     return(
 
-               <Layout>
-    <div className="container">
+        <div>
+ 
     <div className = "row">
     <div className="col-md-12 mt-4 text-center mb-4">
-    <h1>Student Scores</h1>
+    <h1>Class Roster</h1>
     </div>
     </div>
         <div className="row">
             <div className="col-md-12">
-            <Table hover bordered>
+            <Table bordered hover varient="dark">
             <thead>
                 <tr>
                 <th className="text-center" scope="col">Name</th>
@@ -59,10 +58,9 @@ const StudentScores = () => {
         </div>
     </div>
       
-        </Layout>
-     
+  
      
     )
 }
 
-export default StudentScores
+export default ClassRoster

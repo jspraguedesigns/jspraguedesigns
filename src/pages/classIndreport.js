@@ -1,34 +1,35 @@
 import React from 'react'
 import Layout from '../components/layout'
-import ClassScores from '../components/class-component'
+import ClassRoster from '../components/class-roster'
 import {Table} from 'react-bootstrap'
 import Comments from "../components/comments";
 
-const Report = () =>{
+const ClassReport = () =>{
     return(
 
          <Layout>
-
-        <Comments/>
+             <Comments />
          <div className="container pt-4 pb-4">
          <div className="row pt-4">
         <div className="col-md-12 text-center">
-          <h1>Institutional Report</h1>
+          <h1>Class Report</h1>
   
         <p className="text-center">This test assesses student enabeling skills in English and places them into appropriate course level.</p>
         </div>
 
              <Table bordered varient="dark">
-            <thead >
+            <thead>
                 <tr>
-                <th className="text-center" scope="col">School</th>
+                <th className="text-center" scope="col">Class Name</th>
+                <th className="text-center" scope="col">Group</th>
                 <th  className="text-center" scope="col">Report Date</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
-                <td class="text-center">Shanghai Highschool</td>
-                <td class="text-center">1-17-20</td>
+                <td class="text-center"><strong>English Level 1</strong></td>
+                <td class="text-center"><strong>Class 2</strong></td>
+                <td class="text-center"><strong>1-17-20</strong></td>
                 </tr>
            
                
@@ -39,7 +40,7 @@ const Report = () =>{
  
     <div className="row pt-4 pb-4">
         <div className="col-md-12 text-center headerdark">
-          <h2>Overall Institutional Performance</h2>
+          <h2>Overall Class Performance</h2>
         </div>
     </div>
     <div className="row">
@@ -69,7 +70,7 @@ const Report = () =>{
     <div className="row pt-4">
         <div className="col-md-12">
         <p className="text-center">Average section scores (out of 20 points possible):</p>
-         <Table bordered>
+        <Table bordered varient="dark">
             <thead>
                 <tr>
                 <th className="text-center" scope="col">Listening</th>
@@ -92,15 +93,11 @@ const Report = () =>{
         </div>
 
     </div>
-    <ClassScores />
+    <ClassRoster/>
     </div>
-  
+
     </Layout>
-     
-
-         </div>
-      </Layout>
-
+         
     )
 }
-export default Report
+export default ClassReport

@@ -1,17 +1,16 @@
 import React from 'react'
-// import Header from '../components/header'
-// import Footer from '../components/footer'
-import Layout from '../components/layout';
+import Layout from '../components/layout'
+
 import { Link } from 'gatsby'
 
 const About = () => {
     return (
-        <Layout>
-        <div>
+      
+            <Layout>
             <div className="container pt-4 pb-4">
                 <div className="row">
                     <div className="col-md-12">
-                    <h1>What Is ELC</h1>
+                    <h1>What Is ELC?</h1>
                     <hr />
                     <div className="image-what-is-elc">
             </div>
@@ -52,8 +51,8 @@ const About = () => {
                 </div>
             
             </div>
-        </div>
-        </Layout>
+            </Layout>
+      
     )
 }
 
