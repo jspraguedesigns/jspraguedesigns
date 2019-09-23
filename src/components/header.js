@@ -6,7 +6,7 @@ import "../styles/global.css"
 const Header = () => {
   return (
 
-    <Navbar bg="light" expand="md" fixed="top">
+    <Navbar bg="light" expand="md">
       <Navbar.Brand href="/">
 
         <div className="navbar-brand  d-flex align-items-center">
