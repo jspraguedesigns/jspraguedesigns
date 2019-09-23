@@ -100,7 +100,7 @@ const Report = () =>{
     </div>
 
 
-      
+      </div>
       </Layout>
 
     )
