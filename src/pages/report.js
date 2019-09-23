@@ -98,6 +98,8 @@ const Report = () =>{
     </Layout>
      
 
+         </div>
+      </Layout>
 
     )
 }
