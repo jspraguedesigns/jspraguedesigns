@@ -1,6 +1,7 @@
 import React from "react"
 import Layout from "../components/layout"
 import "jquery/dist/jquery.js"
+import { withAuthenticator } from "aws-amplify-react";
 
 const proctoring = () => {
   return (
@@ -70,4 +71,5 @@ const proctoring = () => {
 
 }
 
-export default proctoring
+//export default proctoring
+export default withAuthenticator(proctoring, true)
