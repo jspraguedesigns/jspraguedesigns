@@ -145,6 +145,21 @@ li button{
  background: linear-gradient(180deg, rgba(1,144,118,1) 0%, rgba(71,0,224,1) 100%);
 }
 
+button.feedback{
+  width: auto;
+  height: 40px;
+  border-radius: 20px;
+  margin-top: 5px;
+  padding: 0 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size:20px;
+ background:  rebeccapurple;
+}
+
+
 ul li a{
 color:#fff;
 display:block;
@@ -347,23 +362,21 @@ span.missing{
 }
 
 .form-control {
-    display: inline;
-    width: 20px;
-    height: 20px;
-    padding: 0;
-    font-size: 1rem;
-    font-weight: 400;
-    line-height: 1.5;
-    color: #fff;
-    background-color: transparent;
-    background-clip: padding-box;
-    border-bottom: 1px solid #ced4da;
-    border-left: none;
-    border-right: none;
-    border-top: none;
-    border-radius: 0;
-    float: left;
-    margin-right: 3px;
+  display: inline;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #fff;
+  background-color: #fff;
+  background-clip: padding-box;
+  border-bottom: 1px solid #ced4da;
+  border-left: none;
+  border-right: none;
+  border-top: none;
+  border-radius: 0;
+  float: left;
+  margin-right: 3px;
+  margin-bottom: 5px;
 }
 
 span.form-control2:hover{
@@ -708,6 +721,39 @@ padding: 4em;
   margin: auto;  
   background-color: rgba(0,0,0, 0.85);  
 }  
+
+.comments {
+  position: fixed;
+  z-index: 999999999;
+  width: 60%;
+  height: auto;
+  top: 3%;
+  right: -60%;
+  background-color: rgba(255,255,255, 0.95);
+  transition: all .25s ease-in-out;
+}
+
+.comment-btn{
+  position: relative;
+  right: 65px;
+  top: 280px;
+  transform: rotate(-90deg);
+  font-weight: bold;
+  padding: 4px 10px;
+  background-color: rebeccapurple;
+  border-radius: 5px 5px 0 0;
+  color: #fff;
+  box-shadow: 0px 4px 24px 4px rgba(0,0,0, 0.25);
+}
+
+
+.comment-btn:hover{
+  background-color: #000;
+}
+
+.activeShow{
+  right: 0%;
+}
 .popup\_inner {  
   position: absolute;  
   left: 25%;  

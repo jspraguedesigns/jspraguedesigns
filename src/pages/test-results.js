@@ -3,12 +3,14 @@ import {Link} from 'gatsby'
 import Layout from '../components/layout'
 import SVGIcon from "../components/SVGIcons";
 import Popup from "../components/popup";
-
+import Comments from "../components/comments";
 const TestResults = () => {
     return(
    <Layout>
      <Popup />
+  
        <div className="wrapper">
+       <Comments/>
       <div className="row">
         <div className="w-100 mt-4 mb-4 text-center">
         <h1>Test Results</h1>

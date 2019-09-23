@@ -2,11 +2,14 @@ import React from 'react'
 import Layout from '../components/layout'
 import ClassScores from '../components/class-component'
 import {Table} from 'react-bootstrap'
+import Comments from "../components/comments";
 
 const Report = () =>{
     return(
 
          <Layout>
+
+        <Comments/>
          <div className="container pt-4 pb-4">
          <div className="row pt-4">
         <div className="col-md-12 text-center">

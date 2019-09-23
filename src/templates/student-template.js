@@ -2,10 +2,13 @@ import React from "react"
 import Layout from '../components/layout'
 import {Table, Card} from 'react-bootstrap'
 import AudioPlayer from '../components/audio-player';
+import Comments from "../components/comments";
 
 export default ({ pageContext: { students } }) => (
   <div>
     <Layout>
+
+      <Comments />
       <div className="container">
       <div className="row mt-4 mb-4 d-flex align-items-center">
         <div className="col-md-12">

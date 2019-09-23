@@ -16,11 +16,9 @@ const Popup =() =>{
         <h1 className="overlay">Thank You For Participating</h1>  
         <br />
             <p className="white">We are currently in the process of developing the User Experience of the ELC program. Your feedback is critical at this early development stage.</p> 
-            <p className="white">Please take a moment to look try out our newly designed interface. We will ask you to comment as you navigate through our site in our WeChat group.</p>
+            <p className="white">Please take a moment to look our newly designed interface. Please click on our <strong>Comments</strong> tab to let us know what you think.</p>
 
-           <h2 className="white">The Scenario</h2> 
-           <br />
-           <p className="white">Imagine your school just completed the ELC Entry; navigate to ELC Entry results and tell us: <br />
+           <p className="white">As you navigate through this section, imagine your school just completed the ELC Entry, click on the <strong>Comments</strong> tab on the right and tell us:
            <ol>
                <li>As an administrator, what sort of test feedback you are looking for?</li>
                <li>What is the most important thing you need to see?</li>
@@ -31,7 +29,7 @@ const Popup =() =>{
                <li>Is there anything that you expected to see but didn't?</li>
            </ol>
            </p>
-        <button onClick={hide}>Test Our Site</button>  
+        <button className="btn btn-home-top btn btn-secondary mt-4" onClick={hide}>Test Our Site</button>  
         </div>
     </div>
 
