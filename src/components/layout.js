@@ -15,11 +15,10 @@ const ListLink = props => (
 )
 
 const Layout = ({ children }) => (
-  <div>
     <Header/>
     {children}
     <Footer/>
-  </div>
+
 )
 
 //export default withAuthenticator(Layout, true);
