@@ -1,6 +1,6 @@
 import React from "react"
 import Layout from "../components/layout"
-
+import { withAuthenticator } from "aws-amplify-react";
 import { Link } from "gatsby"
 
 const About = () => {
@@ -67,4 +67,5 @@ const About = () => {
   )
 }
 
-export default About
+//export default About
+export default withAuthenticator(About, true)
