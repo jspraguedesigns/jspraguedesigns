@@ -27,34 +27,25 @@ const Header = () => {
   </Nav.Link>
 <NavDropdown title="ELC Overview">
 
-    <NavDropdown.Item>
-      <Link to="/about">
-      <div className="dropdown-item">What Is ELC?</div>
-      </Link>
+    <NavDropdown.Item href="/about"> 
+      What Is ELC?
       </NavDropdown.Item>
-      <NavDropdown.Item>
-      <Link to="/sample">
-      <div className="dropdown-item">Sample Questions</div>
-      </Link>
+      <NavDropdown.Item href="/sample">
+     Sample Questions
       </NavDropdown.Item>
    
   
 </NavDropdown>
 <NavDropdown title="Teacher's Resources">
-      <NavDropdown.Item>
-      <Link to="/support">
-             <div className="dropdown-item">Support Materials</div>
-          </Link>
+      <NavDropdown.Item href="/support">
+          Support Materials
           </NavDropdown.Item>
-          <NavDropdown.Item>
-          <Link to="/teacher_training">
-      <div className="dropdown-item">Teacher Training</div>
-      </Link>
+          <NavDropdown.Item href="/teacher_training">
+      Teacher Training
           </NavDropdown.Item>
-          <NavDropdown.Item>
-          <Link to="/proctoring">
-          <div className="dropdown-item">Proctoring</div>
-      </Link>
+          <NavDropdown.Item href="/proctoring">
+    Proctoring
+
           </NavDropdown.Item>
 
   </NavDropdown>
@@ -63,9 +54,6 @@ const Header = () => {
     Test Report <small>(Beta)</small>
   </Nav.Link>
 
-                  <Nav.Link href="/feedback">
-        Feedback
-        </Nav.Link>
         </Navbar.Collapse>
         </Nav>
 

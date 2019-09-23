@@ -1,7 +1,6 @@
 import React from 'react'
 import {Link} from 'gatsby'
 import Layout from '../components/layout'
-import SVGIcon from "../components/SVGIcons";
 import Popup from "../components/popup";
 import Comments from "../components/comments";
 const TestResults = () => {
@@ -32,7 +31,6 @@ const TestResults = () => {
   <Link className="squareLink">
   <div className="disabled justify-content-center text-center d-flex align-items-center justify-content-center">
     <div className="label-icon">
-    <SVGIcon name="badge" width={200} />   
   <span className="label">ELC 1</span>
     </div>
 
@@ -42,7 +40,6 @@ const TestResults = () => {
   <Link className="squareLink">
   <div className="disabled justify-content-center text-center d-flex align-items-center justify-content-center">
     <div className="label-icon">
-    <SVGIcon name="badge" width={200} />   
   <span className="label">ELC 2</span>
     </div>
 
@@ -51,8 +48,7 @@ const TestResults = () => {
   </Link>
   <Link className="squareLink">
   <div className="disabled justify-content-center text-center d-flex align-items-center justify-content-center">
-    <div className="label-icon">
-    <SVGIcon name="badge" width={200} />   
+    <div className="label-icon"> 
   <span className="label">ELC 3</span>
     </div>
 
@@ -62,7 +58,6 @@ const TestResults = () => {
       <Link className="squareLink">
   <div className="disabled justify-content-center text-center d-flex align-items-center justify-content-center">
     <div className="label-icon">
-    <SVGIcon name="badge" width={200} />   
   <span className="label">ELC 4</span>
     </div>
 
