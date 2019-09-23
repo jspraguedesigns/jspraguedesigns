@@ -4,6 +4,7 @@ import Layout from "../components/layout"
 import { Link } from "gatsby"
 import WeChat from "../components/image"
 import QRCode from "../components/QR"
+import { withAuthenticator } from "aws-amplify-react";
 
 const IndexPage = () => {
   return (
@@ -45,4 +46,5 @@ const IndexPage = () => {
 
 }
 
-export default IndexPage
+//export default IndexPage
+export default withAuthenticator(IndexPage, true)
