@@ -45,6 +45,35 @@ const IndexPage = () => {
   )
 
 }
+const signUpConfig = {
+  header: 'My Customized Sign Up',
+  hideAllDefaults: true,
+  defaultCountryCode: '1',
+  signUpFields: [
+    {
+      label: 'Email',
+      key: 'email',
+      required: true,
+      displayOrder: 1,
+      type: 'string'
+    },
+    {
+      label: 'Password',
+      key: 'password',
+      required: true,
+      displayOrder: 2,
+      type: 'password'
+    },
+    {
+      label: 'Custom Attribute',
+      key: 'custom_attr',
+      required: false,
+      displayOrder: 3,
+      type: 'string',
+      custom: true
+    }
+  ]
+};
 
 //export default IndexPage
-export default withAuthenticator(IndexPage, true)
+export default withAuthenticator(IndexPage, { signUpConfig })
