@@ -7,7 +7,6 @@ import QRCode from "../components/QR"
 //import { withAuthenticator } from "aws-amplify-react";
 import { ConfirmSignIn, ConfirmSignUp, ForgotPassword, RequireNewPassword, SignIn, SignUp, VerifyContact, withAuthenticator } from 'aws-amplify-react';
 
-console.log('Amplify: ', Amplify)
 
 const IndexPage = ({ data }) => {
     console.log('data: ', data)
