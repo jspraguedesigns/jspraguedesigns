@@ -4,9 +4,13 @@ import Layout from "../components/layout"
 import { Link } from "gatsby"
 import WeChat from "../components/image"
 import QRCode from "../components/QR"
-import { withAuthenticator } from "aws-amplify-react";
+//import { withAuthenticator } from "aws-amplify-react";
+import { ConfirmSignIn, ConfirmSignUp, ForgotPassword, RequireNewPassword, SignIn, SignUp, VerifyContact, withAuthenticator } from 'aws-amplify-react';
 
-const IndexPage = () => {
+console.log('Amplify: ', Amplify)
+
+const IndexPage = ({ data }) => {
+    console.log('data: ', data)
   return (
     <Layout>
       <div className="row d-flex align-items-center justify-content-center  banner">
