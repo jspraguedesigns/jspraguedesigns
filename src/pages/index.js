@@ -64,16 +64,16 @@ const signUpConfig = {
       displayOrder: 2,
       type: 'password'
     },
-    {
-      label: 'Custom Attribute',
-      key: 'custom_attr',
-      required: false,
-      displayOrder: 3,
-      type: 'string',
-      custom: true
-    }
   ]
 };
 
 //export default IndexPage
-export default withAuthenticator(IndexPage, { signUpConfig })
+export default withAuthenticator(IndexPage, { signUpConfig }, [
+  <SignIn/>,
+  <ConfirmSignIn/>,
+  <VerifyContact/>,
+  <SignUp/>,
+  <ConfirmSignUp/>,
+  <ForgotPassword/>,
+  <RequireNewPassword />
+]);
