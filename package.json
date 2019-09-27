@@ -5,6 +5,10 @@
   "version": "0.1.0",
   "author": "Kyle Mathews <mathews.kyle@gmail.com>",
   "dependencies": {
+    "@emotion/core": "^10.0.17",
+    "@emotion/styled": "^10.0.17",
+    "@reach/router": "^1.2.1",
+    "auth0-js": "^9.11.3",
     "aws-amplify": "^1.0.5",
     "aws-amplify-react": "^1.0.5",
     "bootstrap": "^4.3.1",
