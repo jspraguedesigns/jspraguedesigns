@@ -1,9 +1,9 @@
-import React from 'react'
-import { Link } from 'gatsby'
-import { getCurrentUser } from '../utils/auth'
+import React from "react"
+import { Link } from "gatsby"
+import { getUserInfo } from "../utils/auth"
 
 const Home = () => {
-  const user = getCurrentUser()
+  const user = getUserInfo()
   console.log('user:', user)
   return (
     <div>

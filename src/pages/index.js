@@ -1,20 +1,26 @@
-import React from 'react'
+import React from "react"
 //import Header from '../components/header'
 //import Footer from '../components/footer'
-import Layout from '../components/layout'
-import { Link } from 'gatsby'
+import Layout from "../components/layout"
+import { Link } from "gatsby"
 
 
 const IndexPage = () => {
   return (
     <Layout>
       <div>
+        <Link to="/account">Go to your account</Link>
+      </div>
+
+      <div>
 
         <div className="row d-flex align-items-center justify-content-center  banner">
           <div className="col-md-6 text-center animated fadeInUp">
 
             <h1 className="home-text">English<br/> Learning<br /> Certificate</h1>
-            <Link to="/about"><button type="button" class="btn btn-home-top btn btn-secondary mt-4">Read About What ELC Is</button></Link>
+            <Link to="/about">
+              <button type="button" className="btn btn-home-top btn btn-secondary mt-4">Read About What ELC Is</button>
+            </Link>
           </div>
           <div className="col-md-6 home-text">
 

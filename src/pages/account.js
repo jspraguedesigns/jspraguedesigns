@@ -1,7 +1,7 @@
 // src/pages/account.js
 import React from "react"
 import { Router } from "@reach/router"
-import { login, isAuthenticated, getProfile } from "../utils/auth"
+import { getUserInfo, isAuthenticated, login, logout } from "../utils/auth"
 import { Link } from "gatsby"
 
 const Home = ({ user }) => {
@@ -16,7 +16,7 @@ const Account = () => {
     return <p>Redirecting to login...</p>
   }
 
-  const user = getProfile()
+  const user = getUserInfo()
 
   return (
     <>
@@ -24,6 +24,15 @@ const Account = () => {
         <Link to="/account/">Home</Link>{" "}
         <Link to="/account/settings/">Settings</Link>{" "}
         <Link to="/account/billing/">Billing</Link>{" "}
+        <a
+          href="#logout"
+          onClick={e => {
+            logout()
+            e.preventDefault()
+          }}
+        >
+          Log Out
+        </a>
       </nav>
       <Router>
         <Home path="/account/" user={user} />
