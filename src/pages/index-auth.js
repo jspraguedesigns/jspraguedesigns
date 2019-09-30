@@ -6,6 +6,9 @@ import { Link } from "gatsby"
 
 
 const IndexPage = () => {
+    console.log("index-auth: process.env.AUTH0_CALLBACK")
+    console.log(process.env.AUTH0_CALLBACK)
+
     return (
       <Layout>
           <div>

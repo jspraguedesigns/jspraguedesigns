@@ -1,11 +1,19 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Default Starter`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
+    title: `ETS ELC `,
+    description: `ETS ELC.`,
+    author: `@falcon`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
+    'gatsby-plugin-offline',
+    {
+      resolve: 'gatsby-plugin-google-analytics',
+      options: {
+        trackingId: 'UA-140384772-4',
+        respectDNT: true
+      }
+    },
     {
       resolve: `gatsby-source-filesystem`,
       options: {

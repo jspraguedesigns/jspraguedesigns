@@ -32,6 +32,7 @@ export const login = () => {
   }
 
   auth0.authorize();
+
 };
 
 export const logout = () => {

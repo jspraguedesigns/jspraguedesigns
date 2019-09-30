@@ -10,7 +10,6 @@ const Header = () => {
     return <p>Redirecting to login...</p>
   } else {
   const user = getUserInfo()
-
     return (
 
       <Navbar bg="light" expand="md">
@@ -20,7 +19,7 @@ const Header = () => {
             <h1 className="brand">ELC</h1>
             <h2 className="tag">— Admin Portal</h2>
           </div>
-          <div> Welcome, {user.name ? user.name : "friend"}!</div>
+          <div> Welcome, {user.name ? user.name : "friend"}! </div>
         </Navbar.Brand>
 
 

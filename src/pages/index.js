@@ -6,7 +6,7 @@ import { isAuthenticated } from "../utils/auth"
 
 const IndexPage = () => {
 
-  console.log("process.env.AUTH0_CALLBACK")
+  console.log("index:process.env.AUTH0_CALLBACK")
   console.log(process.env.AUTH0_CALLBACK)
 
   if (!isAuthenticated()) {
