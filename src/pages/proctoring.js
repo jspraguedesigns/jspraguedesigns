@@ -71,5 +71,5 @@ const proctoring = () => {
 
 }
 
-//export default proctoring
+export default proctoring
 //export default withAuthenticator(proctoring, true)
