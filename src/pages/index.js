@@ -1,12 +1,14 @@
 import React from "react"
-//import Header from '../components/header'
-//import Footer from '../components/footer'
 import Layout from "../components/layout"
 import { Link } from "gatsby"
 import { isAuthenticated } from "../utils/auth"
 
 
 const IndexPage = () => {
+
+  console.log("process.env.AUTH0_CALLBACK")
+  console.log(process.env.AUTH0_CALLBACK)
+
   if (!isAuthenticated()) {
     return (
       <div>
