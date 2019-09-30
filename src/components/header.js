@@ -3,7 +3,15 @@ import { Link } from 'gatsby'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import {NavDropdown, Nav, Navbar} from 'react-bootstrap'
 import '../styles/global.css';
+import { getUserInfo, isAuthenticated, login, logout } from "../utils/auth"
 const Header = () => {
+  if (!isAuthenticated()) {
+    login()
+    return <p>Redirecting to login...</p>
+  }
+
+  const user = getUserInfo()
+
   return(
     <header>
          <div className="w-100">
@@ -76,6 +84,15 @@ const Header = () => {
                   Feedback
                   </Nav.Link>
                   </Nav>
+            <a
+              href="#logout"
+              onClick={e => {
+                logout()
+                e.preventDefault()
+              }}
+            >
+              Log Out
+            </a>
                   </Navbar.Collapse>
       
   
