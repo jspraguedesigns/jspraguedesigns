@@ -1,21 +1,49 @@
-import React from 'react'
-import { Link } from 'gatsby'
+import React from "react"
+//import Header from '../components/header'
+//import Footer from '../components/footer'
+import Layout from "../components/layout"
+import { Link } from "gatsby"
 
-import Layout from '../components/layout'
 
-import Amplify from 'aws-amplify'
-import config from '../aws-exports'
-Amplify.configure(config)
+const IndexPage = () => {
+    console.log("index-auth: process.env.AUTH0_CALLBACK")
+    console.log(process.env.AUTH0_CALLBACK)
 
-const IndexPage = () => (
-  <Layout>
-    <h1>Hi people</h1>
-    <p>Welcome to your ETS ELC Portal</p>
-    <p>Create a new account: <Link to="/app/signup">Sign Up</Link></p>
-    <Link to="/app/login">Sign In</Link><br />
-    <Link to="/app/home">Home</Link><br />
-    <Link to="/app/profile">Your profile</Link>
-  </Layout>
-)
+    return (
+      <Layout>
+          <div>
+
+              <div className="row d-flex align-items-center justify-content-center  banner">
+                  <div className="col-md-6 text-center animated fadeInUp">
+
+                      <h1 className="home-text">English<br/> Learning<br/> Certificate</h1>
+                      <Link to="/about">
+                          <button type="button" className="btn btn-home-top btn btn-secondary mt-4">Read About What ELC
+                              Is
+                          </button>
+                      </Link>
+                  </div>
+                  <div className="col-md-6 home-text">
+
+                  </div>
+              </div>
+
+              <div className="wechat">
+                  <div className="row">
+                      <div className="col-md-12 text-center pt-4 pb-4">
+                          <img className="wechat-logo" src={"img/clipart1841617.png"} alt="WeChat Logo"/>
+                          <h2 className="home-text">Keep In Touch With Us</h2>
+                          <p className="home-text">We need your feedback to make this test successful. Scan the QR code
+                              bellow to join our WeChat Group.</p>
+                          <img className="wechat-logo" src={"img/qrcode.jpg"} alt="QR Code"/>
+                      </div>
+                  </div>
+              </div>
+
+          </div>
+      </Layout>
+    )
+
+}
 
 export default IndexPage
