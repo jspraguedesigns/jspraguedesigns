@@ -1,0 +1,14 @@
+{
+  "sb": {
+    "awscloudformation": {
+      "AuthRoleName": "elc-webapp-sb-20191002135700-authRole",
+      "UnauthRoleArn": "arn:aws:iam::087409804363:role/elc-webapp-sb-20191002135700-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::087409804363:role/elc-webapp-sb-20191002135700-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "elc-webapp-sb-20191002135700-deployment",
+      "UnauthRoleName": "elc-webapp-sb-20191002135700-unauthRole",
+      "StackName": "elc-webapp-sb-20191002135700",
+      "StackId": "arn:aws:cloudformation:us-east-1:087409804363:stack/elc-webapp-sb-20191002135700/08b20bd0-e53e-11e9-a542-0a0b50a105f6"
+    }
+  }
+}
