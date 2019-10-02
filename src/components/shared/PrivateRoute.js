@@ -1,25 +1,7 @@
-//
-// import React from "react"
-// import { navigate } from "@reach/router"
-// import { isAuthenticated, login } from "../utils/auth"
-//
-// class PrivateRoute extends React.Component {
-//   render() {
-//     const { component: Component, location, ...rest } = this.props
-//     if (!isAuthenticated()) {
-//       login()
-//       return <p>Redirecting to login...</p>
-//     }
-//     return <Component {...rest} />
-//   }
-// }
-
-//export default PrivateRoute
-
 import React from 'react';
 import PropTypes from 'prop-types';
 import {navigate, Router} from '@reach/router';
-import {isAuthenticated, isBrowser} from '../utils/auth';
+import {isAuthenticated, isBrowser} from '../../utils/auth';
 
 const PrivateRoute = ({component: Component, ...rest}) => {
     if (isBrowser && !isAuthenticated()) {

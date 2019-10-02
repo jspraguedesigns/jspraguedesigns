@@ -1,14 +1,10 @@
 import React from "react"
 import Layout from "../components/layout"
-import { Link } from "gatsby"
-import { isAuthenticated } from "../utils/auth"
+import {Link} from "gatsby"
+import {isAuthenticated, login} from "../utils/auth"
 
 
 const IndexPage = () => {
-
-  console.log("index:process.env.AUTH0_CALLBACK")
-  console.log(process.env.AUTH0_CALLBACK)
-
   if (!isAuthenticated()) {
     return (
       <div>
@@ -17,10 +13,11 @@ const IndexPage = () => {
           <div className="col-md-6 text-center animated fadeInUp">
 
             <h1 className="home-text">English<br/> Learning<br /> Certificate</h1>
-            <Link to="/index-auth">
-              <button type="button" className="btn btn-home-top btn btn-secondary mt-4">Login to access your account
+              {/*<Link to="/index-auth">*/}
+              <button type="button" className="btn btn-home-top btn btn-secondary mt-4" onClick={e => login()}>Login to
+                  access your account
               </button>
-            </Link>
+              {/*</Link>*/}
           </div>
           <div className="col-md-6 home-text">
 
@@ -65,6 +62,6 @@ const IndexPage = () => {
 
 
   }
-}
+};
 
 export default IndexPage
