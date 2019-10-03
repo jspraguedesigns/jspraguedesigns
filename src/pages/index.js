@@ -2,7 +2,8 @@ import React from "react"
 import Layout from "../components/layout"
 import { Link } from "gatsby"
 import { isAuthenticated } from "../utils/auth"
-
+import wechatimg from "../images/wechat.png"
+import qrcodeimg from "../images/qrcode.jpg"
 
 const IndexPage = () => {
 
@@ -50,11 +51,11 @@ const IndexPage = () => {
           <div className="wechat">
             <div className="row">
               <div className="col-md-12 text-center pt-4 pb-4">
-                <img className="wechat-logo" src={"img/clipart1841617.png"} alt="WeChat Logo"/>
+                <img className="wechat-logo" src={wechatimg} alt="WeChat Logo"/>
                 <h2 className="home-text">Keep In Touch With Us</h2>
                 <p className="home-text">We need your feedback to make this test successful. Scan the QR code bellow to
                   join our WeChat Group.</p>
-                <img className="wechat-logo" src={"img/qrcode.jpg"} alt="QR Code"/>
+                <img className="wechat-logo" src={qrcodeimg} alt="QR Code"/>
               </div>
             </div>
           </div>
