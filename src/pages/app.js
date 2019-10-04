@@ -1,20 +1,45 @@
 import React from "react"
-import { Router } from "@reach/router"
-import Layout from "../components/layout"
-import Details from "../components/Details"
-import Home from "../components/Home"
-import Login from "../components/Login"
-import PrivateRoute from "../components/PrivateRoute"
+import {navigate, Router} from "@reach/router"
+import { isAuthenticated, getUserInfo, isBrowser } from "../utils/auth"
+import Layout from "../components/shared/layout"
+import About from "../components/about"
+import Support from "../components/school/support"
+import Proctoring from "../components/school/proctoring"
+import Sample from "../components/sample"
+import Training from "../components/school/teacher_training"
+import Launch from "../components/school/launch"
+import PrivateRoute from "../components/shared/PrivateRoute"
+import TestResults from "../components/school/test-results";
 
+const App = () => {
+  // if (!isBrowser) {
+  //   return (
+  //       "you need a browser to access this site"
+  //     )
+  // }
+  if (!isAuthenticated()) {
+    navigate("/")
+    return null
+  } else {
+    const user = getUserInfo()
+      console.log(user.name);
 
-const App = () => (
-  <Layout>
-    <Router>
-      <PrivateRoute path="/app/home" component={Home} />
-      <PrivateRoute path="/app/profile" component={Details} />
-      <Login path="/app/login" />
-    </Router>
-  </Layout>
-)
+    return (
+      <>
+        <Layout>
+          <Router>
+            <About path="/app/about" />
+            <Support path="/app/support" />
+            <Proctoring path="/app/proctoring" />
+            <Sample path="/app/sample" />
+            <Training path="/app/teacher_training" />
+            <Launch path="/app/launch" />
+            <TestResults path="/app/test_results" />
+          </Router>
+        </Layout>
+      </>
+    )
+  }
+}
 
 export default App

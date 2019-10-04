@@ -1,17 +1,17 @@
 import React from "react"
 import "bootstrap/dist/css/bootstrap.min.css"
 import { Nav, Navbar, NavDropdown } from "react-bootstrap"
-import "../styles/global.css"
-import { getUserInfo, isAuthenticated, login, logout } from "../utils/auth"
+import "../../styles/global.css"
+import { getUserInfo, isAuthenticated, login, logout } from "../../utils/auth"
 
 const Header = () => {
   if (!isAuthenticated()) {
     login()
     return <p>Redirecting to login...</p>
-  } else {
-  const user = getUserInfo()
+  } else  {
+ const user = getUserInfo()
     return (
-
+<div>
       <Navbar bg="light" expand="md">
         <Navbar.Brand href="/">
 
@@ -19,7 +19,7 @@ const Header = () => {
             <h1 className="brand">ELC</h1>
             <h2 className="tag">— Admin Portal</h2>
           </div>
-          <div> Welcome, {user.name ? user.name : "friend"}! </div>
+          {/*<div> Welcome, {user.name ? user.name : "friend"}! </div>*/}
         </Navbar.Brand>
 
 
@@ -32,30 +32,30 @@ const Header = () => {
             </Nav.Link>
             <NavDropdown title="ELC Overview" id={"4628376526"}>
 
-              <NavDropdown.Item href="/about">
+              <NavDropdown.Item href="/app/about">
                 What Is ELC?
               </NavDropdown.Item>
-              <NavDropdown.Item href="/sample">
+              <NavDropdown.Item href="/app/sample">
                 Sample Questions
               </NavDropdown.Item>
 
 
           </NavDropdown>
             <NavDropdown title="Teacher's Resources" id={"0807598482"}>
-              <NavDropdown.Item href="/support">
+              <NavDropdown.Item href="/app/support">
                 Support Materials
               </NavDropdown.Item>
-              <NavDropdown.Item href="/teacher_training">
+              <NavDropdown.Item href="/app/teacher_training">
                 Teacher Training
               </NavDropdown.Item>
-              <NavDropdown.Item href="/proctoring">
+              <NavDropdown.Item href="/app/proctoring">
                 Proctoring
 
               </NavDropdown.Item>
 
             </NavDropdown>
 
-            <Nav.Link href="/test-results">
+            <Nav.Link href="/app/test-results">
               Test Report <small>(Beta)</small>
             </Nav.Link>
 
@@ -74,7 +74,7 @@ const Header = () => {
 
       </Navbar>
 
-
+</div>
     )
   }
 }

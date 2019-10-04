@@ -1,14 +1,16 @@
 let activeEnv =
     process.env.GATSBY_ACTIVE_ENV || process.env.NODE_ENV || "development";
 
-console.log(`Using environment config: '${activeEnv}'`);
-console.log("gatsby-config:process.env.AUTH0_CALLBACK [" + process.env.AUTH0_CALLBACK + "]");
-console.log("gatsby-config:process.env.AUTH0_DOMAIN[" + process.env.AUTH0_DOMAIN + "]");
-console.log("gatsby-config:process.env.GA_TRACKING_ID[" + process.env.GA_TRACKING_ID + "]");
+
 
 require("dotenv").config({
     path: `.env.${activeEnv}`,
 });
+
+console.log(`Using environment config: '${activeEnv}'`);
+console.log("gatsby-config:process.env.AUTH0_CALLBACK [" + process.env.AUTH0_CALLBACK + "]");
+console.log("gatsby-config:process.env.AUTH0_DOMAIN[" + process.env.AUTH0_DOMAIN + "]");
+console.log("gatsby-config:process.env.GA_TRACKING_ID[" + process.env.GA_TRACKING_ID + "]");
 
 module.exports = {
     siteMetadata: {

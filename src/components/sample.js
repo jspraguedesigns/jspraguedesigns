@@ -1,13 +1,11 @@
 import React from 'react'
-// import Header from '../components/header'
 
-import Layout from '../components/layout';
+
 
 import 'jquery/dist/jquery.js'
 
-const sample = () => {
+const Sample = () => {
     return (
-      <Layout>
         <div>
         <h1>Sample Questions</h1>
         <div class="row">
@@ -21,9 +19,9 @@ const sample = () => {
 
 
     </div>
-      </Layout>
+
     )
 
 }
 
-export default sample
+export default Sample

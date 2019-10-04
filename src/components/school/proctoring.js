@@ -1,12 +1,10 @@
 import React from "react"
-import Layout from "../components/layout"
 import "jquery/dist/jquery.js"
 
 
-const proctoring = () => {
+const Proctoring = () => {
   return (
 
-    <Layout>
       <div className="container">
 
         <div class="row">
@@ -65,11 +63,8 @@ const proctoring = () => {
         </div>
 
       </div>
-    </Layout>
-
   )
 
 }
 
-export default proctoring
-//export default withAuthenticator(proctoring, true)
+export default Proctoring

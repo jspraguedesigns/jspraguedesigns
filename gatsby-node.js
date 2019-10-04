@@ -10,12 +10,20 @@ exports.onCreatePage = async ({ page, actions }) => {
 
   // page.matchPath is a special key that's used for matching pages
   // only on the client.
+  if (page.path.match(/^\/app/)) {
+    page.matchPath = "/app/*"
+
+    // Update the page.
+    createPage(page)
+  }
+
   if (page.path.match(/^\/account/)) {
     page.matchPath = "/account/*"
 
     // Update the page.
     createPage(page)
   }
+
 }
 
 exports.createPages = ({ actions }) => {
@@ -51,7 +59,7 @@ exports.createPages = ({ actions }) => {
 
   studentsData.forEach(students => {
         createPage({
-          path: `/${students.name}`,
+          path: `/app/${students.name}`,
           component: require.resolve(`./src/templates/student-template.js`),
           context: { students },
         })
@@ -59,7 +67,7 @@ exports.createPages = ({ actions }) => {
 
   classesData.forEach(cls => {
     createPage({
-      path: `/${cls.name}`,
+      path: `/app/${cls.name}`,
       component: require.resolve(`./src/templates/class-template.js`),
       context: { cls },
     })

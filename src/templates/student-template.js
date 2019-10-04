@@ -1,12 +1,11 @@
 import React from "react"
-import Layout from "../components/layout"
 import { Table } from "react-bootstrap"
 import AudioPlayer from "../components/audio-player"
 import Comments from "../components/comments"
+import Footer from "../components/shared/footer";
 
 export default ({ pageContext: { students } }) => (
   <div>
-    <Layout>
 
       <Comments/>
       <div className="container">
@@ -92,7 +91,7 @@ export default ({ pageContext: { students } }) => (
 
 
       </div>
-    </Layout>
+    <Footer/>
   </div>
 
 )
