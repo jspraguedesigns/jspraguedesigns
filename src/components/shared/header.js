@@ -60,9 +60,7 @@ const Header = () => {
                         >
                             Log Out
                         </Nav.Link>
-                        <div className="navbar-text text-wrap font-italic">
-                            {user.name ? user.name : "friend"}
-                        </div>
+                        
                     </Navbar.Collapse>
                 </Nav>
             </Navbar>
