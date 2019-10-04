@@ -26,6 +26,9 @@ const App = () => {
     return (
       <>
         <Layout>
+        <div className="navbar-text text-wrap font-italic">
+                            {user.name ? user.name : "friend"}
+        </div>
           <Router>
             <About path="/app/about" />
             <Support path="/app/support" />
