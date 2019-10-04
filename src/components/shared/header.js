@@ -5,11 +5,8 @@ import "../../styles/global.css"
 import {getUserInfo, isAuthenticated, login, logout} from "../../utils/auth"
 
 const Header = () => {
-  if (!isAuthenticated()) {
-      login();
-    return <p>Redirecting to login...</p>
-  } else {
-      const user = getUserInfo();
+ 
+    const user = getUserInfo();
     return (
         <div>
             <Navbar bg="light" expand="md">
@@ -71,7 +68,7 @@ const Header = () => {
             </Navbar>
         </div>
     )
-  }
+ 
 };
 
 export default Header
