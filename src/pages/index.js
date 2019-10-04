@@ -1,13 +1,14 @@
 import React from "react"
 import Layout from "../components/shared/layout"
-import { isAuthenticated, login } from "../utils/auth"
+import {isAuthenticated, login} from "../utils/auth"
 
 import Home from "../components/home"
+import LayoutPublic from "../components/shared/layoutPublic";
 
 const IndexPage = () => {
   if (!isAuthenticated()) {
     return (
-      <div>
+        <LayoutPublic>
         <div className="row d-flex align-items-center justify-content-center  banner">
           <div className="col-md-6 text-center animated fadeInUp">
             <h1 className="home-text">
@@ -25,7 +26,7 @@ const IndexPage = () => {
           </div>
           <div className="col-md-6 home-text" />
         </div>
-      </div>
+        </LayoutPublic>
     )
   } else {
     return (
@@ -34,6 +35,6 @@ const IndexPage = () => {
       </Layout>
     )
   }
-}
+};
 
 export default IndexPage

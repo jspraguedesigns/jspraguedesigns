@@ -63,8 +63,7 @@
 // src/pages/account.js
 import React from "react"
 import {navigate, Router} from "@reach/router"
-import {login, logout, isAuthenticated, getUserInfo, isBrowser} from "../utils/auth"
-import { Link } from "gatsby"
+import {getUserInfo, isAuthenticated, isBrowser} from "../utils/auth"
 import Layout from "../components/shared/layout";
 import About from "../components/about"
 import Support from "../components/school/support";
@@ -73,19 +72,18 @@ import Sample from "../components/sample";
 import Training from "../components/school/teacher_training";
 
 
-
 // const Home = ({ user }) => {
 //     return <p>Hi, {user.name ? user.name : "friend"}!</p>
 // }
-const Settings = () => <p>Settings</p>
-const Billing = () => <p>Billing</p>
+const Settings = () => <p>Settings</p>;
+const Billing = () => <p>Billing</p>;
 
 const Account = () => {
     if (isBrowser && !isAuthenticated()) {
-        navigate("/")
+        navigate("/");
         return null
     } else {
-        const user = getUserInfo()
+        const user = getUserInfo();
         // console.log(user.name);
 
         return (
@@ -120,6 +118,6 @@ const Account = () => {
             </>
         )
     }
-}
+};
 
 export default Account

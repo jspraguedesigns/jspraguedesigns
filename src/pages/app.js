@@ -1,6 +1,6 @@
 import React from "react"
 import {navigate, Router} from "@reach/router"
-import { isAuthenticated, getUserInfo, isBrowser } from "../utils/auth"
+import {getUserInfo, isAuthenticated} from "../utils/auth"
 import Layout from "../components/shared/layout"
 import About from "../components/about"
 import Support from "../components/school/support"
@@ -8,7 +8,6 @@ import Proctoring from "../components/school/proctoring"
 import Sample from "../components/sample"
 import Training from "../components/school/teacher_training"
 import Launch from "../components/school/launch"
-import PrivateRoute from "../components/shared/PrivateRoute"
 import TestResults from "../components/school/test-results";
 
 const App = () => {
@@ -18,10 +17,10 @@ const App = () => {
   //     )
   // }
   if (!isAuthenticated()) {
-    navigate("/")
+      navigate("/");
     return null
   } else {
-    const user = getUserInfo()
+      const user = getUserInfo();
       console.log(user.name);
 
     return (
@@ -40,6 +39,6 @@ const App = () => {
       </>
     )
   }
-}
+};
 
 export default App
