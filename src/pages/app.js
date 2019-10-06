@@ -17,7 +17,6 @@ const App = () => {
   //     )
   // }
   if (!isAuthenticated()) {
-      console.log("app: !isAuthenticated()");
       login();
     
   } else {
