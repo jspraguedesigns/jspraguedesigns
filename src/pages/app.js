@@ -17,7 +17,7 @@ const App = () => {
   //     )
   // }
   if (!isAuthenticated()) {
-      login();
+      navigate("/");
       return <p>Redirecting to login...</p>
     
   } else {
