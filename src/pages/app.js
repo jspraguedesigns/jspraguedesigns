@@ -1,6 +1,6 @@
 import React from "react"
 import {navigate, Router} from "@reach/router"
-import {getUserInfo, isAuthenticated} from "../utils/auth"
+import {getUserInfo, isAuthenticated, login} from "../utils/auth"
 import Layout from "../components/shared/layout"
 import About from "../components/about"
 import Support from "../components/school/support"
@@ -17,8 +17,9 @@ const App = () => {
   //     )
   // }
   if (!isAuthenticated()) {
-      navigate("/");
-    return null
+      console.log("app: !isAuthenticated()");
+      login();
+    
   } else {
       const user = getUserInfo();
       console.log(user.name);
