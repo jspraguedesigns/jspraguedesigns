@@ -38,7 +38,7 @@ const Header = () => {
                             <Link className="nav-link" to="/app/proctoring">Proctoring</Link>
                         </NavDropdown>
 
-                        <Link to="/app/test-results">Test Report <small>(Beta)</Link>
+                        <Link className="nav-link" to="/app/test-results">Test Report <small>(Beta)</small></Link>
 
                         <Nav.Link
                             href="#logout"
@@ -54,7 +54,7 @@ const Header = () => {
                         <Link className="nav-link" to="/app/support"> Support</Link>
                         <Link className="nav-link" to="/app/teacher_training">Teacher_training</Link>
                         <Link className="nav-link" to="/app/proctoring">Proctoring</Link>
-                        <Link className="nav-link" to="/app/test-results">Test Report <small>(Beta)</Link>
+                        <Link className="nav-link" to="/app/test-results">Test Report <small>(Beta)</small></Link>
                     </Navbar.Collapse>
                 </Nav>
             </Navbar>
