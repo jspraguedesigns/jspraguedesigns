@@ -49,12 +49,7 @@ const Header = () => {
                         >
                             Log Out
                         </Nav.Link>
-                                                <Link className="nav-link"  to="/app/about"> About </Link>
-                                                <Link className="nav-link" to="/app/sample">Sample</Link>
-                        <Link className="nav-link" to="/app/support"> Support</Link>
-                        <Link className="nav-link" to="/app/teacher_training">Teacher_training</Link>
-                        <Link className="nav-link" to="/app/proctoring">Proctoring</Link>
-                        <Link className="nav-link" to="/app/test-results">Test Report <small>(Beta)</small></Link>
+                                    
                     </Navbar.Collapse>
                 </Nav>
             </Navbar>
