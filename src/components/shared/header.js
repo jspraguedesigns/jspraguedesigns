@@ -1,4 +1,5 @@
 import React from "react"
+import { Link } from "gatsby"
 import "bootstrap/dist/css/bootstrap.min.css"
 import {Nav, Navbar, NavDropdown} from "react-bootstrap"
 import "../../styles/global.css"
@@ -60,12 +61,12 @@ const Header = () => {
                         >
                             Log Out
                         </Nav.Link>
-                                                <Nav.Link href="/app/about"> About </Nav.Link>
-                                                <Nav.Link href="/app/sample">Sample</Nav.Link>
-                        <Nav.Link href="/app/support"> Support</Nav.Link>
-                        <Nav.Link href="/app/teacher_training">Teacher_training</Nav.Link>
-                        <Nav.Link href="/app/proctoring">Proctoring</Nav.Link>
-                        <Nav.Link href="/app/test-results">Test-results</Nav.Link>
+                                                <Link to="/app/about"> About </Link>
+                                                <Link To="/app/sample">Sample</Link>
+                        <Link To="/app/support"> Support</Link>
+                        <Link To="/app/teacher_training">Teacher_training</Link>
+                        <Link To="/app/proctoring">Proctoring</Link>
+                        <Link To="/app/test-results">Test-results</Link>
                     </Navbar.Collapse>
                 </Nav>
             </Navbar>
