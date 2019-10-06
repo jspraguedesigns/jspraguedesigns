@@ -29,13 +29,13 @@ const Header = () => {
                     <Navbar.Toggle aria-controls="basic-navbar-nav"/>
                     <Navbar.Collapse>
                         <NavDropdown title="ELC Overview" id={"4628376526"}>
-                            <Link to="/app/about"> About </Link>
-                            <<Link to="/app/sample">Sample Questions</Link>
+                            <Link className="nav-link" to="/app/about"> About </Link>
+                            <Link className="nav-link" to="/app/sample">Sample Questions</Link>
                         </NavDropdown>
                         <NavDropdown title="Teacher's Resources" id={"0807598482"}>
-                            <Link to="/app/support"> Support Materials</Link>
-                            <Link to="/app/teacher_training">Teacher_training</Link>
-                            <Link to="/app/proctoring">Proctoring</Link>
+                            <Link className="nav-link" to="/app/support"> Support Materials</Link>
+                            <Link className="nav-link" to="/app/teacher_training">Teacher_training</Link>
+                            <Link className="nav-link" to="/app/proctoring">Proctoring</Link>
                         </NavDropdown>
 
                         <Link to="/app/test-results">Test Report <small>(Beta)</Link>
@@ -49,12 +49,12 @@ const Header = () => {
                         >
                             Log Out
                         </Nav.Link>
-                                                <Link to="/app/about"> About </Link>
-                                                <Link to="/app/sample">Sample</Link>
-                        <Link to="/app/support"> Support</Link>
-                        <Link to="/app/teacher_training">Teacher_training</Link>
-                        <Link to="/app/proctoring">Proctoring</Link>
-                        <Link to="/app/test-results">Test Report <small>(Beta)</Link>
+                                                <Link className="nav-link"  to="/app/about"> About </Link>
+                                                <Link className="nav-link" to="/app/sample">Sample</Link>
+                        <Link className="nav-link" to="/app/support"> Support</Link>
+                        <Link className="nav-link" to="/app/teacher_training">Teacher_training</Link>
+                        <Link className="nav-link" to="/app/proctoring">Proctoring</Link>
+                        <Link className="nav-link" to="/app/test-results">Test Report <small>(Beta)</Link>
                     </Navbar.Collapse>
                 </Nav>
             </Navbar>
