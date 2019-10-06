@@ -29,13 +29,14 @@ const Header = () => {
                     <Navbar.Toggle aria-controls="basic-navbar-nav"/>
                     <Navbar.Collapse>
                         <NavDropdown title="ELC Overview" id={"4628376526"}>
-                            <Link  to="/app/about"> About </Link>
-                            <Link  to="/app/sample">Sample Questions</Link>
+                            <Link  to="/app/about"> About </Link><br/>
+                            <Link  to="/app/sample">Sample Questions</Link><br/>
                         </NavDropdown>
                         <NavDropdown title="Teacher's Resources" id={"0807598482"}>
-                            <Link  to="/app/support"> Support Materials</Link>
-                            <Link  to="/app/teacher_training">Teacher_training</Link>
-                            <Link  to="/app/proctoring">Proctoring</Link>
+                            <Link  to="/app/support"> Support Materials</Link><br/>
+                            <Link  to="/app/teacher_training">Training</Link><br/>
+                            <Link  to="/app/proctoring">Proctoring</Link><br/>
+                            <Link  to="/app/launch">Launch Test</Link><br/>
                         </NavDropdown>
 
                         <Link className="nav-link" to="/app/test-results">Test Report <small>(Beta)</small></Link>
