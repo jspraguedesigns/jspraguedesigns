@@ -18,6 +18,7 @@ const App = () => {
   // }
   if (!isAuthenticated()) {
       login();
+      return <p>Redirecting to login...</p>
     
   } else {
       const user = getUserInfo();
