@@ -30,13 +30,13 @@ const App = () => {
                             {user.name ? user.name : "friend"}
         </div>
           <Router>
-            <About path="/app/about" />
-            <Support path="/app/support" />
-            <Proctoring path="/app/proctoring" />
-            <Sample path="/app/sample" />
-            <Training path="/app/teacher_training" />
-            <Launch path="/app/launch" />
-            <TestResults path="/app/test_results" />
+            <About path="/app/about/" />
+            <Support path="/app/support/" />
+            <Proctoring path="/app/proctoring/" />
+            <Sample path="/app/sample/" />
+            <Training path="/app/teacher_training/" />
+            <Launch path="/app/launch/" />
+            <TestResults path="/app/test_results/" />
           </Router>
         </Layout>
       </>
