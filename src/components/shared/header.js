@@ -28,26 +28,26 @@ const Header = () => {
                     <Navbar.Toggle aria-controls="basic-navbar-nav"/>
                     <Navbar.Collapse>
                         <NavDropdown title="ELC Overview" id={"4628376526"}>
-                            <NavDropdown.Item href="/app/about/">
+                            <NavDropdown.Item href="/app/about">
                                 What Is ELC?
                             </NavDropdown.Item>
-                            <NavDropdown.Item href="/app/sample/">
+                            <NavDropdown.Item href="/app/sample">
                                 Sample Questions
                             </NavDropdown.Item>
                         </NavDropdown>
                         <NavDropdown title="Teacher's Resources" id={"0807598482"}>
-                            <NavDropdown.Item href="/app/support/">
+                            <NavDropdown.Item href="/app/support">
                                 Support Materials
                             </NavDropdown.Item>
-                            <NavDropdown.Item href="/app/teacher_training/">
+                            <NavDropdown.Item href="/app/teacher_training">
                                 Teacher Training
                             </NavDropdown.Item>
-                            <NavDropdown.Item href="/app/proctoring/">
+                            <NavDropdown.Item href="/app/proctoring">
                                 Proctoring
                             </NavDropdown.Item>
                         </NavDropdown>
 
-                        <Nav.Link href="/app/test-results/">
+                        <Nav.Link href="/app/test-results">
                             Test Report <small>(Beta)</small>
                         </Nav.Link>
 
@@ -60,7 +60,12 @@ const Header = () => {
                         >
                             Log Out
                         </Nav.Link>
-                        
+                                                <Nav.Link href="/app/about"> About </Nav.Link>
+                                                <Nav.Link href="/app/sample">Sample</Nav.Link>
+                        <Nav.Link href="/app/support"> Support</Nav.Link>
+                        <Nav.Link href="/app/teacher_training">Teacher_training</Nav.Link>
+                        <Nav.Link href="/app/proctoring">Proctoring</Nav.Link>
+                        <Nav.Link href="/app/test-results">Test-results</Nav.Link>
                     </Navbar.Collapse>
                 </Nav>
             </Navbar>
