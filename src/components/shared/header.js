@@ -62,11 +62,11 @@ const Header = () => {
                             Log Out
                         </Nav.Link>
                                                 <Link to="/app/about"> About </Link>
-                                                <Link To="/app/sample">Sample</Link>
-                        <Link To="/app/support"> Support</Link>
-                        <Link To="/app/teacher_training">Teacher_training</Link>
-                        <Link To="/app/proctoring">Proctoring</Link>
-                        <Link To="/app/test-results">Test-results</Link>
+                                                <Link to="/app/sample">Sample</Link>
+                        <Link to="/app/support"> Support</Link>
+                        <Link to="/app/teacher_training">Teacher_training</Link>
+                        <Link to="/app/proctoring">Proctoring</Link>
+                        <Link to="/app/test-results">Test-results</Link>
                     </Navbar.Collapse>
                 </Nav>
             </Navbar>
