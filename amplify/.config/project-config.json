@@ -1,17 +1,17 @@
 {
-    "projectName": "elc-webapp",
-    "version": "2.0",
-    "frontend": "javascript",
-    "javascript": {
-        "framework": "react",
-        "config": {
-            "SourceDir": "src",
-            "DistributionDir": "build",
-            "BuildCommand": "npm run build",
-            "StartCommand": "npm run"
-        }
-    },
-    "providers": [
-        "awscloudformation"
-    ]
+  "projectName": "elc-webapp",
+  "version": "2.0",
+  "frontend": "javascript",
+  "javascript": {
+    "framework": "react",
+    "config": {
+      "SourceDir": "src",
+      "DistributionDir": "build",
+      "BuildCommand": "gatsby build",
+      "StartCommand": "gatsby serve"
+    }
+  },
+  "providers": [
+    "awscloudformation"
+  ]
 }

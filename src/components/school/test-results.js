@@ -1,13 +1,11 @@
 import React from "react"
-import { Link } from "gatsby"
-import Layout from "../components/layout"
-import Popup from "../components/popup"
-import Comments from "../components/comments"
+import {Link} from "gatsby"
+import Comments from "../comments"
 
 const TestResults = () => {
   return (
-    <Layout>
-      <Popup/>
+<div>
+    {/*<Popup/>*/}
 
       <div className="wrapper">
         <Comments/>
@@ -77,8 +75,8 @@ const TestResults = () => {
 
         </div>
       </div>
-    </Layout>
+</div>
 
   )
-}
+};
 export default TestResults

@@ -1,13 +1,8 @@
 import React from 'react'
-// import Header from '../components/header'
-// import Footer from '../components/footer'
-import Layout from '../components/layout';
-import { Link } from 'gatsby'
+import {Link} from 'gatsby'
 
 const About = () => {
     return (
-        <Layout>
-        <div>
             <div className="container pt-4 pb-4">
                 <div className="row">
                     <div className="col-md-12">
@@ -42,7 +37,7 @@ const About = () => {
 
 <p>Teachers are at the center of ELC and play key roles throughout the program. They also have a number of opportunities to grow professionally and to use ELC data for increased teaching effectiveness.</p>
 
-<p>Teachers receive <Link to="/support">training</Link> and <Link to="/support_materials">support materials</Link> they can use in their classes to teach and monitor students' progress.</p>
+<p>Teachers receive <Link to="/app/teacher_training">training</Link> and <Link to="/app/support">support materials</Link> they can use in their classes to teach and monitor students' progress.</p>
 
 <p>Teachers may be asked to administer and proctor both the ELC Entry Assessment and the ELC Leveled Assessments.</p>
 
@@ -52,9 +47,9 @@ const About = () => {
                 </div>
             
             </div>
-        </div>
-        </Layout>
+
+
     )
-}
+};
 
 export default About

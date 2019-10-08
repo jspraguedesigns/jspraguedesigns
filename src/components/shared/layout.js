@@ -1,14 +1,8 @@
 import React from "react"
 import Header from "./header"
 import Footer from "./footer"
-import { isAuthenticated, login } from "../utils/auth"
 
-
-const Layout = props => {
-  if (!isAuthenticated()) {
-    login()
-    return <p>Redirecting to login...</p>
-  }
+const Layout = (props) => {
 
   return (
 
@@ -22,6 +16,6 @@ const Layout = props => {
 
     </div>
   )
-}
+};
 
 export default Layout

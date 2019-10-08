@@ -1,11 +1,11 @@
 import React from 'react'
-import Header from '../components/header'
-import Footer from '../components/footer'
+import Footer from '../components/shared/footer'
+import HeaderPublic from "../components/shared/headerPublic";
 
 const PageNotFound = () => {
     return (
         <div>
-                <Header/>
+                <HeaderPublic/>
     <h1>NOT FOUND</h1>
     <p>You just hit a route that doesn&#39;t exist... the sadness.</p>
                 <Footer/>
