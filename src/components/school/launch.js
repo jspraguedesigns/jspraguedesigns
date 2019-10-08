@@ -1,6 +1,6 @@
 import React from "react"
 import "jquery/dist/jquery.js"
-//import { osName } from "react-device-detect"
+import { osName } from "react-device-detect"
 //import DownloadBlock from "../shared/downloadblock"
 
 const Launch = () => {
@@ -16,7 +16,7 @@ const Launch = () => {
             Something short and leading about the ELC.
           </p>
           <p>
-            <a href="#" className="btn btn-primary my-2">
+            <a href="#{osName}" className="btn btn-primary my-2">
               Step 1: Download & Install Secure Browser from link below for {osName}
             </a>
           </p>
