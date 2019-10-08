@@ -16,7 +16,7 @@ const Launch = () => {
             Something short and leading about the ELC.
           </p>
           <p>
-            <a href="#{osName}" className="btn btn-primary my-2">
+            <a href="#"{osName} className="btn btn-primary my-2">
               Step 1: Download & Install Secure Browser from link below for {osName}
             </a>
           </p>
@@ -65,7 +65,7 @@ const Launch = () => {
                 </div>
               </div>
               <div className="col-md-4">
-                <div name="Mac" className="card mb-4 shadow-sm">
+                <div name="Mac OS" className="card mb-4 shadow-sm">
                   <svg
                     className="bd-placeholder-img card-img-top"
                     width="100%"
@@ -116,7 +116,7 @@ const Launch = () => {
                     <title>Placeholder</title>
                     <rect width="100%" height="100%" fill="#55595c" />
                     <text x="5%" y="50%" fill="#eceeef" dy=".3em">
-                      <a
+                      <a name="iOS"
                         href="https://itunes.apple.com/app/safeexambrowser/id1155002964?mt=8"
                         alt="Download SEB for iOS"
                       >
