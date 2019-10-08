@@ -17,7 +17,7 @@ const Launch = () => {
           </p>
           <p>
             <a href="#" className="btn btn-primary my-2">
-              Step 1: Download & Install Secure Browser from link below for your {osName}
+              Step 1: Download & Install Secure Browser from link below for {osName}
             </a>
           </p>
 
@@ -47,7 +47,7 @@ const Launch = () => {
                     <title>Placeholder</title>
                     <rect width="100%" height="100%" fill="#55595c" />
                     <text x="5%" y="50%" fill="#eceeef" dy=".3em">
-                      <a href="https://github.com/SafeExamBrowser/seb-win/releases/download/v2.3/SafeExamBrowserInstaller.exe">
+                      <a name="Windows" href="https://github.com/SafeExamBrowser/seb-win/releases/download/v2.3/SafeExamBrowserInstaller.exe">
                         Download Safe Exam Browser for Windows
                       </a>
                     </text>
@@ -65,7 +65,7 @@ const Launch = () => {
                 </div>
               </div>
               <div className="col-md-4">
-                <div className="card mb-4 shadow-sm">
+                <div name="Mac" className="card mb-4 shadow-sm">
                   <svg
                     className="bd-placeholder-img card-img-top"
                     width="100%"
