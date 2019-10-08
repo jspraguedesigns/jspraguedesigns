@@ -1,1 +1,0 @@
-.\with-env.ps1 GATSBY_ACTIVE_ENV = localdev gatsby develop
