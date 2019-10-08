@@ -1,12 +1,16 @@
 import React from 'react'
-import {graphql, Link} from 'gatsby'
+import {Link} from 'gatsby'
 import wechatimg from "../images/wechat.png"
 import qrcodeimg from "../images/qrcode.jpg"
+import {getUserInfo} from "../utils/auth";
 
 const Home = () => {
   return (
 
 <div>
+  <div className="navbar-text text-wrap font-italic">
+    {getUserInfo().name ? getUserInfo().name : "friend"}
+  </div>
   <div className="row d-flex align-items-center justify-content-center  banner">
     <div className="col-md-6 text-center animated fadeInUp">
 
@@ -40,6 +44,6 @@ const Home = () => {
 </div>
 
 )
-}
+};
 
 export default Home

@@ -1,9 +1,8 @@
 import React from 'react'
-import { Link } from 'gatsby'
+import {Link} from 'gatsby'
 
 const About = () => {
     return (
-        <div>
             <div className="container pt-4 pb-4">
                 <div className="row">
                     <div className="col-md-12">
@@ -48,9 +47,9 @@ const About = () => {
                 </div>
             
             </div>
-        </div>
+
 
     )
-}
+};
 
 export default About

@@ -1,6 +1,6 @@
 import React from "react"
 import {navigate, Router} from "@reach/router"
-import {getUserInfo, isAuthenticated, login} from "../utils/auth"
+import {getUserInfo, isAuthenticated} from "../utils/auth"
 import Layout from "../components/shared/layout"
 import About from "../components/about"
 import Support from "../components/school/support"
@@ -26,10 +26,10 @@ const App = () => {
 
     return (
       <>
-        <Layout>
-        <div className="navbar-text text-wrap font-italic">
-                            {user.name ? user.name : "friend"}
-        </div>
+          <Layout user={user}>
+              {/*<div className="navbar-text text-wrap font-italic">*/}
+              {/*                    {user.name ? user.name : "friend"}*/}
+              {/*</div>*/}
           <Router>
             <About path="/app/about" />
             <Support path="/app/support" />
