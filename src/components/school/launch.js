@@ -16,7 +16,7 @@ const Launch = () => {
             Something short and leading about the ELC.
           </p>
           <p>
-            <a href="#"{osName} className="btn btn-primary my-2">
+            <a href="#" className="btn btn-primary my-2">
               Step 1: Download & Install Secure Browser from link below for {osName}
             </a>
           </p>
