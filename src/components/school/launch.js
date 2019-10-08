@@ -4,7 +4,7 @@ import "jquery/dist/jquery.js"
 //import DownloadBlock from "../shared/downloadblock"
 
 const Launch = () => {
-  // console.log(osName)
+  console.log(osName)
   return (
     <div>
       <main role="main">
@@ -17,7 +17,7 @@ const Launch = () => {
           </p>
           <p>
             <a href="#" className="btn btn-primary my-2">
-              Step 1: Download & Install Secure Browser from link below
+              Step 1: Download & Install Secure Browser from link below for your {osName}
             </a>
           </p>
 
