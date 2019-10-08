@@ -17,7 +17,7 @@ const Launch = () => {
           </p>
           <p>
             <a href="#" className="btn btn-primary my-2">
-              Step 1: Download & Install Secure Browser from link below for {osName}
+              Step 1: Download & Install Secure Browser from link below for {osName} {osVersion}
             </a>
           </p>
 
