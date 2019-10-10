@@ -8,9 +8,7 @@ const Home = () => {
   return (
 
 <div>
-  <div className="navbar-text text-wrap font-italic">
-    {getUserInfo().name ? getUserInfo().name : "friend"}
-  </div>
+ 
   <div className="row d-flex align-items-center justify-content-center  banner">
     <div className="col-md-6 text-center animated fadeInUp">
 
@@ -18,14 +16,16 @@ const Home = () => {
       <Link to="/app/about">
         <button type="button" className="btn btn-home-top btn btn-secondary mt-4">Learn more about ELC
         </button>
+
+           <Link to="/app/launch">
+        <button type="button" className="btn btn-home-top btn btn-secondary mt-4 ml-4">Launch Test
+        </button>
+      </Link>
       </Link>
 
     </div>
-    <div className="col-md-6 home-text">
-      <Link to="/app/launch">
-        <button type="button" className="btn btn-home-top btn btn-secondary mt-4">Launch Test
-        </button>
-      </Link>
+    <div className="col-md-6">
+   
     </div>
   </div>
 
