@@ -12,7 +12,7 @@ body {
 
 
 strong {
-    font-style: normal;
+    font-style: bold;
 }
 
 header {
@@ -26,9 +26,8 @@ header {
 
 .brand {
     font-family: 'Open Sans', sans-serif;
-    font-weight: 900;
+    font-weight: 900 i;
     font-style: italic;
-    color: #007c92;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -550,7 +549,6 @@ img {
     url('../static/img/cooperation-coworking-day-1543895.jpg') center;
     height: 70vh;
     background-size: cover;
-    margin-top: 90px;
 }
 
 .image-support {
@@ -643,9 +641,9 @@ svg {
     display: block;
 }
 
-.container {
-    margin-top: 100px;
-    min-height: calc(100vh - 200px);
+.bodyelc{
+  margin-top: 20px;
+  min-height: calc(100vh - 300px);
 }
 
 .thead-dark {
@@ -696,7 +694,7 @@ thead th {
     margin: .5%;
     float: left;
     transition: all .2s ease-in-out;
-    background-color: transparent;
+    background-color: none;
 }
 
 .square:hover {
@@ -748,14 +746,14 @@ thead th {
 }
 
 .comments {
-    position: fixed;
-    z-index: 999999999;
-    width: 60%;
-    height: auto;
-    top: 3%;
-    right: -60%;
-    background-color: rgba(255, 255, 255, 0.95);
-    transition: all .25s ease-in-out;
+  position: fixed;
+  z-index: 9999999;
+  width: 60%;
+  height: auto;
+  top: 3%;
+  right: -60%;
+  background-color: rgba(255,255,255, 0.95);
+  transition: all .25s ease-in-out;
 }
 
 .comment-btn {
@@ -805,6 +803,99 @@ ol {
 }
 
 
-ol li {
-    margin-bottom: .5em;
+ol li{
+  margin-bottom: .5em;
+}
+
+#msform, #msform2 {
+	margin: 50px auto;
+	position: relative;
+}
+
+#msform fieldset, #msform2 fieldset {
+	background: white;
+	border: 0 none;
+	border-radius: 3px;
+	box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.4);
+	padding: 20px 30px;
+	box-sizing: border-box;
+	width: 80%;
+	margin: 0 10%;
+	
+	/*stacking fieldsets above each other*/
+	position: relative;
+}
+
+
+
+#msform .inactive , #msform2 .inactive {
+	display: none;
+}
+
+
+#msform input, #msform textarea,  #msform2 input, #msform2 textarea{
+	padding: 15px;
+	border: 1px solid #ccc;
+	border-radius: 3px;
+	margin-bottom: 10px;
+	width: 100%;
+	box-sizing: border-box;
+}
+
+#progressbar {
+	margin-bottom: 30px;
+  overflow: hidden;
+  padding-left: 0;
+}
+#progressbar li {
+	list-style-type: none;
+  width: auto;
+  padding: 10px 20px;
+  color: #fff;
+	float: left;
+  position: relative;
+  display: block;
+  background-color: rebeccapurple;
+  margin: 10px 5px;
+  border-radius: 25px;
+}
+
+
+/*marking active/completed steps green*/
+/*The number of the step and the connector before it = green*/
+#progressbar li.active{
+	background: #27AE60;
+	color: white;
+}
+
+
+span.comments{
+  font-weight: bold;
+  border: 1px solid #fff;
+  padding: 5px;
+  border-radius: 5px;
+  display: block;
+}
+
+.inactive-field{
+  display: none;
+}
+
+#progressbar li:hover{
+  background-color: #007c92;
+}
+
+.insidepop{
+  margin-top: 100px;
+}
+
+.login{
+    background-color: rebeccapurple;
+    color: #fff;
+}
+
+.login a{
+    color: #fff;
+    text-decoration: underline;
+    font-weight: bold;
 }

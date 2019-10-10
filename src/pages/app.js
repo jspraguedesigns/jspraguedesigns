@@ -37,7 +37,7 @@ const App = () => {
             <Sample path="/app/sample" />
             <Training path="/app/teacher_training" />
             <Launch path="/app/launch" />
-            <TestResults path="/app/test_results" />
+            <TestResults path="/app/test-results" />
           </Router>
         </Layout>
       </>
