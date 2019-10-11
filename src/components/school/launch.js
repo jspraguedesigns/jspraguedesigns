@@ -1,16 +1,39 @@
 import React from "react"
 import "jquery/dist/jquery.js"
-import {osName, osVersion} from "react-device-detect"
+import  $ from 'jquery'
+import {osName, osVersion,} from "react-device-detect"
 
 //import openWithWin from "../../images/openWithSEBWin.PNG"
 //import DownloadBlock from "../shared/downloadblock"
+function  openOne(){
+    $('.hidden-1').toggleClass('opened');
+  }
 
+  function  openTwo(){
+    $('.hidden-2').toggleClass('opened');
+  }
+
+  function  openThree(){
+    $('.hidden-3').toggleClass('opened');
+  }
+
+  function  openFour(){
+    $('.hidden-4').toggleClass('opened');
+  }
+
+  function  openFive(){
+    $('.hidden-5').toggleClass('opened');
+  }
+
+  function  openSix(){
+    $('.hidden-6').toggleClass('opened');
+  }
 const Launch = () => {
     console.log(osName);
     let supportedOS = false;
     let downloadLink;
     downloadLink = "";
-    let downloadText = "Step 1: Download & Install Secure Browser on your ";
+    let downloadText = "Step 1: Download & install Secure Browser on your ";
     switch (osName) {
         case "Windows":
             // code block
@@ -35,7 +58,7 @@ const Launch = () => {
     }
   return (
 
-  
+
 
     <div div className="container bodyelc">
       <main role="main">
@@ -46,7 +69,7 @@ const Launch = () => {
                 </h1>
             </div>
           </div>
-         
+
           <div className="test-day">
       
           <div className="row mt-4">
@@ -64,11 +87,16 @@ const Launch = () => {
         <div className="col-md-6 d-flex align-items-stretch">
             <div className="card">
                 <div className="card-body text-center">
+                <div className="desktop">
                 <h5>{downloadText}</h5>
-              <a href={downloadLink} className="btn btn-home-top btn btn-secondary mt-4">
+                <a href={downloadLink} className="btn btn-home-top btn btn-secondary mt-4">
                  Click to Download
-            </a>
-       
+                 </a>
+                 </div>
+                 <div className="mobile">
+                    <h5>Step 1: Download &amp; install Secure Browser on your school's device</h5>
+            
+                 </div>
                 </div>
             </div>
         </div>
@@ -77,6 +105,7 @@ const Launch = () => {
         <div className="col-md-6 d-flex align-items-stretch">
             <div className="card">
                 <div className="card-body text-center">
+                <div className="desktop">
                 <h5>Step 2:</h5>
                 <a
                href="https://researchtech1.ets.org/c3.net/Falcon/FalconStartProd.seb"
@@ -84,6 +113,11 @@ const Launch = () => {
              >
              Launch Practice form
              </a>
+               
+                </div>
+                <div className="mobile">
+                <h5>Step 2: Launch Practice form</h5>
+                </div>
                 <p><i>Perform trial runs of practice test using a small group of students to validate that everything is ready </i></p>
                 </div>
             </div>
@@ -99,6 +133,7 @@ const Launch = () => {
         </div>
       </div>
       </div>
+     
       <div className="test-day mt-4 mb-4">
       <div className="row pb-4">
     <div className="col-md-12 text-center">
@@ -112,9 +147,11 @@ const Launch = () => {
         </div>
 
           <div className="row d-flex">
-          <div className="col-md-4 d-flex align-items-stretch align-items-center">
+          <div className="col-md-4 d-flex align-items-stretch">
           <div className="card">
           <div className="card-body text-center">
+          
+          <div className="desktop">
           <h5> Step 1:</h5>
              <a
                href="https://researchtech1.ets.org/c3.net/Falcon/FalconStartProd.seb"
@@ -122,12 +159,17 @@ const Launch = () => {
              >
              Click here to <strong>Start Test</strong>
              </a>
+          </div>
+          <div className="mobile">
+            <h5>Step 1: Start test</h5>
+          </div>
+        
              
            </div>
           </div>
           </div>
      
-          <div className="col-md-4 d-flex align-items-stretch align-items-center">
+          <div className="col-md-4 d-flex align-items-stretch">
           <div className="card">
           <div className="card-body text-center">
            <h5>Step 2: Enter Student Id</h5>
@@ -135,7 +177,7 @@ const Launch = () => {
            </div>
           </div>
           </div>
-          <div className="col-md-4  d-flex align-items-stretch align-items-center">
+          <div className="col-md-4  d-flex align-items-stretch">
           <div className="card">
           <div className="card-body text-center">
            <h5>Step 3: Update student activity sheet</h5>
@@ -152,64 +194,140 @@ const Launch = () => {
 
           <div className="row mt-4">
             <div className="col-md-12 text-center mb-4">
-            <h4>Required Technical Specifications</h4>
+            <h2>ETS ELC SYSTEM AND BANDWIDTH REQUIREMENTS</h2>
             </div>
           </div>
 
           <div className="row">
-            <div className="col-md-4 d-flex align-items-stretch">
-                <div className="card">
-                    <div className="card-body">
-                    <strong>Windows:</strong><br/>
-            Supported operating systems:
-            </div>
-            
-            
-            <ul>
-            <li>Microsoft Windows 7 </li>
-            <li>Windows 8/8.1 </li>
-            <li>Window 10</li>
-            <li>The current version of Chrome</li> 
-            </ul>
-                    </div>
+            <div className="col-md-12">
+            <p>Here are the minimum system requirements for the ETS ELC suite.</p> 
+            <div className="testing-req">
+                <div className="head-btn text-center" onClick={openOne}>
+                    <h2>Student Testing Requirements</h2>
                 </div>
-            <div className="os text-center">
-           
+                </div>
+                <div className="hidden-1">
+
+<h4>Secure Testing</h4>
+<p>Use ETS provided secure testing browser  for ETS ELC testing. With proper set-up, these tools prevent students from accessing other websites during testing.</p>
+
+    <table className="table">
+        <thead>
+            <tr>
+                <th>Device</th>
+                <th>Operating System</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Windows PC</td>
+                <td>Windows 7, 8.1 or 10</td>
+            </tr>
+            <tr>
+                <td>Macintosh</td>
+                <td>Mac OS X v10.12 or higher</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+            <td colspan="2">Recommended: Set up computer user accounts dedicated to testing and disable digital assistants (Siri, Cortana), voice dictation, and unsupported screen readers (ChromeVox and VoiceOver)</td>
+        
+            </tr>
+        </tfoot>
+    </table>
+              
+
             </div>
 
-            <div className="col-md-4 d-flex align-items-stretch">
-                <div className="card">
-                    <div className="card-body">
-                  
-            <strong>macOS:</strong><br /> 
-            Supported operating systems: 
-         
-            
-            <ul>
-                <li>macOS 10.14 Mojave</li>
-                <li>macOS 10.13 High Sierra</li> 
-                <li>macOS 10.12 Sierra</li> 
-                <li>OS X 10.11 El Capitan</li>
-            </ul>
-         <i><strong>On these older OS versions, modern web pages might not be rendered correctly: </strong></i>
-            <ul>
-                <li>OS X 10.10 Yosemite</li>
-                <li>OS X 10.9 Mavericks</li>
-                <li>Safari 6.2 or higher</li>
-            </ul>
-                    </div>
+             <div className="testing-req">
+                <div className="head-btn text-center" onClick={openTwo}>
+                    <h2>Hardware Specifications </h2>
                 </div>
-            </div>
-            <div className="col-md-4 d-flex align-items-stretch">
-                <div className="card">
-                    <div className="card-body">
-                   
-            <strong>Required hardware:</strong><br/>
+                </div>
+                <div className="hidden-2">
+                <p>Computer hardware must meet the minimum requirements specified by the manufacturers of the operating system and browser in use. Hardware that exceeds the minimum is recommended for an optimal experience. For computer display, follow these specifications:</p>
+                <ul>
+                    <li>Screen Resolution Minimum: 1024 x 768 </li>
+                    <li>Scaling or Zoom: 100%</li>
+                    <li>Color Depth: 32-bit recommended (minimum 16-bit)</li>
+                    </ul>            
 
-            <ul>
-                <li>Headsets with Microphones for each test taker</li>
-            </ul>
-                    </div>
+
+                </div>
+
+                  <div className="testing-req">
+                <div className="head-btn text-center" onClick={openThree}>
+                    <h2>Headphones for Students </h2>
+                </div>
+                </div>
+                <div className="hidden-3">
+                <p>Students can hear questions through audio playback. For the best experience, use headphones.</p>
+                <p>In addition, there are specific headphone recommendations for testing with ETS ELC Reading Fluency:</p>
+                   <ul>
+                   <li>Over the ear, not buds</li>
+
+                    <li>Noise cancellation</li>
+
+                    <li>Boom microphone, on the end of a stiff arm that extends in front of the child’s mouth rather than attached to the headphone cord</li>
+                    <li>USB connection for better sound quality</li>
+                       </ul>            
+
+
+                </div>
+                <div className="testing-req">
+                <div className="head-btn text-center" onClick={openFour}>
+                    <h2>Network Bandwidth</h2>
+                </div>
+                </div>
+                <div className="hidden-4">
+                <p>The following bandwidth recommendations are based on best estimate calculations. Test sites that do not meet these recommendations will be able to deliver assessments, but they may experience delays.</p>
+                    <ul>
+                        <li>3 Mbps for every 30 computers concurrently testing. </li>
+<li>Look for limitation points in your internal network (such as school-to-district connections when the district has the main Internet connection).</li>
+<li>You may need to calculate the bandwidth requirements separately for each test season, depending on the tests planned. The requirements increase when you test more students, more subjects, or more schools.</li>
+                    </ul>
+
+<p><u>Note:</u> Additional bandwidth is needed at the beginning of each ETS ELC test. The initial load is approximately 3.5 MB, and the load time varies based on available bandwidth.
+To perform an Internet speed test, use a website such as www.speedtest.net and select Fairfax, VA (the primary location of ETS ELC servers). For each building where testing will take place, perform the test at different times during the school day.</p>
+
+                </div>
+                <div className="testing-req">
+                <div className="head-btn text-center" onClick={openFive}>
+                    <h2>Wireless Recommendations</h2>
+                </div>
+                </div>
+                <div className="hidden-5">
+                <p>The following bandwidth recommendations are based on best estimate calculations. Test sites that do not meet these recommendations will be able to deliver assessments, but they may experience delays.</p>
+                    <ul>
+                        <li>3 Mbps for every 30 computers concurrently testing. </li>
+                        <li>Look for limitation points in your internal network (such as school-to-district connections when the district has the main Internet connection).</li>
+                        <li>You may need to calculate the bandwidth requirements separately for each test season, depending on the tests planned. The requirements increase when you test more students, more subjects, or more schools.</li>
+                    </ul>
+
+                    <p><u>Note:</u> Additional bandwidth is needed at the beginning of each ETS ELC test. The initial load is approximately 3.5 MB, and the load time varies based on available bandwidth.</p>
+                        <p>To perform an Internet speed test, use a website such as www.speedtest.net and select Fairfax, VA (the primary location of ETS ELC servers). For each building where testing will take place, perform the test at different times during the school day.</p>
+
+                </div>
+                <div className="testing-req">
+                <div className="head-btn text-center" onClick={openSix}>
+                    <h2>Firewall Whitelist and Email Configuration</h2>
+                </div>
+                </div>
+                <div className="hidden-6">
+                <p>For the following URLs, you should: add to your white lists, exclude from caching, and prioritize the traffic. Update both hardware (such as firewall, content filter, and proxy server/cache) and software (such as antivirus and anti- malware). Allow the changes to propagate before testing.</p>
+                <h4>Sites for test and administration:</h4>
+                <strong>For ETS ELC suite:</strong>
+                <ul>
+                <li>ets.org</li>
+                <li>researchtech1.ets.org</li>
+                <li>amplifyapp.com</li>
+                <li>innovation.ets.org</li>
+                <li>elc.innovation.ets.org</li>
+                </ul>
+                <strong>Allow in email spam filter (both server and clients):</strong>
+                <p>*@ets.org</p>
+
+
                 </div>
             </div>
           </div>

@@ -1,6 +1,5 @@
 import React from "react"
 import $ from "jquery"
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import exclamation from '../images/exclamation-triangle-solid.svg'
 
 

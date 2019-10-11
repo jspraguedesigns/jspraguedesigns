@@ -918,3 +918,57 @@ span.comments{
     padding: 20px 30px;
     box-sizing: border-box;
 }
+
+
+.desktop{
+    display: block;
+}
+
+.mobile{
+    display: none;
+}
+ .card {
+    width: 100% !important;
+    margin-bottom: 2em !important;
+  }
+.testing-req{
+    padding: 1em;
+    border: 1px solid grey;
+    border-radius: 5px;
+    margin-bottom: 1em;
+    background-color: #fff;
+    height: 75px;
+}
+
+.head-btn{
+    margin-bottom: 2em;
+}
+
+.hidden-1, .hidden-2, .hidden-3, .hidden-4, .hidden-5, .hidden-6{
+    max-height: 0px;
+    overflow: hidden;
+    transition: all .25s ease-in-out;
+
+}
+
+.testing-req:hover{
+    background-color:  #e6e6e6;
+    cursor: crosshair;
+}
+
+.opened{
+    max-height: 500px;
+}
+
+@media (max-width: 768px) {
+    .desktop{
+        display:none;
+    }
+
+    .mobile{
+        display: block;
+    }
+    .testing-req {
+        height: 112px;
+    }
+}
