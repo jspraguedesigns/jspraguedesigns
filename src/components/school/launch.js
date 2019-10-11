@@ -2,31 +2,39 @@ import React from "react"
 import "jquery/dist/jquery.js"
 import  $ from 'jquery'
 import {osName, osVersion,} from "react-device-detect"
+import plus from "../../images/plus.png"
 
 //import openWithWin from "../../images/openWithSEBWin.PNG"
 //import DownloadBlock from "../shared/downloadblock"
 function  openOne(){
     $('.hidden-1').toggleClass('opened');
+    $('.icon').toggleClass('active');
   }
 
   function  openTwo(){
     $('.hidden-2').toggleClass('opened');
+    $('.icon2').toggleClass('active');
   }
 
   function  openThree(){
     $('.hidden-3').toggleClass('opened');
+    $('.icon3').toggleClass('active');
   }
 
   function  openFour(){
     $('.hidden-4').toggleClass('opened');
+    $('.icon4').toggleClass('active');
   }
 
   function  openFive(){
     $('.hidden-5').toggleClass('opened');
+    $('.icon5').toggleClass('active');
+    
   }
 
   function  openSix(){
     $('.hidden-6').toggleClass('opened');
+    $('.icon6').toggleClass('active');
   }
 const Launch = () => {
     console.log(osName);
@@ -123,15 +131,7 @@ const Launch = () => {
             </div>
         </div>
       </div>
-      <div className="row mt-4">
-        <div className="col-md-12 text-center">
 
-            <p><i>After you successfully complete installation and are ready to take
-                the test...</i>
-                
-            </p>
-        </div>
-      </div>
       </div>
      
       <div className="test-day mt-4 mb-4">
@@ -190,7 +190,7 @@ const Launch = () => {
 
 </div>
    
-<hr/>
+<div className="test-day">
 
           <div className="row mt-4">
             <div className="col-md-12 text-center mb-4">
@@ -202,8 +202,8 @@ const Launch = () => {
             <div className="col-md-12">
             <p>Here are the minimum system requirements for the ETS ELC suite.</p> 
             <div className="testing-req">
-                <div className="head-btn text-center" onClick={openOne}>
-                    <h2>Student Testing Requirements</h2>
+                <div className=" head-btn text-center d-flex justify-content-between align-items-center" onClick={openOne}>
+                    <h5>Student Testing Requirements</h5> <div className="icon"> <img className="open-plus" src={plus} alt="open"/></div>
                 </div>
                 </div>
                 <div className="hidden-1">
@@ -240,8 +240,8 @@ const Launch = () => {
             </div>
 
              <div className="testing-req">
-                <div className="head-btn text-center" onClick={openTwo}>
-                    <h2>Hardware Specifications </h2>
+                <div className="head-btn text-center d-flex justify-content-between align-items-center" onClick={openTwo}>
+                    <h5>Hardware Specifications </h5>  <div className="icon2"> <img className="open-plus" src={plus} alt="open"/></div>
                 </div>
                 </div>
                 <div className="hidden-2">
@@ -256,8 +256,8 @@ const Launch = () => {
                 </div>
 
                   <div className="testing-req">
-                <div className="head-btn text-center" onClick={openThree}>
-                    <h2>Headphones for Students </h2>
+                <div className="head-btn text-center  d-flex justify-content-between align-items-center" onClick={openThree}>
+                    <h5>Headphones for Students </h5>   <div className="icon3"> <img className="open-plus" src={plus} alt="open"/></div>
                 </div>
                 </div>
                 <div className="hidden-3">
@@ -275,8 +275,8 @@ const Launch = () => {
 
                 </div>
                 <div className="testing-req">
-                <div className="head-btn text-center" onClick={openFour}>
-                    <h2>Network Bandwidth</h2>
+                <div className="head-btn text-center  d-flex justify-content-between align-items-center" onClick={openFour}>
+                    <h5>Network Bandwidth</h5>  <div className="icon4"> <img className="open-plus" src={plus} alt="open"/></div>
                 </div>
                 </div>
                 <div className="hidden-4">
@@ -292,8 +292,8 @@ To perform an Internet speed test, use a website such as www.speedtest.net and s
 
                 </div>
                 <div className="testing-req">
-                <div className="head-btn text-center" onClick={openFive}>
-                    <h2>Wireless Recommendations</h2>
+                <div className="head-btn text-center d-flex justify-content-between align-items-center" onClick={openFive}>
+                    <h5>Wireless Recommendations</h5> <div className="icon5"> <img className="open-plus" src={plus} alt="open"/></div>
                 </div>
                 </div>
                 <div className="hidden-5">
@@ -309,13 +309,13 @@ To perform an Internet speed test, use a website such as www.speedtest.net and s
 
                 </div>
                 <div className="testing-req">
-                <div className="head-btn text-center" onClick={openSix}>
-                    <h2>Firewall Whitelist and Email Configuration</h2>
+                <div className="head-btn text-center  d-flex justify-content-between align-items-center" onClick={openSix}>
+                    <h5>Firewall Whitelist and Email Configuration</h5>  <div className="icon6"> <img className="open-plus" src={plus} alt="open"/></div>
                 </div>
                 </div>
                 <div className="hidden-6">
                 <p>For the following URLs, you should: add to your white lists, exclude from caching, and prioritize the traffic. Update both hardware (such as firewall, content filter, and proxy server/cache) and software (such as antivirus and anti- malware). Allow the changes to propagate before testing.</p>
-                <h4>Sites for test and administration:</h4>
+                <h5>Sites for test and administration:</h5>
                 <strong>For ETS ELC suite:</strong>
                 <ul>
                 <li>ets.org</li>
@@ -331,7 +331,7 @@ To perform an Internet speed test, use a website such as www.speedtest.net and s
                 </div>
             </div>
           </div>
-
+</div>
        
  
             {/*<p>*/}
