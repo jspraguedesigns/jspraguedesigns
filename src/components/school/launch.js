@@ -245,7 +245,7 @@ const Launch = () => {
 
              <div className="testing-req">
                 <div className="head-btn text-center d-flex justify-content-between align-items-center" onClick={openThree}>
-                    <h5>Hardware Specifications </h5>  <div className="icon2"> <img className="open-plus" src={plus} alt="open"/></div>
+                    <h5>Hardware Specifications </h5>  <div className="icon3"> <img className="open-plus" src={plus} alt="open"/></div>
                 </div>
             </div>
             <div className="hidden-3">
