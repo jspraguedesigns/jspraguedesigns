@@ -188,7 +188,7 @@ const Launch = () => {
         <div className="test-day">
           <div className="row mt-4">
             <div className="col-md-12 text-center mb-4">
-              <h2>ETS ELC SYSTEM AND BANDWIDTH REQUIREMENTS</h2>
+              <h3>ETS ELC SYSTEM AND BANDWIDTH REQUIREMENTS</h3>
             </div>
           </div>
 
@@ -204,7 +204,6 @@ const Launch = () => {
                 >
                   <h5>Student Testing Requirements</h5>{" "}
                   <div className="icon">
-                    {" "}
                     <img className="open-plus" src={plus} alt="open"/>
                   </div>
                 </div>
@@ -300,7 +299,7 @@ const Launch = () => {
 
                   <li>
                     Boom microphone, on the end of a stiff arm that extends in
-                    front of the students’s mouth rather than attached to the
+                    front of the student’s mouth rather than attached to the
                     headphone cord
                   </li>
                   <li>USB connection for better sound quality</li>
