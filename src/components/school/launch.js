@@ -258,32 +258,27 @@ const Launch = () => {
                 </div>
                 </div>
                 <div className="hidden-2">
-                    <p>Use ETS provided secure testing browser  for ETS ELC testing. With proper set-up, these tools prevent students from accessing other websites during testing.</p>
+                <p>Computer hardware must meet the minimum requirements specified by the manufacturers of the operating system and browser in use. Hardware that exceeds the minimum is recommended for an optimal experience. For computer display, follow these specifications:</p>
+                <ul>
+                    <li>Screen Resolution Minimum: 1024 x 768 </li>
 
-                        <table className="table">
-                             <thead>
-                                <tr>
-                                <th>Device</th>
-                                <th>Operating System</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                 <td>Windows PC</td>
-                                <td>Windows 7, 8.1 or 10</td>
-                                 </tr>
-                                 <tr>
-                                    <td>Macintosh</td>
-                                    <td>Mac OS X v10.12 or higher</td>
-                                     </tr>
-                                </tbody>
-                                <tfoot>
-                                    <tr>
-                                    <td colspan="2">Recommended: Set up computer user accounts dedicated to testing and disable digital assistants (Siri, Cortana), voice dictation, and unsupported screen readers (ChromeVox and VoiceOver)</td>
-        
-                                    </tr>
-                                </tfoot>
-                                 </table>
+                    <li>Scaling or Zoom: 100%</li>
+
+                    <li>Color Depth: 32-bit recommended (minimum 16-bit)</li>
+                </ul>
+
+                <h4>Headphones for Students</h4>
+<p>Students can hear questions through audio playback. For the best experience, use headphones.
+In addition, there are specific headphone recommendations for testing with ETS ELC:</p>
+<ul>
+    <li>No Bluetooth headphones</li>
+    <li>Over the ear, not buds</li>
+    <li>Noise cancellation</li>
+    <li>Boom microphone, on the end of a stiff arm that extends in front of the student’s mouth rather than attached to the headphone cord</li>
+    <li>USB connection for better sound quality</li>
+</ul>
+
+
                </div>
 
               <div className="testing-req">
