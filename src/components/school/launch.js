@@ -89,6 +89,10 @@ const Launch = () => {
           <br />
           <p><i>On each computer that the student will use for testing:</i></p>
             </div>
+            <div className="mobile warning">
+                    <strong>Your device is not supported. To launch the placement test, login using a Windows PC with a Windows 7, 8.1 or 10 operating system, or a Macintosh with a Mac OS X v10.12 or higher operating system.</strong>
+            
+                 </div>
           </div>
         
           <div className="row d-flex justify-content-center mt-4">
@@ -190,7 +194,7 @@ const Launch = () => {
 
 </div>
    
-<div className="test-day">
+<div className="test-day mb-4">
 
           <div className="row mt-4">
             <div className="col-md-12 text-center mb-4">
@@ -200,15 +204,17 @@ const Launch = () => {
 
           <div className="row">
             <div className="col-md-12">
+            
+            <h3>Student Testing Requirements:</h3>
             <p>Here are the minimum system requirements for the ETS ELC suite.</p> 
             <div className="testing-req">
                 <div className=" head-btn text-center d-flex justify-content-between align-items-center" onClick={openOne}>
-                    <h5>Student Testing Requirements</h5> <div className="icon"> <img className="open-plus" src={plus} alt="open"/></div>
+                    <h5>Secure Testing</h5> <div className="icon"> <img className="open-plus" src={plus} alt="open"/></div>
                 </div>
                 </div>
                 <div className="hidden-1">
 
-<h4>Secure Testing</h4>
+
 <p>Use ETS provided secure testing browser  for ETS ELC testing. With proper set-up, these tools prevent students from accessing other websites during testing.</p>
 
     <table className="table">
@@ -251,17 +257,8 @@ const Launch = () => {
                     <li>Scaling or Zoom: 100%</li>
                     <li>Color Depth: 32-bit recommended (minimum 16-bit)</li>
                     </ul>            
-
-
-                </div>
-
-                  <div className="testing-req">
-                <div className="head-btn text-center  d-flex justify-content-between align-items-center" onClick={openThree}>
-                    <h5>Headphones for Students </h5>   <div className="icon3"> <img className="open-plus" src={plus} alt="open"/></div>
-                </div>
-                </div>
-                <div className="hidden-3">
-                <p>Students can hear questions through audio playback. For the best experience, use headphones.</p>
+                    <strong>Headphones for Students </strong>
+                    <p>Students can hear questions through audio playback. For the best experience, use headphones.</p>
                 <p>In addition, there are specific headphone recommendations for testing with ETS ELC Reading Fluency:</p>
                    <ul>
                    <li>Over the ear, not buds</li>
@@ -270,10 +267,11 @@ const Launch = () => {
 
                     <li>Boom microphone, on the end of a stiff arm that extends in front of the child’s mouth rather than attached to the headphone cord</li>
                     <li>USB connection for better sound quality</li>
-                       </ul>            
-
+                       </ul>      
 
                 </div>
+
+
                 <div className="testing-req">
                 <div className="head-btn text-center  d-flex justify-content-between align-items-center" onClick={openFour}>
                     <h5>Network Bandwidth</h5>  <div className="icon4"> <img className="open-plus" src={plus} alt="open"/></div>
