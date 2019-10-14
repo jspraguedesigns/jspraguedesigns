@@ -149,7 +149,50 @@ const Launch = () => {
             </div>
           </div>
 
+    <div className="row d-flex">
+          <div className="col-md-4 d-flex align-items-stretch">
+          <div className="card">
+          <div className="card-body text-center">
+          
+          <div className="desktop">
+          <h5> Step 1:</h5>
+             <a
+               href="https://researchtech1.ets.org/c3.net/Falcon/FalconStartProd.seb"
+               className="btn btn-home-top btn btn-secondary mt-2"
+             >
+             Click here to <strong>Start Test</strong>
+             </a>
+          </div>
+          <div className="mobile">
+            <h5>Step 1: Start test</h5>
+          </div>
+        
+             
+           </div>
+          </div>
+          </div>
+     
+          <div className="col-md-4 d-flex align-items-stretch">
+          <div className="card">
+          <div className="card-body text-center">
+           <h5>Step 2: Enter Student Id</h5>
+           
+           </div>
+          </div>
+          </div>
+          <div className="col-md-4  d-flex align-items-stretch">
+          <div className="card">
+          <div className="card-body text-center">
+           <h5>Step 3: Update student activity sheet</h5>
+           
+           </div>
+          </div>
+          </div>
+       
     </div>
+
+</div>
+
    
 <div className="test-day mb-4">
     <div className="row mt-4">
@@ -243,37 +286,6 @@ const Launch = () => {
                                  </table>
                </div>
 
-             <div className="testing-req">
-                <div className="head-btn text-center d-flex justify-content-between align-items-center" onClick={openThree}>
-                    <h5>Hardware Specifications </h5>  <div className="icon3"> <img className="open-plus" src={plus} alt="open"/></div>
-                </div>
-            </div>
-            <div className="hidden-3">
-                <p>Computer hardware must meet the minimum requirements specified by the manufacturers of the operating system and browser in use. Hardware that exceeds the minimum is recommended for an optimal experience. For computer display, follow these specifications:</p>
-                <ul>
-                    <li>Screen Resolution Minimum: 1024 x 768 </li>
-                    <li>Scaling or Zoom: 100%</li>
-                    <li>Color Depth: 32-bit recommended (minimum 16-bit)</li>
-                    </ul>            
-                    <strong>Headphones for Students </strong>
-                    <p>Students can hear questions through audio playback. For the best experience, use headphones.</p>
-                <p>In addition, there are specific headphone recommendations for testing with ETS ELC Reading Fluency:</p>
-                   <ul>
-                   <li>Over the ear, not buds</li>
-
-                    <li>Noise cancellation</li>
-
-                    <li>Boom microphone, on the end of a stiff arm that extends in front of the child’s mouth rather than attached to the headphone cord</li>
-                    <li>USB connection for better sound quality</li>
-
-                  <li>
-                    Boom microphone, on the end of a stiff arm that extends in
-                    front of the student’s mouth rather than attached to the
-                    headphone cord
-                  </li>
-                  <li>USB connection for better sound quality</li>
-                </ul>
-              </div>
               <div className="testing-req">
                 <div className="head-btn text-center  d-flex justify-content-between align-items-center" onClick={openFour}>
                   <h5>Network Bandwidth</h5>{" "}
