@@ -300,7 +300,7 @@ const Launch = () => {
 
                   <li>
                     Boom microphone, on the end of a stiff arm that extends in
-                    front of the child’s mouth rather than attached to the
+                    front of the students’s mouth rather than attached to the
                     headphone cord
                   </li>
                   <li>USB connection for better sound quality</li>
