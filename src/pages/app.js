@@ -9,6 +9,7 @@ import Sample from "../components/sample"
 import Training from "../components/school/teacher_training"
 import Launch from "../components/school/launch"
 import TestResults from "../components/school/test-results";
+import TroubleShooting from "../components/school/trouble_shooting";
 
 const App = () => {
   // if (!isBrowser) {
@@ -38,6 +39,7 @@ const App = () => {
             <Training path="/app/teacher_training" />
             <Launch path="/app/launch" />
             <TestResults path="/app/test-results" />
+            <TroubleShooting path="/app/trouble_shooting" />
           </Router>
         </Layout>
       </>

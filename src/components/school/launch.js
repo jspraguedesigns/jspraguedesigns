@@ -1,8 +1,12 @@
 import React from "react"
 import "jquery/dist/jquery.js"
+import {Link} from "gatsby"
 import $ from "jquery"
 import { osName, osVersion } from "react-device-detect"
 import plus from "../../images/plus.png"
+import icon from "../../images/DesktopIcon.png"
+import pdf from '../../pdf/StudentActivitySheet.pdf'
+import pdf2 from '../../pdf/StudentProblemReport.pdf'
 
 //import openWithWin from "../../images/openWithSEBWin.PNG"
 //import DownloadBlock from "../shared/downloadblock"
@@ -10,7 +14,7 @@ function openOne() {
   $(".hidden-1").toggleClass("opened")
   $(".icon").toggleClass("active")
 }
-
+ 
 function openTwo() {
   $(".hidden-2").toggleClass("opened")
   $(".icon2").toggleClass("active")
@@ -40,7 +44,7 @@ const Launch = () => {
   let supportedOS = false
   let downloadLink
   downloadLink = ""
-  let downloadText = "Step 1: Download & install Secure Browser on your "
+  let downloadText = "Download & install Secure Browser on your "
   switch (osName) {
     case "Windows":
       // code block
@@ -77,7 +81,7 @@ const Launch = () => {
           <div className="row mt-4">
             <div className="col-md-12 text-center">
               <h2>Before Test Day</h2>
-              <strong>Technical Co-Ordinator:</strong>
+              <strong>Technical Co-Ordinator</strong>
               <br/>
               <p>
                 <i>On each computer that the student will use for testing:</i>
@@ -88,105 +92,138 @@ const Launch = () => {
             </div>
         </div>
         <div className="row d-flex justify-content-center mt-4">
-            <div className="col-md-6 d-flex align-items-stretch">
-              <div className="card">
-                <div className="card-body text-center">
-                  <div className="desktop">
-                    <h5>{downloadText}</h5>
-                    <a
-                      href={downloadLink}
-                      className="btn btn-home-top btn btn-secondary mt-4"
-                    >
-                      Click to Download
-                    </a>
-                  </div>
-                  <div className="mobile">
+            <div className="col-md-12 border d-flex align-items-stretch step">
+              <div className="w-100 p-4 d-flex align-items-center">
+              <div className="mobile">
                     <h5>
                       Step 1: Download &amp; install Secure Browser on a supported device.
                     </h5>
-                    <p>{downloadText}</p>
-                  </div>
+                    <strong><p>Save the test launch file to the desktop.</p></strong>
+                
                 </div>
+                <div className="instruction">
+                  <div className="desktop mr-auto">
+                    <h5>Step 1:</h5>
+                    <strong><p>{downloadText}</p></strong>
+                  </div>
+                 
+                </div>
+                <div className="link ml-auto">
+                    <a href={downloadLink} className="btn btn-home-top btn btn-secondary">Click to Download</a>
+                  </div>
               </div>
+         
+                 
+              </div>
+           
+            <div className="col-md-12 border d-flex step">
+         
+            <div className="w-100 p-4">
+           
+            <h5>Step 2:</h5>
+                <strong><p>Save the test launch file to the desktop.</p></strong>
+            </div>
+            
             </div>
 
-            <div className="col-md-6 d-flex align-items-stretch">
-              <div className="card">
-                <div className="card-body text-center">
+            <div className="col-md-12 border d-flex align-items-stretch step p-4">
+                <div className="w-100 d-flex align-items-center">
+                <div>
+                <h5>Step 3:</h5>
+                    <p><strong>Double click the launch file that you saved to your desktop.<br /> This will launch the practice test.</strong></p>
+                </div>
+                
+                </div>
+                 <div className="icon-box text-center">
+                   <img className="icon-pic" src={icon} alt="icon"/>
+                   <br/>
+                   <small><i>Launch file icon depicted above</i></small>
+                 </div>
+
+               
+            </div>
+            <div className="col-md-12 border d-flex align-items-stretch step p-4">
+                <div className="w-100">
                   <div className="desktop">
-                    <h5>Step 2:</h5>
-                    <a
-                      href="https://researchtech1.ets.org/c3.net/Falcon/FalconStartProd.seb"
-                      className="btn btn-home-top btn btn-secondary mb-4 mt-2"
-                    >
-                      Launch Practice form
-                    </a>
-                  </div>
-                  <div className="mobile">
-                    <h5>Step 2: Launch Practice form</h5>
-                  </div>
+                    <h5>Step 4:</h5>
+                    <p><strong>Enter the practice test login id provided to you by your school’s ELC Assessment Coordinator</strong></p>
+                 
+                 
+                 
+                
                 </div>
               </div>
             </div>
+            </div>
+            <div className="text-center">
+            <p><strong>Download and print: <a target="_blank" href={pdf}>Student Activity Sheet</a> and <a target="_blank" href={pdf2}>Student Activity Sheet</a></strong></p><br/>
             <p>
 
-              <i>
-                Recommended: Perform trial runs of the practice test using a small group of
-                students to validate that everything is ready{" "}
-              </i>
-            </p>
-          </div>
-        </div>
+<strong>
+  Recommended: Perform trial runs of the practice test using a small group of
+  students to validate that everything is ready
+</strong><br/>
+<Link className="mt-4 mb-4 btn btn-home-top btn btn-secondary" to="app/trouble_shooting">View our Toubleshooting Guide</Link>
+
+ 
+</p>
+</div>
+
+            </div>
+            
+          
 
         <div className="test-day mt-4 mb-4">
           <div className="row pb-4">
             <div className="col-md-12 text-center">
               <h2>On Test Day</h2>
-              <strong>Proctor:</strong>
-              <p>
-                <i>On each computer that the student will use for testing:</i>{" "}
+              <strong>Proctor: </strong><br/>
+         
+              <p className="mt-2">
+               On each computer that the student will use for testing:
               </p>
+              
             </div>
           </div>
 
     <div className="row d-flex">
-          <div className="col-md-4 d-flex align-items-stretch">
-          <div className="card">
-          <div className="card-body text-center">
-          
-          <div className="desktop">
+          <div className="col-md-12 border d-flex align-items-center step p-4">
+          <div className="instruction w-100">
           <h5> Step 1:</h5>
-             <a
-               href="https://researchtech1.ets.org/c3.net/Falcon/FalconStartProd.seb"
-               className="btn btn-home-top btn btn-secondary mt-2"
-             >
-             Click here to <strong>Start Test</strong>
-             </a>
-          </div>
-          <div className="mobile">
-            <h5>Step 1: Start test</h5>
-          </div>
-        
-             
-           </div>
-          </div>
+             <strong><p>Double click the ELC Test Launch File from the desktop to start the test</p></strong>
+             </div>
+             <div class="icon-box text-center">
+             <img className="icon-pic" src={icon} alt="icon"/>
+             <br/><small><i>Launch icon depicted above</i></small>
+             </div>
+  
+       
+      
           </div>
      
-          <div className="col-md-4 d-flex align-items-stretch">
-          <div className="card">
-          <div className="card-body text-center">
-           <h5>Step 2: Enter Student Id</h5>
-           
-           </div>
+          <div className="col-md-12 border step d-flex align-items-stretch align-items-center p-4">
+       
+          <div className="w-100">
+          <h5>Step 2:</h5>
+           <strong><p>Ask the student to enter their individual login id provided to you by your school’s ELC Assessment Coordinator</p></strong>
           </div>
+          
           </div>
-          <div className="col-md-4  d-flex align-items-stretch">
-          <div className="card">
-          <div className="card-body text-center">
-           <h5>Step 3: Update student activity sheet</h5>
-           
-           </div>
+
+
+          <div className="col-md-12  border  step d-flex align-items-stretch align-items-center  p-4">
+    
+          <div className="w-100 align-items-center">
+          <h5>Step 3:</h5>
+           <strong><p>Update student activity sheet</p></strong>
           </div>
+       
+          </div>
+          <div className="col-md-12 border step p-4  d-flex align-items-stretch align-items-center">
+          <div className="w-100 align-items-center">
+           <h5>Step 4:</h5>
+           <strong><p>Update Testing Issues sheet, if needed</p></strong>
+            </div>
           </div>
        
     </div>
@@ -197,16 +234,16 @@ const Launch = () => {
 <div className="test-day mb-4">
     <div className="row mt-4">
             <div className="col-md-12 text-center mb-4">
-              <h3>ETS ELC SYSTEM AND BANDWIDTH REQUIREMENTS</h3>
+              <h2>ETS ELC System And Bandwidth Requirements</h2>
             </div>
       </div>
 
           <div className="row">
             <div className="col-md-12">
             
-                <h3>Student Testing Requirements:</h3>
-                <p>Here are the minimum system requirements for the ETS ELC suite.</p> 
-            <div className="testing-req">
+                <h3>Student Testing Requirements</h3>
+                <p>Here are the minimum system requirements for the ETS ELC suite:</p> 
+            <div className="testing-req mt-4">
                 <div className=" head-btn text-center d-flex justify-content-between align-items-center" onClick={openOne}>
                     <h5>Secure Testing</h5> <div className="icon"> <img className="open-plus" src={plus} alt="open"/></div>
                 </div>

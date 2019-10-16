@@ -10,6 +10,9 @@ body {
     background-color: #f7f7f7;
 }
 
+p{
+    margin-bottom: 0;
+}
 
 strong {
     font-style: bold;
@@ -911,7 +914,6 @@ span.comments{
 
 
 .test-day{
-    background: white;
     border: 0 none;
     border-radius: 3px;
     box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.4);
@@ -919,6 +921,15 @@ span.comments{
     box-sizing: border-box;
 }
 
+.step{
+    background-color: #fff;
+    margin-bottom: 2em;
+    border-radius: 5px;
+}
+
+.instruction, .link{
+    float: left;
+}
 
 .desktop{
     display: block;
@@ -971,6 +982,15 @@ span.comments{
     margin-top: -3px;
 }
 
+
+.icon-pic{
+    width: auto !important;
+    height: 80px;
+}
+
+.icon-box{
+    width: 240px;
+}
 .active{
     transform: rotate(45deg);
 }

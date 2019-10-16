@@ -13,7 +13,7 @@ const IndexPage = () => {
           <div className="col-md-6 text-center animated fadeInUp">
             <h1 className="home-text">
               English
-              <br /> Learning
+              <br /> Language
               <br /> Certificate
             </h1>
             <button
