@@ -108,7 +108,7 @@ const Launch = () => {
                   </div>
                  
                 </div>
-                <div className="link ml-auto">
+                <div className="link ml-auto desktop">
                     <a href={downloadLink} className="btn btn-home-top btn btn-secondary">Download Secure Browser</a>
                   </div>
               </div>
@@ -126,7 +126,7 @@ const Launch = () => {
               </div>
                      
             </div>
-            <div className="link ml-auto">
+            <div className="link ml-auto desktop">
             <a
               href="https://researchtech1.ets.org/c3.net/Falcon/FalconStartProd.seb"
               className="btn btn-home-top btn btn-secondary"
@@ -166,9 +166,17 @@ const Launch = () => {
             </div>
             <div className="col-md-12 border d-flex align-items-stretch step p-2 pl-4 pr-4">
                 <div className="w-100">
-                  <div className="desktop">
+                  <div>
                     <h5>Step 5:</h5>
                     <p><strong>Enter the practice test login ID provided to you by your school’s ELC Assessment Coordinator<br /> This will log you into the practice test.</strong></p> 
+                </div>
+              </div>
+            </div>
+            <div className="col-md-12 border d-flex align-items-stretch step p-2 pl-4 pr-4">
+                <div className="w-100">
+                  <div >
+                    <h5>Step 6:</h5>
+                    <p><strong>Make sure you run through practice test to see if your microphone and headsets are functioning properly.</strong></p> 
                 </div>
               </div>
             </div>

@@ -34,6 +34,12 @@ const TroubleShooting = () => {
 
                     <p><strong>Double check to make sure you entered ID correctly. If ID still is not working, email <a href="mailto:innovations@ets.org">innovations@ets.org</a>, student may not have been registered properly</strong></p>
                     </div>
+                    <div className="col-md-12 border-bottom pb-4 pt-4">
+                    <h5>I cannot hear the audio</h5>
+
+                    <p><strong>Make sure volume is set correctly. If you still cannot hear any audio, try a different pair of headphones.</strong></p>
+                    </div>
+                
                 
                 </div>
                
