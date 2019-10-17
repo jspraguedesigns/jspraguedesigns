@@ -142,17 +142,11 @@ const Launch = () => {
                   <div className="desktop mr-auto">
            
             <h5>Step 3:</h5>
-                <strong><p>Locate the test launch file in your computer's Download folder and save to the desktop.</p></strong>
+                <strong><p>Locate the test launch file in your computer's Download folder and drag it to the desktop.</p></strong>
               </div>
                      
             </div>
-            <div className="link ml-auto">
-            <a
-              href="https://researchtech1.ets.org/c3.net/Falcon/FalconStartProd.seb"
-              className="btn btn-home-top btn btn-secondary"
-            ><strong>Download Test Launch</strong>
-            </a>
-            </div>
+
             </div>
             </div>
        
@@ -161,7 +155,7 @@ const Launch = () => {
                 <div className="w-100 d-flex align-items-center">
                   <div>
                   <h5>Step 4:</h5>
-                    <p><strong>Double click the launch file that you saved to your desktop.<br /> This will launch the practice test.</strong></p>
+                    <p><strong>Double click the launch file that you saved to your desktop.</strong></p>
                   </div>
                 </div>
                  <div className="icon-box text-center">
@@ -174,20 +168,15 @@ const Launch = () => {
                 <div className="w-100">
                   <div className="desktop">
                     <h5>Step 5:</h5>
-                    <p><strong>Enter the practice test login I.D. provided to you by your school’s ELC Assessment Coordinator</strong></p> 
+                    <p><strong>Enter the practice test login ID provided to you by your school’s ELC Assessment Coordinator<br /> This will log you into the practice test.</strong></p> 
                 </div>
               </div>
             </div>
 
-            <div className="col-md-12 border d-flex align-items-stretch step p-4">
-              <div className="w-100">
-                <h5>Step 6:</h5>
-                  <p><strong>Download and print: <a target="_blank" href={pdf}>Student Activity Sheet</a> and <a target="_blank" href={pdf2}>Student Problem Report</a></strong></p><br/>
-              </div>
-            </div>
+
             <div className="text-center">
               <p> <strong> Recommended: Perform trial runs of the practice test using a small group of students to validate that everything is ready</strong><br/>
-              <Link className="mt-4 mb-4 btn btn-home-top btn btn-secondary" to="app/trouble_shooting">View our Toubleshooting Guide</Link></p>
+              <Link className="mt-4 mb-4 btn btn-home-top btn btn-secondary" to="trouble_shooting">View our Toubleshooting Guide</Link></p>
             </div>
             </div>
 </div>
@@ -197,6 +186,9 @@ const Launch = () => {
             <div className="col-md-12 text-center">
               <h2>On Test Day</h2>
               <strong>Proctor: </strong><br/>
+              <p><strong>Confirm that you have login ID for all students taking the test today.</strong></p>
+            
+                  <p><strong>Download and print: <a target="_blank" href={pdf}>Student Activity Sheet</a> and <a target="_blank" href={pdf2}>Student Problem Report</a></strong></p><br/>
          
               <p className="mt-2">
                On each computer that the student will use for testing:
@@ -224,7 +216,7 @@ const Launch = () => {
        
           <div className="w-100">
           <h5>Step 2:</h5>
-           <strong><p>Ask the student to enter their individual login id provided to you by your school’s ELC Assessment Coordinator</p></strong>
+           <strong><p>Ask the student to enter their individual Login I.D. provided to you by your school’s ELC Assessment Coordinator</p></strong>
         
 
           </div>
