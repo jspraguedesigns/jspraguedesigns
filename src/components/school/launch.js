@@ -109,21 +109,32 @@ const Launch = () => {
                  
                 </div>
                 <div className="link ml-auto">
-                    <a href={downloadLink} className="btn btn-home-top btn btn-secondary">Click to Download</a>
+                    <a href={downloadLink} className="btn btn-home-top btn btn-secondary">Download Secure Browser</a>
                   </div>
               </div>
          
                  
               </div>
            
-            <div className="col-md-12 border d-flex step">
-         
-            <div className="w-100 p-4">
+              <div className="col-md-12 border d-flex align-items-stretch step">
+              <div className="w-100 p-4 d-flex align-items-center">
+              <div className="instruction">
+                  <div className="desktop mr-auto">
            
             <h5>Step 2:</h5>
-                <strong><p>Save the test launch file to the desktop.</p></strong>
+                <strong><p>Download the test launch file and save the test launch file to the desktop.</p></strong>
+              </div>
+                     
             </div>
-            
+            <div className="link ml-auto">
+            <a
+              href="https://researchtech1.ets.org/c3.net/Falcon/FalconStartProd.seb"
+              className="btn btn-home-top btn btn-secondary"
+            ><strong>Download Test Launch</strong>
+            </a>
+            </div>
+            </div>
+            </div>
             </div>
 
             <div className="col-md-12 border d-flex align-items-stretch step p-4">
@@ -154,9 +165,14 @@ const Launch = () => {
                 </div>
               </div>
             </div>
+            <div className="col-md-12 border d-flex align-items-stretch step p-4">
+                <div className="w-100">
+                <h5>Step 4:</h5>
+            <p><strong>Download and print: <a target="_blank" href={pdf}>Student Activity Sheet</a> and <a target="_blank" href={pdf2}>Student Problem Report</a></strong></p><br/>
+            </div>
             </div>
             <div className="text-center">
-            <p><strong>Download and print: <a target="_blank" href={pdf}>Student Activity Sheet</a> and <a target="_blank" href={pdf2}>Student Activity Sheet</a></strong></p><br/>
+           
             <p>
 
 <strong>
@@ -168,9 +184,10 @@ const Launch = () => {
  
 </p>
 </div>
-
             </div>
-            
+
+
+ 
           
 
         <div className="test-day mt-4 mb-4">
@@ -206,6 +223,8 @@ const Launch = () => {
           <div className="w-100">
           <h5>Step 2:</h5>
            <strong><p>Ask the student to enter their individual login id provided to you by your school’s ELC Assessment Coordinator</p></strong>
+        
+
           </div>
           
           </div>
