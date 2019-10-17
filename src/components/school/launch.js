@@ -93,7 +93,7 @@ const Launch = () => {
         </div>
         <div className="row d-flex justify-content-center mt-4">
             <div className="col-md-12 border d-flex align-items-stretch step">
-              <div className="w-100 p-4 d-flex align-items-center">
+              <div className="w-100 p-2 d-flex align-items-center">
               <div className="mobile">
                     <h5>
                       Step 1: Download &amp; install Secure Browser on a supported device.
@@ -117,7 +117,7 @@ const Launch = () => {
               </div>
            
               <div className="col-md-12 border d-flex align-items-stretch step">
-              <div className="w-100 p-4 d-flex align-items-center">
+              <div className="w-100 p-2 d-flex align-items-center">
               <div className="instruction">
                   <div className="desktop mr-auto">
            
@@ -137,7 +137,7 @@ const Launch = () => {
             </div>
             
             <div className="col-md-12 border d-flex align-items-stretch step">
-              <div className="w-100 p-4 d-flex align-items-center">
+              <div className="w-100 p-2 d-flex align-items-center">
               <div className="instruction">
                   <div className="desktop mr-auto">
            
@@ -151,7 +151,7 @@ const Launch = () => {
             </div>
        
 
-            <div className="col-md-12 border d-flex align-items-stretch step p-4">
+            <div className="col-md-12 border d-flex align-items-stretch step p-2">
                 <div className="w-100 d-flex align-items-center">
                   <div>
                   <h5>Step 4:</h5>
@@ -164,7 +164,7 @@ const Launch = () => {
                    <small><i>Launch file icon depicted above</i></small>
                  </div>  
             </div>
-            <div className="col-md-12 border d-flex align-items-stretch step p-4">
+            <div className="col-md-12 border d-flex align-items-stretch step p-2">
                 <div className="w-100">
                   <div className="desktop">
                     <h5>Step 5:</h5>
@@ -186,19 +186,19 @@ const Launch = () => {
             <div className="col-md-12 text-center">
               <h2>On Test Day</h2>
               <strong>Proctor: </strong><br/>
-              <p><strong>Confirm that you have login ID for all students taking the test today.</strong></p>
+              <p>Confirm that you have login ID for all students taking the test today.</p>
             
-                  <p><strong>Download and print: <a target="_blank" href={pdf}>Student Activity Sheet</a> and <a target="_blank" href={pdf2}>Student Problem Report</a></strong></p><br/>
+                  <p>Download and print: <a target="_blank" href={pdf}>Student Activity Sheet</a> and <a target="_blank" href={pdf2}>Student Problem Report</a></p><br/>
          
-              <p className="mt-2">
-               On each computer that the student will use for testing:
+              <p>
+               <i>On each computer that the student will use for testing:</i>
               </p>
               
             </div>
           </div>
 
     <div className="row d-flex">
-          <div className="col-md-12 border d-flex align-items-center step p-4">
+          <div className="col-md-12 border d-flex align-items-center step p-2">
           <div className="instruction w-100">
           <h5> Step 1:</h5>
              <strong><p>Double click the ELC Test Launch File from the desktop to start the test</p></strong>
@@ -212,7 +212,7 @@ const Launch = () => {
       
           </div>
      
-          <div className="col-md-12 border step d-flex align-items-stretch align-items-center p-4">
+          <div className="col-md-12 border step d-flex align-items-stretch align-items-center p-2">
        
           <div className="w-100">
           <h5>Step 2:</h5>
@@ -224,7 +224,7 @@ const Launch = () => {
           </div>
 
 
-          <div className="col-md-12  border  step d-flex align-items-stretch align-items-center  p-4">
+          <div className="col-md-12  border  step d-flex align-items-stretch align-items-center  p-2">
     
           <div className="w-100 align-items-center">
           <h5>Step 3:</h5>
@@ -232,10 +232,10 @@ const Launch = () => {
           </div>
        
           </div>
-          <div className="col-md-12 border step p-4  d-flex align-items-stretch align-items-center">
+          <div className="col-md-12 border step p-2  d-flex align-items-stretch align-items-center">
           <div className="w-100 align-items-center">
            <h5>Step 4:</h5>
-           <strong><p>Update Testing Issues sheet, if needed</p></strong>
+           <strong><p>Update Student Problem Report sheet, if needed</p></strong>
             </div>
           </div>
        
