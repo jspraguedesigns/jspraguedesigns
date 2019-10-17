@@ -164,7 +164,7 @@ const Launch = () => {
                    <small><i>Launch file icon depicted above</i></small>
                  </div>  
             </div>
-            <div className="col-md-12 border d-flex align-items-stretch step p-2">
+            <div className="col-md-12 border d-flex align-items-stretch step p-2 pl-4 pr-4">
                 <div className="w-100">
                   <div className="desktop">
                     <h5>Step 5:</h5>
@@ -198,7 +198,7 @@ const Launch = () => {
           </div>
 
     <div className="row d-flex">
-          <div className="col-md-12 border d-flex align-items-center step p-2">
+          <div className="col-md-12 border d-flex align-items-center step p-2 p-2 pl-4 pr-4">
           <div className="instruction w-100">
           <h5> Step 1:</h5>
              <strong><p>Double click the ELC Test Launch File from the desktop to start the test</p></strong>
@@ -212,11 +212,11 @@ const Launch = () => {
       
           </div>
      
-          <div className="col-md-12 border step d-flex align-items-stretch align-items-center p-2">
+          <div className="col-md-12 border step d-flex align-items-stretch align-items-center p-2 pl-4 pr-4">
        
           <div className="w-100">
           <h5>Step 2:</h5>
-           <strong><p>Ask the student to enter their individual Login I.D. provided to you by your school’s ELC Assessment Coordinator</p></strong>
+           <strong><p>Ask the student to enter their individual Login ID provided to you by your school’s ELC Assessment Coordinator</p></strong>
         
 
           </div>
@@ -224,7 +224,7 @@ const Launch = () => {
           </div>
 
 
-          <div className="col-md-12  border  step d-flex align-items-stretch align-items-center  p-2">
+          <div className="col-md-12  border  step d-flex align-items-stretch align-items-center  p-2 pl-4 pr-4">
     
           <div className="w-100 align-items-center">
           <h5>Step 3:</h5>
@@ -232,7 +232,7 @@ const Launch = () => {
           </div>
        
           </div>
-          <div className="col-md-12 border step p-2  d-flex align-items-stretch align-items-center">
+          <div className="col-md-12 border step p-2 pl-4 pr-4 d-flex align-items-stretch align-items-center">
           <div className="w-100 align-items-center">
            <h5>Step 4:</h5>
            <strong><p>Update Student Problem Report sheet, if needed</p></strong>
