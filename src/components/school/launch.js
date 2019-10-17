@@ -157,7 +157,7 @@ const Launch = () => {
                 <div className="w-100">
                   <div className="desktop">
                     <h5>Step 4:</h5>
-                    <p><strong>Enter the practice test login id provided to you by your school’s ELC Assessment Coordinator</strong></p>
+                    <p><strong>Enter the practice test login I.D. provided to you by your school’s ELC Assessment Coordinator</strong></p>
                  
                  
                  
