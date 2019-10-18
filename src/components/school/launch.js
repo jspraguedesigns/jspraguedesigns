@@ -130,7 +130,7 @@ const Launch = () => {
                 </div>
                 <div className="link ml-auto">
                   <a
-                    href="https://researchtech1.ets.org/c3.net/Falcon/FalconStartProd.seb"
+                    href="https://researchtech1.ets.org/c3.net/Falcon/elcTestStart.seb"
                     className="btn btn-home-top btn btn-secondary"
                   ><strong>Download Test Launch</strong>
                   </a>
