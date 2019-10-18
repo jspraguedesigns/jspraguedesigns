@@ -1,9 +1,9 @@
 import React from "react"
 import Layout from "../components/shared/layout"
-import {isAuthenticated, login} from "../utils/auth"
+import { isAuthenticated, login } from "../utils/auth"
 
 import Home from "../components/home"
-import LayoutPublic from "../components/shared/layoutPublic";
+import LayoutPublic from "../components/shared/layoutPublic"
 
 const IndexPage = () => {
   if (!isAuthenticated()) {
@@ -13,7 +13,7 @@ const IndexPage = () => {
           <div className="col-md-6 text-center animated fadeInUp">
             <h1 className="home-text">
               English
-              <br /> Learning
+              <br/> Language
               <br /> Certificate
             </h1>
             <button
