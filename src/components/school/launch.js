@@ -151,7 +151,7 @@ const Launch = () => {
             </div>
        
 
-            <div className="col-md-12 border d-flex align-items-stretch step p-2">
+            <div className="col-md-12 border d-flex align-items-stretch step p-2 pl-4 pr-4">
                 <div className="w-100 d-flex align-items-center">
                   <div>
                   <h5>Step 4:</h5>
@@ -168,7 +168,7 @@ const Launch = () => {
                 <div className="w-100">
                   <div>
                     <h5>Step 5:</h5>
-                    <p><strong>Enter the practice test login ID provided to you by your school’s ELC Assessment Coordinator<br /> This will log you into the practice test.</strong></p> 
+                    <p><strong>Enter the Tech Check login ID provided to you by your school’s ELC Assessment Coordinator<br /> This will log you into the practice test.</strong></p> 
                 </div>
               </div>
             </div>
@@ -176,7 +176,7 @@ const Launch = () => {
                 <div className="w-100">
                   <div >
                     <h5>Step 6:</h5>
-                    <p><strong>Make sure you run through practice test to see if your microphone and headsets are functioning properly.</strong></p> 
+                    <p><strong>Make sure you run through the Tech Check to see if your microphone and headsets are functioning properly.</strong></p> 
                 </div>
               </div>
             </div>
@@ -211,7 +211,7 @@ const Launch = () => {
           <h5> Step 1:</h5>
              <strong><p>Double click the ELC Test Launch File from the desktop to start the test</p></strong>
              </div>
-             <div class="icon-box text-center">
+             <div className="icon-box text-center">
              <img className="icon-pic" src={icon} alt="icon"/>
              <br/><small><i>Launch icon depicted above</i></small>
              </div>

@@ -9,8 +9,8 @@ const TroubleShooting = () => {
             <Link to="/launch">Launch</Link>
             </div>
             </div>
-            <div class="row">
-                <div class="col-md-12 pt-4 pb-4">
+            <div className="row">
+                <div className="col-md-12 pt-4 pb-4">
                 <h1>Troubleshooting Guide</h1>
                 <hr />
                 <div className="row">
@@ -19,6 +19,11 @@ const TroubleShooting = () => {
 
                     <p><strong>Copy and paste is disabled during testing. Student Login ID d must be typed in manually.</strong></p>
                     </div>
+                    <div className="col-md-12 border-bottom pb-4 pt-4">
+                    <h5>Error Message: Received an error message “Cant open this type of file (.seb).</h5>
+                    <p><strong>Make sure you installed the Safe Exam Browser before.</strong></p>
+                    </div>
+                   
                     <div className="col-md-12 border-bottom pb-4 pt-4">
                     <h5>When clicked on “Download Safe Exam Browser for Windows” and then “Run”, received a message to enter admin username and password.</h5>
 
