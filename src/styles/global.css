@@ -15,7 +15,7 @@ p{
 }
 
 strong {
-    font-style: bold;
+    font-weight: bold;
 }
 
 header {
@@ -29,7 +29,7 @@ header {
 
 .brand {
     font-family: 'Open Sans', sans-serif;
-    font-weight: 900 i;
+    font-weight: 900;
     font-style: italic;
 }
 
@@ -84,7 +84,7 @@ a:hover {
 }
 
 button {
-    transform: all .2s;
+    transition: all .2s;
 }
 
 button:hover {
