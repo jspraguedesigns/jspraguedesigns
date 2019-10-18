@@ -83,6 +83,7 @@ const Launch = () => {
               <h2>Before Test Day</h2>
               <strong>Technical Co-Ordinator</strong>
               <br/>
+              <p><strong>Before starting, quit all programs.</strong></p>
               <p>
                 <i>On each computer that the student will use for testing:</i>
               </p>
@@ -224,7 +225,7 @@ const Launch = () => {
        
           <div className="w-100">
           <h5>Step 2:</h5>
-           <strong><p>Ask the student to enter their individual Login ID provided to you by your school’s ELC Assessment Coordinator</p></strong>
+           <strong><p>Ask the student to enter their individual Login ID provided by ETS to your school’s ELC Assessment Coordinator</p></strong>
         
 
           </div>
@@ -236,14 +237,14 @@ const Launch = () => {
     
           <div className="w-100 align-items-center">
           <h5>Step 3:</h5>
-           <strong><p>Update student activity sheet</p></strong>
+           <strong><p>Complete the Student Activity Sheet, listing all students who take or attempt to take the test</p></strong>
           </div>
        
           </div>
           <div className="col-md-12 border step p-2 pl-4 pr-4 d-flex align-items-stretch align-items-center">
           <div className="w-100 align-items-center">
            <h5>Step 4:</h5>
-           <strong><p>Update Student Problem Report sheet, if needed</p></strong>
+           <strong><p>Update the Student Problem Report if any student experiences a technical problem.</p></strong>
             </div>
           </div>
        

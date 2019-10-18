@@ -28,6 +28,7 @@ const TroubleShooting = () => {
                     <h5>When clicked on “Download Safe Exam Browser for Windows” and then “Run”, received a message to enter admin username and password.</h5>
 
                     <p><strong>Log out of computer and log back in with admin credentials.</strong></p>
+
                     </div>
                     <div className="col-md-12 border-bottom pb-4 pt-4">
                     <h5>I cannot copy and paste student's Login ID to the secure browser.</h5>

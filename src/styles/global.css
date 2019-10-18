@@ -74,6 +74,14 @@ h2.tag {
 
 }
 
+.user-password{
+    width: 300px !important;
+    margin: 20px auto;
+    display: block;
+    border: 2px solid grey;
+    border-radius: 5px;
+}
+
 a {
     color: #007c92;
 }
