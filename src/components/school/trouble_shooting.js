@@ -21,7 +21,7 @@ const TroubleShooting = () => {
                     </div>
                     <div className="col-md-12 border-bottom pb-4 pt-4">
                     <h5>Error Message: Received an error message “Cant open this type of file (.seb).</h5>
-                    <p><strong>Make sure you installed the Safe Exam Browser before.</strong></p>
+                    <p><strong>Make sure you installed the Safe Exam Browser before launching the test.</strong></p>
                     </div>
                    
                     <div className="col-md-12 border-bottom pb-4 pt-4">
