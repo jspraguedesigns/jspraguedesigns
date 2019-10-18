@@ -73,7 +73,7 @@ const Launch = () => {
         <div className="row text-center">
           <div className="col-md-12 mb-4">
             <h1 className="jumbotron-heading">
-              <b>欢迎登入ELC Entry 测试界面。</b>
+              欢迎登入ELC Entry 测试界面。
             </h1>
           </div>
         </div>
@@ -120,10 +120,10 @@ const Launch = () => {
               <div className="col-md-12 border d-flex align-items-stretch step">
               <div className="w-100 p-2 d-flex align-items-center">
               <div className="instruction">
-                  <div className="desktop mr-auto">
+                  <div className="mr-auto">
            
             <h5>Step 2:</h5>
-                <strong><p>Download the test launch file.</p></strong>
+                <strong><p>Download the test launch file elcTestStart.seb.</p></strong>
               </div>
                      
             </div>
@@ -140,10 +140,10 @@ const Launch = () => {
             <div className="col-md-12 border d-flex align-items-stretch step">
               <div className="w-100 p-2 d-flex align-items-center">
               <div className="instruction">
-                  <div className="desktop mr-auto">
+                  <div className="mr-auto">
            
             <h5>Step 3:</h5>
-                <strong><p>Locate the test launch file in your computer's Download folder and drag it to the desktop.</p></strong>
+                <strong><p>Locate the test launch file titled elcTestStart.seb inside of your computer's Download folder.<br/> Drag and drop the file onto the desktop.</p></strong>
               </div>
                      
             </div>
@@ -169,24 +169,21 @@ const Launch = () => {
                 <div className="w-100">
                   <div>
                     <h5>Step 5:</h5>
-                    <p><strong>Enter the Tech Check login ID provided to you by your school’s ELC Assessment Coordinator<br /> This will log you into the practice test.</strong></p> 
+                    <p><strong>Enter the Tech Check login ID provided to you by your school’s ELC Assessment Coordinator<br /> This will log you into the Tech Check. Complete the Tech Check.</strong></p> 
                 </div>
               </div>
             </div>
-            <div className="col-md-12 border d-flex align-items-stretch step p-2 pl-4 pr-4">
-                <div className="w-100">
-                  <div >
-                    <h5>Step 6:</h5>
-                    <p><strong>Make sure you run through the Tech Check to see if your microphone and headsets are functioning properly.</strong></p> 
-                </div>
-              </div>
-            </div>
+      
 
 
             <div className="text-center">
-              <p> <strong> Recommended: Perform trial runs of the practice test using a small group of students to validate that everything is ready</strong><br/>
+              <p> <strong> Recommended: Perform trial runs of the practice test using a small group of students to validate that everything is ready.</strong><br/>
               <Link className="mt-4 mb-4 btn btn-home-top btn btn-secondary" to="trouble_shooting">View our Toubleshooting Guide</Link></p>
             </div>
+            <div className="text-center">
+              <p> <strong> Recommended for Proctor: use the practice test IDs provided to you by your school's ELC coordinator to launch the practice test and fet familiar with the test items to better guide your students. Follow test day procedure bellow.</strong></p>
+            </div>
+
             </div>
 </div>
 
@@ -244,7 +241,7 @@ const Launch = () => {
           <div className="col-md-12 border step p-2 pl-4 pr-4 d-flex align-items-stretch align-items-center">
           <div className="w-100 align-items-center">
            <h5>Step 4:</h5>
-           <strong><p>Update the Student Problem Report if any student experiences a technical problem.</p></strong>
+           <strong><p>Update the Student Problem Report. At the end of the testing session, return all Student Activity and Problem Reports to your school's Assessment Coordinator. If any student experiences a technical problem.</p></strong>
             </div>
           </div>
        

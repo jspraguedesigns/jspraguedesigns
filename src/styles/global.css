@@ -1,4 +1,16 @@
-@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700|Roboto:400,400i,700,700i,900,900i&display=swap');
+
+
+
+  @font-face{ 
+	font-family: 'Open Sans Bold';
+	src: url('../Fonts/opensans-bold-webfont.woff2') format('woff'),
+}
+
+
+@font-face{ 
+	font-family: 'Open Sans';
+	src: url('../Fonts/opensans-regular-webfont.woff') format('woff'),
+}
 .nav-link {
     font-weight: bold;
     color: rebeccapurple !important;
@@ -28,9 +40,9 @@ header {
 }
 
 .brand {
-    font-family: 'Open Sans', sans-serif;
-    font-weight: 900;
+    font-family: 'Open Sans Bold', sans-serif;
     font-style: italic;
+    font-weight: 700;
 }
 
 h1, h2, h3, h4, h5, h6 {
