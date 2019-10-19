@@ -181,15 +181,17 @@ const Launch = () => {
 
               <p><Link className="mt-4 mb-4 btn btn-home-top btn btn-secondary" to="trouble_shooting">View our
                 Toubleshooting Guide</Link></p>
-              <p className="mb-2"><strong> Recommended for Proctor: Use the practice test IDs provided to you by your
+              <p className="mb-2"><strong> Recommended for Proctor:</strong> Use the practice test IDs provided to you
+                by your
                 school's ELC coordinator to launch the practice test and familiarize yourself with the test items. This
-                will help you better guide your students. Follow the test day procedures bellow.</strong></p>
+                will help you better guide your students. Follow the test day procedures below.</p>
             </div>
 
 
             <div className="text-center">
-              <p><strong> Recommended: Perform trial runs of the practice test using a small group of students to
-                validate that everything is ready.</strong><br/></p>
+              <p><strong> Recommended: </strong>Perform trial runs of the practice test using a small group of students
+                to
+                validate that everything is ready.<br/></p>
         
             </div>
 
