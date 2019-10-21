@@ -38,6 +38,14 @@ module.exports = {
                 path: `${__dirname}/src/images`,
             },
         },
+        {
+            resolve: `gatsby-source-filesystem`,
+            options: {
+                name: `software`,
+                path: `${__dirname}/src/static/software/`,
+                ignore: [`**/\.*`], // ignore files starting with a dot
+            },
+        },
         `gatsby-transformer-sharp`,
         `gatsby-plugin-sharp`,
         {
