@@ -18,6 +18,12 @@ strong {
     font-style: bold;
 }
 
+.screenlink {
+
+    color: #007c92;
+    margin-left: 1em;
+    margin-right: .35em;
+}
 header {
     box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.1);
     position: -webkit-sticky;
