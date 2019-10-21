@@ -2,7 +2,7 @@ import React from "react"
 import "jquery/dist/jquery.js"
 import { graphql, Link, useStaticQuery } from "gatsby"
 import $ from "jquery"
-import { osName, osVersion } from "react-device-detect"
+import { MobileView, osName, osVersion, isMobile } from "react-device-detect"
 import plus from "../../images/plus.png"
 import icon from "../../images/DesktopIcon.png"
 import pdf from "../../pdf/ETS_ELC_Student_Activity.pdf"
@@ -12,6 +12,8 @@ import pdf2 from "../../pdf/ETS_ELC_Student_Problem_Report.pdf"
 
 //import openWithWin from "../../images/openWithSEBWin.PNG"
 //import DownloadBlock from "../shared/downloadblock"
+
+
 function openOne() {
   $(".hidden-1").toggleClass("opened")
   $(".icon").toggleClass("active")
@@ -41,6 +43,7 @@ function openSix() {
   $(".hidden-6").toggleClass("opened")
   $(".icon6").toggleClass("active")
 }
+
 
 
 const Launch = () => {
@@ -104,19 +107,19 @@ const Launch = () => {
                 <i>On each computer that the student will use for testing:</i>
               </p>
             </div>
-            <div className="mobile warning">
+            <MobileView className="warning">
               <strong>
                 Your device is not supported. To launch the placement test,
                 login using a Windows PC with a Windows 7, 8.1 or 10 operating
                 system, or a Macintosh with a Mac OS X v10.12 or higher
                 operating system.
               </strong>
-            </div>
+            </MobileView>
           </div>
           <div className="row d-flex justify-content-center mt-4">
             <div className="col-md-12 border d-flex align-items-stretch step">
               <div className="w-100 p-2 d-flex align-items-center">
-                <div className="mobile">
+              <MobileView>
                   <h5>
                     Step 1: Download &amp; install Secure Browser on a supported
                     device.
@@ -124,9 +127,9 @@ const Launch = () => {
                   <strong>
                     <p>Save the test launch file to the desktop.</p>
                   </strong>
-                </div>
+                </MobileView>
                 <div className="instruction">
-                  <div className="desktop mr-auto">
+                  <div id="desktop" className=" mr-auto">
                     <h5>Step 1:</h5>
                     <p>{downloadText}</p>
                   </div>
@@ -146,7 +149,7 @@ const Launch = () => {
                     </p>
                   </div>
                 </div>
-                <div className="link ml-auto desktop">
+                <div id="desktop" className="link ml-auto">
                   <div>
                     <a
                       href={downloadLink}
@@ -171,7 +174,7 @@ const Launch = () => {
                     <p>Download the test launch file elcTestStart.seb.</p>
                   </div>
                 </div>
-                <div className="link ml-auto desktop">
+                <div id="desktop" className="link ml-auto">
                   <a
                     href="https://researchtech1.ets.org/c3.net/Falcon/FalconStartProd.seb"
                     className="btn btn-home-top btn btn-secondary"

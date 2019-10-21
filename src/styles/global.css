@@ -43,6 +43,7 @@ header {
     font-family: 'Open Sans Bold', sans-serif;
     font-style: italic;
     font-weight: 700;
+    color: #007c92;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -955,9 +956,7 @@ span.comments{
     display: block;
 }
 
-.mobile{
-    display: none;
-}
+
  .card {
     width: 100% !important;
     margin-bottom: 2em !important;
@@ -1021,15 +1020,13 @@ span.comments{
     border-radius: 5px;
     color: red;
 }
+.screenlink{
+    margin-left: 1em;
+    margin-right: .5em;
+}
 
 @media (max-width: 768px) {
-    .desktop{
-        display:none;
-    }
 
-    .mobile{
-        display: block;
-    }
     .testing-req {
         height: 112px;
     }
