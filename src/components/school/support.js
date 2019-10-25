@@ -3,7 +3,7 @@ import  React from 'react'
 
 const Support = () => {
     return (
-        <div className="container">
+        <div className="container bodyelc">
         <div className="row pt-4">
         <div className="col-md-12">
           <h2>Support Materials</h2>

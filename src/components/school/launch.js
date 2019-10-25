@@ -40,6 +40,8 @@ function openSix() {
 }
 
 
+
+
 const Launch = () => {
   console.log(osName)
   let supportedOS = false
@@ -159,7 +161,6 @@ const Launch = () => {
                 </div>
 
               </div>
-
 
 
             </div>

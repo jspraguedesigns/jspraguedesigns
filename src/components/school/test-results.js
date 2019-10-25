@@ -1,11 +1,14 @@
 import React from "react"
 import {Link} from "gatsby"
 import Comments from "../comments"
+import Popup from "../popup"
+
+
 
 const TestResults = () => {
   return (
 <div>
-    {/*<Popup/>*/}
+    <Popup/>
 
       <div className="wrapper">
         <Comments/>

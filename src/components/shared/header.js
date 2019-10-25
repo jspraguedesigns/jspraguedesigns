@@ -8,6 +8,25 @@ import {getUserInfo, logout} from "../../utils/auth"
 const Header = () => {
   return (
       <div>
+        <div className="login container-fluid d-flex">
+        <div className="ml-auto">
+        <div className="navbar-text text-wrap font-italic">
+                {getUserInfo().name ? getUserInfo().name : "friend"}
+              </div>
+              &nbsp;
+        <Link
+                  href="#logout"
+                  onClick={e => {
+                    logout();
+                    e.preventDefault()
+                  }}
+              >
+                Log Out
+              </Link>
+           
+        </div>
+ 
+        </div>
         <Navbar bg="light" expand="md">
           <Navbar.Brand href="/">
             <div className="navbar-brand  d-flex align-items-center">
@@ -54,18 +73,7 @@ const Header = () => {
                 Test Report <small>(Beta)</small>
               </Link>
 
-              <Nav.Link
-                  href="#logout"
-                  onClick={e => {
-                    logout();
-                    e.preventDefault()
-                  }}
-              >
-                Log Out
-              </Nav.Link>
-              <div className="navbar-text text-wrap font-italic">
-                {getUserInfo().name ? getUserInfo().name : "friend"}
-              </div>
+         
             </Navbar.Collapse>
           </Nav>
         </Navbar>
