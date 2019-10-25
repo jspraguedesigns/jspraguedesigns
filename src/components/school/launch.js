@@ -22,10 +22,7 @@ function openTwo() {
   $(".icon2").toggleClass("active")
 }
 
-function openThree() {
-  $(".hidden-3").toggleClass("opened")
-  $(".icon3").toggleClass("active")
-}
+
 
 function openFour() {
   $(".hidden-4").toggleClass("opened")
@@ -94,14 +91,17 @@ const Launch = () => {
         <div className="test-day">
           <div className="row mt-4">
             <div className="col-md-12 text-center">
-              <h2>Before Test Day</h2>
-
-              <p>
-                <strong>Technical Co-Ordinator: </strong>
-                <i>Before starting, quit all programs.</i>
+              <h2>Initial Setup And Technical Check</h2>
+              <p><strong>To be performed by Technical Co-Ordinator <u>before</u> test day</strong>
+            </p>
+            <hr/>
+              <p className="mb-4">
+               
+                <i>Before test day, please go through the following steps to ensure your technical equipment is optimal for running the ELC Entry Test and to ensure a smooth testing experience for students. </i>
               </p>
               <p>
-                <i>On each computer that the student will use for testing:</i>
+
+                <i>Before starting, quit all programs. <br/>On each computer that the student will use for testing:</i>
               </p>
             </div>
             <div className="mobile warning">
@@ -260,7 +260,7 @@ const Launch = () => {
         <div className="test-day mt-4 mb-4">
           <div className="row pb-4">
             <div className="col-md-12 text-center">
-              <h2>On Test Day</h2>
+              <h2>ELC Entry Test</h2>
 
               <p>
                 <strong>Proctor: </strong>
