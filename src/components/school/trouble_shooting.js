@@ -1,5 +1,11 @@
 import React from "react"
 import { Link } from "gatsby"
+import { navigate } from '@reach/router';
+
+
+function navigatetothis (){
+  navigate('/launch#requirements')
+}
 
 const TroubleShooting = () => {
   return (
@@ -69,12 +75,13 @@ const TroubleShooting = () => {
             <div className="col-md-12 border-bottom pb-4 pt-4">
             <h5> When I enter the Student Login ID, I recieve a notification that says "loading activities…“ that lasts for 1-5 minutes. </h5>
 
-            <p>Ensure that your institutions bandwidth is <strong>at least 3 Mbps for every 30 computers concurrently testing.</strong> If you cannot verify your school's bandwidth, follow the steps bellow.</p>
+           <div className="jumplink" onClick ={navigatetothis} >Click here to review all system and bandwidth requirements.</div>
+        
             <ol>
               <li>Test the Speed test on one computer that will be used in your testing lab at <a href="https://www.speedtest.net/">speedtest.net</a></li>
               <li>Conduct a latency test using <a href="https://www.cloudping.info/">cloudping.info</a> </li>
               <li>Conduct a detailed bandwidth test using <a href="https://cloudharmony.com/speedtest-for-aws">https://cloudharmony.com/speedtest-for-aws</a>   This test will take atleast 40 minutes to complete.</li> 
-              <li> Email the results to <a href="mailto:innovations@ets.org">innovations@ets.org</a></li>
+              <li> Email the results to ETS.</li>
             </ol>
             
             </div>

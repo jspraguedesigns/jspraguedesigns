@@ -76,6 +76,14 @@ h2.tag {
     margin-left: 1em;
     margin-right: .35em;
 }
+
+.jumplink{
+    color: #007c92;
+}
+
+.jumplink:hover{
+    color: #003B46;
+}
 .rawScore {
     font-size: 2em;
     display: block;
@@ -574,7 +582,7 @@ img {
             rgba(0, 124, 146, 090)
     ),
     url('../static/img/cooperation-coworking-day-1543895.jpg') center;
-    height: 70vh;
+    min-height: calc(100vh - 160px);
     background-size: cover;
 }
 

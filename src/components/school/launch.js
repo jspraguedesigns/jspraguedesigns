@@ -7,6 +7,7 @@ import plus from "../../images/plus.png"
 import icon from "../../images/DesktopIcon.png"
 import pdf from "../../pdf/ETS_ELC_Student_Activity.pdf"
 import pdf2 from "../../pdf/ETS_ELC_Student_Problem_Report.pdf"
+
 // import sebwin from "../../static/software/SafeExamBrowserInstaller.exe"
 // import sebmac from "../../static/software/SafeExamBrowser2.1.3.dmg"
 
@@ -99,7 +100,7 @@ const Launch = () => {
             <hr/>
               <p className="mb-4">
                
-                <i>Before test day, please go through the following steps to ensure your technical equipment is optimal for running the ELC Entry Test and to ensure a smooth testing experience for students. </i>
+                <i><strong>Before test day</strong>, please go through the following steps to ensure your technical equipment is optimal for running the ELC Entry Test and to ensure a smooth testing experience for students. </i>
               </p>
               <p>
 
@@ -284,7 +285,7 @@ const Launch = () => {
                 </i>
               </p>
               <br/>
-
+  <h4>On Test Day:</h4>
               <p>
                 <i>On each computer that the student will use for testing:</i>
               </p>
@@ -346,7 +347,7 @@ const Launch = () => {
           </p>
         </div>
 
-        <div className="test-day mb-4">
+        <div id="requirements" className="test-day mb-4">
           <div className="row mt-4">
             <div className="col-md-12 text-center mb-4">
               <h2>ETS ELC System And Bandwidth Requirements</h2>
