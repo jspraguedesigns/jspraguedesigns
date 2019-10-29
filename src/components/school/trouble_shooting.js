@@ -1,5 +1,11 @@
 import React from "react"
 import { Link } from "gatsby"
+import { navigate } from "@reach/router"
+
+
+function navigatetothis() {
+  navigate("/launch#requirements")
+}
 
 const TroubleShooting = () => {
   return (
@@ -26,7 +32,7 @@ const TroubleShooting = () => {
               <p>Copy and paste is disabled during testing. Student Login ID must be typed in manually.</p>
             </div>
             <div className="col-md-12 border-bottom pb-4 pt-4">
-              <h5>Error Message: Received an error message “Cant open this type of file (.seb)."</h5>
+              <h5>Error Message: Recieved an error message “Cant open this type of file (.seb)."</h5>
               <p>Make sure you installed the <strong>Safe Exam Browser</strong> before launching the test.</p>
             </div>
             <div className="col-md-12 border-bottom pb-4 pt-4">
@@ -66,7 +72,26 @@ const TroubleShooting = () => {
 
               <p>Make sure your are using a supported microphone (bluetooth microphones may not work).</p>
             </div>
+            <div className="col-md-12 border-bottom pb-4 pt-4">
+              <h5> When I enter the Student Login ID, I recieve a notification that says "loading activities…“ that
+                lasts for 1-5 minutes. </h5>
 
+              <div className="jumplink" onClick={navigatetothis}>Click here to review all system and bandwidth
+                requirements.
+              </div>
+
+              <ol>
+                <li>Test the Speed test on one computer that will be used in your testing lab at <a
+                  href="https://www.speedtest.net/">speedtest.net</a></li>
+                <li>Conduct a latency test using <a href="https://www.cloudping.info/">cloudping.info</a></li>
+                <li>Conduct a detailed bandwidth test using <a
+                  href="https://cloudharmony.com/speedtest-for-aws">https://cloudharmony.com/speedtest-for-aws</a> This
+                  test will take atleast 40 minutes to complete.
+                </li>
+                <li> Email the results to ETS.</li>
+              </ol>
+
+            </div>
           </div>
 
 

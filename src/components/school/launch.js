@@ -7,6 +7,7 @@ import plus from "../../images/plus.png"
 import icon from "../../images/DesktopIcon.png"
 import pdf from "../../pdf/ETS_ELC_Student_Activity.pdf"
 import pdf2 from "../../pdf/ETS_ELC_Student_Problem_Report.pdf"
+
 // import sebwin from "../../static/software/SafeExamBrowserInstaller.exe"
 // import sebmac from "../../static/software/SafeExamBrowser2.1.3.dmg"
 
@@ -20,11 +21,6 @@ function openOne() {
 function openTwo() {
   $(".hidden-2").toggleClass("opened")
   $(".icon2").toggleClass("active")
-}
-
-function openThree() {
-  $(".hidden-3").toggleClass("opened")
-  $(".icon3").toggleClass("active")
 }
 
 function openFour() {
@@ -41,7 +37,6 @@ function openSix() {
   $(".hidden-6").toggleClass("opened")
   $(".icon6").toggleClass("active")
 }
-
 
 const Launch = () => {
   console.log(osName)
@@ -73,7 +68,7 @@ const Launch = () => {
   }
   const data = useStaticQuery(graphql`
       query {
-          allFile(filter: {sourceInstanceName: {eq: "software"}}) {
+          allFile(filter: { sourceInstanceName: { eq: "software" } }) {
               edges {
                   node {
                       publicURL
@@ -94,14 +89,28 @@ const Launch = () => {
         <div className="test-day">
           <div className="row mt-4">
             <div className="col-md-12 text-center">
-              <h2>Before Test Day</h2>
-
+              <h2>Initial Setup And Technical Check</h2>
               <p>
-                <strong>Technical Co-Ordinator: </strong>
-                <i>Before starting, quit all programs.</i>
+                <strong>
+                  To be performed by Technical Co-Ordinator <u>before</u> test
+                  day
+                </strong>
+              </p>
+              <hr/>
+              <p className="mb-4">
+                <i>
+                  <strong>Before test day</strong>, please go through the
+                  following steps to ensure your technical equipment is optimal
+                  for running the ELC Entry Test and to ensure a smooth testing
+                  experience for students.{" "}
+                </i>
               </p>
               <p>
-                <i>On each computer that the student will use for testing:</i>
+                <i>
+                  On each computer that the student will use for testing,
+                  complete steps 1-5 listed below. Before starting, exit all
+                  running programs.
+                </i>
               </p>
             </div>
             <div className="mobile warning">
@@ -132,15 +141,19 @@ const Launch = () => {
                   </div>
                   <div className="mt-4">
                     <p>
-                      If you have trouble with the download, try the alternate download link for your device
+                      If you have trouble with the download, try the alternate
+                      download link for your device
                       {data.allFile.edges.map((file, index) => {
                         return (
-
-                          <a className="screenlink" href={file.node.publicURL} download>
-                            {file.node.name === "SafeExamBrowserInstaller" ? "Windows" : "Mac"}
+                          <a
+                            className="screenlink"
+                            href={file.node.publicURL}
+                            download
+                          >
+                            {file.node.name === "SafeExamBrowserInstaller"
+                              ? "Windows"
+                              : "Mac"}
                           </a>
-
-
                         )
                       })}
                     </p>
@@ -155,13 +168,8 @@ const Launch = () => {
                       Download Secure Browser
                     </a>
                   </div>
-
                 </div>
-
               </div>
-
-
-
             </div>
 
             <div className="col-md-12 border d-flex align-items-stretch step">
@@ -222,8 +230,8 @@ const Launch = () => {
                   <p>
                     Enter the Tech Check login ID provided to you by your
                     school’s ELC Assessment Coordinator.
-                    <br/> This will log you into the Tech Check. Complete the
-                    Tech Check.
+                    <br/> This will log you into the Technical Check test.
+                    Complete the Technical Check.
                   </p>
                 </div>
               </div>
@@ -260,7 +268,7 @@ const Launch = () => {
         <div className="test-day mt-4 mb-4">
           <div className="row pb-4">
             <div className="col-md-12 text-center">
-              <h2>On Test Day</h2>
+              <h2>ELC Entry Test</h2>
 
               <p>
                 <strong>Proctor: </strong>
@@ -283,7 +291,7 @@ const Launch = () => {
                 </i>
               </p>
               <br/>
-
+              <h4>On Test Day:</h4>
               <p>
                 <i>On each computer that the student will use for testing:</i>
               </p>
@@ -345,7 +353,7 @@ const Launch = () => {
           </p>
         </div>
 
-        <div className="test-day mb-4">
+        <div id="requirements" className="test-day mb-4">
           <div className="row mt-4">
             <div className="col-md-12 text-center mb-4">
               <h2>ETS ELC System And Bandwidth Requirements</h2>
