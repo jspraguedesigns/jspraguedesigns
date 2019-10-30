@@ -51,11 +51,25 @@ h1, h2, h3, h4, h5, h6 {
     line-height: 1.2;
 }
 
-span.steps{
-    color: #007c92;
+.steps{
     font-weight: 700;
+    font-size: 2.25em;
+    margin: 10px AUTO;
+    border: 4px solid #fff;
+    display: block;
+    width: 80px;
+    height: 80px;
+    border-radius: 100px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
+
+.steps span{
+    font-size: .75em;
+}
 h2.tag {
     font-size: 1.2em;
     line-height: 1.625;
@@ -83,7 +97,12 @@ h2.tag {
     margin-right: .35em;
     text-decoration: underline;
 }
-
+a.green{
+    color: #007c92 !important;
+}
+a.green:hover{
+    color: rebeccapurple !important;
+}
 .screenlink:hover {
 
     text-decoration: underline;
@@ -1046,7 +1065,7 @@ span.comments {
 .head-banner{
 background-color:#007c92;
 color: #fff;
-height: 210px;
+height: 200px;
 }
 
 h1.jumbotron-heading{
@@ -1107,12 +1126,20 @@ h1.jumbotron-heading{
 ul.launch{
     margin: 0;
     padding-left: 0;
--webkit-column-count: 2;
--moz-column-count: 2;
-column-count: 2;
--webkit-column-gap: 20px;
--moz-column-gap: 20px;
-column-gap: 20px;
+    display: flex;
+justify-content: center;
+}
+
+ul.launch>li{
+    display: inline-block;
+    background-color: rebeccapurple;
+    color: #fff;
+    border-radius: 20px;
+    padding: 1em;
+    width: 30%;
+    margin-left: 0;
+    margin: 1%;
+    box-shadow: 5px 5px 5px rgb(179, 179, 179);
 }
 
 ul ul{
@@ -1125,7 +1152,7 @@ ul li{
     page-break-inside: avoid;
     break-inside: avoid;
     margin-left: 28px;
-    list-style: square;
+
 }
 
 ul.page{
@@ -1141,9 +1168,16 @@ list-style: none;
 ul.page>li a{
 display: inline;
 text-decoration: underline;
-color: #007c92;
+color: #fff;
+font-weight: bold;
 }
 
+ul.page>li a:hover{
+    display: inline;
+    text-decoration: underline;
+    color: rgb(213, 213, 213);
+    font-weight: bold;
+    }
 @media (max-width: 768px) {
     .desktop {
         display: none;

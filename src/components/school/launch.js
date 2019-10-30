@@ -79,14 +79,14 @@ const Launch = () => {
       console.log("windows" + osName)
       downloadLink =
         "https://github.com/SafeExamBrowser/seb-win/releases/download/v2.3/SafeExamBrowserInstaller.exe"
-      downloadText = downloadText + osName + " " + osVersion + " device" + ". "
+      downloadText = downloadText + osName + " " + osVersion + " device by clicking this link." 
       supportedOS = true
       break
     case "Mac OS":
       // code block
       downloadLink =
         "https://github.com/SafeExamBrowser/seb-mac/releases/download/2.1.3/SafeExamBrowser-2.1.3.dmg"
-      downloadText = downloadText + osName + " " + osVersion + " device" + ". "
+      downloadText = downloadText + osName + " " + osVersion + " device by clicking this link."
       supportedOS = true
       break
     default:
@@ -110,8 +110,8 @@ const Launch = () => {
   return (
     <div className="container-fluid bodyelc">
       <main role="main">
-        <div className="row text-center head-banner mt-4">
-          <div className="col-md-12 mt-4">
+        <div className="row text-center head-banner">
+          <div className="col-md-12 d-flex align-items-center justify-content-center">
             <h1 className="jumbotron-heading">欢迎登入ELC Entry 测试界面。</h1>
             <div className="section-menu">
 
@@ -133,18 +133,28 @@ const Launch = () => {
         
           <div className="row d-flex justify-content-center mt-4">
             <div className="col-md-12 d-flex align-items-stretch ">
-              <div className="w-100 p-2 d-flex align-items-center">
+            
               
                 <div className="instruction">
                 <h2 className="mb-4">Tech Co-Ordinator's Initial Setup And Technical Check</h2>
-                <p><strong>Before test day,</strong> please go through the following steps to ensure your technical equipment is optimal for running the ELC Entry Test and to ensure a smooth testing experience for students. On each computer that the student will use for testing, quit <u>all programs</u> and complete the following steps:</p>
+                <p><strong>Before test day,</strong> please go through the following steps to ensure your technical equipment is optimal for running the ELC Entry Test and to ensure a smooth testing experience for students.</p> <br/>
+                <p>On each computer that the student will use for testing, quit <u>all programs</u> and complete the following steps:</p>
+                
+                </div>
+                </div>
+                </div>
+                </div>
+            
+                <div className="container-fluid">
+                <div className="row d-flex justify-content-center mb-4">
+            <div className="col-md-12 d-flex align-items-stretch ">
+              <div className="w-100 p-2 d-flex align-items-center">
+              <div className="instruction">
                 <ul className="launch mt-4">
-                  <li> <p> <span className="steps">Step 1:</span> {downloadText}<a href={downloadLink} className="screenlink">
-                      Download Secure Browser
-                    </a></p><br/>
-                    <ul>
-                      <li>
-                      <p>If you have trouble with the download, try the alternate download link for your device. &nbsp;
+                  <li ><div className="steps"> 1</div> <p><a href={downloadLink} className="screenlink">{downloadText}</a></p>
+                     <br/>
+                  
+                      <p><i>If you have trouble with the download, try the alternate download link for your device.</i> &nbsp;
                       {data.allFile.edges.map((file, index) => {
                         return (
 
@@ -155,34 +165,33 @@ const Launch = () => {
 
                         )
                       })}</p>
-                      </li>
-                    </ul>
+                
              
                   
                    </li>
-                   <li>
-                   <p><span className="steps">Step 2:</span> <a
+                   <li className="inactive-step">
+                   <p><div className="steps">2</div> <a
                     href="https://researchtech1.ets.org/c3.net/Falcon/FalconStartProd.seb"
                     className="screenlink"
-                  > Click to download test launch file.
-                  </a> The icon will look similar to the icon bellow.
+                  > Click this link to download test launch file.
+                  </a> </p>
+                   </li>
+                   <li>
+                   <div className="steps">3</div> Drag and drop the Test Launch file from
+                      your computer's Download folder onto the desktop. The icon will look similar to the icon bellow.
                       <div className="icon-box pt-2 text-center">
-                <img className="icon-pic" src={icon} alt="icon"/>
+                <img className="icon-pic mt-4" src={icon} alt="icon"/>
                 <br/>
                 <small>
                   <i>elcTestStart.seb</i>
                 </small>
-              </div></p>
-                   </li>
-                   <li>
-                   <span className="steps">Step 3:</span> Locate the test launch file <i>"elcTestStart.seb"</i> inside
-                      your computer's Download folder. Drag and drop the file onto the desktop.
+              </div>
                   
                    </li>
                    <li>
                    
                   <p>
-                    <span className="steps">Step 4:</span> Double click the launch file that you saved to your desktop. 
+                    <div className="steps">4</div>To open the Test Launch file, double click the icon <i>"elcTestStart.seb"</i> on your desktop that you copied to your desktop. 
                   </p>
 
                     
@@ -190,8 +199,8 @@ const Launch = () => {
                    <li>
                    
                    <p>
-                     <span className="steps">Step 5:</span>    Enter the Tech Check login ID provided to you by your
-                    school’s ELC Assessment Coordinator. This will log you into the Tech Check. Complete the
+                     <div className="steps">5</div>Log into the Tech Check by entering the ID provided to you by your
+                    school’s ELC Assessment Coordinator. <br/> <br/>Complete the
                     Tech Check.
                    </p>
  
@@ -235,8 +244,7 @@ const Launch = () => {
         </div>
         </li>
 <li id="test-day" className="inactive-field">
- <div className="container">
- <div className="mt-4 mb-4">
+ <div className="container mt-4 mb-4">
           <div className="row pb-4">
             <div className="col-md-12">
               <h2>ELC Entry Test</h2>
@@ -248,11 +256,11 @@ const Launch = () => {
                   test today.
            
                   Download and print:{" "}
-                  <a target="_blank" rel="noopener noreferrer" href={pdf}>
+                  <a target="_blank" rel="noopener noreferrer" className="green" href={pdf}>
                     Student Activity Sheet
                   </a>{" "}
                   and{" "}
-                  <a target="_blank" rel="noopener noreferrer" href={pdf2}>
+                  <a target="_blank" rel="noopener noreferrer" className="green" href={pdf2}>
                     Student Problem Report
                   </a>
                
@@ -264,54 +272,56 @@ const Launch = () => {
               </p>
             </div>
           </div>
-
+</div>
+<div className="container-fluid">
           <div className="row d-flex">
-            <div className="col-md-12 border d-flex align-items-center step p-2 p-2 pl-4 pr-4">
-              <div className="instruction w-100">
-                <h5> Step 1:</h5>
+        <ul className="launch mt-4">
+          <li>
+          <div className="steps">
+          1
+          </div>
                 <p>
                   Double click the ELC Test Launch File from the desktop to
                   start the test.
                 </p>
-              </div>
-              <div className="icon-box text-center">
+                <div className="icon-box text-center mt-4">
                 <img className="icon-pic" src={icon} alt="icon"/>
                 <br/>
                 <small>
                   <i>Launch icon depicted above</i>
                 </small>
               </div>
-            </div>
-
-            <div className="col-md-12 border step d-flex align-items-stretch align-items-center p-2 pl-4 pr-4">
-              <div className="w-100">
-                <h5>Step 2:</h5>
+          </li>
+          <li>
+          <div className="steps">
+          2
+          </div>
                 <p>
                   Ask students to enter their Login ID provided by ETS to your
                   school’s ELC Assessment Coordinator.
                 </p>
-              </div>
-            </div>
-
-            <div className="col-md-12  border  step d-flex align-items-stretch align-items-center  p-2 pl-4 pr-4">
-              <div className="w-100 align-items-center">
-                <h5>Step 3:</h5>
+          </li>
+           <li>
+           <div className="steps">
+          3
+          </div>
                 <p>
                   Complete the Student Activity Sheet, listing all students who
                   take or attempt to take the test
                 </p>
-              </div>
-            </div>
-            <div className="col-md-12 border step p-2 pl-4 pr-4 d-flex align-items-stretch align-items-center">
-              <div className="w-100 align-items-center">
-                <h5>Step 4:</h5>
+           </li>
+              <li>
+              <div className="steps">
+          4
+          </div>
                 <p>
                   Update the Student Problem Report if any student experiences a
                   technical problem.
                 </p>
-              </div>
-            </div>
-          </div>
+              </li>
+             
+            
+          </ul>
           <p>
             <strong>
               At the end of the testing session, return all Student Activity and
@@ -373,7 +383,7 @@ const Launch = () => {
                   </tbody>
                   <tfoot>
                   <tr>
-                    <td colSpan="2">
+                    <td coldiv="2">
                       Recommended: Set up computer user accounts dedicated to
                       testing and disable digital assistants (Siri, Cortana),
                       voice dictation, and unsupported screen readers
@@ -616,9 +626,9 @@ const Launch = () => {
            <div className="jumplink" onClick ={openSystem} >Click here to review all system and bandwidth requirements.</div>
         
             <ol>
-              <li>Test the Speed test on one computer that will be used in your testing lab at <a href="https://www.speedtest.net/">speedtest.net</a></li>
-              <li>Conduct a latency test using <a href="https://www.cloudping.info/">cloudping.info</a> </li>
-              <li>Conduct a detailed bandwidth test using <a href="https://cloudharmony.com/speedtest-for-aws">https://cloudharmony.com/speedtest-for-aws</a>   This test will take atleast 40 minutes to complete.</li> 
+              <li>Test the Speed test on one computer that will be used in your testing lab at <a className="green" href="https://www.speedtest.net/">speedtest.net</a></li>
+              <li>Conduct a latency test using <a  className="green" href="https://www.cloudping.info/">cloudping.info</a> </li>
+              <li>Conduct a detailed bandwidth test using <a className="green" href="https://cloudharmony.com/speedtest-for-aws">https://cloudharmony.com/speedtest-for-aws</a>   This test will take atleast 40 minutes to complete.</li> 
               <li> Email the results to ETS.</li>
             </ol>
             
