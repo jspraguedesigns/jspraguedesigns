@@ -209,19 +209,7 @@ const Launch = () => {
                    
                 </ul>
        
-              <p className="mb-2">
-                <strong> Recommended for Proctor:</strong> Use the practice test
-                IDs provided to you by your school's ELC coordinator to launch
-                the practice test and familiarize yourself with the test items.
-                This will help you better guide your students. Follow the test
-                day procedures below.
-              </p>
-              <p>
-                <strong> Recommended: </strong>Perform trial runs of the
-                practice test using a small group of students to validate that
-                everything is ready.
-                <br/>
-              </p>
+         
                 </div>
             
                 
@@ -237,14 +225,32 @@ const Launch = () => {
 
         
 
-
+<div className="container">
+  <div className="row">
+      <div className="col-md-12">
+      <p className="mb-2">
+                <strong> Recommended for Proctor:</strong> Use the practice test
+                IDs provided to you by your school's ELC coordinator to launch
+                the practice test and familiarize yourself with the test items.
+                This will help you better guide your students. Follow the test
+                day procedures below.
+              </p>
+              <p>
+                <strong> Recommended: </strong>Perform trial runs of the
+                practice test using a small group of students to validate that
+                everything is ready.
+                <br/>
+              </p>
+      </div>
+  </div>
+</div>
   
       
           </div>
         </div>
         </li>
 <li id="test-day" className="inactive-field">
- <div className="container mt-4 mb-4">
+ <div className="container mt-4">
           <div className="row pb-4">
             <div className="col-md-12">
               <h2>ELC Entry Test</h2>
@@ -268,14 +274,14 @@ const Launch = () => {
               <br/>
  
               <p>
-                <i>On each computer that the student will use for testing:</i>
+               On each computer that the student will use for testing:
               </p>
             </div>
           </div>
 </div>
 <div className="container-fluid">
           <div className="row d-flex">
-        <ul className="launch mt-4">
+        <ul className="launch">
           <li>
           <div className="steps">
           1
@@ -322,13 +328,20 @@ const Launch = () => {
              
             
           </ul>
-          <p>
+     
+        </div>
+ </div>
+ <div className="container mt-4 mb-4">
+                      <div className="row">
+                        <div className="col-md-12">
+                        <p>
             <strong>
               At the end of the testing session, return all Student Activity and
               Problem Reports to your school's Assessment Coordinator.
             </strong>
           </p>
-        </div>
+                        </div>
+                      </div>
  </div>
 </li>
 
