@@ -1078,6 +1078,7 @@ h1.jumbotron-heading{
     left: 0;
     right: 0;
     width: 100%;
+    background-color: #333
 }
 
 .section-menu > ul {
@@ -1116,11 +1117,19 @@ h1.jumbotron-heading{
 }
 
 
+.section-menu a:hover {
+    background-color: rebeccapurple;
+}
+
  li.selection a {
     background-color: #f7f7f7;
     color: #2C2D30;
     border-top-left-radius: 4px;
     border-top-right-radius: 4px;
+}
+li.selection a:hover{
+    color: rebeccapurple;
+    background-color: #f7f7f7;
 }
 
 ul.launch{

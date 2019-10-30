@@ -173,12 +173,9 @@ const Launch = () => {
                    <p><div className="steps">2</div> <a
                     href="https://researchtech1.ets.org/c3.net/Falcon/FalconStartProd.seb"
                     className="screenlink"
-                  > Click this link to download test launch file.
-                  </a> </p>
-                   </li>
-                   <li>
-                   <div className="steps">3</div> Drag and drop the Test Launch file from
-                      your computer's Download folder onto the desktop. The icon will look similar to the icon bellow.
+                  > Click this link to download Test Launch file.
+                  </a> </p><br/>
+                  <p>Locate the downloaded <strong>Test Launch</strong> file on your computer and drag the icon to the desktop. The icon will look similar to the icon below.</p>
                       <div className="icon-box pt-2 text-center">
                 <img className="icon-pic mt-4" src={icon} alt="icon"/>
                 <br/>
@@ -186,12 +183,11 @@ const Launch = () => {
                   <i>elcTestStart.seb</i>
                 </small>
               </div>
-                  
                    </li>
+                 
                    <li>
-                   
                   <p>
-                    <div className="steps">4</div>To open the Test Launch file, double click the icon <i>"elcTestStart.seb"</i> on your desktop that you copied to your desktop. 
+                    <div className="steps">3</div>To open the Test Launch file, double click the icon <i>"elcTestStart.seb"</i> on your desktop that you copied to your desktop. 
                   </p>
 
                     
@@ -199,7 +195,7 @@ const Launch = () => {
                    <li>
                    
                    <p>
-                     <div className="steps">5</div>Log into the Tech Check by entering the ID provided to you by your
+                     <div className="steps">4</div>Log into the Tech Check by entering the ID provided to you by your
                     school’s ELC Assessment Coordinator. <br/> <br/>Complete the
                     Tech Check.
                    </p>
@@ -259,7 +255,7 @@ const Launch = () => {
                 <strong>Proctor: </strong>
           
                   Confirm that you have login ID for all students taking the
-                  test today.
+                  test today.<br/>
            
                   Download and print:{" "}
                   <a target="_blank" rel="noopener noreferrer" className="green" href={pdf}>
