@@ -4,9 +4,11 @@ import { graphql, Link, useStaticQuery } from "gatsby"
 import $ from "jquery"
 import { osName, osVersion } from "react-device-detect"
 import plus from "../../images/plus.png"
+import warning from "../../images/exclamation-triangle-solid.png"
 import icon from "../../images/DesktopIcon.png"
 import pdf from "../../pdf/ETS_ELC_Student_Activity.pdf"
 import pdf2 from "../../pdf/ETS_ELC_Student_Problem_Report.pdf"
+import Comments from "../comments"
 
 // import sebwin from "../../static/software/SafeExamBrowserInstaller.exe"
 // import sebmac from "../../static/software/SafeExamBrowser2.1.3.dmg"
@@ -109,6 +111,7 @@ const Launch = () => {
   `)
   return (
     <div className="container-fluid bodyelc">
+    <Comments/>
       <main role="main">
         <div className="row text-center head-banner">
           <div className="col-md-12 d-flex align-items-center justify-content-center">
@@ -138,6 +141,7 @@ const Launch = () => {
                 <div className="instruction">
                 <h2 className="mb-4">Tech Co-Ordinator's Initial Setup And Technical Check</h2>
                 <p><strong>Before test day,</strong> please go through the following steps to ensure your technical equipment is optimal for running the ELC Entry Test and to ensure a smooth testing experience for students.</p> <br/>
+                <p>Be sure to have proper microphones and headphones available, as you will be performing testing these components int he steps below.</p><br/>
                 <p>On each computer that the student will use for testing, quit <u>all programs</u> and complete the following steps:</p>
                 
                 </div>
@@ -170,25 +174,29 @@ const Launch = () => {
                   
                    </li>
                    <li className="inactive-step">
-                   <p><div className="steps">2</div> <a
-                    href="https://researchtech1.ets.org/c3.net/Falcon/FalconStartProd.seb"
+                   <p><div className="steps">2</div> 
+                  <div className="warning-box">
+                
+                  <div className="message mb-4">
+                  <strong>Warning! Do not open the Test Launch file in the browser. </strong> 
+                  </div>
+                  <p>Click the link below to download the <strong>Test Launch</strong> file titled <i>"elcTestStart.seb"</i>.</p><br/><p>Once downloaded, locate and drag the file onto the desktop. Normally you will be able to find it in your download folder, depending on your download settings. </p> 
+                  </div>
+                   
+                   <a
+                    href="https://researchtech1.ets.org/c3.net/Falcon/elcTestStart.seb"
                     className="screenlink"
                   > Click this link to download Test Launch file.
                   </a> </p><br/>
-                  <p>Locate the downloaded <strong>Test Launch</strong> file on your computer and drag the icon to the desktop. The icon will look similar to the icon below.</p>
-                      <div className="icon-box pt-2 text-center">
-                <img className="icon-pic mt-4" src={icon} alt="icon"/>
-                <br/>
-                <small>
-                  <i>elcTestStart.seb</i>
-                </small>
-              </div>
+              
                    </li>
                  
                    <li>
                   <p>
-                    <div className="steps">3</div>To open the Test Launch file, double click the icon <i>"elcTestStart.seb"</i> on your desktop that you copied to your desktop. 
+                    <div className="steps">3</div>To open the Test Launch file, double click the icon <i>"elcTestStart.seb" </i> that you copied to your desktop. 
                   </p>
+                      <br/>
+                  <i>Once the test is launched, copy and paste will be disabled. Please have a hard copy of your Log In ID's available.</i>
 
                     
                    </li>

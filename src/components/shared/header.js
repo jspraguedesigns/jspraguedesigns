@@ -57,9 +57,6 @@ const Header = () => {
                 <Link className="dropdown-item" to="/app/support">
                   Support Materials
                 </Link>
-                <Link className="dropdown-item" to="/app/teacher_training">
-                  Training
-                </Link>
                 <Link className="dropdown-item" to="/app/proctoring">
                   Proctoring
                 </Link>
@@ -70,7 +67,7 @@ const Header = () => {
               </NavDropdown>
 
               <Link className="nav-link" to="/app/test-results">
-                Test Report <small>(Beta)</small>
+                Test Report <small>(Coming Soon)</small>
               </Link>
 
          

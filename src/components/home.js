@@ -12,7 +12,7 @@ const Home = () => {
   <div className="row d-flex align-items-center justify-content-center  banner">
     <div className="col-md-6 text-center animated fadeInUp">
 
-      <h1 className="home-text">English<br/> Learning<br/> Certificate</h1>
+      <h1 className="home-text">English<br/> Language<br/> Certificate</h1>
       <Link to="/app/about">
         <button type="button" className="btn btn-home-top btn btn-secondary mt-4">Learn more about ELC
         </button>

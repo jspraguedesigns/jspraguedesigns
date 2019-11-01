@@ -1,12 +1,12 @@
 @font-face {
     font-family: 'Open Sans Bold';
-    src: url('../Fonts/opensans-bold-webfont.woff2') format('woff'),
+    src: url('../Fonts/opensans-bold-webfont.woff2') format('woff')
 }
 
 
 @font-face {
     font-family: 'Open Sans';
-    src: url('../Fonts/opensans-regular-webfont.woff') format('woff'),
+    src: url('../Fonts/opensans-regular-webfont.woff') format('woff')
 }
 .nav-link {
     font-weight: bold;
@@ -909,8 +909,6 @@ ol li {
     padding: 15px;
     border: 1px solid #ccc;
     border-radius: 3px;
-    margin-bottom: 10px;
-    width: 100%;
     box-sizing: border-box;
 }
 
@@ -1029,6 +1027,7 @@ span.comments {
 
 .opened {
     max-height: 1000px;
+    padding-bottom: 4em;
 }
 
 .open-plus {
@@ -1041,10 +1040,22 @@ span.comments {
     margin-top: -3px;
 }
 
+.warning-box{
+    margin-bottom: 2em;
+}
+
+.warn, .message{
+    float: left;
+}
 
 .icon-pic {
     width: auto !important;
     height: 80px;
+}
+
+.icon-warning {
+    width: auto !important;
+    height: 40px;
 }
 
 .icon-box {
@@ -1161,7 +1172,10 @@ ul li{
     page-break-inside: avoid;
     break-inside: avoid;
     margin-left: 28px;
+}
 
+ul.lists li{
+    margin-left: 0px;
 }
 
 ul.page{

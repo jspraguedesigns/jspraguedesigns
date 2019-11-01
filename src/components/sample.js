@@ -4,6 +4,7 @@ import  $ from 'jquery'
 import sentence from '../images/sentence.png'
 import question from '../images/question.png'
 import missing from '../images/missing.png'
+import Comments from '../components/comments'
 
 
 function displayQuestion1 (){
@@ -49,7 +50,8 @@ function displayQuestion2 (){
 const sample = () => {
     return (
  
-
+<div>
+  <Comments/>
     <div className="container bodyelc">
         <div className="row">
             <div className="col-md-12">
@@ -361,7 +363,7 @@ const sample = () => {
   </div>
 
 </div>
-
+</div>
   )
 
 }
