@@ -1,12 +1,14 @@
 @font-face {
     font-family: 'Open Sans Bold';
-    src: url('../Fonts/opensans-bold-webfont.woff2') format('woff')
+    src: url('/Fonts/opensans-bold-webfont.woff') format('woff');
+    src: url('/Fonts/OpenSans-Bold.ttf') format('ttf');
 }
 
 
 @font-face {
     font-family: 'Open Sans';
-    src: url('../Fonts/opensans-regular-webfont.woff') format('woff')
+    src: url('/Fonts/opensans-regular-webfont.woff') format('woff');
+    src: url('/Fonts/OpenSans-Regular.ttf') format('ttf');
 }
 .nav-link {
     font-weight: bold;
@@ -168,9 +170,7 @@ button:hover {
     background-color: #003B46;
 }
 
-body {
-    font-family: 'Red Hat Text', sans-serif;
-}
+
 
 .demo {
     width: 100%
