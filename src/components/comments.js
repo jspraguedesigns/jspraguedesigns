@@ -32,15 +32,15 @@ const Comments = () => {
 
             <Form>
               <FormGroup>
-                <Label for="FirstName">Name</Label>
-                <Input type="text" name="text" id="FirstName" placeholder="Full Name"/>
+                <Label for="FullName">Full Name</Label>
+                <Input type="text" name="text" id="FullName"/>
               </FormGroup>
 
 
               <FormGroup>
 
-                <Label for="exampleEmail">Email</Label>
-                <Input type="email" name="email" id="exampleEmail" placeholder="example@address.com"/>
+                <Label for="Email">Email</Label>
+                <Input type="email" name="email" id="Email"/>
               </FormGroup>
 
               <FormGroup>
