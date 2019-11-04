@@ -292,7 +292,9 @@ const Launch = () => {
           </div>
                 <p>
                   Double click the ELC Test Launch File from the desktop to
-                  start the test.
+                  start the test.<br/><br/>
+                  The icon will look like the one depicted below. If the icon is on visible on the desktop, refer to the "Before Test Day" tab to ensure all steps were completed.
+
                 </p>
                 <div className="icon-box text-center mt-4">
                 <img className="icon-pic" src={icon} alt="icon"/>
