@@ -4,7 +4,6 @@ import { graphql, Link, useStaticQuery } from "gatsby"
 import $ from "jquery"
 import { osName, osVersion } from "react-device-detect"
 import plus from "../../images/plus.png"
-import warning from "../../images/exclamation-triangle-solid.png"
 import icon from "../../images/DesktopIcon.png"
 import pdf from "../../pdf/ETS_ELC_Student_Activity.pdf"
 import pdf2 from "../../pdf/ETS_ELC_Student_Problem_Report.pdf"
@@ -25,8 +24,6 @@ function openTwo() {
   $(".icon2").toggleClass("active")
 }
 
-
-
 function openFour() {
   $(".hidden-4").toggleClass("opened")
   $(".icon4").toggleClass("active")
@@ -42,33 +39,6 @@ function openSix() {
   $(".icon6").toggleClass("active")
 }
 
-
-
-function openBefore() {
-  $("li#Before").addClass("selection").siblings().removeClass("selection")
-  $("#before-testday").fadeIn('fast').siblings().fadeOut('fast')
- 
-}
-
-function openTest() {
-  $("li#Test").addClass("selection").siblings().removeClass("selection")
-  $("#test-day").fadeIn('fast').siblings().fadeOut('fast')
-}
-
-function openSystem() {
-  $("li#System").addClass("selection").siblings().removeClass("selection")
-  $("#requirements").fadeIn('fast').siblings().fadeOut('fast')
-}
-
-function openTrouble() {
-  $("li#Trouble").addClass("selection").siblings().removeClass("selection")
-  $("#trouble-shooting").fadeIn('fast').siblings().fadeOut('fast')
-}
-
-
-
-
-
 const Launch = () => {
   console.log(osName)
   let supportedOS = false
@@ -81,14 +51,14 @@ const Launch = () => {
       console.log("windows" + osName)
       downloadLink =
         "https://github.com/SafeExamBrowser/seb-win/releases/download/v2.3/SafeExamBrowserInstaller.exe"
-      downloadText = downloadText + osName + " " + osVersion + " device by clicking this link." 
+      downloadText = downloadText + osName + " " + osVersion + " device"
       supportedOS = true
       break
     case "Mac OS":
       // code block
       downloadLink =
         "https://github.com/SafeExamBrowser/seb-mac/releases/download/2.1.3/SafeExamBrowser-2.1.3.dmg"
-      downloadText = downloadText + osName + " " + osVersion + " device by clicking this link."
+      downloadText = downloadText + osName + " " + osVersion + " device"
       supportedOS = true
       break
     default:
@@ -99,7 +69,7 @@ const Launch = () => {
   }
   const data = useStaticQuery(graphql`
       query {
-          allFile(filter: {sourceInstanceName: {eq: "software"}}) {
+          allFile(filter: { sourceInstanceName: { eq: "software" } }) {
               edges {
                   node {
                       publicURL
@@ -110,249 +80,270 @@ const Launch = () => {
       }
   `)
   return (
-    <div className="container-fluid bodyelc">
+    <div>
     <Comments/>
+    <div className="container bodyelc">
       <main role="main">
-        <div className="row text-center head-banner">
-          <div className="col-md-12 d-flex align-items-center justify-content-center">
+        <div className="row text-center">
+          <div className="col-md-12 mb-4">
             <h1 className="jumbotron-heading">欢迎登入ELC Entry 测试界面。</h1>
-            <div className="section-menu">
-
-               <ul id="nav-tab">
-             <li id="Before" className="selection" onClick={openBefore}><a href="#0">Before Test Day</a></li>
-             <li id="Test"  onClick={openTest}><a href="#0">On Test Day</a></li>
-             <li id="System" onClick={openSystem}><a href="#0">System And Bandwidth Requirements</a></li>
-             <li id="Trouble" onClick={openTrouble}><a href="#0">Troubleshooting</a></li>
-             
-           </ul>
-            </div>
-        
           </div>
         </div>
-
-      <ul className="page mb-4">
-        <li id="before-testday">
-        <div className="container">
-        
-          <div className="row d-flex justify-content-center mt-4">
-            <div className="col-md-12 d-flex align-items-stretch ">
-            
-              
-                <div className="instruction">
-                <h2 className="mb-4">Tech Co-Ordinator's Initial Setup And Technical Check</h2>
-                <p><strong>Before test day,</strong> please go through the following steps to ensure your technical equipment is optimal for running the ELC Entry Test and to ensure a smooth testing experience for students.</p> <br/>
-                <p>Be sure to have proper microphones and headphones available, as you will be performing testing these components int he steps below.</p><br/>
-                <p>On each computer that the student will use for testing, quit <u>all programs</u> and complete the following steps:</p>
-                
-                </div>
-                </div>
-                </div>
-                </div>
-            
-                <div className="container-fluid">
-                <div className="row d-flex justify-content-center mb-4">
-            <div className="col-md-12 d-flex align-items-stretch ">
-              <div className="w-100 p-2 d-flex align-items-center">
-              <div className="instruction">
-                <ul className="launch mt-4">
-                  <li ><div className="steps"> 1</div> <p><a href={downloadLink} className="screenlink">{downloadText}</a></p>
-                     <br/>
-                  
-                      <p><i>If you have trouble with the download, try the alternate download link for your device.</i> &nbsp;
-                      {data.allFile.edges.map((file, index) => {
-                        return (
-
-                          <a className="screenlink" href={file.node.publicURL} download>
-                            {file.node.name === "SafeExamBrowserInstaller" ? "Windows" : "Mac"}
-                          </a>
-
-
-                        )
-                      })}</p>
-                
-             
-                  
-                   </li>
-                   <li className="inactive-step">
-                   <p><div className="steps">2</div> 
-                  <div className="warning-box">
-                
-                  <div className="message mb-4">
-                  <strong>Warning! Do not open the Test Launch file in the browser. </strong> 
-                  </div>
-                  <p>Click the link below to download the <strong>Test Launch</strong> file titled <i>"elcTestStart.seb"</i>.</p><br/><p>Once downloaded, locate and drag the file onto the desktop. Normally you will be able to find it in your download folder, depending on your download settings. </p> 
-                  </div>
-                   
-                   <a
-                    href="https://researchtech1.ets.org/c3.net/Falcon/elcTestStart.seb"
-                    className="screenlink"
-                  > Click this link to download Test Launch file.
-                  </a> </p><br/>
-              
-                   </li>
-                 
-                   <li>
-                  <p>
-                    <div className="steps">3</div>To open the Test Launch file, double click the icon <i>"elcTestStart.seb" </i> that you copied to your desktop. 
-                  </p>
-                      <br/>
-                  <i>Once the test is launched, copy and paste will be disabled. Please have a hard copy of your Log In ID's available.</i>
-
-                    
-                   </li>
-                   <li>
-                   
-                   <p>
-                     <div className="steps">4</div>Log into the Tech Check by entering the ID provided to you by your
-                    school’s ELC Assessment Coordinator. <br/> <br/>Complete the
-                    Tech Check.
-                   </p>
- 
-                     
-                    </li>
-                   
-                </ul>
-       
-         
-                </div>
-            
-                
-                  
-              
-
-           
-
-              </div>
-
-
-            </div>
-
-        
-
-<div className="container">
-  <div className="row">
-      <div className="col-md-12">
-      <p className="mb-2">
-                <strong> Recommended for Proctor:</strong> Use the practice test
-                IDs provided to you by your school's ELC coordinator to launch
-                the practice test and familiarize yourself with the test items.
-                This will help you better guide your students. Follow the test
-                day procedures below.
+        <div className="test-day">
+          <div className="row mt-4">
+            <div className="col-md-12 text-center">
+              <h2>Initial Setup And Technical Check</h2>
+              <p>
+                <strong>
+                  To be performed by Technical Co-Ordinator <u>before</u> test
+                  day
+                </strong>
+              </p>
+              <hr/>
+              <p className="mb-4">
+                <i>
+                  <strong>Before test day</strong>, please go through the
+                  following steps to ensure your technical equipment is optimal
+                  for running the ELC Entry Test and to ensure a smooth testing
+                  experience for students.{" "}
+                </i>
               </p>
               <p>
-                <strong> Recommended: </strong>Perform trial runs of the
-                practice test using a small group of students to validate that
-                everything is ready.
-                <br/>
+                <i>
+                  On each computer that the student will use for testing,
+                  complete steps 1-5 listed below. Before starting, exit all
+                  running programs.
+                </i>
               </p>
-      </div>
-  </div>
-</div>
-  
-      
+            </div>
+            <div className="mobile warning">
+              <strong>
+                Your device is not supported. To launch the placement test,
+                login using a Windows PC with a Windows 7, 8.1 or 10 operating
+                system, or a Macintosh with a Mac OS X v10.12 or higher
+                operating system.
+              </strong>
+            </div>
+          </div>
+          <div className="row d-flex justify-content-center mt-4">
+            <div className="col-md-12 border d-flex align-items-stretch step">
+              <div className="w-100 p-2 d-flex align-items-center">
+                <div className="mobile">
+                  <h5>
+                    Step 1: Download &amp; install Secure Browser on a supported
+                    device.
+                  </h5>
+                  <strong>
+                    <p>Save the test launch file to the desktop.</p>
+                  </strong>
+                </div>
+                <div className="instruction">
+                  <div className="desktop mr-auto">
+                    <h5>Step 1:</h5>
+                    <p>{downloadText}</p>
+                  </div>
+                  <div className="mt-4">
+                    <p>
+                      If you have trouble with the download, try the alternate
+                      download link for your device
+                      {data.allFile.edges.map((file, index) => {
+                        return (
+                          <a
+                            className="screenlink"
+                            href={file.node.publicURL}
+                            download
+                          >
+                            {file.node.name === "SafeExamBrowserInstaller"
+                              ? "Windows"
+                              : "Mac"}
+                          </a>
+                        )
+                      })}
+                    </p>
+                  </div>
+                </div>
+                <div className="link ml-auto desktop">
+                  <div>
+                    <a
+                      href={downloadLink}
+                      className="btn btn-home-top btn btn-secondary"
+                    >
+                      Download Secure Browser
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="col-md-12 border d-flex align-items-stretch step">
+              <div className="w-100 p-2 d-flex align-items-center">
+                <div className="instruction">
+                  <div className="mr-auto">
+                    <h5>Step 2:</h5>
+                    <p>Download the test launch file elcTestStart.seb.</p>
+                  </div>
+                </div>
+                <div className="link ml-auto desktop">
+                  <a
+                    href="https://researchtech1.ets.org/c3.net/Falcon/elcTestStart.seb"
+                    className="btn btn-home-top btn btn-secondary"
+                  >
+                    <strong>Download Test Launch</strong>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div className="col-md-12 border d-flex align-items-stretch step">
+              <div className="w-100 p-2 d-flex align-items-center">
+                <div className="instruction">
+                  <div className="mr-auto">
+                    <h5>Step 3:</h5>
+                    <p>
+                      Locate the test launch file titled elcTestStart.seb inside
+                      your computer's Download folder.
+                      <br/> Drag and drop the file onto the desktop.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="col-md-12 border d-flex align-items-stretch step p-2 pl-4 pr-4">
+              <div className="w-100 d-flex align-items-center">
+                <div>
+                  <h5>Step 4:</h5>
+                  <p>
+                    Double click the launch file that you saved to your desktop.
+                  </p>
+                </div>
+              </div>
+              <div className="icon-box text-center">
+                <img className="icon-pic" src={icon} alt="icon"/>
+                <br/>
+                <small>
+                  <i>Launch file icon depicted above</i>
+                </small>
+              </div>
+            </div>
+            <div className="col-md-12 border d-flex align-items-stretch step p-2 pl-4 pr-4">
+              <div className="w-100">
+                <div>
+                  <h5>Step 5:</h5>
+                  <p>
+                    Enter the Tech Check login ID provided to you by your
+                    school’s ELC Assessment Coordinator.
+                    <br/> This will log you into the Technical Check test.
+                    Complete the Technical Check.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div className="text-center">
+              <p>
+                <Link
+                  className="mt-4 mb-4 btn btn-home-top btn btn-secondary"
+                  to="trouble_shooting"
+                >
+                  View our Toubleshooting Guide
+                </Link>
+              </p>
+         
+            </div>
+
+        
           </div>
         </div>
-        </li>
-<li id="test-day" className="inactive-field">
- <div className="container mt-4">
+
+        <div className="test-day mt-4 mb-4">
           <div className="row pb-4">
-            <div className="col-md-12">
+            <div className="col-md-12 text-center">
               <h2>ELC Entry Test</h2>
 
               <p>
                 <strong>Proctor: </strong>
-          
+                <i>
                   Confirm that you have login ID for all students taking the
-                  test today.<br/>
-           
+                  test today.
+                </i>
+              </p>
+
+              <p>
+                <i>
                   Download and print:{" "}
-                  <a target="_blank" rel="noopener noreferrer" className="green" href={pdf}>
+                  <a target="_blank" rel="noopener noreferrer" href={pdf}>
                     Student Activity Sheet
                   </a>{" "}
                   and{" "}
-                  <a target="_blank" rel="noopener noreferrer" className="green" href={pdf2}>
+                  <a target="_blank" rel="noopener noreferrer" href={pdf2}>
                     Student Problem Report
                   </a>
-               
+                </i>
               </p>
               <br/>
- 
+              <h4>On Test Day:</h4>
               <p>
-               On each computer that the student will use for testing:
+                <i>On each computer that the student will use for testing:</i>
               </p>
             </div>
           </div>
-</div>
-<div className="container-fluid">
+
           <div className="row d-flex">
-        <ul className="launch">
-          <li>
-          <div className="steps">
-          1
-          </div>
+            <div className="col-md-12 border d-flex align-items-center step p-2 p-2 pl-4 pr-4">
+              <div className="instruction w-100">
+                <h5> Step 1:</h5>
                 <p>
                   Double click the ELC Test Launch File from the desktop to
-                  start the test.<br/><br/>
-                  The icon will look like the one depicted below. If the icon is on visible on the desktop, refer to the "Before Test Day" tab to ensure all steps were completed.
-
+                  start the test.
                 </p>
-                <div className="icon-box text-center mt-4">
+              </div>
+              <div className="icon-box text-center">
                 <img className="icon-pic" src={icon} alt="icon"/>
                 <br/>
                 <small>
                   <i>Launch icon depicted above</i>
                 </small>
               </div>
-          </li>
-          <li>
-          <div className="steps">
-          2
-          </div>
+            </div>
+
+            <div className="col-md-12 border step d-flex align-items-stretch align-items-center p-2 pl-4 pr-4">
+              <div className="w-100">
+                <h5>Step 2:</h5>
                 <p>
                   Ask students to enter their Login ID provided by ETS to your
                   school’s ELC Assessment Coordinator.
                 </p>
-          </li>
-           <li>
-           <div className="steps">
-          3
-          </div>
+              </div>
+            </div>
+
+            <div className="col-md-12  border  step d-flex align-items-stretch align-items-center  p-2 pl-4 pr-4">
+              <div className="w-100 align-items-center">
+                <h5>Step 3:</h5>
                 <p>
                   Complete the Student Activity Sheet, listing all students who
                   take or attempt to take the test
                 </p>
-           </li>
-              <li>
-              <div className="steps">
-          4
-          </div>
+              </div>
+            </div>
+            <div className="col-md-12 border step p-2 pl-4 pr-4 d-flex align-items-stretch align-items-center">
+              <div className="w-100 align-items-center">
+                <h5>Step 4:</h5>
                 <p>
                   Update the Student Problem Report if any student experiences a
                   technical problem.
                 </p>
-              </li>
-             
-            
-          </ul>
-     
-        </div>
- </div>
- <div className="container mt-4 mb-4">
-                      <div className="row">
-                        <div className="col-md-12">
-                        <p>
+              </div>
+            </div>
+          </div>
+          <p>
             <strong>
               At the end of the testing session, return all Student Activity and
               Problem Reports to your school's Assessment Coordinator.
             </strong>
           </p>
-                        </div>
-                      </div>
- </div>
-</li>
+        </div>
 
-<li id="requirements" className="inactive-field">
-        <div className="container test-day mb-4">
+        <div id="requirements" className="test-day mb-4">
           <div className="row mt-4">
             <div className="col-md-12 text-center mb-4">
               <h2>ETS ELC System And Bandwidth Requirements</h2>
@@ -402,7 +393,7 @@ const Launch = () => {
                   </tbody>
                   <tfoot>
                   <tr>
-                    <td coldiv="2">
+                    <td colSpan="2">
                       Recommended: Set up computer user accounts dedicated to
                       testing and disable digital assistants (Siri, Cortana),
                       voice dictation, and unsupported screen readers
@@ -574,91 +565,7 @@ const Launch = () => {
             </div>
           </div>
         </div>
-        </li> 
-        <li id="trouble-shooting" className="inactive-field">
-          <div className="container">
-                    <div className="row">
-                    <div className="col-md-12 pt-4 pb-4">
-          <h2>Troubleshooting Guide</h2>
-          
-    
-      </div>
 
-             <div className="col-md-12 border-bottom pb-4 pt-4">
-              <h5>My computer crashed.</h5>
-
-              <p>Move to another computer and login with your ID. The test will restart where you left off.</p>
-            </div>
-
-               <div className="col-md-12 border-bottom pb-4 pt-4">
-
-<h5>I cannot copy and paste the Student's Login ID to the secure browser.</h5>
-
-<p>Copy and paste is disabled during testing. Student Login ID must be typed in manually.</p>
-</div>
-
-  <div className="col-md-12 border-bottom pb-4 pt-4">
-              <h5>Error Message: Recieved an error message “Can't open this type of file (.seb)."</h5>
-              <p>Make sure you installed the <strong>Safe Exam Browser</strong> before launching the test.</p>
-            </div>
-
-                <div className="col-md-12 border-bottom pb-4 pt-4">
-              <h5>The Safe Exam Browser is not installed.</h5>
-              <p>Ask your tech coordinator to install the browser.</p>
-            </div>
-
-            <div className="col-md-12 border-bottom pb-4 pt-4">
-              <h5>When I clicked on “Download Safe Exam Browser for Windows/Mac” and then clicked on “Run”, I received a
-                message to enter admin username and password.</h5>
-
-              <p><strong>Log out </strong>of computer and log back in with admin credentials.</p>
-
-            </div>
-
-               <div className="col-md-12 border-bottom pb-4 pt-4">
-              <h5>Student Login ID provided did not work.</h5>
-
-              <p>Double check to make sure you entered your Student Login ID correctly. If your ID still is not working,
-                enter in <strong>Student Problem Report</strong>.</p>
-            </div>
-            <div className="col-md-12 border-bottom pb-4 pt-4">
-              <h5>When I launch the test I received a message "Permitted or Prohibited Processes Are Running".</h5>
-
-              <p><strong>Click Cancel</strong> and close all running programs, then re-launch.</p>
-            </div>
-
-                <div className="col-md-12 border-bottom pb-4 pt-4">
-              <h5>I cannot hear the audio.</h5>
-
-              <p>Make sure volume is set correctly. If you still cannot hear any audio, try a different pair of
-                headphones.</p>
-            </div>
-
-              <div className="col-md-12 border-bottom pb-4 pt-4">
-              <h5>My microphone is not working</h5>
-
-              <p>Make sure your are using a supported microphone (bluetooth microphones may not work).</p>
-            </div>
-            <div className="col-md-12 border-bottom pb-4 pt-4">
-            <h5> When I enter the Student Login ID, I recieve a notification that says "loading activities…“ that lasts for 1-5 minutes. </h5>
-
-           <div className="jumplink" onClick ={openSystem} >Click here to review all system and bandwidth requirements.</div>
-        
-            <ol>
-              <li>Test the Speed test on one computer that will be used in your testing lab at <a className="green" href="https://www.speedtest.net/">speedtest.net</a></li>
-              <li>Conduct a latency test using <a  className="green" href="https://www.cloudping.info/">cloudping.info</a> </li>
-              <li>Conduct a detailed bandwidth test using <a className="green" href="https://cloudharmony.com/speedtest-for-aws">https://cloudharmony.com/speedtest-for-aws</a>   This test will take atleast 40 minutes to complete.</li> 
-              <li> Email the results to ETS.</li>
-            </ol>
-            
-            </div>
-
-                    </div>
-          </div>
-      
-
-                    </li>
-        </ul>
         {/*<p>*/}
         {/*  <img*/}
         {/*    className="openwith"*/}
@@ -667,6 +574,7 @@ const Launch = () => {
         {/*  />*/}
         {/*</p>*/}
       </main>
+    </div>
     </div>
   )
 }

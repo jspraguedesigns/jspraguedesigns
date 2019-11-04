@@ -1,14 +1,12 @@
 @font-face {
     font-family: 'Open Sans Bold';
-    src: url('/Fonts/opensans-bold-webfont.woff') format('woff');
-    src: url('/Fonts/OpenSans-Bold.ttf') format('ttf');
+    src: url('../Fonts/opensans-bold-webfont.woff2') format('woff'),
 }
 
 
 @font-face {
     font-family: 'Open Sans';
-    src: url('/Fonts/opensans-regular-webfont.woff') format('woff');
-    src: url('/Fonts/OpenSans-Regular.ttf') format('ttf');
+    src: url('../Fonts/opensans-regular-webfont.woff') format('woff'),
 }
 .nav-link {
     font-weight: bold;
@@ -23,7 +21,6 @@ body {
 
 p {
     margin-bottom: 0;
-    line-height:26px;
 }
 
 strong {
@@ -53,25 +50,6 @@ h1, h2, h3, h4, h5, h6 {
     line-height: 1.2;
 }
 
-.steps{
-    font-weight: 700;
-    font-size: 2.25em;
-    margin: 10px AUTO;
-    border: 4px solid #fff;
-    display: block;
-    width: 80px;
-    height: 80px;
-    border-radius: 100px;
-    text-align: center;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-
-.steps span{
-    font-size: .75em;
-}
 h2.tag {
     font-size: 1.2em;
     line-height: 1.625;
@@ -93,29 +71,10 @@ h2.tag {
 }
 
 .screenlink {
-    display: inline-block;
+
     color: #007c92;
-    font-weight: 400;
+    margin-left: 1em;
     margin-right: .35em;
-    text-decoration: underline;
-}
-a.green{
-    color: #007c92 !important;
-}
-a.green:hover{
-    color: rebeccapurple !important;
-}
-.screenlink:hover {
-
-    text-decoration: underline;
-}
-
-.jumplink{
-    color: #007c92;
-}
-
-.jumplink:hover{
-    color: #003B46;
 }
 .rawScore {
     font-size: 2em;
@@ -170,7 +129,9 @@ button:hover {
     background-color: #003B46;
 }
 
-
+body {
+    font-family: 'Red Hat Text', sans-serif;
+}
 
 .demo {
     width: 100%
@@ -205,10 +166,8 @@ ul.end {
 }
 
 
-
-
-ul li ul li{
-    list-style:circle ;
+ul li {
+    cursor: pointer;
 }
 
 li button {
@@ -461,7 +420,7 @@ span.missing {
     border-radius: 0;
     float: left;
     margin-right: 3px;
-    margin-bottom: 25px;
+    margin-bottom: 5px;
 }
 
 span.form-control2:hover {
@@ -615,7 +574,7 @@ img {
             rgba(0, 124, 146, 090)
     ),
     url('../static/img/cooperation-coworking-day-1543895.jpg') center;
-    min-height: calc(100vh - 160px);
+    height: 70vh;
     background-size: cover;
 }
 
@@ -909,6 +868,8 @@ ol li {
     padding: 15px;
     border: 1px solid #ccc;
     border-radius: 3px;
+    margin-bottom: 10px;
+    width: 100%;
     box-sizing: border-box;
 }
 
@@ -975,7 +936,13 @@ span.comments {
 }
 
 
-
+.test-day {
+    border: 0 none;
+    border-radius: 3px;
+    box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.4);
+    padding: 20px 30px;
+    box-sizing: border-box;
+}
 
 .step {
     background-color: #fff;
@@ -1027,7 +994,6 @@ span.comments {
 
 .opened {
     max-height: 1000px;
-    padding-bottom: 4em;
 }
 
 .open-plus {
@@ -1040,26 +1006,14 @@ span.comments {
     margin-top: -3px;
 }
 
-.warning-box{
-    margin-bottom: 2em;
-}
-
-.warn, .message{
-    float: left;
-}
 
 .icon-pic {
     width: auto !important;
     height: 80px;
 }
 
-.icon-warning {
-    width: auto !important;
-    height: 40px;
-}
-
 .icon-box {
-    width: 100%;
+    width: 240px;
 }
 
 .active {
@@ -1073,134 +1027,6 @@ span.comments {
     color: red;
 }
 
-.head-banner{
-background-color:#007c92;
-color: #fff;
-height: 200px;
-}
-
-h1.jumbotron-heading{
-    color: #fff;
-}
-
-.section-menu {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    width: 100%;
-    background-color: #333
-}
-
-.section-menu > ul {
-    max-width: 960px;
-    list-style: none;
-    text-align: left;
-    padding: 0 10px;
-    margin: 0 auto;
-    font-size: 0;
-}
-
-.section-menu li {
-    font-size: 16px;
-    line-height: 26px;
-    text-align: left;
-    margin-bottom: 0;
-    padding-bottom: 0;
-    display: inline-block;
-}
-
-.section-menu > ul > li > a {
-    position: relative;
-    z-index: 2;
-}
-
-.section-menu a {
-    color: #FFF;
-    font-weight: 700;
-    text-decoration: none;
-    padding-left: 15px;
-    padding-right: 15px;
-    display: inline-block;
-    width: 100%;
-    line-height: 40px;
-    min-height: 40px;
-}
-
-
-.section-menu a:hover {
-    background-color: rebeccapurple;
-}
-
- li.selection a {
-    background-color: #f7f7f7;
-    color: #2C2D30;
-    border-top-left-radius: 4px;
-    border-top-right-radius: 4px;
-}
-li.selection a:hover{
-    color: rebeccapurple;
-    background-color: #f7f7f7;
-}
-
-ul.launch{
-    margin: 0;
-    padding-left: 0;
-    display: flex;
-justify-content: center;
-}
-
-ul.launch>li{
-    display: inline-block;
-    background-color: rebeccapurple;
-    color: #fff;
-    border-radius: 20px;
-    padding: 1em;
-    width: 30%;
-    margin-left: 0;
-    margin: 1%;
-    box-shadow: 5px 5px 5px rgb(179, 179, 179);
-}
-
-ul ul{
-    padding-left:0;
-}
-ul li{
-    line-height: 26px;
-    padding-bottom: 12px;
-    -webkit-column-break-inside: avoid;
-    page-break-inside: avoid;
-    break-inside: avoid;
-    margin-left: 28px;
-}
-
-ul.lists li{
-    margin-left: 0px;
-}
-
-ul.page{
-    margin: 0;
-padding: 0;
-}
-
-ul.page>li{
-    margin: 0;
-padding: 0;
-list-style: none;
-}
-ul.page>li a{
-display: inline;
-text-decoration: underline;
-color: #fff;
-font-weight: bold;
-}
-
-ul.page>li a:hover{
-    display: inline;
-    text-decoration: underline;
-    color: rgb(213, 213, 213);
-    font-weight: bold;
-    }
 @media (max-width: 768px) {
     .desktop {
         display: none;
