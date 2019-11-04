@@ -29,17 +29,6 @@ const Home = () => {
     </div>
   </div>
 
-  <div className="wechat">
-    <div className="row">
-      <div className="col-md-12 text-center pt-4 pb-4">
-        <img className="wechat-logo" src={wechatimg} alt="WeChat Logo"/>
-        <h2 className="home-text">Keep In Touch With Us</h2>
-        <p className="home-text">We need your feedback to make this test successful. Scan the QR code bellow to
-          join our WeChat Group.</p>
-        <img className="wechat-logo" src={qrcodeimg} alt="QR Code"/>
-      </div>
-    </div>
-  </div>
 
 </div>
 
