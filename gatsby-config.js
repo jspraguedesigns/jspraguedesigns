@@ -24,6 +24,7 @@ module.exports = {
     plugins: [
         `gatsby-plugin-react-helmet`,
         'gatsby-plugin-offline',
+        `gatsby-plugin-hotjar`,
         {
             resolve: 'gatsby-plugin-google-analytics',
             options: {
@@ -46,6 +47,13 @@ module.exports = {
                 ignore: [`**/\.*`], // ignore files starting with a dot
             },
         },
+        {
+            resolve: `gatsby-plugin-hotjar`,
+            options: {
+              id: 1558085,
+              sv: 6
+            },
+          },
         `gatsby-transformer-sharp`,
         `gatsby-plugin-sharp`,
         {

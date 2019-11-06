@@ -12,6 +12,9 @@ const Footer = () => {
               Copyright &copy; 2019 by Educational Testing Service. All rights reserved.
               All trademarks are the property of their respective owners.
             </div>
+            <div className="links ml-auto">
+            <a href="https://www.ets.org/legal/privacy/" target="_blank">Privacy</a> | <a href="https://www.ets.org/legal/terms/" target="_blank">Terms Of Use</a>
+            </div>
           </div>
 
         </div>
