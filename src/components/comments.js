@@ -19,8 +19,8 @@ const Comments = () => {
             <h2 className="text-center">Comments</h2>
             <hr/>
               <p>Your comments are welcome and appreciated. Please share your impressions and opinions with us.</p>
-
-            <Form action="https://formspree.io/mnqqawgd" method="POST">
+                
+            <Form className="mt-4" action="https://formspree.io/mnqqawgd" method="POST">
               <FormGroup>
                 <Label for="FullName">Full Name</Label>
                 <Input type="text" name="_replyto" name="full name" id="FullName"/>
