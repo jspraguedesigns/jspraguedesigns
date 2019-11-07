@@ -18,17 +18,7 @@ const Comments = () => {
           <div className="col-md-12">
             <h2 className="text-center">Comments</h2>
             <hr/>
-
-
-            <ol>
-              <li>As an administrator, what sort of test feedback you are looking for?</li>
-              <li>What is the most important thing you need to see?</li>
-              <li>What was the first thing you clicked on?</li>
-              <li>What was the first thing you expected to see?</li>
-              <li>When you clicked, were you directed to where you wated to go?</li>
-              <li>Did you find the information you were looking for on the page?</li>
-              <li>Is there anything that you expected to see but didn't?</li>
-            </ol>
+              <p>Your comments are welcome and appreciated. Please share your impressions and opinions with us.</p>
 
             <Form action="https://formspree.io/mnqqawgd" method="POST">
               <FormGroup>
