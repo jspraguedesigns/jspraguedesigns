@@ -30,10 +30,10 @@ const Comments = () => {
               <li>Is there anything that you expected to see but didn't?</li>
             </ol>
 
-            <Form>
+            <Form action="https://formspree.io/mnqqawgd" method="POST">
               <FormGroup>
                 <Label for="FullName">Full Name</Label>
-                <Input type="text" name="text" id="FullName"/>
+                <Input type="text" name="_replyto" name="full name" id="FullName"/>
               </FormGroup>
 
 
@@ -48,7 +48,7 @@ const Comments = () => {
                 <Input type="textarea" name="text" id="exampleText"/>
               </FormGroup>
 
-              <Button className="mt-4">Submit</Button>
+              <Button className="mt-4" type="submit">Submit</Button>
             </Form>
           </div>
         </div>
