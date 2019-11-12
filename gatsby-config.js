@@ -24,14 +24,40 @@ module.exports = {
     plugins: [
         `gatsby-plugin-react-helmet`,
         'gatsby-plugin-offline',
-        `gatsby-plugin-hotjar`,
-        {
-            resolve: 'gatsby-plugin-google-analytics',
-            options: {
-                trackingId: process.env.GA_TRACKING_ID,
-                respectDNT: true
+
+      {
+        resolve: "gatsby-plugin-google-tagmanager",
+        options: {
+          // datalayer to be set before GTM is loaded
+          // should be a stringified object or object
+          // Defaults to null
+          defaultDataLayer: function() {
+            return {
+              pageType: window.pageType,
             }
+          },
         },
+      },
+      {
+        resolve: "gatsby-plugin-google-tagmanager",
+        options: {
+          id: "GTM-MMJNVLR",
+
+          // Include GTM in development.
+          // Defaults to false meaning GTM will only be loaded in production.
+          includeInDevelopment: false,
+
+          // datalayer to be set before GTM is loaded
+          // should be an object or a function that is executed in the browser
+          // Defaults to null
+          defaultDataLayer: { platform: "gatsby" },
+
+          // Specify optional GTM environment details.
+          gtmAuth: "8R8wFObiUUk3bj13BVzu4A",
+          gtmPreview: "env-2",
+
+        },
+      },
         {
             resolve: `gatsby-source-filesystem`,
             options: {
