@@ -1,8 +1,12 @@
 import React from 'react'
 import {Link} from 'gatsby'
+import Comments from '../components/comments'
 
 const About = () => {
     return (
+        <div>
+        <Comments/>
+      
             <div className="container pt-4 pb-4">
                 <div className="row">
                     <div className="col-md-12">
@@ -47,7 +51,7 @@ const About = () => {
                 </div>
             
             </div>
-
+            </div>
 
     )
 };

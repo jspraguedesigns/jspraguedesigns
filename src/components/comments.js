@@ -18,29 +18,19 @@ const Comments = () => {
           <div className="col-md-12">
             <h2 className="text-center">Comments</h2>
             <hr/>
-
-
-            <ol>
-              <li>As an administrator, what sort of test feedback you are looking for?</li>
-              <li>What is the most important thing you need to see?</li>
-              <li>What was the first thing you clicked on?</li>
-              <li>What was the first thing you expected to see?</li>
-              <li>When you clicked, were you directed to where you wated to go?</li>
-              <li>Did you find the information you were looking for on the page?</li>
-              <li>Is there anything that you expected to see but didn't?</li>
-            </ol>
-
-            <Form>
+              <p>Your comments are welcome and appreciated. Please share your impressions and opinions with us.</p>
+                
+            <Form className="mt-4" action="https://formspree.io/mnqqawgd" method="POST">
               <FormGroup>
-                <Label for="FirstName">Name</Label>
-                <Input type="text" name="text" id="FirstName" placeholder="Full Name"/>
+                <Label for="FullName">Full Name</Label>
+                <Input type="text" name="_replyto" name="full name" id="FullName"/>
               </FormGroup>
 
 
               <FormGroup>
 
-                <Label for="exampleEmail">Email</Label>
-                <Input type="email" name="email" id="exampleEmail" placeholder="example@address.com"/>
+                <Label for="Email">Email</Label>
+                <Input type="email" name="email" id="Email"/>
               </FormGroup>
 
               <FormGroup>
@@ -48,7 +38,7 @@ const Comments = () => {
                 <Input type="textarea" name="text" id="exampleText"/>
               </FormGroup>
 
-              <Button className="mt-4">Submit</Button>
+              <Button className="mt-4" type="submit">Submit</Button>
             </Form>
           </div>
         </div>
