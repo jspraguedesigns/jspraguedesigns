@@ -73,13 +73,6 @@ module.exports = {
                 ignore: [`**/\.*`], // ignore files starting with a dot
             },
         },
-        {
-            resolve: `gatsby-plugin-hotjar`,
-            options: {
-              id: 1558085,
-              sv: 6
-            },
-          },
         `gatsby-transformer-sharp`,
         `gatsby-plugin-sharp`,
         {
