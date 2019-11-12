@@ -71,6 +71,7 @@ yarn-error.log
 # Yarn Integrity file
 .yarn-integrity
 
+.env.*
 #amplify
 amplify/\#current-cloud-backend
 amplify/.config/local-*

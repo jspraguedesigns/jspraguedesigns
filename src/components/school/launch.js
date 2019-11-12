@@ -7,6 +7,7 @@ import plus from "../../images/plus.png"
 import icon from "../../images/DesktopIcon.png"
 import pdf from "../../pdf/ETS_ELC_Student_Activity.pdf"
 import pdf2 from "../../pdf/ETS_ELC_Student_Problem_Report.pdf"
+import Comments from "../comments"
 
 // import sebwin from "../../static/software/SafeExamBrowserInstaller.exe"
 // import sebmac from "../../static/software/SafeExamBrowser2.1.3.dmg"
@@ -79,6 +80,8 @@ const Launch = () => {
       }
   `)
   return (
+    <div>
+    <Comments/>
     <div className="container bodyelc">
       <main role="main">
         <div className="row text-center">
@@ -245,23 +248,10 @@ const Launch = () => {
                   View our Toubleshooting Guide
                 </Link>
               </p>
-              <p className="mb-2">
-                <strong> Recommended for Proctor:</strong> Use the practice test
-                IDs provided to you by your school's ELC coordinator to launch
-                the practice test and familiarize yourself with the test items.
-                This will help you better guide your students. Follow the test
-                day procedures below.
-              </p>
+         
             </div>
 
-            <div className="text-center">
-              <p>
-                <strong> Recommended: </strong>Perform trial runs of the
-                practice test using a small group of students to validate that
-                everything is ready.
-                <br/>
-              </p>
-            </div>
+        
           </div>
         </div>
 
@@ -584,6 +574,7 @@ const Launch = () => {
         {/*  />*/}
         {/*</p>*/}
       </main>
+    </div>
     </div>
   )
 }

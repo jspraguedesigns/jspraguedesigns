@@ -1,9 +1,12 @@
 import  React from 'react'
-
+import Comments from "../comments"
 
 const Support = () => {
     return (
-        <div className="container">
+        <div>
+            <Comments />
+     
+        <div className="container bodyelc">
         <div className="row pt-4">
         <div className="col-md-12">
           <h2>Support Materials</h2>
@@ -31,6 +34,7 @@ const Support = () => {
             </ul>
     
     
+        </div>
         </div>
         </div>
         </div>

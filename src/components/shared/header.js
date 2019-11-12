@@ -8,6 +8,26 @@ import {getUserInfo, logout} from "../../utils/auth"
 const Header = () => {
   return (
       <div>
+        
+        <div className="login container-fluid d-flex">
+        <div className="ml-auto">
+        <div className="navbar-text text-wrap font-italic">
+                {getUserInfo().name ? getUserInfo().name : "friend"}
+              </div>
+              &nbsp;
+        <Link
+                  href="#logout"
+                  onClick={e => {
+                    logout();
+                    e.preventDefault()
+                  }}
+              >
+                Log Out
+              </Link>
+           
+        </div>
+ 
+        </div>
         <Navbar bg="light" expand="md">
           <Navbar.Brand href="/">
             <div className="navbar-brand  d-flex align-items-center">
@@ -38,9 +58,6 @@ const Header = () => {
                 <Link className="dropdown-item" to="/app/support">
                   Support Materials
                 </Link>
-                <Link className="dropdown-item" to="/app/teacher_training">
-                  Training
-                </Link>
                 <Link className="dropdown-item" to="/app/proctoring">
                   Proctoring
                 </Link>
@@ -51,21 +68,10 @@ const Header = () => {
               </NavDropdown>
 
               <Link className="nav-link" to="/app/test-results">
-                Test Report <small>(Beta)</small>
+                Test Report <small>(Coming Soon)</small>
               </Link>
 
-              <Nav.Link
-                  href="#logout"
-                  onClick={e => {
-                    logout();
-                    e.preventDefault()
-                  }}
-              >
-                Log Out
-              </Nav.Link>
-              <div className="navbar-text text-wrap font-italic">
-                {getUserInfo().name ? getUserInfo().name : "friend"}
-              </div>
+         
             </Navbar.Collapse>
           </Nav>
         </Navbar>
