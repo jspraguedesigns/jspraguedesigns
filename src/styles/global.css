@@ -1100,6 +1100,21 @@ span.comments {
     line-height: 40px;
     min-height: 40px;
 }
+
+.sidebar{
+    position: relative;
+    background: #f9f9f9;
+    top: 0;
+}
+
+.sidebar>ul>li>a{
+    color: #007c92;
+}
+
+.info-charts{
+    max-height: 100vh;
+    overflow-y: scroll;
+}
 @media (max-width: 768px) {
     .desktop {
         display: none;

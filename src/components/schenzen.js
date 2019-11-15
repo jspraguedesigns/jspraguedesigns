@@ -18,14 +18,19 @@ import fig10 from "../images/unnamed-chunk-12-1.png";
 
 function display1 (){
   $('#id1').fadeIn('fast').siblings().fadeOut('fast');
+  $('.tab1').addClass('selected').siblings().removeClass('selected');
 }
 
 function display2 (){
     $('#id2').fadeIn('fast').siblings().fadeOut('fast');
+    $('.tab2').addClass('selected').siblings().removeClass('selected');
+ 
   }
 
   function display3(){
     $('#id3').fadeIn('fast').siblings().fadeOut('fast');
+    $('.tab3').addClass('selected').siblings().removeClass('selected');
+ 
   }
 
 class Schenzen extends Component {
@@ -72,15 +77,15 @@ class Schenzen extends Component {
     return (
       <div>
 
-        <section class="banner-score">
-        <div class="banner_container">
-        <h1 class="banner_title">ELC Entry Results</h1>
+        <section className="banner-score">
+        <div className="banner_container">
+        <h1 className="banner_title">ELC Entry Results</h1>
        </div>
-       <div class="section_menu" id="global_menu">
+       <div className="section_menu" id="global_menu">
        <ul>
-         <li class="selected" onClick={display1}><a href="#0" >Individual Level Scores</a></li>
-         <li><a href="#0" onClick={display2}>Total Scores</a></li>
-         <li><a href="#0" onClick={display3}>Individual Scores</a></li>
+         <li className="selected tab1" onClick={display1}><a href="#0" >Individual Level Scores</a></li>
+         <li className="tab2" ><a href="#0"onClick={display2}>Total Scores</a></li>
+         <li className="tab3" ><a href="#0"  onClick={display3}>Individual Scores</a></li>
 </ul>
 </div>
 </section>
@@ -129,15 +134,22 @@ class Schenzen extends Component {
       <fieldset id="id2">
       <div className="container mt-4">
       <div className="row">
-        <div className="col-md-12 mt-4">
-        <p>Only group size >=25 are illustrated</p>
-        <h1>Total Scores</h1>
-   
-        </div>
     
+        <div className="sidebar col-md-4">
 
+         <p>Only group size >=25 are illustrated</p>
+        <h1>Total Scores</h1>
+        <ul>
+<li><a href="#all1">All test takers (n=144)</a></li>
+<li><a href="#grades1">Compare: between grades</a></li>
+<li><a href="#class1">Compare: between class (within-grade)</a></li>
+<li><a href="#course1">Compare: between courses</a></li>
+<li><a href="#teachers">Compare: between teachers (within-grade)</a></li>
+</ul>
+        </div>
+        <div className="info-charts col-md-8">
 
-        <div id="all1" className="col-md-12 mt-4">
+              <div id="all1" className="col-md-12 mt-4">
         <h3>All test takers (n=144)</h3>
         <img className="img-fluid" src={fig1} alt="fig1"/>
         </div>
@@ -167,13 +179,32 @@ class Schenzen extends Component {
         <img className="img-fluid" src={fig5} alt="fig5"/>
         </div>
         </div>
+
+    
+        </div>
         </div>
  </fieldset>
  <fieldset id="id3">
  <div className="container mt-4">
       <div className="row">
-        <h2>Category Scores</h2>
+      
+                <div className="sidebar col-md-4">
 
+<p>Only group size >=25 are illustrated</p>
+<h2>Category Scores</h2>
+
+<ul>
+
+<li><a href="#all2">All test takers (n=144)</a></li>
+<li><a href="#grades2">Compare: between grades</a></li>
+<li><a href="#class2">Compare: between class (within-grade)</a></li>
+<li><a href="#courses2">Compare: between courses</a></li>
+<li><a href="#compare2">Compare: between teachers (within-grade)</a></li>
+
+</ul>
+</div>
+
+  <div className="info-charts col-md-8">
         <div id="all2" className="col-md-12">
        
         <h3 className="tag">All test takers (n=144)</h3>
@@ -205,6 +236,7 @@ class Schenzen extends Component {
         <img className="img-fluid" src={fig10} alt="fig10"/>
         </div>
       </div>  
+      </div>
       </div>
       </fieldset>
   </form>
