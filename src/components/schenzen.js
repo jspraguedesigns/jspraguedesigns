@@ -60,7 +60,7 @@ class Schenzen extends Component {
     return (
       <div>
       <div className="kendo-react-getting-started">
-        <h2>Shen Zhen High School: ELC Entry Individual Level Scores</h2>
+        <h1>Shen Zhen High School:<br/> ELC Entry Individual Level Scores</h1>
         <hr/>
         
         <Grid
@@ -100,82 +100,77 @@ class Schenzen extends Component {
       </div>
       <div className="row">
         <div className="col-md-12 mt-4">
-          <h2>Scoring Details</h2>
+        <p>Only group size >=25 are illustrated</p>
+        <h1>Total Scores</h1>
+   
         </div>
       </div>
 
-      <div className="row mt-4 mb-4">
-        <div className="col-md-6">
-        <h3>Total Scores</h3>
-        <h2 className="tag">All test takers (n=144)</h2>
+
+        <div id="all1" className="col-md-12 mt-4">
+        <h3>All test takers (n=144)</h3>
         <img className="img-fluid" src={fig1} alt="fig1"/>
         </div>
-        <div className="col-md-6">
+
+        <div id="grades1" className="col-md-12">
         <h3>Compare: between grades</h3>
         <h2 className="tag">All test takers (n=144)</h2>
         <img className="img-fluid" src={fig2} alt="fig2"/>
         </div>
-        </div>
-        <div className="row mb-4">
-        <div className="col-md-12">
+   
+ 
+        <div id="class1" className="col-md-12">
         <h3>Compare: between class (within-grade)</h3>
         <h2 className="tag">All test takers (n=144)</h2>
         <img className="img-fluid" src={fig3} alt="fig3"/>
         </div>
-      </div>
 
-          <div className="row mb-4">
-        <div className="col-md-6">
+
+        <div id="courses1" className="col-md-12">
         <h3>Compare: between courses</h3>
         <img className="img-fluid" src={fig4} alt="fig4"/>
         </div>
-      </div>
+ 
 
-        <div className="row mb-4">
-        <div className="col-md-12">
+        <div id="teachers" className="col-md-12">
         <h3>Compare: between teachers (within-grade)</h3>
         <img className="img-fluid" src={fig5} alt="fig5"/>
         </div>
-      </div>
+ 
+        <h2>Category Scores</h2>
 
-
-  <div className="row mb-4">
-        <div className="col-md-12">
-        <h3>Category Scores</h3>
-        <h2 className="tag">All test takers (n=144)</h2>
+        <div id="all2" className="col-md-12">
+       
+        <h3 className="tag">All test takers (n=144)</h3>
         <img className="img-fluid" src={fig6} alt="fig6"/>
         </div>
-      </div>
+  
 
 
-  <div className="row mb-4">
-        <div className="col-md-12">
+        <div id="grades2" className="col-md-12">
         <h3>Compare: between grades</h3>
         <img className="img-fluid" src={fig7} alt="fig7"/>
         </div>
-      </div>
 
-      <div className="row mb-4">
-        <div className="col-md-12">
+
+        <div id="class2" className="col-md-12">
         <h3>Compare: between class (within-grade)</h3>
         <img className="img-fluid" src={fig8} alt="fig8"/>
         </div>
-      </div>  
+ 
 
-          <div className="row mb-4">
-        <div className="col-md-12">
+        <div id="courses2" className="col-md-12">
         <h3>Compare: between courses</h3>
         <img className="img-fluid" src={fig9} alt="fig9"/>
         </div>
-      </div>  
+  
 
-          <div className="row mb-4">
-        <div className="col-md-12">
+        <div id="compare2" className="col-md-12">
         <h3>Compare: between teachers (within-grade)</h3>
         <img className="img-fluid" src={fig10} alt="fig10"/>
         </div>
       </div>  
-      </div>
+  
     );
   }
 }
