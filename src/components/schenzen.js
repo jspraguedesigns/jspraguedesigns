@@ -3,7 +3,6 @@ import '@progress/kendo-theme-default/dist/all.css';
 import scores from '../../data/scores.json';
 import { process } from '@progress/kendo-data-query';
 import { Grid, GridColumn } from '@progress/kendo-react-grid';
-import { Window } from '@progress/kendo-react-dialogs';
 import  $ from 'jquery'
 import fig1 from "../images/unnamed-chunk-2-1.png";
 import fig2 from "../images/unnamed-chunk-3-1.png";
@@ -83,7 +82,7 @@ class Schenzen extends Component {
 
         <section className="banner-score">
         <div className="banner_container">
-        <h1 className="banner_title">ELC Entry Results</h1>
+        <h1 className="banner_title">Shen Zhen High School: ELC Entry Results</h1>
        </div>
        <div className="section_menu" id="global_menu">
        <ul>
@@ -96,7 +95,7 @@ class Schenzen extends Component {
 <form>
   <fieldset id="id1">
       <div className="container mt-4">
-        <h1>Shen Zhen High School:<br/> ELC Entry Individual Level Scores</h1>
+        <h2>Individual Level Scores</h2>
         <hr/>
         
         <Grid
@@ -107,31 +106,15 @@ class Schenzen extends Component {
           onDataStateChange={this.handleGridDataStateChange}
           style={{ height: "400px" }}
           onRowClick={this.handleGridRowClick}>
-          <GridColumn field="StudentID" title="Student ID" />
+        
           <GridColumn field="FirstName" title="First Name" />
           <GridColumn field="LastName" title="Last Name" />
+          <GridColumn field="ELCEntryScore" title="ELC Entry Score" />
           <GridColumn field="Grade" title="Grade" />
           <GridColumn field="Teacher" title="Teacher" />
-          <GridColumn field="ELCEntryScore" title="ELC Entry Score" />
+      
         </Grid>
-        
-        {this.state.windowVisible &&
-          <Window
-            title="Student Details"
-            onClose={this.closeWindow}
-            height={250}>
-            <dl>
-              <dt>First Name</dt>
-              <dd>{this.state.gridClickedRow.FirstName}</dd>
-              <dt>Last Name</dt>
-              <dd>{this.state.gridClickedRow.LastName}</dd>
-              <dt>Gender</dt>
-              <dd>{this.state.gridClickedRow.Gender}</dd>
-              <dt>ELC Entry Score</dt>
-              <dd>{this.state.gridClickedRow.ELCEntryScore}</dd>
-            </dl>
-          </Window>
-        }
+
         
       </div>
       </fieldset>
@@ -252,14 +235,6 @@ class Schenzen extends Component {
   }
 }
 
-class checkboxColumn extends Component {
-  render() {
-    return (
-        <td>
-          <input type="checkbox" checked={this.props.dataItem[this.props.field]} disabled="disabled" />
-        </td>
-    );
-  }
-}
+
 
 export default Schenzen;
