@@ -773,7 +773,7 @@ thead th {
 .comment-btn {
     position: relative;
     right: 65px;
-    top: 280px;
+    top: 130px;
     transform: rotate(-90deg);
     font-weight: bold;
     padding: 4px 10px;
@@ -1142,6 +1142,7 @@ span.comments {
   .sidebar-nav-link:hover {
 background-color: #EDEAEA;
 font-weight: bold;
+color: #007c92;
   }
   .sidebar ul{
       padding-left: 0;
