@@ -52,8 +52,8 @@ module.exports = {
           // Defaults to null
           defaultDataLayer: { platform: "gatsby" },
 
-          // Specify optional GTM environment details.
-          gtmAuth: "ox8f72_41neC2uASte__bg",   //stage gtm
+          // Specify optional GTM environment details.  //GTM STG
+          gtmAuth: "ox8f72_41neC2uASte__bg",
           gtmPreview: "env-5",
 
         },
