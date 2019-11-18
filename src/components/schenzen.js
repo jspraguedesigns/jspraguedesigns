@@ -15,6 +15,8 @@ import fig7 from "../images/unnamed-chunk-9-1.png";
 import fig8 from "../images/unnamed-chunk-10-1.png";
 import fig9 from "../images/unnamed-chunk-11-1.png";
 import fig10 from "../images/unnamed-chunk-12-1.png";
+import SideMenu from "../components/side-bar-menu";
+import SideMenu2 from "../components/side-bar-menu-2";
 
 function display1 (){
   $('#id1').fadeIn('fast').siblings().fadeOut('fast');
@@ -32,6 +34,8 @@ function display2 (){
     $('.tab3').addClass('selected').siblings().removeClass('selected');
  
   }
+
+
 
 class Schenzen extends Component {
   constructor(props) {
@@ -132,52 +136,56 @@ class Schenzen extends Component {
       </div>
       </fieldset>
       <fieldset id="id2">
-      <div className="container mt-4">
+      <div className="container">
       <div className="row">
     
-        <div className="sidebar col-md-4">
+        <div className="mt-4 sidebar col-md-4">
 
-         <p>Only group size >=25 are illustrated</p>
-        <h1>Total Scores</h1>
-        <ul>
-<li><a href="#all1">All test takers (n=144)</a></li>
-<li><a href="#grades1">Compare: between grades</a></li>
-<li><a href="#class1">Compare: between class (within-grade)</a></li>
-<li><a href="#course1">Compare: between courses</a></li>
-<li><a href="#teachers">Compare: between teachers (within-grade)</a></li>
-</ul>
+         <SideMenu/>
         </div>
         <div className="info-charts col-md-8">
+          <form className="mt-4">
 
-              <div id="all1" className="col-md-12 mt-4">
-        <h3>All test takers (n=144)</h3>
-        <img className="img-fluid" src={fig1} alt="fig1"/>
-        </div>
+          <fieldset id="all1">
+            <div  className="col-md-12">
+           <h3>All test takers (n=144)</h3>
+           <img className="img-fluid" src={fig1} alt="fig1"/>
+            </div>
+          </fieldset>
+          <fieldset id="grades1" >
+            <div className="col-md-12">
+            <h3>Compare: between grades</h3>
+             <h2 className="tag">All test takers (n=144)</h2>
+             <img className="img-fluid" src={fig2} alt="fig2"/>
+            </div>
+          </fieldset>
 
-        <div id="grades1" className="col-md-12">
-        <h3>Compare: between grades</h3>
-        <h2 className="tag">All test takers (n=144)</h2>
-        <img className="img-fluid" src={fig2} alt="fig2"/>
-        </div>
-   
- 
-        <div id="class1" className="col-md-12">
+          <fieldset id="class1">
+          <div  className="col-md-12">
         <h3>Compare: between class (within-grade)</h3>
         <h2 className="tag">All test takers (n=144)</h2>
         <img className="img-fluid" src={fig3} alt="fig3"/>
         </div>
-
-
-        <div id="courses1" className="col-md-12">
+          </fieldset>
+ 
+   
+          <fieldset id="courses1">
+          <div  className="col-md-12">
         <h3>Compare: between courses</h3>
         <img className="img-fluid" src={fig4} alt="fig4"/>
         </div>
- 
+          </fieldset>
 
-        <div id="teachers" className="col-md-12">
+
+        <fieldset id="teachers">
+        <div  className="col-md-12">
         <h3>Compare: between teachers (within-grade)</h3>
         <img className="img-fluid" src={fig5} alt="fig5"/>
         </div>
+        </fieldset>
+
+          </form>
+        
         </div>
 
     
@@ -189,52 +197,51 @@ class Schenzen extends Component {
       <div className="row">
       
                 <div className="sidebar col-md-4">
-
-<p>Only group size >=25 are illustrated</p>
-<h2>Category Scores</h2>
-
-<ul>
-
-<li><a href="#all2">All test takers (n=144)</a></li>
-<li><a href="#grades2">Compare: between grades</a></li>
-<li><a href="#class2">Compare: between class (within-grade)</a></li>
-<li><a href="#courses2">Compare: between courses</a></li>
-<li><a href="#compare2">Compare: between teachers (within-grade)</a></li>
-
-</ul>
+<SideMenu2/>
 </div>
 
   <div className="info-charts col-md-8">
-        <div id="all2" className="col-md-12">
+  <form className="mt-4">
+  <fieldset id="all2" >
+  <div  className="col-md-12 ">
        
-        <h3 className="tag">All test takers (n=144)</h3>
-        <img className="img-fluid" src={fig6} alt="fig6"/>
-        </div>
-  
-
-
-        <div id="grades2" className="col-md-12">
+       <h3 className="tag">All test takers (n=144)</h3>
+       <img className="img-fluid" src={fig6} alt="fig6"/>
+       </div>
+  </fieldset>
+<fieldset id="grades2">
+<div  className="col-md-12">
         <h3>Compare: between grades</h3>
         <img className="img-fluid" src={fig7} alt="fig7"/>
         </div>
+</fieldset>
 
 
-        <div id="class2" className="col-md-12">
+<fieldset id="class2" >
+
+        <div className="col-md-12">
         <h3>Compare: between class (within-grade)</h3>
         <img className="img-fluid" src={fig8} alt="fig8"/>
         </div>
- 
+</fieldset>
 
-        <div id="courses2" className="col-md-12">
+ <fieldset id="courses2">
+ <div  className="col-md-12 ">
         <h3>Compare: between courses</h3>
         <img className="img-fluid" src={fig9} alt="fig9"/>
         </div>
   
+   </fieldset>
 
-        <div id="compare2" className="col-md-12">
+ <fieldset  id="compare2">
+ <div className="col-md-12">
         <h3>Compare: between teachers (within-grade)</h3>
         <img className="img-fluid" src={fig10} alt="fig10"/>
         </div>
+ </fieldset>
+
+    
+        </form>
       </div>  
       </div>
       </div>

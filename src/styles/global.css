@@ -841,7 +841,7 @@ ol li {
 }
 
 
-#msform .inactive, #msform2 .inactive , #id2, #id3{
+#msform .inactive, #msform2 .inactive , #id2, #id3, #grades1, #class1, #courses1, #teachers, #grades2, #class2, #courses2, #compare2{
     display: none;
 }
 
@@ -892,6 +892,12 @@ span.comments {
 .inactive-field {
     display: none;
 }
+
+.info-charts ul{
+    padding: 0;
+    list-style: none;
+}
+
 
 #progressbar li:hover {
     background-color: #007c92;
@@ -1014,10 +1020,9 @@ span.comments {
 
 .banner-score {
     background: #2986BE;
-    background: linear-gradient(-150deg,#00C1B6 0,#136EB5 97%);
+    background: linear-gradient(-150deg,#00C1B6 0,#007c92 97%);
     background-size: cover;
     background-position: center bottom;
-    padding-top: 66px;
     z-index: 3;
 }
 
@@ -1078,7 +1083,7 @@ span.comments {
 }
 
 .section_menu>ul>li.selected a {
-    background-color: #fff;
+    background-color: rgb(247, 247, 247);
     color: #2C2D30;
     border-top-left-radius: 4px;
     border-top-right-radius: 4px;
@@ -1111,9 +1116,58 @@ span.comments {
     color: #007c92;
 }
 
-.info-charts{
-    max-height: 100vh;
-    overflow-y: scroll;
+
+.sidebar-nav {
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 1em;
+  }
+  
+  .sidebar-nav-link {
+    display: block;
+    position: relative;
+    margin-bottom: .3em;
+    color: 007c92;
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 1;
+    text-align: left;
+    width: 70%;
+    padding: 15px;
+  }
+
+  .sidebar-nav-link a{
+    font-weight: bold;
+  }
+
+  .sidebar-nav-link:hover {
+background-color: #EDEAEA;
+font-weight: bold;
+  }
+  .sidebar ul{
+      padding-left: 0;
+  }
+ .current-selection{
+    background-color: rebeccapurple;
+    padding: 15px;
+    font-weight: 700;
+    position: relative;
+}
+
+.current-selection a{
+    color: #fff !important;
+}
+
+.current-selection:after{
+    border: solid transparent;
+    content: " ";
+    height: 0;
+    width: 0;
+    position: absolute;
+    border-left-color: white;
+    border-width: 14px;
+    left: 100%;
+    top: 50%;
+    margin-top: -14px;
 }
 @media (max-width: 768px) {
     .desktop {
