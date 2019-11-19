@@ -44,7 +44,7 @@ class Schenzen extends Component {
       dropdownlistCategory: null,
       gridDataState: {
         sort: [
-          { field: "ProductName", dir: "asc" }
+          { field: "Grade", dir: "asc" }
         ],
         page: { skip: 0, take: 10 }
       },

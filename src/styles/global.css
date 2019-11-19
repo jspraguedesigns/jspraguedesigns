@@ -1139,11 +1139,19 @@ span.comments {
     font-weight: bold;
   }
 
-  .sidebar-nav-link:hover {
+  .sidebar-nav-link:hover , .sidebar-nav-link:focus{
 background-color: #EDEAEA;
 font-weight: bold;
 color: #007c92;
   }
+
+  .sidebar-nav-link:focus a,  .sidebar-nav-link:hover a, .sidebar-nav-link:focus-within a{
+    color: #007c92;
+      }
+
+      .sidebar-nav-link:hover a{
+        color: #007c92;
+          }
   .sidebar ul{
       padding-left: 0;
   }
@@ -1158,6 +1166,9 @@ color: #007c92;
     color: #fff !important;
 }
 
+.current-selection a:hover{
+    color: #007c92 !important;
+}
 .current-selection:after{
     border: solid transparent;
     content: " ";
