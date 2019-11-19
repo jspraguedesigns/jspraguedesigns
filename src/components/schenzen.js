@@ -87,8 +87,8 @@ class Schenzen extends Component {
        <div className="section_menu" id="global_menu">
        <ul>
          <li className="selected tab1" onClick={display1}><a href="#0" >Individual Level Scores</a></li>
-         <li className="tab2" ><a href="#0"onClick={display2}>Total Scores</a></li>
-         <li className="tab3" ><a href="#0"  onClick={display3}>Individual Scores</a></li>
+         <li className="tab2" ><a href="#0"onClick={display2}>Total Score Group Comparison</a></li>
+         <li className="tab3" ><a href="#0"  onClick={display3}>Category Scores Group Comparison</a></li>
 </ul>
 </div>
 </section>

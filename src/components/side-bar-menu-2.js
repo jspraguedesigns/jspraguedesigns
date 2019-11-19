@@ -55,7 +55,7 @@ class SideMenu2 extends Component {
     
 
 <p>Only group size >=25 are illustrated</p>
-<h2>Category Scores</h2>
+<h2>Category Scores Group Comparison</h2>
 
 <ul className="mt-4">
 
