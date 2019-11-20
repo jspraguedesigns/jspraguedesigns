@@ -54,10 +54,14 @@ const Header = () => {
                   Sample Questions
                 </Link>
               </NavDropdown>
-              <NavDropdown title="Teacher's Resources" id={"0807598482"}>
+              <NavDropdown title="Testing Resources" id={"0807598482"}>
+              <Link className="dropdown-item" to="/app/scoring">
+              Score Calculation
+              </Link>
                 <Link className="dropdown-item" to="/app/support">
                   Support Materials
                 </Link>
+          
                 <Link className="dropdown-item" to="/app/proctoring">
                   Proctoring
                 </Link>
@@ -66,14 +70,11 @@ const Header = () => {
                   Launch Test
                 </Link>
               </NavDropdown>
-              <NavDropdown title=" ELC Entry Results" id={"0807598482"}>
+
               <Link className="nav-link" to="/app/test-results">
-             Score Report
+              ELC Entry Results
               </Link>
-              <Link className="nav-link" to="/app/scoring">
-              Score Interpretation
-              </Link>
-              </NavDropdown>
+              
          
             </Navbar.Collapse>
           </Nav>

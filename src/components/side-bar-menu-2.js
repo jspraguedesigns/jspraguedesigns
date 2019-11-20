@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import  $ from 'jquery'
-
+import {Link} from "gatsby"
   function displayfig6(){
     $('#all2').fadeIn('fast').siblings().fadeOut('fast');
     $('.list-6').addClass('current-selection');
@@ -54,9 +54,9 @@ class SideMenu2 extends Component {
 
     
 
-<p>Only group size >=25 are illustrated</p>
+<p><i>Only group size >=25 are illustrated</i></p>
 <h2>Category Scores Group Comparison</h2>
-
+<p className="mt-2"><i>For a more detailed explanation of ELC Entry Scoring, please read our <Link to="/app/scoring"> Score Calculation </Link>section.</i></p>
 <ul className="mt-4">
 
 <li className="list-6 sidebar-nav-link current-selection" onClick={displayfig6}><a href="#0">All test takers</a></li>
