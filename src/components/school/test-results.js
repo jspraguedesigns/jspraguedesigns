@@ -13,8 +13,17 @@ const TestResults = () => {
       return (
         <div>
           <Comments/>
-          <h1>Welcome ETSers</h1>
-          <h3> No Score reports for you</h3>
+          <div className="container">
+
+            <div className="row">
+              <div className="col-md-12 bodyelc">
+              <h1>Welcome ETSers</h1>
+               <h3 className="tag"> No score reports for you.</h3>
+              </div>
+            </div>
+
+          </div>
+       
 
         </div>
       )
@@ -31,11 +40,15 @@ const TestResults = () => {
     default:
       // code block
       return (
-        <div>
+        <div className="container">
+
+        <div className="row">
+          <div className="col-md-12 bodyelc">
           <Comments/>
           <h1>{getUserInfo()["https://elc.innovation.ets.org/app_metadata"].org}, score report will be available a few
             weeks afer all your students complete the test</h1>
         </div>
+        </div></div>
       )
   }
 }

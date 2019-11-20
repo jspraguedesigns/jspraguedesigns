@@ -136,7 +136,7 @@ class Schenzen extends Component {
          <SideMenu/>
         </div>
         <div className="info-charts mt-4 col-md-8">
-        <ModalDiagram/>
+    
           <form className="mt-4">
 
           <fieldset id="all1">
