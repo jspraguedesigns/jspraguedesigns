@@ -66,11 +66,14 @@ const Header = () => {
                   Launch Test
                 </Link>
               </NavDropdown>
-
+              <NavDropdown title=" ELC Entry Results" id={"0807598482"}>
               <Link className="nav-link" to="/app/test-results">
-              ELC Entry Results
+             Score Report
               </Link>
-
+              <Link className="nav-link" to="/app/scoring">
+              Score Interpretation
+              </Link>
+              </NavDropdown>
          
             </Navbar.Collapse>
           </Nav>

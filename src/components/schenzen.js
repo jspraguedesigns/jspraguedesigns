@@ -167,13 +167,6 @@ class Schenzen extends Component {
           </fieldset>
 
 
-        <fieldset id="teachers">
-        <div  className="col-md-12 mb-4">
-        <h3>Compare: between teachers (within-grade)</h3>
-        <img className="img-fluid mt-4 mb-2" src={fig5} alt="fig5"/>
-        <i>Total number of test takers = 144</i>
-        </div>
-        </fieldset>
 
 
           </form>
@@ -238,13 +231,6 @@ class Schenzen extends Component {
   
    </fieldset>
 
- <fieldset  id="compare2">
- <div className="col-md-12 mb-4">
-        <h3>Compare: between teachers (within-grade)</h3>
-        <img className="img-fluid mt-4 mb-2" src={fig10} alt="fig10"/>
-        <i>Total number of test takers = 144</i>
-        </div>
- </fieldset>
 
     
         </form>
