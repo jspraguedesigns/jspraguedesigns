@@ -654,7 +654,6 @@ svg {
 }
 
 .bodyelc {
-    margin-top: 20px;
     min-height: calc(100vh - 195px);
 }
 
@@ -1223,4 +1222,23 @@ li.tab2:hover,li.tab2:hover, li.tab3:hover{
     .testing-req {
         height: 112px;
     }
+}
+.k-grid tr.k-master-row:last-child td{
+ padding-bottom: 40px;
+}
+
+/* .k-grid tr.k-master-row:last-child:after{
+    content: '';
+    height: 20px;
+    width: 100%;
+    display:table-row;
+    position:relative;
+} */
+
+.k-grid, .k-grid tbody{
+   border: 1px solid #949494 !important;
+}
+
+.k-grid table{
+border-right: 1px solid #949494 !important;
 }
