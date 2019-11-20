@@ -31,7 +31,7 @@ import  $ from 'jquery'
     $('.list-6').removeClass('current-selection');
     $('.list-7').removeClass('current-selection');
     $('.list-8').removeClass('current-selection');
-    $('.list-19').removeClass('current-selection');
+    $('.list-10').removeClass('current-selection');
   }
 
   function displayfig10(){
@@ -59,7 +59,7 @@ class SideMenu2 extends Component {
 
 <ul className="mt-4">
 
-<li className="list-6 sidebar-nav-link current-selection" onClick={displayfig6}><a href="#0">All test takers (n=144)</a></li>
+<li className="list-6 sidebar-nav-link current-selection" onClick={displayfig6}><a href="#0">All test takers</a></li>
 <li className="list-7 sidebar-nav-link"  onClick={displayfig7}><a href="#0">Compare: between grades</a></li>
 <li className="list-8 sidebar-nav-link"  onClick={displayfig8}><a href="#0">Compare: between class (within-grade)</a></li>
 <li className="list-9 sidebar-nav-link"  onClick={displayfig9 }><a href="#0">Compare: between courses</a></li>

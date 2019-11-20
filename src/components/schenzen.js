@@ -16,6 +16,7 @@ import fig9 from "../images/unnamed-chunk-11-1.png";
 import fig10 from "../images/unnamed-chunk-12-1.png";
 import SideMenu from "../components/side-bar-menu";
 import SideMenu2 from "../components/side-bar-menu-2";
+import illustration from "../images/illustration.png";
 
 function display1 (){
   $('#id1').fadeIn('fast').siblings().fadeOut('fast');
@@ -94,17 +95,17 @@ class Schenzen extends Component {
 </section>
 <form>
   <fieldset id="id1">
-      <div className="container mt-4">
+      <div className="container mt-4 mb-4">
         <h2>Individual Level Scores</h2>
         <hr/>
         
         <Grid
           data={process(scores, this.state.gridDataState)}
-          pageable={true}
+          pageable={false}
           sortable={true}
           {...this.state.gridDataState}
           onDataStateChange={this.handleGridDataStateChange}
-          style={{ height: "400px" }}
+          style={{ height: "600px" }}
           onRowClick={this.handleGridRowClick}>
         
           <GridColumn field="FirstName" title="First Name" />
@@ -131,41 +132,49 @@ class Schenzen extends Component {
 
           <fieldset id="all1">
             <div  className="col-md-12">
-           <h3>All test takers (n=144)</h3>
-           <img className="img-fluid" src={fig1} alt="fig1"/>
+           <h3>All test takers </h3>
+           <img className="img-fluid mt-4 mb-4" src={fig1} alt="fig1"/>
+           <i>Total number of test takers = 144</i>
+
             </div>
           </fieldset>
           <fieldset id="grades1" >
-            <div className="col-md-12">
+            <div className="col-md-12 mb-4">
             <h3>Compare: between grades</h3>
-             <h2 className="tag">All test takers (n=144)</h2>
-             <img className="img-fluid" src={fig2} alt="fig2"/>
+
+             <img className="img-fluid mt-4 mb-2" src={fig2} alt="fig2"/>
+             <i>Total number of test takers = 144</i>
             </div>
+          
           </fieldset>
 
           <fieldset id="class1">
-          <div  className="col-md-12">
+          <div  className="col-md-12 mb-4">
         <h3>Compare: between class (within-grade)</h3>
-        <h2 className="tag">All test takers (n=144)</h2>
-        <img className="img-fluid" src={fig3} alt="fig3"/>
+ 
+        <img className="img-fluid mt-4 mb-2" src={fig3} alt="fig3"/>
+        <i>Total number of test takers = 144</i>
         </div>
           </fieldset>
  
    
           <fieldset id="courses1">
-          <div  className="col-md-12">
+          <div  className="col-md-12 mb-4">
         <h3>Compare: between courses</h3>
-        <img className="img-fluid" src={fig4} alt="fig4"/>
+        <img className="img-fluid mt-4 mb-2" src={fig4} alt="fig4"/>
+        <i>Total number of test takers = 144</i>
         </div>
           </fieldset>
 
 
         <fieldset id="teachers">
-        <div  className="col-md-12">
+        <div  className="col-md-12 mb-4">
         <h3>Compare: between teachers (within-grade)</h3>
-        <img className="img-fluid" src={fig5} alt="fig5"/>
+        <img className="img-fluid mt-4 mb-2" src={fig5} alt="fig5"/>
+        <i>Total number of test takers = 144</i>
         </div>
         </fieldset>
+
 
           </form>
         
@@ -173,6 +182,15 @@ class Schenzen extends Component {
 
     
         </div>
+        <div className="row mt-4">
+        <div  className="col-md-6 mb-4">
+        <h4>How to interpret charts</h4>
+    <p> Scores are sorted. Then four equal sized groups are made from the ordered scores. That is, 25% of all scores are placed in each group. The lines dividing the groups are called quartiles, and the groups are referred to as quartile groups.</p>
+        <img className="img-fluid mt-4 mb-2" src={illustration} alt="illustration"/>
+ 
+        </div>
+        </div>
+  
         </div>
  </fieldset>
  <fieldset id="id3">
@@ -186,40 +204,45 @@ class Schenzen extends Component {
   <div className="info-charts col-md-8">
   <form className="mt-4">
   <fieldset id="all2" >
-  <div  className="col-md-12 ">
+  <div  className="col-md-12 mb-4">
        
-       <h3 className="tag">All test takers (n=144)</h3>
-       <img className="img-fluid" src={fig6} alt="fig6"/>
+       <h3 className="tag">All test takers</h3>
+       <img className="img-fluid mt-4 mb-2" src={fig6} alt="fig6"/>
+       <i>Total number of test takers = 144</i>
        </div>
   </fieldset>
 <fieldset id="grades2">
-<div  className="col-md-12">
+<div  className="col-md-12 mb-4">
         <h3>Compare: between grades</h3>
-        <img className="img-fluid" src={fig7} alt="fig7"/>
+        <img className="img-fluid mt-4 mb-2" src={fig7} alt="fig7"/>
+        <i>Total number of test takers = 144</i>
         </div>
 </fieldset>
 
 
 <fieldset id="class2" >
 
-        <div className="col-md-12">
+        <div className="col-md-12 mb-4">
         <h3>Compare: between class (within-grade)</h3>
-        <img className="img-fluid" src={fig8} alt="fig8"/>
+        <img className="img-fluid mt-4 mb-2" src={fig8} alt="fig8"/>
+        <i>Total number of test takers = 144</i>
         </div>
 </fieldset>
 
  <fieldset id="courses2">
- <div  className="col-md-12 ">
+ <div  className="col-md-12 mb-4">
         <h3>Compare: between courses</h3>
-        <img className="img-fluid" src={fig9} alt="fig9"/>
+        <img className="img-fluid mt-4 mb-2" src={fig9} alt="fig9"/>
+        <i>Total number of test takers = 144</i>
         </div>
   
    </fieldset>
 
  <fieldset  id="compare2">
- <div className="col-md-12">
+ <div className="col-md-12 mb-4">
         <h3>Compare: between teachers (within-grade)</h3>
-        <img className="img-fluid" src={fig10} alt="fig10"/>
+        <img className="img-fluid mt-4 mb-2" src={fig10} alt="fig10"/>
+        <i>Total number of test takers = 144</i>
         </div>
  </fieldset>
 
