@@ -206,7 +206,7 @@ class Schenzen extends Component {
   <div  className="col-md-12 mb-4">
        
        <h3 className="tag">All test takers</h3>
-       <img className="img-fluid mt-4 mb-2" src={fig6} alt="fig6"/>
+       <img className="img-fluid mb-2" src={fig6} alt="fig6"/>
     
        </div>
   </fieldset>
