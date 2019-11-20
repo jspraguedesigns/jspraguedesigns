@@ -657,7 +657,7 @@ svg {
 }
 
 .bodyelc {
-    min-height: calc(100vh - 195px);
+    min-height: calc(100vh - 175px);
 }
 
 .thead-dark {

@@ -54,9 +54,7 @@ class SideMenu2 extends Component {
 
     
 
-<p><i>Only group size >=25 are illustrated</i></p>
 
-<p className="mt-2"><i>For a more detailed explanation of ELC Entry Scoring, please read our <Link to="/app/scoring"> Score Calculation </Link>section.</i></p>
 <ul className="mt-4">
 
 <li className="list-6 sidebar-nav-link current-selection" onClick={displayfig6}><a href="#0">All test takers</a></li>
@@ -66,6 +64,10 @@ class SideMenu2 extends Component {
 <li className="list-10 sidebar-nav-link" onClick={displayfig10}><a href="#compare2">Compare: between teachers (within-grade)</a></li>
 
 </ul>
+
+<p className="mt-2"><i>Only group size >=25 are illustrated</i></p>
+
+<p className="mt-2"><i>For a more detailed explanation of ELC Entry Scoring, please read our <Link to="/app/scoring"> Score Calculation </Link>section.</i></p>
         </>
      
     );
