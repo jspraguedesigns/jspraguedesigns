@@ -88,7 +88,7 @@ class Schenzen extends Component {
 
         <section className="banner-score">
         <div className="banner_container">
-        <h1 className="banner_title">Shen Zhen High School: ELC Entry Results</h1>
+        <h4 className="banner_title">ELC Entry Results</h4>
        </div>
        <div className="section_menu" id="global_menu">
        <ul>
@@ -101,19 +101,14 @@ class Schenzen extends Component {
 <form>
   <fieldset id="id1">
       <div className="container mt-4 mb-4">
-        <h2>Individual Level Scores</h2>
-        <p className="mt-2"><i>For a more detailed explanation of ELC Entry Scoring, please read our <Link to="/app/scoring"> Score Calculation </Link>section.</i></p>
-  
-     <p><i>Only group size >=25 are illustrated.</i></p>
-        <hr/>
- 
+
         <Grid
           data={process(scores, this.state.gridDataState)}
           pageable={false}
           sortable={true}
           {...this.state.gridDataState}
           onDataStateChange={this.handleGridDataStateChange}
-          style={{ height: "600px" }}
+          style={{ height: "350px" }}
           onRowClick={this.handleGridRowClick}>
         
           <GridColumn field="FirstName" title="First Name" />
@@ -123,7 +118,8 @@ class Schenzen extends Component {
           <GridColumn field="Teacher" title="Teacher" />
       
         </Grid>
-
+      
+        <p className="mt-2"><i>For a more detailed explanation of ELC Entry Scoring, please read our <Link to="/app/scoring"> Score Calculation </Link>section.</i></p>
         
       </div>
       </fieldset>
@@ -137,7 +133,7 @@ class Schenzen extends Component {
         </div>
         <div className="info-charts mt-4 col-md-8">
     
-          <form className="mt-4">
+          <form>
 
           <fieldset id="all1">
             <div  className="col-md-12">
@@ -205,7 +201,7 @@ class Schenzen extends Component {
 
   <div className="info-charts col-md-8 mt-4">
  
-  <form className="mt-4">
+  <form>
   <fieldset id="all2" >
   <div  className="col-md-12 mb-4">
        

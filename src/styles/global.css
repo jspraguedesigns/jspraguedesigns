@@ -626,7 +626,7 @@ h1.home-text {
 }
 
 footer {
-    height: 100px;
+    height: auto;
     background-color: #333;
 
 }
@@ -1042,15 +1042,11 @@ span.comments {
     margin-right: auto;
     display: flex;
     flex-wrap: wrap;
-    padding: 35px 15px;
+    padding: 25px 15px;
     width: 100%;
 }
 
-.banner-score .banner_title {
-    font-weight: 700;
-    font-size: 44px;
-    line-height: 52px;
-}
+
 
 .banner-score .banner_title {
     flex-basis: 100%;
