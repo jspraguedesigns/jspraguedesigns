@@ -8,8 +8,9 @@ import Proctoring from "../components/school/proctoring"
 import Sample from "../components/sample"
 import Training from "../components/school/teacher_training"
 import Launch from "../components/school/launch"
-import TestResults from "../components/school/test-results";
-import TroubleShooting from "../components/school/trouble_shooting";
+import TestResults from "../components/school/test-results"
+import TroubleShooting from "../components/school/trouble_shooting"
+import ScoreCalculation from "../components/scoring"
 
 const App = () => {
   // if (!isBrowser) {
@@ -40,6 +41,7 @@ const App = () => {
             <Launch path="/app/launch" />
             <TestResults path="/app/test-results" />
             <TroubleShooting path="/app/trouble_shooting" />
+            <ScoreCalculation path="/app/scoring" />
           </Router>
         </Layout>
       </>

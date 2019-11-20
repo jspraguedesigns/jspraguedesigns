@@ -7,7 +7,7 @@ const Footer = () => {
         <div className="row">
 
 
-          <div className="col-md-9 d-flex align-items-center p-4">
+          <div className="col-md-12 d-flex align-items-center p-4">
             <div className="copyright">
               Copyright &copy; 2019 by Educational Testing Service. All rights reserved.
               All trademarks are the property of their respective owners.

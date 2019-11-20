@@ -15,6 +15,7 @@ console.log("gatsby-config:process.env.GA_TRACKING_ID[" + process.env.GA_TRACKIN
 module.exports = {
     siteMetadata: {
         siteUrl: process.env.SITE_URL,
+      apiNamespace: `https://elc.innovation.ets.org`,
         title: `ETS ELC `,
         description: `ETS ELC.`,
         author: `@falcon`,
@@ -52,9 +53,9 @@ module.exports = {
           // Defaults to null
           defaultDataLayer: { platform: "gatsby" },
 
-          // Specify optional GTM environment details.
-          gtmAuth: "8R8wFObiUUk3bj13BVzu4A",
-          gtmPreview: "env-2",
+          // Specify optional GTM environment details.  //GTM STG
+          gtmAuth: "ox8f72_41neC2uASte__bg",
+          gtmPreview: "env-5",
 
         },
       },
@@ -73,13 +74,13 @@ module.exports = {
                 ignore: [`**/\.*`], // ignore files starting with a dot
             },
         },
-        {
-            resolve: `gatsby-plugin-hotjar`,
-            options: {
-              id: 1558085,
-              sv: 6
-            },
-          },
+      {
+        resolve: `gatsby-plugin-hotjar`,
+        options: {
+          id: 1558085,
+          sv: 6,
+        },
+      },
         `gatsby-transformer-sharp`,
         `gatsby-plugin-sharp`,
         {
