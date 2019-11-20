@@ -80,7 +80,7 @@ h2.tag {
     font-size: 2em;
     display: block;
     margin: 0 auto;
-    border: 4px solid #999;
+    border: 1px solid #949494;
     width: 80px;
     height: 80px;
     border-radius: 100px;
@@ -386,6 +386,9 @@ span.missing {
     padding-left: .2rem;
 }
 
+hr{
+    border-top: 1px solid #949494;
+}
 
 .form-control {
     display: inline;
@@ -394,7 +397,7 @@ span.missing {
     line-height: 1.5;
     background-color: #fff;
     background-clip: padding-box;
-    border: 2px solid #ced4da;
+    border: 1px solid #949494;
     border-radius: 5;
     float: left;
     margin-right: 3px;
@@ -1241,4 +1244,5 @@ li.tab2:hover,li.tab2:hover, li.tab3:hover{
 
 .k-grid table{
 border-right: 1px solid #949494 !important;
+color: #212529;
 }
