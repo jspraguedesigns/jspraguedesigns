@@ -68,7 +68,7 @@ const Header = () => {
               </NavDropdown>
 
               <Link className="nav-link" to="/app/test-results">
-                Test Report <small>(Coming Soon)</small>
+              ELC Entry Results
               </Link>
 
          

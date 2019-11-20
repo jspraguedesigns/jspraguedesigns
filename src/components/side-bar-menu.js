@@ -53,7 +53,7 @@ class SideMenu extends Component {
         <>
 
          <p>Only group size >=25 are illustrated</p>
-        <h2>Total Scores</h2>
+        <h2>Total Score Group Comparison</h2>
         <ul className="mt-4">
 <li className="list-1 sidebar-nav-link current-selection" onClick={displayfig1}><a href="#0">All test takers (n=144)</a></li>
 <li className="list-2 sidebar-nav-link" onClick={displayfig2} ><a href="#0">Compare: between grades</a></li>

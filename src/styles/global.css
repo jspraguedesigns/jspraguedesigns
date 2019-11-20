@@ -773,7 +773,7 @@ thead th {
 .comment-btn {
     position: relative;
     right: 65px;
-    top: 280px;
+    top: 130px;
     transform: rotate(-90deg);
     font-weight: bold;
     padding: 4px 10px;
@@ -1045,7 +1045,7 @@ span.comments {
     margin-right: auto;
     display: flex;
     flex-wrap: wrap;
-    padding: 55px 15px;
+    padding: 35px 15px;
     width: 100%;
 }
 
@@ -1139,10 +1139,19 @@ span.comments {
     font-weight: bold;
   }
 
-  .sidebar-nav-link:hover {
+  .sidebar-nav-link:hover , .sidebar-nav-link:focus{
 background-color: #EDEAEA;
 font-weight: bold;
+color: #007c92;
   }
+
+  .sidebar-nav-link:focus a,  .sidebar-nav-link:hover a, .sidebar-nav-link:focus-within a{
+    color: #007c92;
+      }
+
+      .sidebar-nav-link:hover a{
+        color: #007c92;
+          }
   .sidebar ul{
       padding-left: 0;
   }
@@ -1157,6 +1166,9 @@ font-weight: bold;
     color: #fff !important;
 }
 
+.current-selection a:hover{
+    color: #007c92 !important;
+}
 .current-selection:after{
     border: solid transparent;
     content: " ";
@@ -1168,6 +1180,40 @@ font-weight: bold;
     left: 100%;
     top: 50%;
     margin-top: -14px;
+}
+
+tr{
+    text-align: center;
+}
+table td:nth-child(3){
+    font-weight: bold;
+}
+
+th.k-sorted{
+    background-color:rgb(0, 124, 146) !important;
+}
+
+
+
+.k-pager-numbers .k-link {
+    color:rgb(0, 124, 146) !important;
+}
+
+.k-pager-numbers .k-state-selected {
+    color: #fff !important;
+    background-color:rebeccapurple!important;
+}
+
+.k-grid-header .k-i-sort-asc-sm, .k-grid-header .k-i-sort-desc-sm, .k-grid-header .k-sort-order {
+    color: #fff !important;
+}
+.k-dialog-titlebar {
+    border-color: inherit;
+    color: #fff;
+    background-color: rgb(0, 124, 146);
+}
+li.tab2:hover,li.tab2:hover, li.tab3:hover{
+    background-color: #000;
 }
 @media (max-width: 768px) {
     .desktop {
