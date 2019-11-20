@@ -16,7 +16,10 @@ import fig9 from "../images/unnamed-chunk-11-1.png";
 import fig10 from "../images/unnamed-chunk-12-1.png";
 import SideMenu from "../components/side-bar-menu";
 import SideMenu2 from "../components/side-bar-menu-2";
-import illustration from "../images/illustration.png";
+
+import ModalDiagram from "../components/modal";
+import {Link} from "gatsby"
+
 
 function display1 (){
   $('#id1').fadeIn('fast').siblings().fadeOut('fast');
@@ -79,7 +82,9 @@ class Schenzen extends Component {
   
   render() {
     return (
+
       <div>
+
 
         <section className="banner-score">
         <div className="banner_container">
@@ -97,8 +102,11 @@ class Schenzen extends Component {
   <fieldset id="id1">
       <div className="container mt-4 mb-4">
         <h2>Individual Level Scores</h2>
+        <p className="mt-2"><i>For a more detailed explanation of ELC Entry Scoring, please read our <Link to="/app/scoring"> Score Calculation </Link>section.</i></p>
+  
+     <p><i>Only group size >=25 are illustrated.</i></p>
         <hr/>
-        
+ 
         <Grid
           data={process(scores, this.state.gridDataState)}
           pageable={false}
@@ -127,14 +135,15 @@ class Schenzen extends Component {
 
          <SideMenu/>
         </div>
-        <div className="info-charts col-md-8">
+        <div className="info-charts mt-4 col-md-8">
+        <ModalDiagram/>
           <form className="mt-4">
 
           <fieldset id="all1">
             <div  className="col-md-12">
            <h3>All test takers </h3>
            <img className="img-fluid mt-4 mb-4" src={fig1} alt="fig1"/>
-           <i>Total number of test takers = 144</i>
+        
 
             </div>
           </fieldset>
@@ -143,7 +152,7 @@ class Schenzen extends Component {
             <h3>Compare: between grades</h3>
 
              <img className="img-fluid mt-4 mb-2" src={fig2} alt="fig2"/>
-             <i>Total number of test takers = 144</i>
+           
             </div>
           
           </fieldset>
@@ -153,7 +162,7 @@ class Schenzen extends Component {
         <h3>Compare: between class (within-grade)</h3>
  
         <img className="img-fluid mt-4 mb-2" src={fig3} alt="fig3"/>
-        <i>Total number of test takers = 144</i>
+      
         </div>
           </fieldset>
  
@@ -162,19 +171,19 @@ class Schenzen extends Component {
           <div  className="col-md-12 mb-4">
         <h3>Compare: between courses</h3>
         <img className="img-fluid mt-4 mb-2" src={fig4} alt="fig4"/>
-        <i>Total number of test takers = 144</i>
+     
         </div>
           </fieldset>
 
 
-        <fieldset id="teachers">
-        <div  className="col-md-12 mb-4">
-        <h3>Compare: between teachers (within-grade)</h3>
-        <img className="img-fluid mt-4 mb-2" src={fig5} alt="fig5"/>
+  <div className="row  d-flex mb-4">
+        <div className="col">
         <i>Total number of test takers = 144</i>
         </div>
-        </fieldset>
-
+        <div className="ml-auto">
+        <ModalDiagram/>
+        </div>
+        </div>
 
           </form>
         
@@ -182,14 +191,7 @@ class Schenzen extends Component {
 
     
         </div>
-        <div className="row mt-4">
-        <div  className="col-md-6 mb-4">
-        <h4>How to interpret charts</h4>
-    <p> Scores are sorted. Then four equal sized groups are made from the ordered scores. That is, 25% of all scores are placed in each group. The lines dividing the groups are called quartiles, and the groups are referred to as quartile groups.</p>
-        <img className="img-fluid mt-4 mb-2" src={illustration} alt="illustration"/>
- 
-        </div>
-        </div>
+   
   
         </div>
  </fieldset>
@@ -201,21 +203,22 @@ class Schenzen extends Component {
 <SideMenu2/>
 </div>
 
-  <div className="info-charts col-md-8">
+  <div className="info-charts col-md-8 mt-4">
+ 
   <form className="mt-4">
   <fieldset id="all2" >
   <div  className="col-md-12 mb-4">
        
        <h3 className="tag">All test takers</h3>
        <img className="img-fluid mt-4 mb-2" src={fig6} alt="fig6"/>
-       <i>Total number of test takers = 144</i>
+    
        </div>
   </fieldset>
 <fieldset id="grades2">
 <div  className="col-md-12 mb-4">
         <h3>Compare: between grades</h3>
         <img className="img-fluid mt-4 mb-2" src={fig7} alt="fig7"/>
-        <i>Total number of test takers = 144</i>
+     
         </div>
 </fieldset>
 
@@ -225,7 +228,7 @@ class Schenzen extends Component {
         <div className="col-md-12 mb-4">
         <h3>Compare: between class (within-grade)</h3>
         <img className="img-fluid mt-4 mb-2" src={fig8} alt="fig8"/>
-        <i>Total number of test takers = 144</i>
+      
         </div>
 </fieldset>
 
@@ -233,26 +236,32 @@ class Schenzen extends Component {
  <div  className="col-md-12 mb-4">
         <h3>Compare: between courses</h3>
         <img className="img-fluid mt-4 mb-2" src={fig9} alt="fig9"/>
-        <i>Total number of test takers = 144</i>
+       
         </div>
   
    </fieldset>
 
- <fieldset  id="compare2">
- <div className="col-md-12 mb-4">
-        <h3>Compare: between teachers (within-grade)</h3>
-        <img className="img-fluid mt-4 mb-2" src={fig10} alt="fig10"/>
+  <div className="row  d-flex mb-4">
+        <div className="col">
         <i>Total number of test takers = 144</i>
         </div>
- </fieldset>
-
+        <div className="ml-auto">
+        <ModalDiagram/>
+        </div>
+        </div>
     
         </form>
+
       </div>  
+
+ 
+
       </div>
+      
       </div>
       </fieldset>
   </form>
+
  </div>
     );
   }

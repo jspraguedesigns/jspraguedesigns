@@ -1122,14 +1122,16 @@ span.comments {
   .sidebar-nav-link {
     display: block;
     position: relative;
-    margin-bottom: .3em;
+    margin-bottom: 1em;
     color: 007c92;
     font-size: 15px;
     font-weight: 500;
     line-height: 1;
-    text-align: left;
+    text-align: center;
     width: 70%;
-    padding: 15px;
+    padding: 10px 15px;
+    border-radius: 20px !important;
+    border: 1px solid #999;
   }
 
   .sidebar-nav-link a{
@@ -1154,9 +1156,10 @@ color: #007c92;
   }
  .current-selection{
     background-color: rebeccapurple;
-    padding: 15px;
+    padding: 10px 15px;
     font-weight: 700;
     position: relative;
+    border: none;
 }
 
 .current-selection a{
