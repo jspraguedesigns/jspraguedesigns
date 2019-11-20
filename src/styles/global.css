@@ -626,7 +626,7 @@ h1.home-text {
 }
 
 footer {
-    height: auto;
+    height: 70px;
     background-color: #333;
 
 
@@ -655,7 +655,7 @@ svg {
 
 .bodyelc {
     margin-top: 20px;
-    min-height: calc(100vh - 230px);
+    min-height: calc(100vh - 195px);
 }
 
 .thead-dark {
