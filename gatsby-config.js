@@ -15,6 +15,7 @@ console.log("gatsby-config:process.env.GA_TRACKING_ID[" + process.env.GA_TRACKIN
 module.exports = {
     siteMetadata: {
         siteUrl: process.env.SITE_URL,
+      apiNamespace: `https://elc.innovation.ets.org`,
         title: `ETS ELC `,
         description: `ETS ELC.`,
         author: `@falcon`,

@@ -1,9 +1,9 @@
 import React from "react"
-import {Link} from "gatsby"
+import { Link } from "gatsby"
 import "bootstrap/dist/css/bootstrap.min.css"
-import {Nav, Navbar, NavDropdown} from "react-bootstrap"
+import { Nav, Navbar, NavDropdown } from "react-bootstrap"
 import "../../styles/global.css"
-import {getUserInfo, logout} from "../../utils/auth"
+import { getUserInfo, logout } from "../../utils/auth"
 
 const Header = () => {
   return (
@@ -12,7 +12,8 @@ const Header = () => {
         <div className="login container-fluid d-flex">
         <div className="ml-auto">
         <div className="navbar-text text-wrap font-italic">
-                {getUserInfo().name ? getUserInfo().name : "friend"}
+          {getUserInfo().name ? getUserInfo().name : "friend"} &nbsp;
+          {getUserInfo()["https://elc.innovation.ets.org/app_metadata"].org}
               </div>
               &nbsp;
         <Link
