@@ -14,9 +14,8 @@ function MyVerticallyCenteredModal(props) {
           <h4>How to interpret charts</h4>
           </Modal.Title>
         </Modal.Header>
-        <Modal.Body>
+        <Modal.Body className="text-center">
       
-    <p> Scores are sorted. Then four equal sized groups are made from the ordered scores. That is, 25% of all scores are placed in each group. The lines dividing the groups are called quartiles, and the groups are referred to as quartile groups.</p>
         <img className="img-fluid mt-4 mb-2" src={illustration} alt="illustration"/>
         </Modal.Body>
     
