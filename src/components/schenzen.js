@@ -140,7 +140,9 @@ class Schenzen extends Component {
            <h3>All test takers </h3>
            <img className="img-fluid mt-4 mb-4" src={fig1} alt="fig1"/>
         
-
+           <div className="col">
+            <i>Total number of test takers = 144</i>
+          </div>
             </div>
           </fieldset>
           <fieldset id="grades1" >
@@ -173,9 +175,7 @@ class Schenzen extends Component {
 
 
   <div className="row  d-flex mb-4">
-        <div className="col">
-        <i>Total number of test takers = 144</i>
-        </div>
+      
         <div className="ml-auto">
         <ModalDiagram/>
         </div>
@@ -206,7 +206,10 @@ class Schenzen extends Component {
   <div  className="col-md-12 mb-4">
        
        <h3 className="tag">All test takers</h3>
-       <img className="img-fluid mb-2" src={fig6} alt="fig6"/>
+       <img className="img-fluid mb-2 mt-4" src={fig6} alt="fig6"/>
+       <div className="col">
+        <i>Total number of test takers = 144</i>
+        </div>
     
        </div>
   </fieldset>
@@ -238,9 +241,7 @@ class Schenzen extends Component {
    </fieldset>
 
   <div className="row  d-flex mb-4">
-        <div className="col">
-        <i>Total number of test takers = 144</i>
-        </div>
+    
         <div className="ml-auto">
         <ModalDiagram/>
         </div>
