@@ -13,7 +13,7 @@ const ScoreCalculation = () => {
                     <hr />
                  
             </div>
-            <p>The ELC Entry Test has six measures: Listening, Vocabulary, Grammar, Reading, Speaking, and Writing The Speaking and Writing sections are not scored. Items in the remaining four measures (Listening, Vocabulary, Grammar, Reading) can all be scored as right or wrong. The following sections are specifically for these four measures.</p>
+            <p>The ELC Entry Test has six measures: Listening, Vocabulary, Grammar, Reading, Speaking, and Writing. The Speaking and Writing sections are not scored. Items in the remaining four measures (Listening, Vocabulary, Grammar, Reading) can all be scored as right or wrong. The following text describes the scores in these four test sections.</p>
             <br/>
             <p>Items in the Listening, Vocabulary, Grammar, and Reading measures are delivered as a two-stage adaptive test – selection of the Stage 2 panel form is determined by performance on the Stage 1 router. Scores for the total test and each of the four measures are based on performance on both stages of the test.</p>
             <br/>

@@ -59,7 +59,6 @@ class SideMenu extends Component {
 <li className="list-2 sidebar-nav-link" onClick={displayfig2} ><a href="#0">Compare: between grades</a></li>
 <li className="list-3 sidebar-nav-link" onClick={displayfig3}><a href="#0">Compare: between class (within-grade)</a></li>
 <li className="list-4 sidebar-nav-link" onClick={displayfig4}><a href="#0">Compare: between courses</a></li>
-<li className="list-5 sidebar-nav-link" onClick={displayfig5}><a href="#0">Compare: between teachers (within-grade)</a></li>
 </ul>
 
    <p><i>Only group size >=25 are illustrated</i></p>

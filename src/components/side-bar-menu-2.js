@@ -65,8 +65,7 @@ class SideMenu2 extends Component {
           <li className="list-8 sidebar-nav-link" onClick={displayfig8}><a href="#0">Compare: between class
             (within-grade)</a></li>
           <li className="list-9 sidebar-nav-link" onClick={displayfig9}><a href="#0">Compare: between courses</a></li>
-          <li className="list-10 sidebar-nav-link" onClick={displayfig10}><a href="#compare2">Compare: between teachers
-            (within-grade)</a></li>
+      
 
         </ul>
 
