@@ -6,8 +6,6 @@ export const isBrowser = typeof window !== 'undefined';
 // This prevents a flicker while the HTTP round-trip completes.
 let profile = false;
 
-console.log("process.env")
-console.log(process.env)
 
 const tokens = {
   accessToken: false,
@@ -36,7 +34,8 @@ export const login = () => {
 };
 
 export const logout = () => {
-  localStorage.setItem('isLoggedIn', false);
+  //localStorage.setItem('isLoggedIn', false);
+  sessionStorage.setItem('isLoggedIn', false);
   profile = false;
 
   const { protocol, host } = window.location;
@@ -62,7 +61,8 @@ const setSession = callback => (err, authResult) => {
     tokens.idToken = authResult.idToken;
     tokens.expiresAt = expiresAt;
     profile = authResult.idTokenPayload;
-    localStorage.setItem('isLoggedIn', true);
+    //localStorage.setItem('isLoggedIn', true);
+    sessionStorage.setItem('isLoggedIn', true);
     callback();
   }
 };
@@ -89,7 +89,8 @@ export const isAuthenticated = () => {
     return;
   }
 
-  return localStorage.getItem('isLoggedIn') === 'true';
+  //return localStorage.getItem('isLoggedIn') === 'true';
+  return sessionStorage.getItem('isLoggedIn') === 'true';
 };
 
 export const getAccessToken = () => {
