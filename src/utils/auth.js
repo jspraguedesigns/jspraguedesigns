@@ -6,8 +6,6 @@ export const isBrowser = typeof window !== 'undefined';
 // This prevents a flicker while the HTTP round-trip completes.
 let profile = false;
 
-console.log("process.env")
-console.log(process.env)
 
 const tokens = {
   accessToken: false,
