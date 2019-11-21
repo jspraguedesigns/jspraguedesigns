@@ -63,7 +63,7 @@ class SideMenu extends Component {
 
    <p><i>Only group size >=25 are illustrated</i></p>
      
-     <p className="mt-2"><i>For a more detailed explanation of ELC Entry Scoring, please read our <Link to="/app/scoring"> Score Calculation </Link>section.</i></p>
+     <p className="mt-2"><i>For a more detailed explanation of ELC Entry Scoring, please read our  <a href="/app/scoring" target="_blank"> Score Calculation </a> section.</i></p>
 
         </>
      

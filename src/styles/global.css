@@ -658,6 +658,10 @@ footer a:hover {
     font-size: .85em;
 }
 
+.k-widget{
+height:calc(100vh - 378px);
+}
+
 svg {
     height: 100px;
     width: 80px;

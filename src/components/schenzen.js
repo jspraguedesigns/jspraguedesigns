@@ -108,7 +108,7 @@ class Schenzen extends Component {
           sortable={true}
           {...this.state.gridDataState}
           onDataStateChange={this.handleGridDataStateChange}
-          style={{ height: "454px" }}
+   
           onRowClick={this.handleGridRowClick}>
         
           <GridColumn field="FirstName" title="First Name" />
