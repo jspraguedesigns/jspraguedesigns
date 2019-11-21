@@ -1,18 +1,18 @@
-import React from 'react'
-import {Link} from 'gatsby'
-import Comments from '../components/comments'
+import React from "react"
+import { Link } from "gatsby"
+import Comments from "../components/comments"
 
 const About = () => {
-    return (
-        <div>
-        <Comments/>
-      
-            <div className="container pt-4 pb-4">
-                <div className="row">
-                    <div className="col-md-12">
-                    <h1>What Is ELC</h1>
-                    <hr />
-                    <div className="image-what-is-elc">
+  return (
+    <div>
+      <Comments/>
+
+      <div className="container pt-4 pb-4">
+        <div className="row">
+          <div className="col-md-12">
+            <h1>What Is ELC</h1>
+            <hr/>
+            <div className="image-what-is-elc">
             </div>
             <p>ELC is a comprehensive assessment system for English language learners around the world.</p>
 <br/>
@@ -53,7 +53,7 @@ const About = () => {
             </div>
             </div>
 
-    )
+  )
 };
 
 export default About

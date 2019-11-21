@@ -386,7 +386,7 @@ span.missing {
     padding-left: .2rem;
 }
 
-hr{
+hr {
     border-top: 1px solid #949494;
 }
 
@@ -1116,9 +1116,9 @@ span.comments {
 .sidebar-nav {
     border-bottom: 1px solid #ccc;
     padding-bottom: 1em;
-  }
-  
-  .sidebar-nav-link {
+}
+
+.sidebar-nav-link {
     display: block;
     position: relative;
     margin-bottom: 1em;
@@ -1131,29 +1131,31 @@ span.comments {
     padding: 10px 15px;
     border-radius: 20px !important;
     border: 1px solid #999;
-  }
+}
 
-  .sidebar-nav-link a{
+.sidebar-nav-link a {
     font-weight: bold;
-  }
+}
 
-  .sidebar-nav-link:hover , .sidebar-nav-link:focus{
-background-color: #EDEAEA;
-font-weight: bold;
-color: #007c92;
-  }
-
-  .sidebar-nav-link:focus a,  .sidebar-nav-link:hover a, .sidebar-nav-link:focus-within a{
+.sidebar-nav-link:hover, .sidebar-nav-link:focus {
+    background-color: #EDEAEA;
+    font-weight: bold;
     color: #007c92;
-      }
+}
 
-      .sidebar-nav-link:hover a{
-        color: #007c92;
-          }
-  .sidebar ul{
-      padding-left: 0;
-  }
- .current-selection{
+.sidebar-nav-link:focus a, .sidebar-nav-link:hover a, .sidebar-nav-link:focus-within a {
+    color: #007c92;
+}
+
+.sidebar-nav-link:hover a {
+    color: #007c92;
+}
+
+.sidebar ul {
+    padding-left: 0;
+}
+
+.current-selection {
     background-color: rebeccapurple;
     padding: 10px 15px;
     font-weight: 700;
@@ -1226,8 +1228,9 @@ li.tab2:hover,li.tab2:hover, li.tab3:hover{
         height: 112px;
     }
 }
-.k-grid tr.k-master-row:last-child td{
- padding-bottom: 40px;
+
+.k-grid tr.k-master-row:last-child td {
+    padding-bottom: 40px;
 }
 
 /* .k-grid tr.k-master-row:last-child:after{
@@ -1238,11 +1241,11 @@ li.tab2:hover,li.tab2:hover, li.tab3:hover{
     position:relative;
 } */
 
-.k-grid, .k-grid tbody{
-   border: 1px solid #949494 !important;
+.k-grid, .k-grid tbody {
+    border: 1px solid #949494 !important;
 }
 
-.k-grid table{
-border-right: 1px solid #949494 !important;
-color: #212529;
+.k-grid table {
+    border-right: 1px solid #949494 !important;
+    color: #212529;
 }
