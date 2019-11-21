@@ -1218,6 +1218,9 @@ li.tab2:hover,li.tab2:hover, li.tab3:hover{
     background-color: #000;
 }
 @media (max-width: 768px) {
+    .navbar-nav {
+        width: 100%;
+    }
     .desktop {
         display: none;
     }
@@ -1227,6 +1230,40 @@ li.tab2:hover,li.tab2:hover, li.tab3:hover{
     }
     .testing-req {
         height: 112px;
+    }
+
+    .navbar-text{
+        display: none;
+    }
+
+    .section_menu>ul {
+        width: 100%;
+        padding: 0;
+    }
+
+    .section_menu>ul>li.selected a {
+        background-color: rgb(247, 247, 247);
+        color: #2C2D30;
+        border-top-left-radius: 0px;
+        border-top-right-radius: 0px;
+    }
+    .section_menu>ul>li a{
+        background-color: #949494;
+    }
+
+    .section_menu li {
+        width: 100%;
+    }
+    .banner-score .banner_container {
+        padding: 15px 15px;
+    }
+    .dropdown, .dropleft, .dropright, .dropup {
+        position: relative;
+        text-align: center;
+    }
+
+    .navbar-nav .show>.nav-link {
+        text-align: center;
     }
 }
 
