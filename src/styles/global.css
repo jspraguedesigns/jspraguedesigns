@@ -90,6 +90,13 @@ h2.tag {
 
 }
 
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: 0;
+   margin-left: 0;
+}
+
 .user-password {
     width: 300px !important;
     margin: 20px auto;
@@ -1246,9 +1253,11 @@ li.tab2:hover,li.tab2:hover, li.tab3:hover{
         color: #2C2D30;
         border-top-left-radius: 0px;
         border-top-right-radius: 0px;
+        text-align: center;
     }
     .section_menu>ul>li a{
         background-color: #949494;
+        text-align: center;
     }
 
     .section_menu li {
@@ -1265,6 +1274,49 @@ li.tab2:hover,li.tab2:hover, li.tab3:hover{
     .navbar-nav .show>.nav-link {
         text-align: center;
     }
+
+    .sidebar-nav-link {
+        width: 100%;
+    }
+    #progressbar li {
+        list-style-type: none;
+        width: 100%;
+        padding: 10px 10px;
+        color: #fff;
+        float: left;
+        position: relative;
+        display: block;
+        background-color: rebeccapurple;
+        margin: 10px 0px;
+        border-radius: 25px;
+        text-align: center;
+    }
+    #msform fieldset, #msform2 fieldset {
+        background: white;
+        border: 0 none;
+        border-radius: 3px;
+        box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.4);
+        padding: 20px 30px;
+        box-sizing: border-box;
+        width: 100%;
+        margin: 0;
+        position: relative;
+    }
+    #msform, #msform2 {
+        margin: 20px auto;
+        position: relative;
+    }
+
+    .image-what-is-elc, .image-test, .image-support {
+        width: 100%;
+
+    }
+
+    .comments {
+        width: 90%;
+        right: -90%;
+    }
+
 }
 
 .k-grid tr.k-master-row:last-child td {
