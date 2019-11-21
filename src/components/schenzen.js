@@ -141,7 +141,7 @@ class Schenzen extends Component {
            <img className="img-fluid mt-4 mb-4" src={fig1} alt="fig1"/>
         
            <div className="col">
-            <i>Total number of test takers = 144</i>
+            <i>Total number of test takers = 148</i>
           </div>
             </div>
           </fieldset>
@@ -208,7 +208,7 @@ class Schenzen extends Component {
        <h3 className="tag">All test takers</h3>
        <img className="img-fluid mb-2 mt-4" src={fig6} alt="fig6"/>
        <div className="col">
-        <i>Total number of test takers = 144</i>
+        <i>Total number of test takers = 148</i>
         </div>
     
        </div>
