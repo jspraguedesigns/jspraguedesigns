@@ -7,9 +7,8 @@ require("dotenv").config({
 });
 
 console.log("gatsby-config:process.env.GA_TRACKING_ID[" + process.env.GA_TRACKING_ID + "]");
-
-console.log("gatsby-config:process.env.AMPLIFY_GA_TRACKING_ID[" + process.env.AMPLIFY_GA_TRACKING_ID + "]");
-console.log("gatsby-config:process.env.GATSBY_AMPLIFY_GA_TRACKING_ID[" + process.env.GATSBY_AMPLIFY_GA_TRACKING_ID + "]");
+console.log("gatsby-config:process.env.AUTH0_CALLBACK [" + process.env.AUTH0_CALLBACK + "]");
+console.log("gatsby-config:process.env.AUTH0_DOMAIN[" + process.env.AUTH0_DOMAIN + "]");
 
 
 module.exports = {
