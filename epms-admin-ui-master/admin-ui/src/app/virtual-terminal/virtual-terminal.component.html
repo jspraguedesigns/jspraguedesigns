@@ -1,0 +1,46 @@
+
+<div class="mt-4 container-xl">
+    <div class="row">
+        <div class="col-md-12">
+                <h1>Virtual Terminal</h1>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam fermentum, nulla luctus pharetra vulputate.</p>
+            <div class="card">
+                <div class="card-body ">
+                    
+                        <form [formGroup]="transactionForm" (ngSubmit)="submit()" class="row d-flex align-items-center">
+                                 <div class="col-md-5 form-controls">
+                                     <label class="form-label">Transaction Type</label>
+                              
+                                             <select class="form-control" formControlName="transaction" id="transaction" (change)="ChangeOption($event)">
+                                                <option [ngValue]="null" disabled>Select...</option>
+                                               <option value="Sale">Sale</option>
+                                               <option value="Refund">Override Refund</option>
+                                             </select>
+                                       
+                                 </div>
+                                <div class="col-md-5 form-controls">
+                                     <label class="form-label">Originating System Code</label>
+                                             <select class="form-control" formControlName="OSC">
+                                                <option [ngValue]="null" disabled>Select...</option>
+                                               <option value="option">ERG</option>
+                                               <option value="option">ETS</option>
+                                               <option value="option">GRE</option>
+                                             </select>        
+                                </div>
+                                <div class="col-md-2">
+                                    <button class="btn btn-primary" type="submit" [disabled]="!transactionForm.valid">Go</button>
+                                </div>
+                        </form>
+
+                </div>
+          
+
+        </div>
+        <div *ngIf="submitted && selectedTransaction == 'Sale'">
+               <app-sale-payment></app-sale-payment>
+             </div>
+             <div *ngIf="submitted && selectedTransaction == 'Refund'">
+                    <app-override-refund></app-override-refund>
+             </div>
+    </div>
+</div>

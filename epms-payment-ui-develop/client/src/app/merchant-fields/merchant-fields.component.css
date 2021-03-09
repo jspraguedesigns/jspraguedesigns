@@ -1,0 +1,22 @@
+.light-blue{
+    border-radius: 10px;
+    filter: drop-shadow(4px 4px 4px #ddd);
+    background-color: rgba(229, 245, 252, 1);
+
+        font-family:'Open Sans', sans-serif;
+
+}
+
+.merch-fields{
+    margin-left:20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.required:after{
+    content: " *";
+}
+
+.input-text{
+    width:60%;
+}

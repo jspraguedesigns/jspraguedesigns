@@ -1,0 +1,56 @@
+<div class="card mt-4">
+    <div class="card-body">
+        <h3>Assign Originating System Code (OSC)</h3>
+        <label>Please select one or more Originating System Code (OSC).</label>
+        <form [formGroup]="myForm">
+        <div class="row">
+            <div class="col-md-6">
+                <ng-multiselect-dropdown
+                    [placeholder]="'Employee privilege'"
+                    formControlName="city"
+                    [data]="dropdownList"
+                    [settings]="dropdownSettings"
+                    >
+                    </ng-multiselect-dropdown>
+            </div>
+            <div class="col-md-6">
+                <button class="btn btn-primary mr-4">
+                    Add
+                </button>
+                <button class="btn btn-primary">
+                    Remove
+                </button>
+            </div>
+        </div>
+        <div class="row mt-4">
+            <div class="col-md-12">
+                <h3>List of Assigned Originating System Code</h3>
+                <table class="table">
+                    <tr>
+                        <th>Assigned Date</th>
+                        <th>Assigned Originating System Code (OSC)</th>
+                    </tr>
+                    <tr>
+                        <td>01/26/2021</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>01/26/2021</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>01/26/2021</td>
+                        <td></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <button class="btn btn-function" (click)="back()">
+        Exit
+        </button>
+        <button class="btn btn-primary" (click)="back()">
+            Save and Exit
+        </button>
+       </form>
+    </div>
+</div>

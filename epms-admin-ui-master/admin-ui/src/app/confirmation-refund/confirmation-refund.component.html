@@ -1,0 +1,132 @@
+<div class="bread-crumb">
+    <div class="container-xl">
+        <div class="row">
+            <div class="col-12 pt-2 pb-2">
+                    <a [routerLink]="['/virtual-terminal']">Virtual Terminal</a> / <a [routerLink]="['confirmation-refund']">{{title}}</a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container-xl mt-4">
+    <div class="row">
+        <div class="col-md-12 mb-4">
+                <h2 class="page-title">Confirmation</h2>
+        </div>
+    </div>
+        <div class="row">
+            <div class='col-md-12'>
+               
+                    <div class="alert alert-success"type="success">
+                        <div class="alert-message">
+                            <div class="row">
+                                <div class="col-md-1">
+                                     <fa-icon [icon]="faCheckCircle" class="check"></fa-icon>
+                                </div>
+                                <div class="col-md-11">
+                                     <strong>Override Refund Result</strong><br/>
+                                     Override Refund Successfully Processed.
+                                </div>
+                            </div>
+                    </div>
+                 </div>
+
+          
+                    <div class="card receiving-information mb-4">
+                        <div class="card-body">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                            <table>
+                                                    <tr>
+                                                        <td class="pr-4"><strong>Amount</strong></td>
+                                                        <td>12.00</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="pr-4"><strong>OSC</strong></td>   
+                                                     <td>APP</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="pr-4"><strong>Order ID</strong></td>
+                                                         <td>A12345</td>
+                                                    </tr>
+                                              
+                                                </table>
+                                    </div>
+                                    <div class="col-md-6">
+                                            <h3>Shipping/Contact Information</h3>
+                                            <div>
+                                                <span>firstName</span>&nbsp;&nbsp;
+                                                <span>lastName</span>
+                                            </div>
+                                            <div>shippingAddress</div>  
+                                            <div>addressLine1</div>
+                                            <div>addressLine2</div>
+                                            <div>city region</div>
+                                            <div>postalCode</div>
+                                            <div>country</div>
+                                            <div class="mt-4">
+                                                phoneNumber
+                                            </div>
+                                            <div>
+                                                email
+                                            </div>
+                                            <div class="mt-4">
+                                                <small>This is the name and address of the person who will receive the product/service (e.g., the person who will be taking a test or is requesting scores); or, if you ordered items to be shipped, they will be sent to this address.</small>
+                                            </div>
+                                    </div>
+                                </div>
+                        </div>
+                    </div>
+
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <h2 class="error">Override Transaction Error</h2>
+                            <div class="row">
+                                <div class="col-12">
+                                <h3 class="error"> <fa-icon [icon]="faExclamationTriangle"></fa-icon>  Override Refund Transaction Result</h3>
+                                </div>
+                            </div>
+                            
+                            <div class="error-message">
+                                    <span class="error">Your Refund was declined.</span>
+                            </div>
+
+                            <div class="error-message">
+                                    <span class="error">Your Refund was rejected.</span>
+                            </div>
+                            
+                            <div class="error-message">
+                                    <span class="error">Your Refund was in error.</span>
+                            </div>
+
+                            
+                            <div class="grey-box p-4">
+                                <table>
+                                    <tr>
+                                        <th>Amount</th> <td>$12.00</td>
+                                    </tr>
+                                    <tr>
+                                        <th>OSC</th> <td>APP</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Order ID</th><td>F123456789</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Decision</th><td>xxxxx</td>
+                                    </tr>
+                                    <tr>
+                                        <th>PMG Response Code</th><td>xxx</td>
+                                    </tr> 
+                                    <tr>
+                                        <th>PMG Message</th> <td>xxxxx xxxxx xxxxx xxxxx</td>
+                                    </tr>
+                                       
+                                       
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+    
+            </div>
+        </div>
+    </div>
+    

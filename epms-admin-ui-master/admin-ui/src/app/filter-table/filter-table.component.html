@@ -1,0 +1,54 @@
+
+<div class="row">
+    <div class="col-12 mt-4 mb-4 d-flex justify-content-between">
+        <h3>Search Results</h3>
+        <button class="btn btn-primary" >Export</button>
+    </div>
+</div>
+
+<kendo-grid 
+accessibleGrid
+[data]="gridData"
+[height]="800"
+[pageSize]="state.take"
+[skip]="state.skip"
+[sort]="state.sort"
+[filter]="state.filter"
+[sortable]="true"
+[pageable]="{
+    buttonCount: buttonCount,
+    info: info,
+    pageSizes: pageSizes,
+    previousNext: previousNext
+}"
+filterable="menu"
+(dataStateChange)="dataStateChange($event)"
+>
+<kendo-grid-column field="orderID" title="Order Id" width="110">
+      
+</kendo-grid-column>
+<kendo-grid-column field="programSpecificKey" title="Program Specific Key" width="190">
+</kendo-grid-column>
+<kendo-grid-column field="transactionCreatedDate" title="Transaction Created Date" width="220">
+</kendo-grid-column>
+<kendo-grid-column field="osc" title="OSC" width="80">
+</kendo-grid-column>
+<kendo-grid-column field="shiptoFirstName" title="Ship to First Name"  width="180">
+</kendo-grid-column>
+<kendo-grid-column field="shiptoLastName" title="Ship to Last Name" width="180">
+</kendo-grid-column>
+<kendo-grid-column field="orderState" title="Order State"  width="140">
+</kendo-grid-column>
+<kendo-grid-column field="paymentMethod" title="Payment Method" width="180">
+</kendo-grid-column>
+<kendo-grid-column field="usdAmount" title="USD Amount" width="140">
+</kendo-grid-column>
+<kendo-grid-column field="localCurrency" title="Local Currency Amount" width="220">
+</kendo-grid-column>
+<kendo-grid-column field="currencyCode" title="Currency Code" width="160">
+</kendo-grid-column>
+<kendo-grid-column field="billToFirstName" title="Bill to First Name" width="180">
+</kendo-grid-column>
+<kendo-grid-column field="billToLastName" title="Bill to Last Name" width="180">
+</kendo-grid-column>
+</kendo-grid>   

@@ -1,0 +1,21 @@
+# FROM creates a layer from the node 12 Docker image.
+FROM node:12-slim
+
+# Creating the root directory for the project
+WORKDIR /epms-payment-ui/
+
+# copying the root directory into the epms-payment-ui folder.
+COPY . /epms-payment-ui/
+
+# Setting ENV variable 
+ENV PORT 80
+
+# installing the application pacakges & build server
+RUN npm install
+RUN npm run build:app
+
+# port on which a container listens for connections
+EXPOSE 80
+
+# command to run server in the container.
+CMD ["node", "dist/server/index.js"]

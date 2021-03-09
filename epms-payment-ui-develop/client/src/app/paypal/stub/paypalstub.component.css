@@ -1,0 +1,41 @@
+.rounded-card {
+    border-radius: 10px;
+    filter: drop-shadow(4px 4px 4px #ddd);
+}
+
+.paypal-buttons{
+    width: 400px;
+    display: block;
+    margin: 0 auto;
+}
+
+.btn-group {
+    margin-top:25px;
+    border-top:1px solid #ddd;
+}
+
+.label, .radio-inline{
+    margin-left:10px;
+}
+
+.submit-button, .btn {
+    background-color:#003082;
+    border-color: 2px solid #003082;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 4px;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+    border-bottom-left-radius: 4px;
+}
+
+.paypalStubBtn{
+    background: #0070ba;
+    color: #fff;
+    text-transform: none;
+    border-radius: 4px;
+    width: 300px;
+    height: 60px;
+    border: none;
+}

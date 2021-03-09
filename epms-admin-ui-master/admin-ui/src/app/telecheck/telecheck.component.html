@@ -1,0 +1,165 @@
+<form [formGroup]="telecheckForm" class="mt-4">
+    <div class="row d-flex">
+        <div class="ml-auto mr-4">
+          <p> <span class="required-asterisk">*</span>Required
+        </div>
+    </div>
+    <div class="row mb-4">
+        <div class="col-12">
+          Have funds transferred directly from your bank Account . <strong>Note: Must be a U.S. Bank Account .</strong>
+        </div>
+      </div>
+
+    <div class="row">
+        <div class="col-lg-6 order-first order-sm-2 order-lg-1">
+            <div class="col-md-12 p-0 form-group">
+                    <label for="chkAccount Type" class="control-label"><span class="required-asterisk">*</span>Bank Account  Type:
+                    </label>
+                    <select class="form-control" name="chkAccount Type" id="chkAccount Type" >
+                      <option>- Select -</option>
+                      <option value="C">Checking</option>
+                      <option value="S">Savings</option>
+                    </select>
+            </div>
+            <div class="col-md-12 p-0 form-group">
+                <label for="routingNum" class="control-label">
+                        <span class="required-asterisk">*</span>Bank Routing Number
+                </label>
+                        <input class="mr-2 form-control"
+                        name="routingNum" /> 
+            </div>
+            <div class="col-md-12 p-0 form-group">
+                    <label for="confirmRoutingNum" class="control-label">
+                            <span class="required-asterisk">*</span>Confirm Bank Routing Number
+                    </label>
+                            <input class="mr-2 form-control"
+                            name="confirmRoutingNum" />
+                </div>
+        </div>
+        <div class="col-lg-6 order-sm-1 order-lg-2">
+                <img class="img-fluid mb-2" src="../../assets/img/check.png" alt="The first nine digits at the bottom of the check is the bank routing number. Followed by the bank Account  number. The last set of numbers is the check number." />
+              </div>
+  
+    </div>
+
+    <div class="row">
+        <div class="col-md-6 form-group">
+            <label for="accNumber" class="control-label"><span class="required-asterisk">*</span>Bank Account Number <small>(not credit/debit card)</small></label>
+                    <input class="form-control" type="tel" name="accNumber">
+        </div>
+        <div class="col-md-6 form-group">
+            <label for="confirmAtelecheckNumber" class="control-label">
+                    <span class="required-asterisk">*</span>Confirm Bank Account  Number
+            </label>
+            <input  class="form-control" type="tel"  name="confirmAtelecheckNumber">
+        </div>
+    
+    </div>
+    <div class="row">
+        <div class="col-md-3 form-group">
+            <label for="chkNumber">Check Number</label>
+            <input type="text" class="form-control">
+        </div>
+        <div class="col-md-3 form-group">
+                <label for="chkBankType"><span class="required-asterisk">*</span>Check Type</label>
+                <select class="form-control" name="chkBankType" id="chkBankType">
+                        <option>- Select -</option>
+                        <option value="P">Personal</option>
+                        <option value="C">Company</option>
+                      </select>
+        </div>
+    </div>
+
+    <div id="billingDetails" class="mt-4">
+      <strong>Billing Information</strong>
+      <div class="mb-2">
+        <input class="mr-2" type="checkbox" id="chk-shippingname-billing-same" />
+        <label for="chk-shippingname-billing-same">Same as Shipping/Contact name</label>
+      </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <label for="chk-first-name"><span class="required-asterisk">*</span>First Name</label>
+            <input type="text" class="form-control">
+        </div>
+        <div class="col-md-6">
+                <label for="chk-last-name"><span class="required-asterisk">*</span>Last Name</label>
+                <input type="text" class="form-control">
+            </div>
+    </div>
+    <div class="row">
+            <div class="mb-2 mt-4" >
+                    <input class="mr-2" type="checkbox" id="chk-shipping-billing-same">
+                    <label for="chk-shipping-billing-same"> Same as Shipping/Contact Information</label>
+                  </div>
+    </div>
+    <div class="row">
+            <div class="col-lg-4 form-group">
+                <label class="form-label"><span class="required-asterisk">*</span>Street Address 1</label>
+                    <input type="text" class="form-control" formControlName="telecheckStreetAddress1">
+                    <span 
+              *ngIf="!telecheckForm.get('telecheckStreetAddress1').valid && telecheckForm.get('telecheckStreetAddress1').touched"
+              class="tip">You must enter an address.</span>  
+            </div>
+            <div class="col-lg-4 form-group">
+                <label>Street Address 2</label>
+                    <input type="text" class="form-control" formControlName="telecheckStreetAddress2">
+            </div>
+            <div class="col-lg-4 form-group">
+                <label class="form-label"><span class="required-asterisk">*</span> City</label>
+                <input type="text" class="form-control"  formControlName="telecheckCity">
+                <span 
+              *ngIf="!telecheckForm.get('telecheckCity').valid && telecheckForm.get('telecheckCity').touched"
+              class="tip">You must enter a city.</span>  
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-4 form-group">
+                <label class="form-label"><span class="required-asterisk">*</span> Country </label>
+                <select id="inputState" 
+                class="form-control"
+                formControlName="telecheckCountry">
+                <option disabled [value]="null">- Select -</option>
+                <option *ngFor="let country of countryList" [value]="country.id">{{country.name}}</option>
+                  </select>
+                 
+            </div>
+            <div class="col-lg-4 form-group">
+                <label class="form-label"><span class="required-asterisk">*</span> State</label>
+                <select id="inputState" 
+                formControlName="telecheckState"
+                class="form-control">
+                <option disabled [value]="null">- Select -</option>
+                <option *ngFor="let region of regionList" [value]="region.id">{{region.name}}</option>
+                  </select>
+               
+            </div>
+            <div class="col-lg-4 form-group">
+                <label class="form-label"><span class="required-asterisk">*</span> Zip Code</label>
+                    <input type="text" class="form-control" formControlName="telecheckZipCode">   
+                 <span 
+                    *ngIf="!telecheckForm.get('telecheckZipCode').valid && telecheckForm.get('telecheckZipCode').touched"
+                    class="tip">You must enter a city.</span>  
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-4 form-group">
+                <label class="form-label">Company</label>
+                    <input type="text"class="form-control" formControlName="telecheckCompany">   
+            </div>       
+            <div class="col-lg-4 form-group">
+                <label class="form-label">Phone Number</label>
+                    <input type="text" class="form-control" formControlName="telecheckPhoneNumber">   
+            </div> 
+            <div class="col-lg-4 form-group">
+                <label class="form-label">Email</label>
+                    <input type="text" class="form-control" formControlName="telecheckEmail">   
+                    <span 
+                    *ngIf="!telecheckForm.get('telecheckEmail').valid && telecheckForm.get('telecheckEmail').touched"
+                    class="tip">Email is optional. You must enter a valid email address.</span>  
+          </div>    
+        </div>
+        <button id="submit" class="btn--primary ml-3">
+          Process Payment
+        </button>
+</form>

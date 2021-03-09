@@ -1,0 +1,27 @@
+<div class="card">
+    <div class="card-body">
+        <strong>Please select Originating System Code (OSC) or Program Group</strong>
+        <form [formGroup]="oscForm" class="mt-2">
+            <div class="form-check form-check-inline"> 
+                
+                    <input class="form-check-input" type="radio" name="assign" formControlName="assign" value="osc" id="osc"/>
+                    
+                    <label for="osc">   Originating System Code (OSC) </label>
+            </div>
+            <div class="form-check form-check-inline"> 
+                
+                    <input  class="form-check-input" type="radio" name="assign" formControlName="assign" value="programGroup" id="programGroup"/>
+                    
+                    <label for="programGroup"> Program Group</label>
+            </div>
+
+        </form>
+    </div>
+</div>
+
+<div *ngIf="oscForm.value.assign === 'osc'">
+    <app-assign-osc></app-assign-osc>
+</div>
+<div *ngIf="oscForm.value.assign === 'programGroup'">
+    <app-program></app-program>
+</div>

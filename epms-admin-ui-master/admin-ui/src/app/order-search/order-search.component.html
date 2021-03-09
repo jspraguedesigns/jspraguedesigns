@@ -1,0 +1,366 @@
+<div class="mt-4 container-xl">
+    <div class="row">
+        <div class="col-12">
+            <h2>
+                Order Search
+            </h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam fermentum, nulla luctus pharetra vulputate, felis tellus mollis orci, sed rhoncus sapien nunc eget odio.
+            </p>
+            <h3>Search Options
+            </h3>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-12">
+                                <h4>Date Range</h4>
+
+                                    <strong>
+                                        Transaction Date 
+                                        (<span *ngIf="selectedDate === 'today' || selectedDate === 'yesterday'">{{quickDate}}</span> 
+                                        <span *ngIf="selectedDate === 'week'">{{today}} - {{quickDate}}</span>
+                                        <span *ngIf="selectedDate === 'last'">{{last}} - {{yesterday}}</span>
+                                        <span *ngIf="selectedDate === 'month'">{{today}} - {{quickDate}}</span>
+                                        <span *ngIf="selectedDate === 'pastMonth'">{{lastMonth}} - {{yesterday}}</span>)
+                                    </strong><br/>
+                                    <strong>
+                                            Note: hour (01-24) and minute (00-59) values are optional
+                                    </strong>
+                        </div>
+                    </div>
+                    <div class="row mt-4">
+                        <div class="col-md-12 ">
+                            <div class="card grey">
+                                <div class="card-body row">
+                                    <form [formGroup]="dateSelect">
+                                        <div class="row">
+                                            <div class="col-md-5 form-group">
+                                                   
+                                                <label class="form-label">From Date and Time</label>
+                                                <div class="row d-flex align-items-center">
+                                                    <div class="col-6">
+                                                            <kendo-datepicker [focusedDate]="focusedDate"></kendo-datepicker>
+                                                    </div>
+    
+                                                    <div class="col-6">
+                                                            <timepicker></timepicker> 
+                                                    </div>
+                                                       
+                                                </div>
+                                                
+                                                 
+                                                 
+                                            </div>
+    
+                                            <div class="col-md-5 form-group">
+                                           
+                                                    <label class="form-label">To Date and Time</label>
+                                                    <div class="row d-flex align-items-center">
+                                                            <div class="col-6">
+                                                                    <kendo-datepicker [focusedDate]="focusedDate"></kendo-datepicker>
+                                                            </div>
+    
+                                                            <div class="col-6">
+                                                                    <timepicker></timepicker> 
+                                                            </div>
+                                                               
+                                                        </div>
+                                        </div>
+                                                              
+                                           
+                                                <div class=" col-md-2 form-group">
+                                                        <label>Quick Date Select</label>
+                                                        <select (change)="onDateChange()" class="form-control select-date" formControlName="quickDateSelect">
+                                                                <option>Quick Select Date</option>
+                                                                <option value="today">Today</option>
+                                                                <option value="yesterday">Yesterday</option>
+                                                                <option value="week">This week</option>
+                                                                <option value="last">Last week</option>
+                                                                <option value="month">This month</option>
+                                                                <option value="pastMonth">Last month</option>
+                                                            </select>
+                                                    </div>
+
+                                        </div>
+                         
+                                    </form>
+                                               
+                                    </div>          
+                                </div>
+                            </div>
+                        </div>
+                
+               
+                    <div class="row">
+                        <div class="col-md-12">
+                    <form [formGroup]="searchForm">
+                            <div class="row mt-4 mb-2">
+                                    <div class="col-12">
+                                        <h4>Order Details Information</h4>
+                                    </div>
+                                </div>
+                        <div class="row">
+                            <div class="col-4 form-group">
+                                    <label for="orderState">Order State</label>
+                                    <select class="form-control">
+                                        <option>Select</option>
+                                        <option value="">SALE</option>
+                                        <option value="">SALE-SETTLED</option>
+                                        <option value="">SALE ERROR</option>
+                                        <option value="">SALE REJECTED</option>
+                                        <option value="">SALE PENDING - AUTHORIZED</option>
+                                        <option value="">SALE NOMATCH_SETTLED</option>
+                                        <option value="">REFUND</option>
+                                        <option value="">REFUND SETTLED</option>
+                                        <option value="">REFUND REJECTED</option>
+                                        <option value="">REFUND ERROR</option>
+                                        <option value="">LINKED OVERRIDE REFUND</option>
+                                        <option value="">STANDALONE OVERRIDE-REFUND</option>
+                                        <option value="">REFUND-NOMATCH_SETTLED</option>
+                                        <option value="">CHARGEBACK/DISPUTE</option>
+                                        <option value="">REVERSE-CHARGEBACK</option>
+                                        <option value="">OVERRIDE-CHARGEBACK</option>
+                                        <option value="">OVERRIDE-REQ_FOR_RET N/A</option>
+                                        <option value="">OVERRIDE-REV-CHARGEBACK</option>
+                                    </select>
+                      
+                            </div>
+
+                            <div class="col-4 form-group">
+                                    <label for="Decision">Decision</label>
+                                    <select class="form-control">
+                                            <option>Select</option>
+                                            <option>ACCEPT</option>
+                                            <option>REJECT</option>
+                                            <option>ERROR</option>
+                                        </select>
+                            </div>
+
+                        </div>
+                      <div class="row">
+                          <div class="col-4">
+                              <div class="row">
+                                    <div class="col-5 form-group">
+                                            <label>Order/Sale Amount Filter</label>
+                                            <select class="form-control">
+                                                <option>Select</option>
+                                                <option value="">Greater Than</option>
+                                                <option value="">Equal To</option>
+                                                <option value="">Less Than</option>
+                                            </select>
+                                      </div>
+                                      <div class="col-5 form-group">
+                                          
+                                        <label>Order Sale Amount</label>
+                                        <input 
+                                        currencyInput
+                                        class="form-control" />
+                                      </div>
+                              </div>
+                        
+                               
+                          </div>
+                         
+                          <div class="col-4 form-group">
+                                <label>Auth Response or Reason Code</label>
+                                <input class="form-control"/>
+                          </div>
+                            <div class="col-4 form-group">
+                                    <label>Last Reason Code</label>
+                                    <input class="form-control"/>
+                            </div>
+                            
+                      </div>
+                      <div class="row mt-4 mb-2">
+                            <div class="col-12">
+                                <h4>Bill to & Ship to Customer Information</h4>
+                            </div>
+                        </div>
+                        <div class="row">
+                                <div class="col-4 form-group">
+                                        <label for="bill-first-name"><span class="required-asterisk">*</span> Bill to First Name</label>
+                                        <input type="text" formControlName="bill-first-name" class="form-control">
+                                        <span 
+                                        *ngIf="!searchForm.get('bill-first-name').valid && searchForm.get('bill-first-name').touched"
+                                        class="tip">Bill to First Name is a required field and must be specified.</span>
+                                    </div>
+                                    <div class="col-4 form-group">
+                                            <label for="bill-last-name"><span class="required-asterisk">*</span> Bill to Last Name</label>
+                                            <input type="text" formControlName="bill-last-name"  class="form-control">
+                                            <span 
+                                            *ngIf="!searchForm.get('bill-last-name').valid && searchForm.get('bill-last-name').touched"
+                                            class="tip">Bill to Last Name is a required field and must be specified.</span>
+                                        </div>
+            
+                                        <div class="col-4 form-group">
+                                                <label for="customer-id">Customer ID</label>
+                                                <input type="text" class="form-control">
+                                            </div>
+                                            <div class="col-4 form-group">
+                                                    <label for="bill-phone">Bill to Customer Phone</label>
+                                                    <input type="tel" class="form-control">
+                                                </div>
+
+                                                <div class="col-4 form-group">
+                                                        <label for="bill-phone">Bill to Customer email</label>
+                                                        <input type="email" class="form-control">
+                                                    </div>
+
+                        </div>
+
+                        <div class="row">
+                                <div class="col-4 form-group">
+                                        <label for="ship-first-name">Ship to First Name</label>
+                                        <input type="text" class="form-control">
+                                    </div>
+                                    <div class="col-4 form-group">
+                                            <label for="ship-last-name">Ship to Last Name</label>
+                                            <input type="text" class="form-control">
+                                        </div>
+            
+                                        <div class="col-4 form-group">
+                                                <label for="customer-id">Ship to Customer Email</label>
+                                                <input type="text" class="form-control">
+                                            </div>
+                                            <div class="col-4 form-group">
+                                                    <label for="bill-phone">Ship to Country</label>
+                                                    <input type="tel" class="form-control">
+                                                </div>
+
+                                                <div class="col-4 form-group">
+                                                        <label for="bill-phone">Test Center Country</label>
+                                                        <input type="email" class="form-control">
+                                                    </div>
+
+                        </div>
+                    
+                        <div class="row mt-4 mb-2">
+                                <div class="col-12">
+                                    <h4>Program Specific Information</h4>
+                                </div>
+                            </div>
+
+                        <div class="row">
+                            <div class="col-4 form-group">
+                                <label for="osc">Originating System Code (OSC)</label>
+                                <kendo-autocomplete
+                                [data]="OSC"
+                                [placeholder]="'Select'"
+                                class="form-control"
+                            >
+                            </kendo-autocomplete>
+                            </div>
+
+                            <div class="col-4 form-group">
+                                <label for="program-specific-date">Program Specific Date</label>
+                                <input type="text" class="form-control">
+                            </div>
+
+                           <div class="col-4 form-group">
+                               <label for="program-specific-key">Program Specific Key</label>
+                               <input type="text" class="form-control">
+                           </div>
+                           <div class="col-4 form-group">
+                                <label for="osc-session-ID">OSC Session ID</label>
+                                <input type="text" class="form-control">
+                           </div>
+                           <div class="col-4 form-group">
+                               <label for="subscription-id">Subscription ID</label>
+                               <input type="text" class="form-control">
+                           </div>
+                           <div class="col-4 form-group">
+                               <label for="order-reconciliation-it">Order (Reconciliation) ID</label>
+                               <input type="text" class="form-control">
+                           </div>
+                        </div>
+                        <div class="row mt-4 mb-2">
+                                <div class="col-12">
+                                    <h4>Payment Information</h4>
+                                </div>
+                            </div>
+                        <div class="row">
+                                <div class="col-4 form-group">
+                                        <label for="payment-method">Payment Method</label>
+                                        <select name="payment-method" id="payment-method" class="form-control">
+                                            <option value="">Select</option>
+                                            <option value="">VISA</option>
+                                            <option value="">MasterCard</option>
+                                           <option value="">American Express</option>
+                                           <option value="">Discover</option>
+                                           <option value="">UnionPay</option>
+                                           <option value="">Diners Club International</option>
+                                           <option value="">JCB</option>
+                                           <option value="">Rupay Global</option>
+                                           <option value="">PayPal</option>
+                                            <option value="">Electronic Check</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-4 form-group">
+                                            <label for="payment-type">Payment Type</label>
+                                            <select name="payment-type" id="payment-type" class="form-control">
+                                                <option>Select</option>
+                                                <option value="">Credit Card</option>
+                                                <option value=""> PayPal</option>
+                                                <option value="">Bank account</option>
+                                                
+                                            </select>
+                                        </div>
+                                <div class="col-4 form-group">
+                                    <label for="masked-account-number">Masked Account Number</label>
+                                    <input type="text" class="form-control">
+                                </div>
+                                <div class="col-4 form-group">
+                                    <label for="last-four-digits-cc">Last 4 Digits of Credit Card</label>
+                                    <input type="text" class="form-control">
+                                </div>
+                                <div class="col-4 form-group">
+                                    <label for="currency">Currency</label>
+                                    <input type="text" class="form-control">
+                                </div>
+                                <div class="col-4 form-group">
+                                        <label for="transaction-type">Transaction Type</label>
+                                        <select name="transaction-type" id="transaction-type" class="form-control">
+                                                <option>Select</option>
+                                                <option value="">Credit Card Sale</option>
+                                                <option value="">Credit Card Refund</option>
+                                                <option value="">Credit Card Chargeback</option>
+                                                <option value="">Credit Card Reverse Chargeback</option>
+                                                <option value="">Credit Card Request for Retrieval (RFR)</option>
+                                                <option value="">Electronic Check Sale</option>
+                                                <option value="">Electronic Check Refund</option>
+                                                <option value="">Electronic Check Return (chargeback)</option>
+                                                <option value="">PayPal Sale</option>
+                                                <option value="">PayPal Refund</option>
+                                                <option value="">PayPal Chargeback</option>
+                                                <option value="">PayPal Reverse Chargeback</option>
+
+                                            </select>
+                                    </div>
+                                    <div class="col-4 form-group">
+                                        <label for="bank-account-number">Bank Account Number</label>
+                                        <input class="form-control" type="text">
+                                    </div>
+                                    <div class="col-4 form-group">
+                                            <label for="bank-account-number">ABA/Bank Routing Number</label>
+                                            <input class="form-control" type="text">
+                                        </div>
+                        </div>
+                    </form>  
+                    <button class="btn btn-secondary" (click)="resetForm()">
+                        Clear
+                    </button>
+                    <button class="btn btn-primary" (click)="onSubmit()" [disabled]="!searchForm.valid">
+                        Search
+                    </button>
+                        </div>
+                    </div>
+                
+                   
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

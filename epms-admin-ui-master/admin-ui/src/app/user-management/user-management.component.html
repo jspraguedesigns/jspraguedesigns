@@ -1,0 +1,131 @@
+<div class="mt-4 container-xl">
+    <div class="row">
+        <div class="col-12">
+            <h2>
+                Manage Users
+            </h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam fermentum, nulla luctus pharetra vulputate, felis tellus mollis orci, sed rhoncus sapien nunc eget odio</p>
+
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-body">
+                    <h3>Search Users</h3>
+                    <form [formGroup]="userSearch">
+                        <div class="row">
+                            <div class="col-md-4 form-group">
+                                <label>UserID</label>
+                                <input class="form-control">
+                          </div>
+                          <div class="col-md-4 form-group">
+                            <label>First Name</label>
+                            <input class="form-control">
+                        </div>
+                        <div class="col-md-4 form-group">
+                            <label>Last Name</label>
+                            <input class="form-control">
+                        </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4">
+                                <label>Program Group</label>
+                                <select class="form-control">
+                                    <option value="">ALL</option>
+                                    <option value="">ETS GRE</option>
+                                    <option value="">ETS PRAXIS</option>
+                                    <option value="">ETS PROGRAMS</option>
+                                    <option value="">ETS PROGRAMS-HiSET</option>
+                                    <option value="">ETS TOEFL</option>
+                                </select>
+                            </div>
+                            <div class="col-md-4">
+                                <label>Originating System Code (OSC)</label>
+                                <select class="form-control">
+                                    <option value="">ALL</option>
+                                    <option value="">ARE</option>
+                                    <option value="">CON</option>
+                                    <option value="">CPX</option>
+                                    <option value="">CSL</option>
+                                    <option value="">EAP</option>
+                                    <option value="">ECS</option>
+                                    <option value="">EFO</option>
+                                    <option value="">ERG</option>
+                                    <option value="">ERS</option>
+                                    <option value="">ERT</option>
+                                    <option value="">ESN</option>
+                                    <option value="">ETM</option>
+                                    <option value="">ETS</option>
+                                    <option value="">FIN</option>
+                                    <option value="">GAC</option>
+                                    <option value="">GAE</option>
+                                    <option value="">GAP</option>
+                                    <option value="">GAT</option>
+                                    <option value="">GRT</option>
+                                    <option value="">GTL</option>
+                                    <option value="">HEI</option>
+                                    <option value="">HIT</option>
+                                    <option value="">ITP</option>
+                                    <option value="">MAP</option>
+                                    <option value="">MFT</option>
+                                    <option value="">NET</option>
+                                    <option value="">OMP</option>
+                                    <option value="">OMS</option>
+                                    <option value="">PAR</option>
+                                    <option value="">PPA</option>
+                                    <option value="">PRO</option>
+                                    <option value="">PRT</option>
+                                    <option value="">PXB</option>
+                                    <option value="">PXT</option>
+                                    <option value="">RIS</option>
+                                    <option value="">SSG</option>
+                                    <option value="">SST</option>
+                                    <option value="">TC2</option>
+                                    <option value="">TEL</option>
+                                    <option value="">TIG</option>
+                                    <option value="">TOE</option>
+                                    <option value="">TOT</option>
+                                    <option value="">TSA</option>
+                                    <option value="">TWR</option>
+                                </select>
+                            </div>
+                            <div class="col-md-4">
+                                <label>Role</label>
+                                <select class="form-control">
+                                    <option value="">ETS Admin</option>
+                                    <option value="">User 2</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4">
+                                <label>Status</label>
+                                <select class="form-control">
+                                    <option value="">ALL</option>
+                                    <option value="">Active</option>
+                                    <option value="">Inactive</option>
+                                </select>
+                            </div>
+                        </div>
+
+                    </form>
+                    <div class="row mt-2">
+                        <div class="col-12">
+                            <button class="btn btn-primary">Go</button>
+                        </div>
+                    </div>
+                    <hr/>
+
+                    <h3>Internal and External User(s) List</h3>
+                    <div class="row">
+                        <div class="col-12">
+                           <app-internal-external-user-list></app-internal-external-user-list>
+                        </div>
+                    </div>
+                   
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

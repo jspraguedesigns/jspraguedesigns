@@ -1,0 +1,21 @@
+<table class="table">
+    <tr>
+        <th>Date Created</th>
+        <th>Created By</th>
+        <th>Message</th>
+    </tr>
+    <tr>
+        <td>{{dateCreated}}</td>
+        <td>{{createdBy}}</td>
+        <td>{{message}}</td>
+    </tr>
+
+</table>
+<form [formGroup]="auditMessage">
+
+    <div class="form-group">
+        <h3>New Audit Message</h3>
+    <textarea class="form-control" formControlName="message"></textarea>
+    </div>
+</form>
+

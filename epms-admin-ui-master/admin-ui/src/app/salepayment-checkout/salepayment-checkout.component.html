@@ -1,0 +1,111 @@
+<div class="container-xl">
+    <div class="row">
+        <div class="col-md-12">
+
+                <div class="card">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-md-12">
+                                        <a [routerLink]="['/virtual-terminal']">Back to Sale</a>
+                                </div>
+                            </div>
+                            <div class="row">
+                                    <div class="col-md-8">
+                                            <div class="light-blue rounded-card mb-4">
+                                                    <div class="card-body">
+                                                            <div class="row">
+                                                                    <div class="col-lg-6 col-sm-12">
+                                                                            <h3>Order Total</h3>
+                                                                    </div>
+                                                        
+                                                                    <div class="col-lg-6 col-sm-12 d-flex justify-content-end total-number align-items-center">
+                                                                            <div class="one-twenty mr-4">Amount (USD)</div>
+                                                                      <div class="amount"><strong>$</strong></div>
+                                                                    </div>
+                                            
+                                                            </div>
+                                            
+                                            
+                                        </div>
+
+                                      
+                                            </div>
+                                            <div class="mt-4 mb-4">
+                                                    <h2>Select a payment method.</h2>
+                                            </div>
+
+                                            <button id="btn-credit-card" arial-label="Credit Card"  class="btn btn-cc" (click)="showCC();">
+                                              <fa-icon [icon]="faCreditCard"></fa-icon> &nbsp; Credit Card
+                                            </button>
+                                            <app-cc-form *ngIf="showCreditCard"></app-cc-form>
+                                            <div class="row apc-margin-top mb-4">
+                                                    <div class="col-lg-12 mb-2 accepted">
+                                                        Accepted Payment Cards
+                                                    </div>
+                                                    <div class="col-lg-12 credit-card-container">
+                                                        <div class="credit-card">
+                                                            <img class="navbar-logo" src="../../assets/img/epms-payment-cardsvisa-copy.png" alt="Visa icon" />
+                                                        </div>
+                                                        <div class="credit-card" >
+                                                            <img class="navbar-logo" src="../../assets/img/epms-payment-cardsmastercard-copy.png"
+                                                                alt="MasterCard icon" />
+                                                        </div>
+                                                        <div class="credit-card">
+                                                            <img class="navbar-logo" src="../../assets/img/epms-payment-cardsamex-copy.png"
+                                                                alt="American Express icon" />
+                                                        </div>
+                                                        <div class="credit-card">
+                                                            <img class="navbar-logo" src="../../assets/img/epms-payment-cardsdiscover-copy.png"
+                                                                alt="Dicover icon" />
+                                                        </div>
+                                                        <div class="credit-card">
+                                                            <img class="navbar-logo" src="../../assets/img/epms-payment-cardsjcb-copy.png" alt="JCB icon" />
+                                                        </div>
+                                                
+                                                        <div class="credit-card">
+                                                            <img class="navbar-logo" src="../../assets/img/epms-payment-cardsunionpay-copy.png"
+                                                                alt="UnionPay icon" />
+                                                        </div>
+                                                        <div class="credit-card">
+                                                            <img class="navbar-logo" src="../../assets/img/epms-payment-cardsdinersclub-copy.png"
+                                                                alt="Diners Club icon" />
+                                                        </div>
+                                                        <div class="credit-card2">
+                                                            <img class="navbar-logo" src="../../assets/img/epms-payment-cardsrupay-copy.png" alt="RuPay icon" />
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                            <div class="card rounded-card receiving-information">
+                                                    <div class="card-body">
+                                                        <h3>Shipping/Contact Information</h3>
+                                                        <div>
+                                                            <span>firstName</span>&nbsp;&nbsp;
+                                                            <span>lastName</span>
+                                                        </div>
+                                                        <div>shippingAddress</div>  
+                                                        <div>addressLine1</div>
+                                                        <div>addressLine2</div>
+                                                        <div>city region</div>
+                                                        <div>postalCode</div>
+                                                        <div>country</div>
+                                                        <div class="mt-4">
+                                                            phoneNumber
+                                                        </div>
+                                                        <div>
+                                                            email
+                                                        </div>
+                                                        <div class="mt-4">
+                                                            <small>This is the name and address of the person who will receive the product/service (e.g., the person who will be taking a test or is requesting scores); or, if you ordered items to be shipped, they will be sent to this address.</small>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                    </div>
+                            </div>
+                            </div>
+                    </div>               
+        </div>
+    </div>
+</div>
+

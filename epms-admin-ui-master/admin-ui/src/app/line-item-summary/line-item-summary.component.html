@@ -1,0 +1,29 @@
+
+<kendo-grid 
+accessibleGrid
+[data]="gridData"
+[height]="400"
+[pageSize]="state.take"
+[skip]="state.skip"
+[sort]="state.sort"
+[filter]="state.filter"
+[sortable]="true"
+[pageable]="false"
+filterable="menu"
+(dataStateChange)="dataStateChange($event)"
+>
+
+<kendo-grid-column field="lineItemNo" title="Line Item #">
+</kendo-grid-column>
+<kendo-grid-column field="sku" title="Product SKU">
+</kendo-grid-column>
+<kendo-grid-column field="productDesc" title="Product Description">
+</kendo-grid-column>
+<kendo-grid-column field="totalLineItemAmtUSD" title="Total Line Item Amount USD">
+</kendo-grid-column>
+<kendo-grid-column field="transactionType" title="Transaction Type"  >
+</kendo-grid-column>
+<kendo-grid-column field="transactionProcessDate" title="Transaction Process Date">
+</kendo-grid-column>
+
+</kendo-grid>   

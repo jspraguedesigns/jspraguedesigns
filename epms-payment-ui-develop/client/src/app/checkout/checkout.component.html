@@ -1,0 +1,58 @@
+<div *ngIf="orderData?.lineItems?.length>0" class="card rounded-card mb-4">
+
+    <div class="card-body">
+        <div >
+            <table class="table">
+                <tr>
+
+                    <th class="no-border">
+                        <h2>Order Summary</h2>
+                        <p>Please click to <a href="#">modify your order.</a></p>
+                    </th>
+                    <th class="no-border text-right">Unit Price</th>
+                    <th class="no-border text-right">Tax</th>
+                    <th class="no-border text-right">Sub-total</th>
+                </tr>
+
+                <tr class="dotted"  *ngFor="let lineItem of orderData.lineItems">
+
+
+                    <td class="first-col"><strong>{{lineItem?.productName}}</strong> <br />
+                        Quantity: <strong>{{lineItem?.quantity}}</strong>
+                    </td>
+
+                    <td>
+                        <strong>{{lineItem?.unitPrice | number : '1.2-2'}}</strong>
+                    </td>
+                    <td><strong>{{lineItem?.taxAmount | number : '1.2-2'}}</strong></td>
+                    <td><strong>{{lineItem?.subTotal | number : '1.2-2'}}</strong></td>
+                    <td></td>
+                </tr>
+                <tr class="sub-total">
+                    <td class="first-col borderless top">
+                            <strong>Subtotal</strong>
+                    </td>
+                    <td  class="borderless top" colspan="3">
+                            <strong>{{orderData.amountDetail.subtotalAmount | number : '1.2-2'}}</strong>
+                    </td>
+                   
+                </tr>
+                <tr class="sub-total">
+                        <td class="first-col borderless bottom">
+                                <strong>Tax</strong>
+                        </td>
+                        <td class="borderless bottom" colspan="3">
+                                <strong>{{orderData.amountDetail.taxAmount | number : '1.2-2'}}</strong> 
+                        </td>
+                       
+                    </tr>
+
+
+            </table>
+
+        </div>
+
+
+    </div>
+
+</div>

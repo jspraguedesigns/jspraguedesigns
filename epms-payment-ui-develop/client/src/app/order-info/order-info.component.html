@@ -1,0 +1,25 @@
+<div class="card rounded-card receiving-information" *ngIf="gd?.oscConfig?.displayShippingFlds">
+    <div class="card-body">
+        <h3>Shipping/Contact Information</h3>
+        <div>
+            <span *ngIf="orderData?.shippingAddress?.firstName">{{orderData?.shippingAddress?.firstName}}</span>&nbsp;
+
+            <span *ngIf="orderData?.shippingAddress?.lastName">{{orderData?.shippingAddress?.lastName}}</span>
+        </div>
+        <div *ngIf="orderData?.shippingAddress?.company">{{orderData?.shippingAddress?.company}}</div>
+        <div>{{orderData?.shippingAddress?.addressLine1}}</div>
+        <div>{{orderData?.shippingAddress?.addressLine2}}</div>
+        <div>{{orderData?.shippingAddress?.city}} {{orderData?.shippingAddress.region}}</div>
+        <div>{{orderData?.shippingAddress?.postalCode}}</div>
+        <div>{{orderData?.shippingAddress?.country}}</div>
+        <div class="mt-4" *ngIf="orderData?.shippingContact?.phoneNumber">
+            <span aria-hidden="true"><fa-icon [icon]="faPhone"></fa-icon> </span> {{orderData?.shippingContact?.phoneNumber}}
+        </div>
+        <div *ngIf="orderData?.shippingContact?.email">
+            <span aria-hidden="true"><fa-icon [icon]="faEnvelope"></fa-icon></span> {{orderData?.shippingContact?.email}}
+        </div>
+        <div class="mt-4">
+            <small>This is the name and address of the person who will receive the product/service (e.g., the person who will be taking a test or is requesting scores); or, if you ordered items to be shipped, they will be sent to this address.</small>
+        </div>
+    </div>
+</div>

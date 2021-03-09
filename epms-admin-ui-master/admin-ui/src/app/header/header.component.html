@@ -1,0 +1,60 @@
+<header class="navbar-fixed-top">
+    <nav class="navbar navbar-light">
+            <div class="container-xl d-flex align-content-center">
+                <div class="branding d-flex">
+                    <div class="img">
+                            <img src="../../assets/img/ets-logo.png" />
+                    </div>
+                    <div class = "title ">
+                            <h1>Program<small>&reg;</small> Application</h1>
+                    </div>
+                       
+                </div>
+                <div class="nav-area">
+                                <div class="help">Help</div>
+
+                                <div class="user">
+                                            John Smith
+                                </div>
+                </div>
+
+
+                        
+                </div>
+    </nav>
+
+
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light no-padding-top">
+          
+            <div class="collapse navbar-collapse container-xl" id="navbarSupportedContent">
+              
+                    <ul class="navbar-nav mr-auto ets-portal-nav">
+                            <li class="nav-item ets-portal-item" 
+                            routerLinkActive="active"
+                            [routerLinkActiveOptions]="{exact: true}">
+                            <a class="nav-link" [routerLink]="['/epms-admin-home']">EPMS Admin Home</a></li>
+                            <li class="nav-item ets-portal-item"
+                            routerLinkActive="active"
+                            [routerLinkActiveOptions]="{exact: true}"><a class="nav-link" [routerLink]="['/order-search']">Order Search</a></li>
+                            <li class="nav-item ets-portal-item"
+                            routerLinkActive="active"
+                            [routerLinkActiveOptions]="{exact: true}"><a class="nav-link" [routerLink]="['/virtual-terminal']">Virtual Terminal</a></li>
+                            <li class="nav-item ets-portal-item"
+                            routerLinkActive="active"
+                            [routerLinkActiveOptions]="{exact: true}"><a class="nav-link" [routerLink]="['#']">OSC and Hop Configuation</a></li>
+                            <li class='nav-item btn-group ets-portal-item'   routerLinkActive="active" dropdown>
+                                <a class='nav-link dropdown-toggle'dropdownToggle aria-controls="dropdown-animated">Manage Users <span class="caret"></span></a>
+                                <ul id="dropdown-animated" *dropdownMenu class="dropdown-menu" role="menu" aria-labelledby="button-animated">
+                                  <li role="menuitem"><a class="nav-link" [routerLink]="['/user-management']">Manage All Users</a></li>
+                                </ul>
+                                </li>
+                            <li class="nav-item ets-portal-item"
+                            routerLinkActive="active"
+                            [routerLinkActiveOptions]="{exact: true}"><a class="nav-link" [routerLink]="['#']">CVA Tool</a></li>
+                        </ul>
+           
+            </div>
+          </nav>
+
+</header>

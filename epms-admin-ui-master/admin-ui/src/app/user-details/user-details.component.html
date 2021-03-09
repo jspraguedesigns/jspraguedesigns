@@ -1,0 +1,125 @@
+<div class="mt-4 container-xl">
+ <div class="row mt-4">
+     <div class="col-12">
+        <h2>User Details and Activity</h2>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam fermentum, nulla luctus pharetra vulputate, felis tellus mollis orci, sed rhoncus sapien nunc eget odio.
+       
+    </div>
+ </div>
+<div class="row">
+    <div class="col-12">
+        <button class="btn btn-primary btn-function mt-2" (click)="back()"><fa-icon [icon]="faChevronLeft"></fa-icon> Back </button> 
+    </div>
+</div>
+    <div class="row mt-4" (click)="toggle()">
+        <div class="col-12">
+            <div class="card">
+                <div class="grey card-body d-flex justify-content-between align-items-center" >
+                    <h3><fa-icon [icon]="faSearch"></fa-icon> User Details</h3> 
+                    <div class="toggle-state">
+                        <div  class="arrow-down" *ngIf="display === false"><fa-icon [icon]="faSortDown"></fa-icon></div>
+                        <div  class="arrow-up" *ngIf="display === true"><fa-icon [icon]="faSortUp"></fa-icon></div>
+                    </div>
+     
+                </div>
+            </div>
+    
+        </div>
+    </div>
+    <div class="row" *ngIf="display" @fadeIn>
+        <div class="col-12">
+            <div class="card">
+                <div class="card-body">
+
+                <h3>User Details for UserName</h3>
+                <div class="row">
+                    <div class="col-md-6">
+                        <table>
+                            <tr>
+                                <th>User Name</th>
+                                <td>Lorem ipsum dolor sit amet</td>
+                            </tr>
+                            <tr>
+                                <th>Last Name</th>
+                                <td>Lorem ipsum dolor sit amet</td>
+                            </tr>
+                            <tr>
+                                <th>First Name</th>
+                                <td>Lorem ipsum dolor sit amet</td>
+                            </tr>
+                            <tr>
+                                <th>Email Address</th>
+                                <td>Loremipsum@abc.com</td>
+                            </tr>
+                            <tr>
+                                <th>Associated OSC</th>
+                                <td>ERG</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="col-md-6">
+                        <table>
+                            <tr>
+                                <th>Assoicated Program Group</th>
+                                <td>Lorem ipsum dolor sit amet</td>
+                            </tr>
+                            <tr>
+                                <th>Account Type</th>
+                                <td>Lorem ipsum dolor sit amet</td>
+                            </tr>
+                            <tr>
+                                <th>Status</th>
+                                <td>Lorem ipsum dolor sit amet</td>
+                            </tr>
+                            <tr>
+                                <th>Role</th>
+                                <td>Lorem ipsum dolor sit amet</td>
+                            </tr>
+                        </table>
+                    </div>
+    
+
+                </div>
+
+
+                    </div>
+            </div>
+        </div>
+    </div> 
+    <div class="row mt-4">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-body">
+                    <h3>
+                        User Account Activity Log
+                     </h3>
+                     <table class="table mt-4">
+                         <tr>
+                             <th>Entry Date</th>
+                             <th>Updated By</th>
+                             <th>Action Taken</th>
+                         </tr>
+                         <tr>
+                             <td>MM/DD/YYY</td>
+                             <td>EPMS Admin</td>
+                             <td>Assigned OSC</td>
+                         </tr>
+                         <tr>
+                             <td>MM/DD/YYY</td>
+                             <td>EPMS Admin</td>
+                             <td>Assigned OSC</td>
+                         </tr>
+                         <tr>
+                             <td>MM/DD/YYY</td>
+                             <td>EPMS Admin</td>
+                             <td>Assigned OSC</td>
+                         </tr>
+                     </table>
+
+                </div>
+            </div>
+           
+        </div>
+    </div>
+    
+</div>        

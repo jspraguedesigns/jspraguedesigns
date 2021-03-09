@@ -1,0 +1,236 @@
+
+<div class="container-xl mt-4">
+<div class="row">
+    <div class="col-12">
+            <h2>Order Search Result</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam fermentum, nulla luctus pharetra vulputate, felis tellus mollis orci, sed rhoncus sapien nunc eget odio.
+            </p>
+    </div>
+</div>
+<div class="row">
+    <div class="col-12">
+        <button class="btn btn-primary btn-function mb-4" (click)="onRevise()"><fa-icon [icon]="faChevronLeft"></fa-icon> Revise Search Criteria</button>
+    </div>
+</div>
+<div class="row mt-4" (click)="toggle()">
+    <div class="col-12">
+        <div class="card">
+            <div class="grey card-body d-flex justify-content-between align-items-center" >
+                <h3><fa-icon [icon]="faSearch"></fa-icon> Search Criteria</h3> 
+                <div class="toggle-state">
+                    <div  class="arrow-down" *ngIf="display === false"><fa-icon [icon]="faSortDown"></fa-icon></div>
+                    <div  class="arrow-up" *ngIf="display === true"><fa-icon [icon]="faSortUp"></fa-icon></div>
+                </div>
+ 
+            </div>
+        </div>
+
+    </div>
+</div>
+
+  
+  
+<div class="row" *ngIf="display" @fadeIn>
+    <div class="col-12">
+        <div class="card">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-12 border-bottom pt-4 pb-4">
+                      <div class="row">
+                          <div class="col-12">
+                            <h3>Transaction Date</h3>
+                          </div>
+                      </div>
+
+                            <div class="row">
+                                <div class="col-6">
+                                    <strong>From Date and Time</strong> MM/DD/YYYY [HH:MM]
+                                </div>
+                                <div class="col-6">
+                                    <strong>From Date and Time</strong> MM/DD/YYYY [HH:MM]
+                                </div>
+                            </div>
+                          
+                     
+                    </div>
+                    <div class="col-12 border-bottom pt-4 pb-4">
+                        <div class="row">
+                            <div class="col-12">
+                                <h3>Order Details Information</h3>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12">
+                                    <strong>Order State</strong> xxxxx
+                            </div>
+                        </div>
+                        
+                    </div>
+                         
+                    <div class="col-12 border-bottom pt-4 pb-4">
+                        <div class="row">
+                            <div class="col-12">    
+                                    <h3>Bill to & Ship to Customer Information</h3>
+                            </div>
+                        </div>
+                       <div class="row mb-2">
+                           <div class="col-md-6">
+                                <strong>Bill to First Name</strong> Lorem ipsum dolor sit amet
+                           </div>
+                           <div class="col-md-6">
+                                <strong>Bill to Last Name</strong> Lorem ipsum dolor sit amet
+                           </div>
+                       </div>
+                         
+                       <div class="row mb-2">
+                           <div class="col-md-6">
+                                <strong>Bill to Customer Email</strong> Loremipsum@abc.com
+                           </div>
+                           <div class="col-md-6">
+                                <strong>Bill to Customer Phone</strong> xxx-xxx-xxxx
+                           </div>
+                       </div>
+                         
+                     </div>
+                    
+                     <div class="col-12 border-bottom pt-4 pb-4">
+                         <div class="row">
+                             <div class="col-12">
+                                    <h3>Program Specific Information</h3>
+                             </div>
+                         </div>
+                        <div class="row">
+                            <div class="col-md-6 mb-2">
+                                    <strong>Originating System Code (OSC)</strong> xxxxx
+                            </div>
+                            <div class="col-md-6">
+                                    <strong>Program Specific Date</strong> xxxxx
+                            </div>
+                        </div>
+                        
+                        
+                     </div>
+                     <div class="col-12 border-bottom pt-4 pb-4">
+                         <div class="row">
+                
+                         </div>
+                        <h3>Payment Information</h3>
+                         <strong>Payment Method</strong> xxxxx
+                         <strong>Payment Type</strong> xxxxx
+                     </div>
+                    </div>
+                
+                
+                        </div>
+                
+                </div>
+            </div>
+        </div>
+  
+
+
+
+<div class="row mt-4">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-body">
+                <h3>Filter By</h3>
+                <form [formGroup]="searchResult">
+                    <div class="row">
+                            <div class="col-md-4 form-group">
+                                    <label for="orderID">Order ID</label>
+                                    <input type="text" class="form-control" formControlName="orderID" >
+                                </div>
+                            <div class="col-md-4 form-group">
+                                    <label>Order State</label>
+                                    <select class="form-control" formControlName="orderState">
+                                        <option>All</option>
+                                        <option>SALE</option>
+                                        <option>SALE ERROR</option>
+                                        <option>SALE REJECTED</option>
+                                        <option>SALE PENDING-AUTHORIZED</option>
+                                        <option>SALE NOMATCH_SETTLED</option>
+                                        <option>REFUND</option>
+                                        <option>REFUND RECONCILIATION PENDING</option>
+                                        <option>REFUND SETTLED</option>
+                                        <option>REFUND REJECTED</option>
+                                        <option>REFUND ERROR</option>
+                                        <option>LINKED OVERRIDE REFUND</option>
+                                        <option>STANDALONE OVERRIDE REFUND</option>
+                                        <option>REFUND-NOMATCH SETTLED</option>
+                                        <option>CHARGEBACK/DISPUTE</option>
+                                        <option>REVERSE CHARGEBACK</option>
+                                        <option>OVERRIDE CHARGEBACK</option>
+                                        <option>OVERRIDE-REQ FOR_RET N/A</option>
+                                        <option>OVERRIDE-REV-CHARGEBACK</option>
+                                    </select>
+                                </div>
+                   
+                                    <div class="col-md-4 form-group">
+                                            <label>OSC</label>
+                                            <select class="form-control" formControlName="osc">
+                                                    <option value="All">All</option>
+                                                    <option>APP</option>
+                                                    <option>ERG</option>
+                                                    <option>ETS</option>
+                                                    <option>CPX</option>
+                                                </select>
+                                           
+                                        </div>
+                                    </div>
+                               <div class="row">
+                                    <div class="col-md-4 form-group">
+                                            <label>Payment Method</label>
+                                            <select class="form-control" formControlName="paymentMethod">
+                                                    <option value="All">All</option>
+                                                    <option value="Visa">Visa</option>
+                                                    <option value="MasterCard">MasterCard</option>
+                                                    <option value="Amex">American Express</option>
+                                                    <option value="JCB">JCB</option>
+                                                    <option value="Discover">Discover</option>
+                                                    <option value="UnionPay">UnionPay</option>
+                                                    <option value="Diners Club">Diners Club International</option>
+                                                    <option value="Rupay">RuPay Global</option>
+                                                    <option value="Rupay">PayPal</option>
+                                                    <option value="Rupay">Electronic Check</option>
+                                                </select>
+                                           
+                                        </div>
+
+                                        <div class="col-md-4 form-group">
+                                                <label for="lUSD Amount">USD Amount</label>
+                                                <input type="text" class="form-control">
+                                            </div>
+
+                                            <div class="col-md-4 form-group">
+                                                    <label>Transaction Creation Date</label>
+                                                    <kendo-datepicker></kendo-datepicker>
+                                                </div>
+
+                               </div>
+                                      
+            
+                 
+                </form>
+                <button class="btn btn-primary">Go</button>
+                <hr/>
+                <app-filter-table></app-filter-table>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="row">
+ 
+        <div class="col-12">
+        
+        </div>
+      </div>
+    <div class="row mt-4">
+        <div class="col-12">
+            <app-search-fail></app-search-fail>
+        </div>
+    </div>
+
+</div>

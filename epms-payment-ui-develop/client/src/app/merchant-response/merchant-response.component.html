@@ -1,0 +1,12 @@
+<div class="paymentActionData-container">
+
+  <form ngNoForm method="POST" action="{{actionUrl}}" #paymentActionDataForm>
+
+    <ng-container *ngFor="let item of pgResponseData | keyvalue">
+
+      <input type="hidden" name="{{item.key}}" value="{{item.value}}"/>
+    </ng-container>
+
+  </form>
+
+</div>

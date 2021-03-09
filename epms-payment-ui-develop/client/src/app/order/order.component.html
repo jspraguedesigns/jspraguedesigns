@@ -1,0 +1,44 @@
+<!-- payment redirect form -->
+<app-merchant-response ></app-merchant-response>
+
+<div class="alert alert-success" role="alert" *ngIf="status === 'approved'">
+  Your payment was successfully processed!
+</div>
+<div class="alert alert-danger" role="alert" *ngIf="status === 'maxAttemptError'">
+  You have reached Max allowed Payment attempts. Please contact our Customer Service.
+</div>
+<div class="alert alert-danger" role="alert" *ngIf="status === 'paymentError'">
+  Error  while processing the request
+</div>
+
+<button id="btn-credit-card" arial-label="Credit Card" aria-controls="creditCard" class="btn btn-primary" [class.changestyle]="activeBtn"
+        [disabled]="status && (status === 'approved' || status === 'maxAttemptError')" *ngIf="globalAppData?.oscConfig?.ccPaymentEnabled"
+        (click)="loadPaymentIframe();">
+  <fa-icon [icon]="faCreditCard"></fa-icon> Credit Card
+</button>
+
+<button id="btn-paypal-fiserv" aria-controls="payPal" class="btn btn-primary"  [class.changestyle]="activePP" *ngIf="orderData && isPaypalEnabled()"
+        [disabled]="status && (status === 'approved' || status === 'maxAttemptError')" (click)="loadPaypal();"><fa-icon [icon]="faPaypal"> </fa-icon> PayPal</button>
+<button id="btn-check" aria-controls="bankAccount" class="btn btn-primary" [class.changestyle]="activeBA" [disabled]="status && (status === 'approved' || status === 'maxAttemptError')"
+        *ngIf="orderData && isBankAccountEnabled()" (click)="loadBankAccount();">
+  <fa-icon [icon]="faLandmark"></fa-icon> Bank Account
+</button>
+
+<div id="creditCard" *ngIf='showCreditCard' aria-hidden="true">
+  <app-credit-card [billingDetails]="billingDetails" [status]="status" [disabledPaymentMethodNames]="getBlockedPaymentMethodNames()"
+                   (paymentStatusChange)="paymentStatusChange($event)" [orderData]="orderData"></app-credit-card>
+</div>
+
+
+<div id="bankAccount" *ngIf='showBankAccount' aria-hidden="true">
+  <app-telecheck (paymentStatusChange)="paymentStatusChange($event)" [orderData]="orderData"></app-telecheck>
+</div>
+
+<div id="payPal" *ngIf='showPaypal && !isStubEnabled' aria-hidden="true">
+  <app-paypal></app-paypal>
+</div>
+
+<div id="payPal" *ngIf='showPaypal && isStubEnabled' aria-hidden="true">
+  <app-paypal-stub (paymentStatusChange)="paymentStatusChange($event)"></app-paypal-stub>
+</div>
+

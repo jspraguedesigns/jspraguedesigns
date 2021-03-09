@@ -1,0 +1,420 @@
+<div class="card rounded-card mb-4 mt-2">
+  <div class="alert alert-danger" role="alert"
+    *ngIf="paymentStatus && paymentStatus !== 'approved'">
+    {{errorMessage}}
+  </div>
+  <!-- payment redirect form -->
+  <app-merchant-response></app-merchant-response>
+
+
+
+  <div class="card-body">
+    <form id="teleForm" name="teleForm" (ngSubmit)="teleFormData.form.valid" #teleFormData="ngForm"  aria-label="Pay with check form">
+      <div class="row d-flex">
+        <div class="ml-auto mr-4">
+          <p> <span class="required-asterisk">*</span>Required
+        </div>
+      </div>
+
+      <div class="row mb-4">
+        <div class="col-12">
+          Have funds transferred directly from your bank account. <strong>Note: Must be a U.S. Bank Account.</strong>
+        </div>
+      </div>
+      <div class="row">
+          <div class="col-lg-6 order-first order-sm-2 order-lg-1">
+              <div class="col-md-12 p-0">
+                <label for="chkAccountType" class="control-label"><span class="required-asterisk">*</span>Bank Account Type:
+                </label>
+                <select class="form-control" name="chkAccountType" id="chkAccountType" required (change)="selectAccountTypeHandler($event)" ngModel #chkAccountType="ngModel">
+                  <option>- Select -</option>
+                  <option value="C">Checking</option>
+                  <option value="S">Savings</option>
+                </select>
+                
+                <div *ngIf="teleFormData.submitted && chkAccountType.invalid" class="tip" role="alert">
+                  You must select Bank Account Type
+                </div>
+              </div>
+              <div ngModelGroup="routingNumberGroup">
+                <div class="col-md-12 p-0" [class.has-error]="routingNum.touched && routingNum.invalid">
+                  <label for="routingNum" class="control-label"><span class="required-asterisk">*</span>Bank Routing Number</label>
+                  <div class="form-controls">
+                    <input class="mr-2" type="tel" id="routingNum" name="routingNum" pattern="^0?[0-9]+$" [(ngModel)]="bnkAccModel.routingNum"
+                    #routingNum="ngModel" (input)="confirmRoutingNum.control.updateValueAndValidity()" required maxlength="9" minlength="9"/>
+                  </div>
+                  <div class="tip" role="alert"  *ngIf="routingNum.errors?.minlength">
+                    Routing Number is required and must be at least 9 characters long.
+                  </div>
+                  <div class="tip" role="alert"  *ngIf="routingNum.errors?.pattern">
+                    Please do not use any embedded spaces, hyphens, or special characters.
+                  </div>
+                </div>
+                <div class="col-md-12 p-0" [class.has-error]="confirmRoutingNum.touched && confirmRoutingNum.invalid">
+                  <label for="confirmRoutingNum" class="control-label"><span class="required-asterisk">*</span>Confirm Bank Routing Number</label>
+                  <div class="form-controls">
+                    <input class="mr-2" type="tel" id="confirmRoutingNum" name="confirmRoutingNum" pattern="^0?[0-9]+$" placeholder="(routing number must match)"
+                    [(ngModel)]="bnkAccModel.confirmRoutingNum" #confirmRoutingNum="ngModel" appConfirmEqualValidator="routingNum" required maxlength="9" minlength="9"/>
+                  </div>
+                  <span *ngIf="confirmRoutingNum.touched && confirmRoutingNum.errors?.notEqual" class="tip" role="alert"> Routing Number and Confirm Routing Number Must Match</span>
+                </div>
+              </div>
+            </div>
+          <div class="col-lg-6 order-sm-1 order-lg-2">
+              
+              <img class="img-fluid mb-2" src="../../assets/img/check.png" alt="The first nine digits at the bottom of the check is the bank routing number. Followed by the bank account number. The last set of numbers is the check number." />
+            </div>
+
+
+      </div>
+      <div ngModelGroup="accNumberGroup" [class.has-error]="confirmAccNumber.touched && confirmAccNumber.invalid" class="row">
+          <div class="col-md-6">
+            <label for="accNumber"><span class="required-asterisk">*</span>Bank Account Number <small>(not credit/debit card)</small></label>
+            <div class="form-controls">
+              <input class="mr-2" type="tel" id="accNumber" name="accNumber" pattern="^0?[0-9]+$" [(ngModel)]="bnkAccModel.accNumber"
+              #accNumber="ngModel" (input)="confirmAccNumber.control.updateValueAndValidity()" required/>
+            </div>
+            <div class="tip" role="alert"  *ngIf="accNumber.errors?.pattern">
+              Account Number is required and must be numeric.
+            </div>
+          </div>
+          <div class="col-md-6">
+            <label for="confirmAccNumber"><span class="required-asterisk">*</span>Confirm Bank Account Number</label>
+            <div class="form-controls">
+              <input class="mr-2" type="tel" id="confirmAccNumber" name="confirmAccNumber" pattern="^0?[0-9]+$" placeholder="(must match)"
+              [(ngModel)]="bnkAccModel.confirmAccNumber" #confirmAccNumber="ngModel" appConfirmEqualValidator="accNumber" required/>
+            </div>
+            <span *ngIf="confirmAccNumber.touched && confirmAccNumber.errors?.notEqual" class="tip" role="alert">Account Number and Confirm Account Number Must Match</span>
+          </div>
+      </div>
+      <div class="row">
+        <div class="col-md-3">
+          <label for="chkNumber">Check Number</label>
+          <div class="form-controls">
+            <input class="mr-2" type="tel" id="chkNumber" name="chkNumber" pattern="^0?[0-9]+$" placeholder="(Optional)" [(ngModel)]="bnkAccModel.chkNumber" #chkNumber="ngModel" />
+          </div>
+          <div class="tip" role="alert"  *ngIf="chkNumber.errors?.pattern">
+            Check Number is optional and must be numeric.
+          </div>
+        </div>
+        <div class="col-md-3">
+          <label for="chkBankType"><span class="required-asterisk">*</span>Check Type</label>
+          <select class="form-control" name="chkBankType" id="chkBankType" required (change)="selectCheckTypeHandler($event)" ngModel="chkBankType" #chkBankType >
+            <option>- Select -</option>
+            <option value="P">Personal</option>
+            <option value="C">Company</option>
+          </select>
+          
+          <div *ngIf="teleFormData.submitted && chkBankType.invalid" class="tip" role="alert">
+            You must select Bank Account Type
+          </div>
+        </div>
+      </div>
+       <div id="billingDetails" class="mt-4" *ngIf=" gd?.oscConfig?.displayBillingName
+      || gd?.oscConfig?.displayBillingAddress "  >
+        <strong>Billing Information</strong>
+        <div class="mb-2" *ngIf="gd?.oscConfig?.displayShippingAsBillingAddr && gd?.oscConfig?.displayBillingName">
+          <input class="mr-2" type="checkbox" id="chk-shippingname-billing-same" (change)="samenamechkchange($event)" />
+          <label for="chk-shippingname-billing-same">Same as Shipping/Contact name</label>
+        </div>
+        <div class="row" *ngIf="gd?.oscConfig?.displayBillingName">
+
+          <div class="col-md-6">
+            <label for="chk-first-name"><span class="required-asterisk">*</span>First Name</label>
+            <div class="form-controls">
+              <input class="mr-2" type="text" id="chk-first-name" name="chk-first-name" placeholder="First name" [(ngModel)]="bnkAccModel.firstName"
+              #firstName="ngModel" required pattern="^[_A-z]*((-|\s)*[_A-z])*$"/>
+            </div>
+            <div class="tip" role="alert" *ngIf="firstName.errors?.pattern">First Name is required. Do not include special characters</div>
+            <div class="tip" role="alert" *ngIf="teleFormData.submitted && firstName.errors?.required">First Name is required.</div>
+          </div>
+          <div class="col-md-6">
+            <label for="chk-last-name"><span class="required-asterisk">*</span>Last Name</label>
+            <div class="form-controls">
+              <input class="mr-2" type="text" id="chk-last-name" name="chk-last-name" placeholder="Last name" [(ngModel)]="bnkAccModel.lastName"
+              #lastName="ngModel" pattern="^[_A-z]*((-|\s)*[_A-z])*$" required/>
+            </div>
+            <div class="tip" role="alert" *ngIf="lastName.errors?.pattern">Last Name is required. Do not include special characters</div>
+            <div class="tip" role="alert" *ngIf="teleFormData.submitted && lastName.errors?.required">Last Name is required.</div>
+          </div>
+        </div>
+
+        <div class="mb-2" *ngIf="gd?.oscConfig?.displayShpngAsBillngNam && gd?.oscConfig?.displayBillingAddress" >
+          <input class="mr-2" type="checkbox" id="chk-shipping-billing-same" (change)="sameadrchkchange($event)">
+          <label for="chk-shipping-billing-same"> Same as Shipping/Contact Information</label>
+        </div>
+        <ng-container *ngIf="gd?.oscConfig?.displayBillingAddress">
+          <div class="row" >
+            <div class="col-lg-4">
+             
+              <label for="streetAddress1" class="control-label"><span class="required-asterisk">*</span>Street Address 1</label>
+              <div class="form-controls">
+                <input type="text" name="streetAddress1" id="txt-shipping-addr1" required
+                  [(ngModel)]="bnkAccModel.streetAddress1" #streetAddress1="ngModel" pattern="^[_A-z0-9\s]*([_A-z0-9\s])*$"
+                  [ngClass]="{ 'is-invalid': teleFormData.submitted && streetAddress1.invalid }">
+              </div>
+              <div *ngIf="streetAddress1.errors?.pattern" class="tip" role="alert" >
+                Street Address 1 is required. Do not include special characters.
+          </div>
+            </div>
+            <div class="col-lg-4">
+              
+              <label for="streetAddress1" class="control-label">Street Address 2</label>
+              <div class="form-controls">
+                <input type="text" name="streetAddress2" id="txt-shipping-addr2" placeholder="(optional)"
+                  [(ngModel)]="bnkAccModel.streetAddress2" #streetAddress2="ngModel" pattern="^[_A-z0-9\s]*([_A-z0-9\s])*$">
+              </div>
+              <div *ngIf="streetAddress2.errors?.pattern" class="tip" role="alert" >
+                Street Address 2 is optional. Do not include special characters.
+          </div>
+          
+          <div *ngIf="teleFormData.submitted && city.invalid" class="tip" role="alert">
+            <div *ngIf="streetAddress2.errors.required">You must enter your city.</div>
+          </div>
+            </div>
+            <div class="col-lg-4">
+              
+              <label for="city" class="control-label"><span class="required-asterisk">*</span>City</label>
+              <div class="form-controls">
+                <input type="text" name="city" id="billingCity" required [(ngModel)]="bnkAccModel.city" #city="ngModel" pattern="^[_A-z0-9\s]*([_A-z0-9\s])*$">
+              </div>
+              
+              <div *ngIf="teleFormData.submitted && city.invalid" class="tip" role="alert">
+                <div *ngIf="city.errors.required">You must enter your city.</div>
+              </div>
+              <div *ngIf="city.touched && city.errors?.pattern" class="tip" role="alert" >
+                City is required. Do not include special characters.</div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-lg-4">
+              
+              <label for="country" class="control-label"><span class="required-asterisk">*</span>Country</label>
+              <div class="form-controls-dropdown">
+                <select class="form-control" name="country" id="billingCountry" required [(ngModel)]="bnkAccModel.country"
+                  #country="ngModel" [ngClass]="{ 'is-invalid': teleFormData.submitted && country.invalid }"
+                  (change)="changeCountry()">
+                  <option>- Select -</option>
+                  <option *ngFor="let country of countryList" [value]="country.id">{{country.name}}</option>
+                </select>
+                
+                <div *ngIf="teleFormData.submitted && country.invalid" class="tip" role="alert">
+                  <div class="tip" role="alert" *ngIf="country.errors.required">Country is required. Please select a country.</div>
+                </div>
+              </div>
+            </div>
+            <div *ngIf="selectedCountry === 'US' || selectedCountry === 'CA' ; else region" class="col-lg-4">
+              <label for="state" *ngIf="selectedCountry === 'US'" class="control-label"> <span
+                  class="required-asterisk">*</span>State</label>
+              <label for="country" *ngIf="selectedCountry === 'CA'" class="control-label"> <span
+                  class="required-asterisk">*</span>Province</label>
+              <div *ngIf="selectedCountry === 'US'" class="form-controls-dropdown">
+             
+                <select class="form-control" name="state" id="billingRegion" required [(ngModel)]="bnkAccModel.region"
+                  #region="ngModel" [ngClass]="{ 'is-invalid': teleFormData.submitted && region.invalid }"
+                  (change)="changeRegion($event)">
+                  <option *ngFor="let region of regionList" [value]="region.id">{{region.name}}</option>
+                </select>
+                
+                <div *ngIf="teleFormData.submitted && region.invalid" class="tip" role="alert">
+                  <div  class="tip" role="alert" *ngIf="region.errors.required">State is required. Please select a state.</div>
+                </div>
+              </div>
+              <div *ngIf="selectedCountry === 'CA'" class="form-controls-dropdown">
+                <select class="form-control" name="provice" id="billingRegion" required [(ngModel)]="bnkAccModel.province"
+                  #region="ngModel" (change)="changeProvince($event)">
+                  <option *ngFor="let province of provinceList" [value]="province.id">{{province.name}}</option>
+                </select>
+                <div *ngIf="teleFormData.submitted && region.invalid" class="tip" role="alert">
+                  <div  class="tip" role="alert" *ngIf="region.errors.required">Province is required. Please select a Province.</div>
+                </div>
+              </div>
+            </div>
+            <ng-template #region>
+              <div class="col-lg-4">
+
+                <label for="state-province">State/Province</label>
+                <div class="form-controls">
+
+                  <input type="text" name="state-province" id="stateProvince" placeholder="(optional)">
+                </div>
+              </div>
+            </ng-template>
+
+            <div *ngIf="selectedCountry === 'US' || selectedCountry === 'CA'; else postal" class="col-lg-4">
+                <label for="zipcode" *ngIf="selectedCountry === 'US'" class="control-label"><span class="required-asterisk">*</span>Zip
+                  Code</label>
+                <label for="postalcodeCA" *ngIf="selectedCountry === 'CA'" class="control-label"><span class="required-asterisk">*</span>Postal
+                  Code</label>
+                 <div *ngIf="selectedCountry === 'US'">
+                    <div  class="form-controls">
+
+                        <input  type="tel" name="zipcode" id="billingPostalcode" required minlength="5" [(ngModel)]="bnkAccModel.postalcode" #postalcode="ngModel" pattern="^0?[0-9]+$"/>
+                      </div>
+                      <div *ngIf="selectedCountry === 'US'">
+                          <div *ngIf="postalcode.errors?.minlength" class="tip" role="alert">
+                              Zip Code must contain at least 5 numeric characters.
+                              </div>
+                         <div *ngIf="postalcode.errors?.pattern" class="tip" role="alert">
+                          Zip Code is required and must be numeric. Do not include special characters.
+                         </div>
+
+                 </div>
+                </div>
+
+                <div *ngIf="selectedCountry === 'CA'">
+                    <div  class="form-controls">
+                        <input  type="tel" name="postalcodeCA" id="billingPostalcode" required minlength="6" [(ngModel)]="bnkAccModel.postalcode" #postalcode="ngModel"  pattern="^[_A-z0-9\s]*([_A-z0-9\s])*$"/>
+                      </div>
+                      <div *ngIf="selectedCountry === 'CA'">
+                          <div *ngIf="postalcode.errors?.minlength" class="tip" role="alert">
+                              Postal Code must contain at least 6 characters.
+                              </div>
+                         <div *ngIf="postalcode.errors?.pattern" class="tip" role="alert">
+                            Postal Code is required. Do not include special characters.
+                         </div>
+
+                 </div>
+                </div>
+
+              </div>
+
+
+            <ng-template #postal>
+              <div class="col-lg-4">
+
+                <label for="zip-postalcose">
+                  Zip/Postal Code
+                </label>
+                <div class="form-controls">
+
+                  <input type="text" name="zip-postalcode" id="billingPostalcode" [(ngModel)]="bnkAccModel.postalcode"
+                    #postalcode="ngModel" placeholder="(optional)">
+                </div>
+              </div>
+            </ng-template>
+          </div>
+        </ng-container>
+      </div>
+      <div class="row" *ngIf="gd?.oscConfig?.displayBillingAddress">
+        <div class="col-lg-4">
+
+          <label for="company" class="control-label">Company</label>
+          <div class="form-controls">
+            <input type="text" name="company" id="company" placeholder="(optional)" [(ngModel)]="bnkAccModel.company"
+              #company="ngModel">
+          </div>
+        </div>
+        <div class="col-lg-4">
+
+          <label for="phone" class="control-label">Phone Number</label>
+          <div class="form-controls" (focusin)="show = true" (focusout)="show = false">
+            <input type="tel" pattern="^[0-9]+$" name="phone" id="txt-shipping-phone" placeholder="(optional)" [(ngModel)]="bnkAccModel.phone"
+              #phone="ngModel" minlength="10">
+          </div>
+          <div class="inst" role="alert" *ngIf="show" >
+              Do not include spaces, hyphens, or special characters.
+       </div>
+       <div class="tip" role="alert"  *ngIf="phone.errors?.minlength">
+        Phone number must be at least 10 characters long.
+      </div>
+          <div class="tip" role="alert" *ngIf="phone.errors?.pattern">Please do not use any embedded spaces, hyphens, or special characters.</div>
+        </div>
+        <div class="col-lg-4">
+
+          <label for="email" class="control-label">Email</label>
+          <div class="form-controls">
+            <input type="email" name="email" id="txt-shipping-email" placeholder="Email" placeholder="(optional)"
+              [(ngModel)]="bnkAccModel.email" #email="ngModel" pattern="[A-z0-9._+-]+@[A-z0-9.-]+\.[A-z]{2,4}$">
+          </div>
+          <div class="tip" role="alert" *ngIf="email.errors?.pattern">Email Address is invalid</div>
+        </div>
+      </div>
+      <div class="row mt-3">
+        <div id="col-md-12 payButton border-top">
+          <button id="submit" [ngClass]="teleFormData.invalid ?'disabled-bkg ml-3':'btn--primary ml-3'"
+                   [disabled]="teleFormData.invalid"
+          (click)="open(content)">
+          <span *ngIf="teleFormData.invalid"><fa-icon [icon]="faLock"></fa-icon></span> Process Payment
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+<!--consent Modal-->
+<ng-template #content let-modal>
+  <div class="inner-modal">
+    <div *ngIf="sourceType === 'sale'">
+     <h3 class="mb-4"> Electronic Check Disclaimer</h3>
+    </div>
+    <div *ngIf="sourceType === 'subscription'">
+      <h3 class="mb-4"> Subscription Disclaimer</h3>
+     </div>
+    <span [innerHTML]="consentText"></span>
+    <div class="mb-2">
+      <input class="mr-2" type="checkbox" id="chk-agree-terms-condition" (change)="agreeToTermsCondition($event)" />
+      <label for="chk-agree-terms-condition">I have read and accept the conditions above.</label>
+    </div>
+    <div class="row d-flex justify-content-end mr-2">
+      <button class="underlined" (click)="exit(incomplete);modal.close()">Exit without consent</button>
+      <button [ngClass]="enablePaymentButton?'disabled-bkg':'btn--primary'" [disabled]="enablePaymentButton" (click)="createPayment();modal.close()">Continue</button>
+    </div>
+  </div>
+</ng-template>
+<!-- modal without agreeing to consent -->
+<ng-template #incomplete let-modal>
+  <div class="inner-modal">
+    <h2 class="mb-4">Incomplete Payment</h2>
+    <p class="mb-4">Without consent, another form of payment will be required.</p>
+    <div class="row d-flex justify-content-end mr-2">
+      <button class="btn--primary okay" (click)="modal.close()">OK</button>
+    </div>
+  </div>
+</ng-template>
+
+<ng-template #adverseActionDisclosureContent let-adverseActionDisclosureModal>
+  <div class="inner-modal">
+    <h3 class="mb-4"> Adverse Action Disclosure </h3>
+  <p style="height: 400px;overflow: auto">
+    <b>The Adverse Action Disclosure :</b><br>
+    We are sorry that we cannot complete your transaction. Our decision was based, in part, on information provided by TeleCheck.<br>
+    · What is TeleCheck? TeleCheck provides payment acceptance, account screening, and fraud prevention services to both merchants and financial institutions by reporting on check writing histories. Please visit <a href="https://getassistance.telecheck.com/index.html" class="external-link" target="_blank" rel="nofollow noopener" title="Follow link">https://getassistance.telecheck.com/index.html</a> to learn more about TeleCheck. · Why does TeleCheck need personal information about you before we can assist you? The use of some types of personal information, including bank account details and/or a driver’s license number, is needed to verify TeleCheck is communicating with the right person about the right records. TeleCheck may even request a social security number in order to locate and verify records reported by a bank or credit union. To a consumer worried about identity theft, this may seem like a lot to ask. However, TeleCheck only requests what is needed to ensure the accuracy of data.<br>
+    · You may have received a decline because of unpaid debt associated with your checking account. TeleCheck will issue a decline alert if it has at least one record in its files of unpaid debt associated with your bank account and/or personal information. This type of a decline code is referred to as a “<b>Code 4</b>”. We encourage you to contact TeleCheck to learn more details about the information in its records and what you can do to resolve any issues related to your receipt of a Code 4 decline.<br>
+    · You may have received a risk-based decline. TeleCheck analyzes transactions to determine whether they appear to be potentially high risk to protect consumers, merchants, and financial institutions from fraud and losses. How did TeleCheck determine this “potential risk?” Through the use of modeling tools built on the detection of common characteristic groupings observed in past transactions, TeleCheck statistically determines the likelihood that a payment may return. So, while there may have been nothing wrong with your transaction, it had certain characteristics that made TeleCheck question it. Receiving a risk decline does not signify to you – or anyone else – that TeleCheck holds records of bad check writing history on you. And, it does not mean you do not have enough money in the bank to cover your payment. TeleCheck has no visibility into your bank account balance. And finally, it has absolutely no effect on your credit. These risk models provide critical protection against fraud. A Code 3 is often the first alert a consumer receives that their account has been fraudulently compromised. Risk modeling also enables merchants to continue to safely accept their customers’ checks by minimizing fraud-related losses, and controlled loss brings cost benefits to customers.<br>
+    · To learn more: You may call or write TeleCheck for further information. You will need to provide (1) the declined transaction’s record number (<b>{{paymentResponse?.achResponse?.referenceNumber}}</b> ), (2) your driver’s license number and its state of issuance (3) if applicable, the bank routing and account number you used for the declined transaction, and (4) your social security number (if the declined transaction was with a financial institution).<br>
+    Contact information:<br>
+    TeleCheck Services, Inc.<br>
+    ATTN: Resolutions Department P. O. Box 6806 Hagerstown, MD 21741-6806<br>
+    Tel: 1-800-366-2425 <a href="https://getassistance.telecheck.com/index.html" class="external-link" target="_blank" rel="nofollow noopener" title="Follow link">https://getassistance.telecheck.com/index.html</a></p>
+
+
+    <div class="mb-2">
+      <input class="mr-2" type="checkbox" id="chk-adverse-action-disclosure" (change)="agreeToAdverseActionDisclosure($event)" />
+      <label for="chk-agree-terms-condition">I have read and understand the above disclosure.</label>
+    </div>
+    <div class="row d-flex justify-content-end mr-2">
+      <button [ngClass]="disableAdverseActionDisclosureContentBtn?'disabled-bkg':'btn--primary'" [disabled]="disableAdverseActionDisclosureContentBtn" (click)="closeAdverseActionDisclosure(adverseActionDisclosureModal)">Continue</button>
+    </div>
+
+  </div>
+
+
+
+</ng-template>
+
+<!--Begin profiling tags below -->
+<!---note: replace 's0b500q' with your organization id
+note: replace my_session_id' with a uniquely generated handle
+note: for production, replace 'h.online-metrix.net' with a local
+URL and configure your web server to redirect to
+'h.online-metrix.net' -->
+<object ngNonBindable>
+<p style="background:url('https://h.online-metrix.net/fp/clear.png?org_id=s0b500qh;m=1')"></p>
+<img src="https://h.online-metrix.net/fp/clear.png?org_id=s0b500qh;m=2" alt="" />
+<script src="https://h.online-metrix.net/fp/check.js?org_id=s0b500qh;session_id={{fingerprintTransactionId}}” type="text="javascript"></script>
+<object type="application/x-shockwave-flash" data="https://h.online-metrix.net/fp/fp.swf?org_id=s0b500qh;session_id={{fingerprintTransactionId}}" width="1" height="1" id="obj_id">
+<param name="movie" value="https://h.online-metrix.net/fp/fp.swf?org_id=s0b500qh;session_id={{fingerprintTransactionId}}" />
+<div></div>
+</object>
+<!--- End profiling tags -->

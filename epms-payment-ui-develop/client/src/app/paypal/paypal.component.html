@@ -1,0 +1,18 @@
+<div class="alert alert-danger" role="alert" *ngIf="paymentStatus && paymentStatus !== 'approved'">
+    Your PayPal transaction was declined. Try again using a different payment method.
+</div>
+<div class="card rounded-card mb-4 mt-2 p-4">
+  <!-- payment redirect form -->
+  <app-merchant-response></app-merchant-response>
+  <div class="card-body p-4">
+<div id="smart-button-container" class="mt-4 mb-4">
+    <div class="text-center mb-2">
+        <strong>Log in to</strong>
+    </div>
+    <div id="frame-paypal" style="text-align: center;">
+        <div #paypal></div>
+    </div>
+</div>
+
+</div>
+</div>

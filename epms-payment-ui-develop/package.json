@@ -1,0 +1,27 @@
+{
+  "name": "epms-payment-ui",
+  "version": "1.0.0",
+  "scripts": {
+    "watch": "cd server && tsc -w",
+    "start": "nodemon dist/server/index.js",
+    "build:app": "tsc --build server/tsconfig.json"
+  },
+  "private": true,
+  "dependencies": {
+    "axios": "^0.21.1",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "ngx-page-scroll": "^7.0.4"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.8",
+    "@types/express": "4.17.6",
+    "@types/helmet": "0.0.47",
+    "@types/node": "^12.11.1",
+    "codelyzer": "^6.0.0",
+    "nodemon": "^2.0.6",
+    "ts-node": "~8.3.0",
+    "tslint": "~6.1.0",
+    "typescript": "~3.9.5"
+  }
+}

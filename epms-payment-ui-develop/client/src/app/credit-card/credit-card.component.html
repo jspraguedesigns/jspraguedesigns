@@ -1,0 +1,472 @@
+<div class="card rounded-card mb-4 mt-2">
+  <!-- payment redirect form -->
+  <app-merchant-response></app-merchant-response>
+  <div class="alert alert-danger" role="alert"
+    *ngIf="paymentStatus && paymentStatus !== 'approved'">
+     {{errorMessage}}
+  </div>
+  <!--<div class="alert alert-danger" role="alert"
+       *ngIf="paymentStatus === 'paymentError'">
+       Your card issuer is unable to approve your transaction at this time. Try again using a different payment method.
+  </div>-->
+  <div class="card-body">
+
+    <form id="ccForm" name="ccForm" (ngSubmit)="ccFormData.form.valid" #ccFormData="ngForm" aria-label="Pay with credit card form">
+      <div class="row d-flex">
+        <div class="ml-auto mr-4">
+          <p> <span class="required-asterisk">*</span>Required
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-3">
+          <label for="cc-card" class="control-label"><span class="required-asterisk" aria-label="required information">*</span>Card Type: </label>
+          <select id="cc-option" class="form-control" name="cardType" required [(ngModel)]="model.cardType" #cardType="ngModel" (ngModelChange)="onCardTypeChange(cardType.value)"
+            [ngClass]="{ 'is-invalid': ccFormData.submitted && cardType.invalid }" >
+            <option value="001"*ngIf="gd?.oscConfig?.visaEnabled && showOption('Visa')">Visa</option>
+            <option value="002" *ngIf="gd?.oscConfig?.masterCardEnabled && showOption('MasterCard')">MasterCard</option>
+            <option value="003" *ngIf="gd?.oscConfig?.amexEnabled && showOption('American Express')">American Express</option>
+            <option value="007" *ngIf="gd?.oscConfig?.jcbEnabled && showOption('JCB')">JCB</option>
+            <option value="004" *ngIf="gd?.oscConfig?.discoverEnabled && showOption('Discover')">Discover</option>
+            <option value="006" *ngIf="gd?.oscConfig?.unionPayEnabled && showOption('Union Pay')">Union Pay</option>
+            <option value="005" *ngIf="gd?.oscConfig?.dinersClubEnabled && showOption('Diners Club International')">Diners Club International</option>
+            <option value="008" *ngIf="gd?.oscConfig?.rupayGlobalEnabled && showOption('RuPay Global')">RuPay Global</option>
+          </select>
+          <div *ngIf="ccFormData.submitted && cardType.invalid" class="tip">
+            <div *ngIf="cardType.errors.required">You must select your Credit Card type.</div>
+          </div>
+        </div>
+      </div>
+
+
+      <!-- Creditcard fields for Fiserv -->
+      <div class="row" [hidden]="isStubEnabled">
+        <div class="col-lg-6 col-md-12">
+
+          <label for="txt-cc-number" class="control-label"><span class="required-asterisk" >*</span>Card Number </label>
+          <div id="txt-cc-number" class="form-controls payment-fields disabled empty"
+            id="first-data-payment-field-card" minlength="16" maxlength="19" data-cc-card></div>
+
+        </div>
+        <div class="col-lg-2 col-md-3">
+
+          <label for="txt-cc-expiry" id="txt-cc-expiry" class="control-label"><span class="required-asterisk">*</span>Exp
+            Date</label>
+          <div id="first-data-payment-field-exp" class="form-controls payment-fields disabled empty"
+            aria-label="expiration date" id="cc-exp" data-cc-exp></div>
+        </div>
+
+        <div class="col-lg-2 col-md-3 col-sm-6" aria-describedby="cvv-tip" *ngIf="showCvvForCC&&isShowCvv()">
+          <label id="txt-cc-cvv	" for="cc-cvv" class="control-label"><span class="required-asterisk">*</span>CVV
+            <app-cvv-tooltip></app-cvv-tooltip></label>
+          <div id="first-data-payment-field-cvv" class="form-controls payment-fields disabled empty"
+            aria-label="CVV Number" id="cc-cvv" data-cc-cvv></div>
+        </div>
+      </div>
+      <div class="row" [hidden]="isStubEnabled">
+        <div class="col-lg-6">
+          <label for="cc-name" class="control-label"><span class="required-asterisk">*</span>Card Holder Name</label>
+          <div class="form-controls payment-fields disabled empty" id="txt-shipping-firstname"
+            aria-label="Card Holder Name" data-cc-name></div>
+        </div>
+      </div>
+      <!-- Creditcard fields for stubing -->
+      <div class="row" *ngIf="!!isStubEnabled">
+        <div class="col-lg-6 col-md-12 form-group"  *ngIf="selectedCard === '003'; else  ccsixteen">
+          <label for="stubCardNumber"><span class="required-asterisk">*</span>Card Number  </label>
+          <input id="stubCardNumber" class="form-control" aria-label="credit card number" name="stubCardNumber" required
+            pattern="^[0-9]+$" minlength="15" maxlength="19" ngModel #stubCardNumber="ngModel">
+            <div class="tip" role="alert"  *ngIf="stubCardNumber.errors?.minlength">
+                Card number must be at least 15 characters long.
+              </div>
+
+              <div *ngIf="ccFormData.submitted && stubCardNumber.invalid" class="tip" role="alert">
+                <div *ngIf="stubCardNumber.errors.required">You must enter a valid card number.</div>
+              </div>
+              <div class="tip" role="alert"  *ngIf="stubCardNumber.errors?.pattern">
+                  Please do not use any embedded spaces, hyphens, or special characters.
+                </div>
+
+        </div>
+
+        <ng-template #ccsixteen>
+            <div class="col-lg-6 col-md-12 form-group">
+                <label for="stubCardNumber"><span class="required-asterisk">*</span>Card Number  </label>
+                <input id="stubCardNumber" class="form-control" aria-label="credit card number" name="stubCardNumber" required
+                  pattern="^[0-9]+$" minlength="16" maxlength="19" ngModel #stubCardNumber="ngModel">
+                  <div class="tip" role="alert"  *ngIf="stubCardNumber.errors?.minlength">
+                      Card number must be at least 16 characters long.
+                    </div>
+
+                    <div *ngIf="ccFormData.submitted && stubCardNumber.invalid" class="tip" role="alert">
+                      <div *ngIf="stubCardNumber.errors.required">You must enter a valid card number.</div>
+                    </div>
+                    <div class="tip" role="alert"  *ngIf="stubCardNumber.errors?.pattern">
+                        Please do not use any embedded spaces, hyphens, or special characters.
+                      </div>
+
+              </div>
+        </ng-template>
+
+        <div class="col-lg-2 col-md-3 form-group">
+          <label for="stubExpDate"><span class="required-asterisk">*</span>Exp Date</label>
+          <input id="stubExpDate" class="form-control" aria-label="expiration date" name="stubExpDate"
+            pattern="^[0-9/]+$" minlength="5" maxlength="5"  ngModel #stubExpDate="ngModel" placeholder="MM/YY" required>
+            <div class="tip" role="alert"  *ngIf="stubExpDate.errors?.pattern">
+                Please do not use any embedded spaces, hyphens, or special characters.
+              </div>
+
+              <div *ngIf="ccFormData.submitted && stubExpDate.invalid" class="tip" role="alert">
+                <div *ngIf="stubExpDate.errors.required">You must enter card experation month.</div>
+              </div>
+        </div>
+
+        <div class="col-lg-2 col-md-3 col-sm-6 form-group" *ngIf="showCvvForCC&&isShowCvv()">
+          <label for="stubCvv"><span class="required-asterisk">*</span>CVV
+            <app-cvv-tooltip></app-cvv-tooltip></label>
+          <input id="stubCvv" class="form-control" aria-label="CVV Number" name="stubCvv" pattern="^[0-9]+$"
+            minlength="3" maxlength="4" ngModel data-cc-cvv #stubCvv="ngModel" required>
+            <div class="tip" role="alert"  *ngIf="stubCvv.errors?.pattern">
+                Please do not use any embedded spaces, hyphens, or special characters.
+              </div>
+              <div class="tip" role="alert"  *ngIf="stubCvv.errors?.minlength">
+                  Card number must be at least 3 characters long.
+                </div>
+
+                <div *ngIf="ccFormData.submitted && stubCvv.invalid" class="tip" role="alert">
+                  <div *ngIf="stubCvv.errors.required">You must enter card CVV number.</div>
+                </div>
+        </div>
+      </div>
+      <div class="row" *ngIf="!!isStubEnabled">
+
+        <div class="col-lg-6 form-group">
+          <label for="stubCcName"><span class="required-asterisk">*</span>Card Holder Name</label>
+          <input id="stubCcName" class="form-control" name="stubCcName" required aria-label="Card Holder Name" pattern="^[_A-z0-9\s]*([_A-z0-9\s])*$" ngModel #chName="ngModel">
+
+          <div class="tip" role="alert" *ngIf="chName.errors?.pattern">Card Holder Name is required. Do not include special characters</div>
+
+          <div *ngIf="ccFormData.submitted && chName.invalid" class="tip" role="alert">
+            <div *ngIf="chName.errors.required">Card Holder Name is required.</div>
+          </div>
+        </div>
+      </div>
+      <div id="billingDetails" class="mt-4" *ngIf="gd?.oscConfig?.billingFieldsRequired">
+        <strong>Billing Address</strong>
+        <div class="mb-2" *ngIf="gd?.oscConfig?.displayShpngAsBillngNam">
+
+          <input class="mr-2" aria-checked="false" type="checkbox" aria-label="Address is the same as Shipping/Contact information"
+          id="cc-shipping-billing-same" [checked]="isCcShippingBillingSameChk" (change)="sameadrchkchange($event)">
+          <label for="cc-shipping-billing-same"> Same as Shipping/Contact Information</label>
+        </div>
+        <!--epms-address [billingDetails]="sessionAddressDetails" [orderData]="orderData" (addressInfo)="userAddressDetails($event)"></epms-address-->
+        <div class="row">
+          <div class="col-lg-4">
+
+            <label for="streetAddress1" class="control-label"><span class="required-asterisk">*</span>Street Address 1</label>
+            <div class="form-controls payment-fields disabled empty">
+              <input type="text" name="streetAddress1" id="txt-shipping-addr1" required
+                [(ngModel)]="model.streetAddress1" #streetAddress1="ngModel" 
+                (keyup)="onAddressKey(streetAddress1.value)"
+                [ngClass]="{ 'is-invalid': ccFormData.submitted && streetAddress1.invalid }"
+
+                aria-label="Street Address 1"
+                pattern="^[_A-z0-9\s]*([_A-z0-9\s])*$">
+
+            </div>
+            <div class="tip" role="alert" *ngIf="streetAddress1.errors?.pattern">Address is required. Do not include special characters</div>
+            <div *ngIf="ccFormData.submitted && streetAddress1.errors?.pattern" class="tip" role="alert">
+              <div *ngIf="streetAddress1.errors.required">You must enter your address. Do not include special characters</div>
+            </div>
+
+            
+            <div *ngIf="ccFormData.submitted && streetAddress1.invalid" class="tip" role="alert">
+              <div *ngIf="streetAddress1.errors.required">You must enter your address.</div>
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <label for="streetAddress2" class="control-label">Street Address 2</label>
+            <div class="form-controls payment-fields disabled empty">
+              <input type="text" name="streetAddress2" id="txt-shipping-addr2" placeholder="(optional)"
+                [(ngModel)]="model.streetAddress2" #streetAddress2="ngModel" aria-label="Street Address 2"
+                pattern="^[_A-z0-9\s]*([_A-z0-9\s])*$">
+            </div>
+            <div class="tip" role="alert"  *ngIf="streetAddress2.errors?.pattern">
+              Please do not use any embedded spaces, hyphens, or special characters.
+            </div>
+          </div>
+          <div class="col-lg-4">
+
+            <label for="city" class="control-label"><span class="required-asterisk">*</span>City</label>
+            <div class="form-controls payment-fields disabled empty">
+              <input type="text" name="city" id="billingCity" required [(ngModel)]="model.city" #city="ngModel"
+                [ngClass]="{ 'is-invalid': ccFormData.submitted && city.invalid }" aria-label="City"
+                pattern="^[_A-z0-9\s]*([_A-z0-9\s])*$">
+
+            </div>
+            <div *ngIf="city.errors?.pattern" class="tip" role="alert">
+             Please do not use any embedded spaces, hyphens, or special characters.
+              </div>
+            <div *ngIf="ccFormData.submitted && city.invalid" class="tip" role="alert">
+              <div *ngIf="city.errors.required">You must enter your city.</div>
+            </div>
+
+            </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-4">
+
+            <label for="country" class="control-label"><span class="required-asterisk">*</span>Country</label>
+            <div class="form-controls-dropdown payment-fields disabled empty">
+              <select class="form-control" name="country" id="billingCountry" required [(ngModel)]="model.country"
+                #country="ngModel" [ngClass]="{ 'is-invalid': ccFormData.submitted && country.invalid }"
+                (change)="changeCountry()" aria-label="Country">
+                <option disabled>- Select -</option>
+                <option *ngFor="let country of countryList" [value]="country.id">{{country.name}}</option>
+              </select>
+
+              <div *ngIf="ccFormData.submitted && country.invalid" class="tip" role="alert">
+                <div *ngIf="country.errors.required">You must enter your country.</div>
+              </div>
+            </div>
+          </div>
+          <div *ngIf="selectedCountry === 'US' || selectedCountry === 'CA' ; else region" class="col-lg-4">
+            <label for="state" *ngIf="selectedCountry === 'US'" class="control-label">
+              <span
+                class="required-asterisk">*</span>State</label>
+            <label for="province" *ngIf="selectedCountry === 'CA'" class="control-label"> <span
+                class="required-asterisk">*</span>Province</label>
+            <div *ngIf="selectedCountry === 'US'" class="form-controls-dropdown payment-fields disabled empty">
+              <select class="form-control" name="state" id="billingRegion" required [(ngModel)]="model.region"
+                #region="ngModel" [ngClass]="{ 'is-invalid': ccFormData.submitted && region.invalid }"
+                (change)="changeRegion($event)" aria-label="State">
+                <option disabled>- Select -</option>
+                <option *ngFor="let region of regionList" [value]="region.id">{{region.name}}</option>
+              </select>
+              <div *ngIf="ccFormData.submitted && region.invalid" class="tip" role="alert">
+                <div *ngIf="region.errors.required">You must enter your state.</div>
+              </div>
+            </div>
+            <div *ngIf="selectedCountry === 'CA'" class="form-controls-dropdown payment-fields disabled empty">
+              <select class="form-control" name="provice" id="billingRegion" required [(ngModel)]="model.province"
+                #region="ngModel" (change)="changeProvince($event)" aria-label="Province">
+                <option disabled>- Select -</option>
+                <option *ngFor="let province of provinceList" [value]="province.id">{{province.name}}</option>
+              </select>
+              <div *ngIf="ccFormData.submitted && region.invalid" class="tip" role="alert">
+                <div *ngIf="region.errors.required">You must enter your province.</div>
+              </div>
+            </div>
+          </div>
+          <ng-template #region>
+            <div class="col-lg-4">
+              <label for="state-province">State/Province</label>
+              <div class="form-controls payment-fields disabled empty">
+                <input type="text" name="state-province" id="state-provice" aria-label="State/Province" placeholder="(optional)">
+              </div>
+            </div>
+          </ng-template>
+          <div *ngIf="selectedCountry === 'US' || selectedCountry === 'CA'; else postal" class="col-lg-4">
+            <label for="billingPostalcode" *ngIf="selectedCountry === 'US'" class="control-label"><span class="required-asterisk">*</span>Zip
+              Code</label>
+            <label *ngIf="selectedCountry === 'CA'" class="control-label"><span class="required-asterisk">*</span>Postal
+              Code</label>
+             <div *ngIf="selectedCountry === 'US'">
+                <div  class="form-controls">
+                    <input  type="tel" name="postalcode" id="billingPostalcode" required minlength="5" [(ngModel)]="model.postalcode" #postalcode="ngModel" pattern="^0?[0-9]+$"/>
+                  </div>
+                  <div *ngIf="selectedCountry === 'US'">
+                      <div *ngIf="postalcode.errors?.minlength" class="tip" role="alert">
+                          Zip Code must contain at least 5 numeric characters.
+                          </div>
+                     <div *ngIf="postalcode.errors?.pattern" class="tip" role="alert">
+                      Zip Code is required and must be numeric. Do not include special characters.
+                     </div>
+
+             </div>
+            </div>
+
+            <div *ngIf="selectedCountry === 'CA'">
+                <div  class="form-controls">
+                    <input  type="tel" name="postalcodeCA" id="billingPostalcode" required minlength="6" [(ngModel)]="model.postalcode" #postalcode="ngModel"  pattern="^[_A-z0-9\s]*([_A-z0-9\s])*$"/>
+                  </div>
+                  <div *ngIf="selectedCountry === 'CA'">
+                      <div *ngIf="postalcode.errors?.minlength" class="tip" role="alert">
+                          Postal Code must contain at least 6 characters.
+                          </div>
+                     <div *ngIf="postalcode.errors?.pattern" class="tip" role="alert">
+                        Postal Code is required. Do not include special characters.
+                     </div>
+
+             </div>
+            </div>
+
+          </div>
+
+          <ng-template #postal>
+            <div class="col-lg-4">
+              <label for="postalcode">
+                Zip/Postal Code
+              </label>
+              <div class="form-controls payment-fields disabled empty">
+                <input type="text" name="postalcode" id="billingPostalcode" minlength="5" [(ngModel)]="model.postalcode"
+                  #postalcode="ngModel" aria-label="Zip/Postal Code" placeholder="(optional)">
+              </div>
+              <div *ngIf="selectedCountry === 'US'">
+                <div *ngIf="postalcode.errors?.minlength" class="tip" role="alert">
+                    Zip code must contain at least 5 numeric characters.
+                    </div>
+                <div *ngIf="postalcode.errors?.pattern" class="tip" role="alert">
+                  Zip Code is required and must be numeric. Do not include special characters.
+                </div>
+              </div>
+            </div>
+          </ng-template>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-4">
+          <label for="company" class="control-label">Company</label>
+          <div class="form-controls payment-fields disabled empty">
+            <input type="text" name="company" id="company" placeholder="(optional)" [(ngModel)]="model.company" [pattern]="regexPatteren"
+              aria-label="Company" #company="ngModel">
+          </div>
+          <div class="tip" role="alert" *ngIf="company.errors?.pattern">Please do not use any embedded spaces, hyphens, or special characters.</div>
+        </div>
+        <div class="col-lg-4">
+          <label for="phone" class="control-label">Phone Number</label>
+          <div class="form-controls payment-fields disabled empty" (focusin)="show = true" (focusout)="show = false">
+            <input type="tel" name="phone" id="txt-shipping-phone" placeholder="(optional)" [(ngModel)]="model.phone"
+              aria-label="Phone Number" #phone="ngModel" minlength="10" pattern="^[0-9]+$">
+          </div>
+          <div class="inst" role="alert" *ngIf="show" >
+            Do not include spaces, hyphens, or special characters.
+     </div>
+          <div class="tip" role="alert"  *ngIf="phone.errors?.minlength">
+           Phone number must be at least 10 characters long.
+          </div>
+          <div class="tip" role="alert" *ngIf="phone.errors?.pattern">Please do not use any embedded spaces, hyphens, or special characters.</div>
+        </div>
+        <div class="col-lg-4">
+          <label for="email" class="control-label">Email</label>
+          <div class="form-controls payment-fields disabled empty">
+            <input type="email" name="email" id="txt-shipping-email" placeholder="Email" placeholder="(optional)"
+              aria-label="Email" [(ngModel)]="model.email" #email="ngModel" pattern="[A-z0-9._+-]+@[A-z0-9.-]+\.[A-z]{2,4}$" >
+          </div>
+          <div class="tip" role="alert" *ngIf="email.errors?.pattern">Email Address is invalid</div>
+        </div>
+      </div>
+      <div class="row mt-4  pr-2 pl-2">
+        <div class="col-md-12 border-top">
+          <small>Depending on the credit card account number entered, you may be given the option to select a currency
+            after selecting "Process Payment."</small>
+        </div>
+      </div>
+      <div class="row mt-3 ">
+        <div class="col-4 d-flex">
+          <div id="payButton" *ngIf="!isStubEnabled">
+            <!-- Button to submit the data to fiserv -->
+
+            <button id="submit" [ngClass]="ccFormData.invalid ?'disabled-bkg':'btn--primary'" data-submit-btn [disabled]="ccFormData.invalid">
+              <fa-icon [icon]="faLock"></fa-icon> Process Payment
+            </button>
+          </div>
+          <div id="stubPayButton" *ngIf="isStubEnabled">
+            <!-- Button to submit the data to stubing -->
+            <button type="button" [ngClass]="ccFormData.invalid ?'disabled-bkg':'btn--primary'" [disabled]="ccFormData.invalid"
+              (click)="submitStubForm(ccFormData)">
+              <span *ngIf="ccFormData.invalid"><fa-icon [icon]="faLock"></fa-icon></span> Process Payment
+            </button>
+          </div>
+        </div>
+        <div class="col-8 sub-text">
+           <div class="lock"><fa-icon [icon]="faLock"></fa-icon> </div> ETS processes your payment with your security in mind. This may impact your experience. <button  class="dsmodal" (click)="open(dsmodal)">Learn more.</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+<!-- 3DS form -->
+<div [style.display]="'none'" class="secure-3ds-form-container" *ngIf="secure3dsFormData">
+  <div [innerHtml]="secure3dsFormData"></div>
+</div>
+<!-- ACS Form -->
+<div [style.display]="'none'" class="auth-challenge-container" *ngIf="authChallengeParams">
+  <form id="epms-acs-redirect-form" ngNoForm method="POST" action={{authChallengeParams.acsURL}} #authChallengeForm>
+    <div *ngIf="authChallengeParams.payerAuthenticationRequest">
+      <input type="hidden" name="PaReq" value="{{authChallengeParams.payerAuthenticationRequest}}" />
+      <input type="hidden" name="MD" value="{{authChallengeParams.merchantData}}" />
+    </div>
+    <div *ngIf="authChallengeParams.creq">
+      <input type="hidden" name="creq" value="{{authChallengeParams.creq}}" />
+      <input type="hidden" name="threeDSSessionData" value="{{authChallengeParams.sessionData}}" />
+    </div>
+    <input type="hidden" name="TermUrl" value="{{authChallengeParams.termURL}}" />
+  </form>
+</div>
+<!-- DCC Confirmation-->
+<ng-template #dccModal let-modal>
+  <div class="modal-header">
+    <h3>Select Your Choice of Currency</h3>
+  </div>
+  <div class="inner-modal">
+    <table class="dcc">
+      <tr>
+        <td>
+          <div class="flag pr-4"><img class="img-fluid" src="../../assets/img/u3579.png" alt="US Flag" />
+          </div>
+        </td>
+        <td>
+          <div class="amount"><strong class="pr-2">{{dccResponse.currency}}</strong>
+            <strong>{{dccResponse.grandTotalAmount}}</strong></div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <div class="flag pr-4"><img class="img-fluid"
+              src="../../assets/img/{{dccResponse.foreignCurrency}}.png"
+              alt="{{dccResponse.foreignCurrency}} Flag" /> </div>
+        </td>
+        <td>
+          <div class="amount"><strong class="pr-2">{{dccResponse.foreignCurrency}}</strong>
+            <strong>{{dccResponse.foreignCurrencyGrandTotalAmount}}</strong><br />
+            <span class="smaller">1 {{dccResponse.currency}} = {{dccResponse.exchangeRate}} {{dccResponse.foreignCurrency}} Includes
+              {{dccResponse.marginRatePercentage}}% margin</span></div>
+        </td>
+      </tr>
+    </table>
+    <div class="d-flex justify-content-between" >
+      <button class="btn--primary" (click)="exitdcc(false);modal.close()">Pay in {{dccResponse.currency}}</button>
+      <button class="btn--primary" (click)="exitdcc(true);modal.close()">Pay in {{dccResponse.foreignCurrency}}</button>
+    </div>
+  </div>
+</ng-template>
+
+<ng-template #dsmodal let-modal>
+  <div class="modal-header">
+      <h4> <fa-icon class="question-3ds" [icon]="faQuestionCircle"></fa-icon> 3DS Information</h4> <button class="close" (click)="modal.close()"> <fa-icon [icon]="faTimes"></fa-icon> </button>
+  </div>
+    <div class="inner-modal">
+
+        <p>Visa Secure/Verified by Visa, MasterCard SecureCode, American Express SafeKey, and Discover ProtectBuy are 3D Secure (3DS) online fraud prevention measures used by card companies as an added layer of security to protect cardholder account information. During the payment process you may be asked by your card issuing bank to verify cardholder identity by entering an authentication code known only to the cardholder and the bank. Failure to enter the required information or entry of invalid information will result in the sale being rejected. If you don’t know your 3D-Secure passcode or password, and you are not being given the option to enroll online in the bank’s pop up screen, then you will need to contact your bank.</p>
+
+        <div class="icons d-flex justify-content-between">
+            <div class="credit-card">
+              <img class="img-fluid" src="../../assets/img/secure-120x120-visa-secure.png"
+                alt="Visa Secure" />
+            </div>
+            <div class="credit-card">
+              <img class="img-fluid" src="../../assets/img/secure-120x120-mc-securecode.png"
+                alt="MasterCard Secure" />
+            </div>
+            <div class="credit-card">
+              <img class="img-fluid" src="../../assets/img/secure-120x120-amex-safekey.png"
+                alt="American Express SafeKey" />
+            </div>
+            <div class="credit-card">
+              <img class="img-fluid" src="../../assets/img/secure-120x120-discover-protectbuy.png"
+                alt="Discover Protect Buy" />
+            </div>
+          </div>
+
+    </div>
+</ng-template>

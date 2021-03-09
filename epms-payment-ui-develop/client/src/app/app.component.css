@@ -1,0 +1,58 @@
+body{
+    color:#151515;
+    font-family:'Open Sans', sans-serif;
+}
+
+h1, h2, h3, h4 {
+    font-family:'Open Sans', sans-serif;
+}
+
+h1.title{
+    font-size: 1.5rem;
+    color: #003082;
+    font-weight: 700;
+}
+h3{
+    font-size: 20px;
+    font-weight: 700;
+}
+.select-payment-title h3{
+    margin-top: 2em;
+    margin-bottom: 1em;
+    font-size: 1.7em;
+    font-weight: 400;
+    color: #003356;
+}
+a.link{
+    color:#797979;
+    text-decoration: none;
+}
+a.link:hover{
+    text-decoration:underline;
+}
+span.link{
+  color:#003356;
+  text-decoration: none;
+}
+span.link:hover{
+  text-decoration:underline;
+  cursor: pointer;
+}
+.container-fluid{
+    max-width: 1330px;
+}
+
+@media (max-width: 576px) {
+    .select-payment-title h3{
+        font-size:1.5em;
+    }
+}
+
+.loader{
+    position: relative;
+    width:auto;
+    height: auto;
+    z-index:100;
+    top: 50vh;
+    background-color: rgba(0,0,0,.2)
+}

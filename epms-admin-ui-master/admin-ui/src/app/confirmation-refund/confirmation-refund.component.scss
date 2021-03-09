@@ -1,0 +1,44 @@
+@import '../../component.scss';
+
+.receiving-information, .grey-box{
+    background-color:rgba(240, 240, 240, 1);
+        border-top:none;
+        border-radius: 10px;
+}
+
+.alert-message{
+    font-size: 20px;
+}
+th{
+    padding-right: 2em;
+}
+
+fa-icon .check{
+    font-size: 2em;
+    color: #153303;
+}
+
+fa-icon .circle{
+    font-size: 2em;
+    color: #CC4C4D;
+}
+
+h2.error{
+    font-size: 24px;
+    color: #CC4C4D;
+    font-weight: 700;
+}
+
+h3.error{
+    color: #CC4C4D;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.error{
+    color: #CC4C4D;
+}
+.error-message{
+    margin-bottom: 1em;
+    margin-left: 2em;
+}

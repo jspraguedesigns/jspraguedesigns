@@ -1,0 +1,51 @@
+.rounded-card{
+    border-radius: 10px;
+    filter: drop-shadow(4px 4px 4px  #ddd);
+}
+
+
+.no-border{
+    border-top: 1px solid #fff;
+    padding-bottom: 0;
+}
+
+
+h3{
+        font-size: 2em;
+        font-weight: 400;
+        color: #003356;
+
+}
+
+table{
+    font-family:'Open Sans', sans-serif;
+}
+
+.sub-total{
+    font-size:1.25em;
+    font-family:'Open Sans', sans-serif;
+}
+
+span.quanity{
+    font-weight: 200;
+}
+
+td{
+    text-align: right;
+}
+
+td.first-col{
+    text-align: left;
+}
+
+.borderless {
+    border: none;
+}
+
+.bottom{
+    padding: 0rem.75rem;
+}
+
+.top{
+    padding: .75rem .75rem .25rem .75rem;
+}

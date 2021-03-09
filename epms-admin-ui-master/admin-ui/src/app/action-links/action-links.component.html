@@ -1,0 +1,110 @@
+<div class="btn-group" dropdown>
+    <button id="button-basic" dropdownToggle type="button" class="btn dropdown-toggle btn-action"
+            aria-controls="dropdown-basic">
+      Action Links<span class="caret"></span>
+    </button>
+    <ul id="dropdown-basic" *dropdownMenu class="dropdown-menu"
+        role="menu" aria-labelledby="button-basic">
+      <li role="menuitem"><a class="dropdown-item"  (click)="openModal(linkedoverriderefund)">Linked Override Refund</a></li>
+      <li role="menuitem"><a class="dropdown-item" (click)="openModal(refund)">Refund</a></li>
+      <li role="menuitem"><a class="dropdown-item" (click)="openModal(reversechargeback)">Manual Reverse Chargeback</a></li>
+      <li role="menuitem"><a class="dropdown-item" (click)="openModal(retrieval)">Request For Retrieval</a></li>
+      <li role="menuitem"><a class="dropdown-item" (click)="openModal(auditlog)">Audit Log</a></li>
+      <li role="menuitem"><a class="dropdown-item" (click)="openModal(postaudit)">Post Audit</a>
+      </li>
+    </ul>
+  </div>
+
+  <ng-template #linkedoverriderefund>
+    <div class="modal-header">
+      <h4 class="modal-title pull-left">Linked Override Refund</h4>
+      <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      <app-linked-override-refund></app-linked-override-refund>
+    </div>
+    <div class="modal-footer">
+      <button class="btn btn-primary btn-function" (click)="modalRef.hide()">Exit</button> <button class="btn btn-primary btn-function">Reset Form</button> <button class="btn btn-primary">Process Link Override Refund</button>
+  </div>
+  </ng-template>
+
+  <ng-template #refund>
+    <div class="modal-header">
+      <h4 class="modal-title pull-left">Refund</h4>
+      <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      <app-refund></app-refund>
+    </div>
+    <div class="modal-footer">
+      <button class="btn btn-primary btn-function" (click)="modalRef.hide()">Exit</button> <button class="btn btn-primary btn-function">Reset Form</button> <button class="btn btn-primary">Process Link Override Refund</button>
+  </div>
+  </ng-template>
+
+  <ng-template #reversechargeback>
+    <div class="modal-header">
+      <h4 class="modal-title pull-left">Manual Chargeback or Reverse Chargeback</h4>
+      <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+     <app-manual-reverse-chargeback></app-manual-reverse-chargeback>
+    </div>
+    <div class="modal-footer">
+      <button class="btn btn-primary btn-function" (click)="modalRef.hide()">Exit</button> <button class="btn btn-primary btn-function">Reset Form</button> <button class="btn btn-primary">Process Link Override Refund</button>
+  </div>
+  </ng-template>
+
+
+  <ng-template #retrieval>
+    <div class="modal-header">
+      <h4 class="modal-title pull-left">Manual Chargeback or Reverse Chargeback</h4>
+      <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      <app-request-retrieval></app-request-retrieval>
+    </div>
+    <div class="modal-footer">
+      <button class="btn btn-primary btn-function" (click)="modalRef.hide()">Exit</button> <button class="btn btn-primary btn-function">Reset Form</button> <button class="btn btn-primary">Process Link Override Refund</button>
+  </div>
+  </ng-template>
+
+
+  <ng-template #auditlog>
+    <div class="modal-header">
+      <h4 class="modal-title pull-left">Audit Log</h4>
+      <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      <app-audit-log></app-audit-log>
+    </div>
+    <div class="modal-footer">
+      <button class="btn btn-primary btn-function" (click)="modalRef.hide()">Exit</button>
+  </div>
+  </ng-template>
+
+
+  <ng-template #postaudit>
+    <div class="modal-header">
+      <h4 class="modal-title pull-left">Post Audit Message</h4>
+      <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      <app-audit-message></app-audit-message>
+    </div>
+
+    <div class="modal-footer">
+      <button class="btn btn-primary btn-function" (click)="modalRef.hide()">Exit</button> <button class="btn btn-primary btn-function">Reset Form</button> <button class="btn btn-primary">Post Audit Message</button>
+  </div>
+  </ng-template>

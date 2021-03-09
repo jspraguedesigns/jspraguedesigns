@@ -1,0 +1,37 @@
+<div class="row apc-margin-top mb-4">
+    <div class="col-lg-12 mb-2 accepted">
+        Accepted Payment Cards
+    </div>
+    <div class="col-lg-12 credit-card-container" *ngIf="gd?.oscConfig?.ccPaymentEnabled">
+        <div class="credit-card" *ngIf="gd?.oscConfig?.visaEnabled">
+            <img class="navbar-logo" src="../../assets/img/epms-payment-cardsvisa-copy.png" alt="Visa" />
+        </div>
+        <div class="credit-card" *ngIf="gd?.oscConfig?.masterCardEnabled">
+            <img class="navbar-logo" src="../../assets/img/epms-payment-cardsmastercard-copy.png"
+                alt="MasterCard" />
+        </div>
+        <div class="credit-card" *ngIf="gd?.oscConfig?.amexEnabled">
+            <img class="navbar-logo" src="../../assets/img/epms-payment-cardsamex-copy.png"
+                alt="American Express" />
+        </div>
+        <div class="credit-card" *ngIf="gd?.oscConfig?.discoverEnabled">
+            <img class="navbar-logo" src="../../assets/img/epms-payment-cardsdiscover-copy.png"
+                alt="Discover" />
+        </div>
+        <div class="credit-card" *ngIf="gd?.oscConfig?.jcbEnabled">
+            <img class="navbar-logo" src="../../assets/img/epms-payment-cardsjcb-copy.png" alt="JCB" />
+        </div>
+
+        <div class="credit-card" *ngIf="gd?.oscConfig?.unionPayEnabled">
+            <img class="navbar-logo" src="../../assets/img/epms-payment-cardsunionpay-copy.png"
+                alt="UnionPay" />
+        </div>
+        <div class="credit-card" *ngIf="gd?.oscConfig?.dinersClubEnabled">
+            <img class="navbar-logo" src="../../assets/img/epms-payment-cardsdinersclub-copy.png"
+                alt="Diners Club" />
+        </div>
+        <div class="credit-card2" *ngIf="gd?.oscConfig?.rupayGlobalEnabled">
+            <img class="navbar-logo" src="../../assets/img/epms-payment-cardsrupay-copy.png" alt="RuPay" />
+        </div>
+    </div>
+</div>

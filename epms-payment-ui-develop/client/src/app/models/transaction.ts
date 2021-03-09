@@ -1,0 +1,54 @@
+import { OrderLineItem } from './order-line-item';
+import { OrderAmountDetail } from './order-amount-detail';
+import { Address } from './address';
+import { Contact } from './contact';
+import {SubscriptionDetail} from './subscription-detail';
+import {Order} from './order';
+import {ProcessorDetails} from './processor-details';
+import {PaymentMethodDetail} from './payment-method-detail';
+import {BillingAddress} from './billing-address';
+import {BillingContact} from './billing-contact';
+import {PaypalResponse} from './paypal';
+import {AchDetail} from './ach-detail';
+
+
+export interface Transaction {
+    amount?: number;
+    amountDetail?: OrderAmountDetail;
+    lineItems?: Array<OrderLineItem>;
+    shippingAddress?: Address;
+    shippingContact?: Contact;
+    pmtCounter?: number;
+    sourceType: string;
+    subscriptionDetail?: SubscriptionDetail;
+    storeId: string;
+    modeOfReceipt: string;
+    processorDetail?: ProcessorDetails;
+    order: Order;
+    orderTransactionId?: string;
+    serviceCode?: string;
+    merchantDescriptor: string;
+    merchantDescriptorContact: string;
+    transactionStatus?: string;
+    paymentMethodCode?: string;
+    schemeTransactionId?: string;
+    transactionTime?: string;
+    decision?: string;
+    pgmResponseCode?: string;
+    pgmResponseMessage?: string;
+    programDefinedDate?: string;
+    programSpecificKey?: string;
+    paymentTypeCode?: string;
+    orderAmount?: number;
+    resourceText?: string;
+    glProductText?: string;
+    glActivityText?: string;
+    glProjectText?: string;
+    merchantDefinedField1: string;
+    paymentMethodDetail?: PaymentMethodDetail;
+    epmsTransactionID?: string;
+    billingAddress?: BillingAddress;
+    billingContact?: BillingContact;
+    gatewayReferenceId?: string;
+    achDetail?: AchDetail;
+}

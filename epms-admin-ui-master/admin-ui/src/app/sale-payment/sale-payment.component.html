@@ -1,0 +1,379 @@
+<div class="card mt-4">
+        <div class="card-body">
+            <h2> Sale Transaction </h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus</p>
+            
+            <form [formGroup]="saleForm"  (ngSubmit)="onSubmit()">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h3>Payment Details</h3>
+                   </div>
+                </div>
+      
+                   <div formGroupName="paymentDetails" class="row g-3">
+                      <div class="col-md-4 form-controls">
+                          <label class="form-label" for="amount"><span class="required-asterisk">*</span>Amount</label>
+                          <input class="form-control"  
+                          id="amount" 
+                          currencyInput
+                          formControlName="amount"/>
+                          <span 
+                          *ngIf="!saleForm.get('paymentDetails.amount').valid && saleForm.get('paymentDetails.amount').touched"
+                          class="tip">Amount is a required field and must be specified</span>
+                     </div>
+                     <div class="col-md-4 form-controls">
+                          <label class="form-label" for="mode-of-receipt"><span class="required-asterisk">*</span>Mode Of Receipt</label>
+                        
+                                  <select class="form-control"
+                                         formControlName="mode-of-receipt">
+                                         <option disabled>Select</option>
+                                         <option value='N'> Internet</option>
+                                         <option value='I'> In Person</option>
+                                         <option value='T'> Phone</option>
+                                         <option value='V'> VRS</option>
+                                         <option value='M'> Mail</option>
+                                         <option value='F'> Fax</option>
+                                  </select>
+                                  <span 
+                                  *ngIf="!saleForm.get('paymentDetails.mode-of-receipt').valid && saleForm.get('paymentDetails.mode-of-receipt').touched "
+                                  class="tip">Mode Of Receipt is a required field an must be specified.</span>
+                     </div>
+                     <div class="col-md-4 form-controls">
+                          <label class="form-label" for="billingStatementText">Billing Statement Text</label>
+                          <input class="form-control" 
+                          formControlName="billingStatementText"
+                          id="billingStatementText"/>
+                          <span 
+                          *ngIf="!saleForm.get('paymentDetails.billingStatementText').valid && saleForm.get('paymentDetails.billingStatementText').touched || saleForm.get('paymentDetails.billingStatementText').errors?.minlength"
+                          class="tip">Billing Statement must contain 25 characters</span>
+                     </div>
+                     <div class="col-md-4 form-controls">
+                             <label class="form-label" for="program-specific-key">Program Specific Key</label>
+                             <input class="form-control" 
+                             id="program-specific-key"
+                             formControlName="program-spec-key"/>
+                        </div>
+                   </div>
+                 <div class="row">
+                    <div class="col-md-12 mt-4">
+                        <h3>Contact/Shipping Information</h3>
+                   </div>
+                 </div>
+      
+                     <div formGroupName="shippingInfo" class="row g-3">
+                        <div class="col-md-6 form-controls">
+                            <label class="form-label" for="first-name"><span class="required-asterisk">*</span>First Name</label>
+                            <input class="form-control" 
+                            id="first-name"
+                            formControlName="firstName"/>
+                            <span 
+                            *ngIf="!saleForm.get('shippingInfo.firstName').valid && saleForm.get('shippingInfo.firstName').touched"
+                            class="tip">First name is a required field and must be specified.</span>
+                       </div>
+                       <div class="col-md-6 form-controls">
+                            <label class="form-label" for="last-name"><span class="required-asterisk">*</span>Last Name</label>
+                            <input class="form-control" 
+                            id="last-name"
+                            formControlName="lastName"/>
+                            <span 
+                            *ngIf="!saleForm.get('shippingInfo.lastName').valid && saleForm.get('shippingInfo.lastName').touched"
+                            class="tip">Last name is a required field and must be specified.</span>
+                       </div>
+                       <div class="col-md-4 form-controls">
+                            <label class="form-label" for="last-name"><span class="required-asterisk">*</span>Street Address 1</label>
+                            <input class="form-control" 
+                            id="street-address-1"
+                            formControlName="streetAddress1"/>
+                            <span 
+                            *ngIf="!saleForm.get('shippingInfo.streetAddress1').valid && saleForm.get('shippingInfo.streetAddress1').touched"
+                            class="tip">Street Address 1 is a required field. and must be specified</span>
+                       </div>
+                       <div class="col-md-4 form-controls">
+                            <label class="form-label" for="last-name">Street Address 2</label>
+                            <input class="form-control"
+                              id="street-address-2"
+                              formControlName="streetAddress2"
+                              placeholder="(optional)"/>
+                              
+                       </div>
+                       <div class="col-md-4 form-controls">
+                            <label class="form-label" for="last-name"><span class="required-asterisk">*</span>City</label>
+                            <input class="form-control" 
+                            formControlName="city"
+                            id="last-name"/>
+                            <span 
+                            *ngIf="!saleForm.get('shippingInfo.city').valid && saleForm.get('shippingInfo.city').touched"
+                            class="tip">City is a required field and must be specified.</span>
+                       </div>
+                       <div class="col-lg-4 form-controls">
+                            <label class="form-label" class="control-label"><span class="required-asterisk">*</span>Country</label>
+                              <select class="form-control" 
+                              name="country" 
+                              formControlName="country"
+                              id="billingCountry" 
+                              aria-label="Country" 
+                              (change)="changeCountry($event)">
+                                <option disabled>- Select -</option>
+                                <option *ngFor="let country of countryList" [value]="country.id">{{country.name}}</option>
+                              </select>
+                              <span 
+                              *ngIf="!saleForm.get('shippingInfo.country').valid && saleForm.get('shippingInfo.country').touched"
+                              class="tip">Country is a required field and must be specified.</span>
+                          </div>
+        
+                          <div *ngIf="selectedCountry == 'US' || selectedCountry == 'CA' ; else region" class="col-lg-4 form-controls">
+                                <label *ngIf="selectedCountry == 'US'" class="control-label">
+                                  <span class="required-asterisk">*</span>
+                                  State
+                                </label>
+                                <label *ngIf="selectedCountry == 'CA'" class="control-label"> 
+                                  <span class="required-asterisk">*</span>Province
+                                </label>
+                                <div *ngIf="selectedCountry == 'US'" class="form-controls-dropdown payment-fields disabled empty">
+                                  <select class="form-control" 
+                                  name="state"
+                                  formControlName="state"
+                                  (change)="changeRegion($event)" 
+                                  aria-label="State">
+                                    <option disabled>- Select -</option>
+                                    <option *ngFor="let region of regionList" [value]="region.id">{{region.name}}</option>
+                                  </select>
+                                  <span 
+                                  *ngIf="!saleForm.get('shippingInfo.state').valid && saleForm.get('shippingInfo.state').touched"
+                                  class="tip">State is a required field and must be specified.</span>
+                                </div>
+        
+                                <div *ngIf="selectedCountry == 'CA'" class="form-controls-dropdown payment-fields disabled empty">
+                                  <select class="form-control" 
+                                  name="provice"
+                                  formControlName="province"
+                                  (change)="changeProvince($event)" 
+                                  aria-label="Province">
+                                    <option disabled>- Select -</option>
+                                    <option *ngFor="let province of provinceList" [value]="province.id">{{province.name}}</option>
+                                  </select>
+                                  <span 
+                                  *ngIf="!saleForm.get('shippingInfo.province').valid && saleForm.get('shippingInfo.province').touched"
+                                  class="tip">Province is a required field and must be specified.</span>
+                                </div>
+                              </div>
+        
+                              <ng-template #region>
+                                    <div class="form-controls col-lg-4">
+                                      <label>State/Province</label>
+                                      <div class="payment-fields disabled empty">
+                                        <input class="form-control" 
+                                         type="text" 
+                                         name="state"
+                                         formControlName="state-province"
+                                         id="state-province" 
+                                         aria-label="State/Province" 
+                                         placeholder="(optional)">
+                                      </div>
+                                    </div>
+                                  </ng-template>
+        
+                                  <div *ngIf="selectedCountry == 'US' || selectedCountry == 'CA'; else postal" class="col-lg-4 form-controls">
+                                        <label *ngIf="selectedCountry == 'US'" class="control-label"><span class="required-asterisk">*</span>Zip
+                                          Code</label>
+                                        <label *ngIf="selectedCountry == 'CA'" class="control-label"><span class="required-asterisk">*</span>Postal
+                                          Code</label>
+                                         <div *ngIf="selectedCountry == 'US'">
+                                            <div  class="">
+                                                <input class="form-control" 
+                                                type="tel" 
+                                                name="postalcode"
+                                                formControlName="zip" 
+                                                minlength="5" 
+                                                pattern="^0?[0-9]+$"/>
+                                                <span 
+                                  *ngIf="!saleForm.get('shippingInfo.zip').valid && saleForm.get('shippingInfo.zip').touched"
+                                  class="tip">Zip Code is a required field and must be specified.</span>
+                                              </div>
+                                        
+                                        </div>
+                            
+                                        <div *ngIf="selectedCountry == 'CA'">
+                                            <div  class="">
+                                                <input class="form-control" 
+                                                type="tel" 
+                                                name="postalcodeCA" 
+                                                formControlName="postalCA" 
+                                                minlength="6" 
+                                                pattern="^[_A-z0-9\s]*([_A-z0-9\s])*$"/>
+                                                <span 
+                                  *ngIf="!saleForm.get('shippingInfo.postalCA').valid && saleForm.get('shippingInfo.postalCA').touched"
+                                  class="tip">Postal Code is a required field and must be specified.</span>
+                                              </div>
+                
+                                        </div>
+                            
+                                      </div>
+                            
+                                      <ng-template #postal>
+                                        <div class="col-lg-4 form-controls">
+                                          <label>
+                                            Zip/Postal Code
+                                          </label>
+                                          <div class="payment-fields disabled empty">
+                                            <input class="form-control" 
+                                            type="text" 
+                                            name="postalcode"
+                                            formControlName="zipPostal" 
+                                            minlength="5" 
+                                            aria-label="Zip/Postal Code" 
+                                            placeholder="(optional)">
+                                            <span 
+                                  *ngIf="!saleForm.get('shippingInfo.zipPostal').valid && saleForm.get('shippingInfo.zipPostal').touched"
+                                  class="tip">Zip/Postal Code is a required field and must be specified.</span>
+                                          </div>
+                                          
+                                        </div>
+                                      </ng-template>
+                                      <div class="col-md-4 form-controls">
+                                            <label class="form-label" for="first-name">Company</label>
+                                            <input class="form-control"
+                                            formControlName="company" 
+                                            id="Company" 
+                                            placeholder="(optional)"/>
+                                       </div>
+                                       <div class="col-lg-4  form-controls">
+                                            <label class="control-label">Phone Number</label>
+                                            <div class="payment-fields disabled empty" >
+                                              <input class="form-control" 
+                                              type="tel" 
+                                              name="phone"
+                                              formControlName="phone"
+                                              id="txt-shipping-phone" 
+                                              placeholder="(optional)"  
+                                              aria-label="Phone Number" 
+                                              minlength="10" 
+                                              pattern="^[0-9]+$">
+                                            </div>
+                                       
+                                       </div>
+                                       <div class="col-lg-4 form-controls">
+                                            <label class="control-label">Email</label>
+                                            <div class="payment-fields disabled empty" >
+                                              <input class="form-control" 
+                                              type="email" 
+                                              name="email"
+                                              formControlName="email"
+                                              id="email" 
+                                              placeholder="(optional)"  
+                                              aria-label="Email" 
+                                              pattern="[A-z0-9._+-]+@[A-z0-9.-]+\.[A-z]{2,4}$">
+                                              <span 
+                                  *ngIf="!saleForm.get('shippingInfo.email').valid && saleForm.get('shippingInfo.email').touched"
+                                  class="tip">Email is optional. You must enter a valid email address.</span>
+                                            </div>
+                                       
+                                       </div>
+                                       <div class="col-lg-12 mt-4">
+                                            <h3>Peoplesoft Details</h3>
+                                       </div>
+                                       <div class="col-lg-4  form-controls">
+                                            <label class="control-label"><span class="required-asterisk">*</span> Project</label>
+                                            <div class="payment-fields disabled empty" >
+                                              <input class="form-control" 
+                                              type="tel" 
+                                              name="project" 
+                                              id="project"
+                                              formControlName="project"
+                                              aria-label="Project">
+                                        
+                                            </div>
+                                            <span 
+                                  *ngIf="!saleForm.get('shippingInfo.project').valid && saleForm.get('shippingInfo.project').touched"
+                                  class="tip">Project is a required field and must be specified. </span>
+                                  <span 
+                                  *ngIf="!saleForm.get('shippingInfo.project').valid && saleForm.get('shippingInfo.project').touched || saleForm.get('shippingInfo.project').errors?.minlength"
+                                  class="tip">Project must contain 5 characters. </span>
+                                  <span 
+                                  *ngIf="saleForm.get('shippingInfo.project').errors?.pattern"
+                                  class="tip">Project must be numeric characters only. </span>
+
+                                       </div>
+        
+                                       <div class="col-lg-4  form-controls">
+                                            <label class="control-label">Product</label>
+                                            <div class="payment-fields disabled empty" >
+                                              <input class="form-control" 
+                                              type="tel" 
+                                              name="product" 
+                                              id="product"
+                                              formControlName="product"
+                                              aria-label="Product">
+                                            </div>
+                                            <span 
+                                            *ngIf="!saleForm.get('shippingInfo.product').valid && saleForm.get('shippingInfo.product').touched || saleForm.get('shippingInfo.product').errors?.minlength"
+                                            class="tip">Product must contain 5 characters. </span>
+                                            <span 
+                                            *ngIf="saleForm.get('shippingInfo.product').errors?.pattern"
+                                            class="tip">Product must be numeric characters only. </span>
+        
+                                       </div>
+        
+                                       <div class="col-lg-4  form-controls">
+                                            <label class="control-label">Journal Entry Acct #</label>
+                                            <div class="payment-fields disabled empty" >
+                                              <input class="form-control" 
+                                              type="tel"
+                                              formControlName="journal-entry-num"
+                                              name="journal-acct-num" 
+                                              id="journal-acct-num" 
+                                              aria-label="Journal Entry Account Number">
+                                            </div>
+                                            <span 
+                                            *ngIf="!saleForm.get('shippingInfo.journal-entry-num').valid && saleForm.get('shippingInfo.journal-entry-num').touched || saleForm.get('shippingInfo.journal-entry-num').errors?.minlength"
+                                            class="tip">Journal Entry Acct # must contain 6 characters. </span>
+                                            <span 
+                                            *ngIf="saleForm.get('shippingInfo.journal-entry-num').errors?.pattern"
+                                            class="tip">Journal Entry Acct # must be numeric characters only. </span>
+                                          
+                                       </div>
+                                       <div class="col-lg-4  form-controls">
+                                            <label class="control-label">Activity</label>
+                                            <div class="payment-fields disabled empty" >
+                                              <input class="form-control" 
+                                              type="text" 
+                                              name="activity" 
+                                              id="activity"
+                                              formControlName="activity"
+                                              aria-label="Activity">
+                                            </div>
+                                            <span 
+                                            *ngIf="!saleForm.get('shippingInfo.activity').valid && saleForm.get('shippingInfo.activity').touched || saleForm.get('shippingInfo.activity').errors?.minlength"
+                                            class="tip">Activity must contain 3 characters. </span>
+                                            <span 
+                                            *ngIf="saleForm.get('shippingInfo.activity').errors?.pattern"
+                                            class="tip">Activity must be numeric characters only. </span>
+                                       </div>
+                                       <div class="col-lg-4  form-controls">
+                                            <label class="control-label">Resource</label>
+                                            <div class="payment-fields disabled empty" >
+                                              <input class="form-control" 
+                                              type="text" 
+                                              name="resource" 
+                                              id="resource"
+                                              formControlName="resource"
+                                              aria-label="Resource">
+                                            </div>
+                                            <span 
+                                            *ngIf="!saleForm.get('shippingInfo.resource').valid && saleForm.get('shippingInfo.resource').touched || saleForm.get('shippingInfo.resource').errors?.minlength"
+                                            class="tip">Resource must contain 2 characters. </span>
+                                            <span 
+                                            *ngIf="saleForm.get('shippingInfo.resource').errors?.pattern"
+                                            class="tip">Resource must be numeric characters only. </span>
+                                       </div>
+                     </div>
+                    
+              </form>
+            <div class="row">
+                <div class="col-md-12 mt-4 mb-4">
+                        <button class="btn btn-primary" id="next-button" (click)="onSubmit()" [disabled]="!saleForm.valid" >Continue</button> <button class="btn btn-light">Cancel</button>
+                </div>
+            </div>
+            
+        </div>
+     </div>

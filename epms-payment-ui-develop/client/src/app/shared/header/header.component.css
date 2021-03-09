@@ -1,0 +1,41 @@
+.navbar-title{
+    font-family: "Roboto Slab";
+    font-weight: 700;
+    font-size: 1.75rem;
+}
+
+.ets-header{
+    background: #003082;
+}
+
+.navbar-logo {
+    height: 4.0625rem;
+    margin-right: 1.25rem;
+}
+
+.nav-control{
+    background-color: #f7f7f7;
+}
+
+.container-fluid{
+    max-width: 1330px;
+}
+
+.access-links a, .access-links a:focus {
+    position: absolute;
+    left: 0;
+    text-decoration: none;
+    top: 0px;
+}
+
+.access-links a {
+    top: -40px;
+    z-index: 2000;
+    padding: .375em 1em;
+    font-size: 1rem;
+    border-right: 1px solid #fff;
+    border-bottom: 1px solid #fff;
+    border-bottom-right-radius: 10px;
+    transition: top .5s ease-out,background 1s linear;
+    color: #fff
+}

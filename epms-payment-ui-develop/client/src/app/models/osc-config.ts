@@ -1,0 +1,57 @@
+import {BlockPaymentOption} from './block-payment-option';
+
+export interface OscConfig {
+  hopId: string;
+  oscCode: string;
+  paypalEnabled: boolean;
+  maxRejectAtmptCount: number;
+  sessionTimeoutMnts: number;
+  amexEnabled: boolean;
+  dinersClubEnabled: boolean;
+  discoverEnabled: boolean;
+  jcbEnabled: boolean;
+  masterCardEnabled: boolean;
+  rupayGlobalEnabled: boolean;
+  unionPayEnabled: boolean;
+  visaEnabled: boolean;
+  bankAccountEnabled: boolean;
+  ccPaymentEnabled: boolean;
+  threeDSEnabled: boolean;
+  dccEnabled: boolean;
+  fraudDetectEnabled: boolean;
+  allowAuthorizationOnlyRequest: boolean;
+  avsDeclineCodeList: any;
+  csvDeclineCodeList: any;
+  ignoreAvsDeclineCodes: boolean;
+  ignoreCsvDeclineCodes: boolean;
+  displayBillingFields: boolean;
+  displayShippingAsBillingAddr: boolean;
+  displayShpngAsBillngNam: boolean;
+  displayShippingFlds: boolean;
+  editShippingFields: boolean;
+  amexCSCRequired: boolean;
+  dinersClubCSCRequired: boolean;
+  discoveryCSCRequired: boolean;
+  jcbCSCRequired: boolean;
+  mastercardCSCRequired: boolean;
+  rupayGlobalCSCRequired: boolean;
+  unionPayCSCRequired: boolean;
+  visaCSCRequired: boolean;
+  billingFieldsRequired: boolean;
+  payerAuthenticationRequired: boolean;
+  reqShippingFieldsRequired: boolean;
+  cssUrl: any;
+  errorUrl: any;
+  merchantPstToUrl: any;
+  paypalHdrImgUrl: any;
+  rejectUrl: any;
+  successUrl: any;
+  timeoutUrl: any;
+  postUrl: any;
+  blockPymtOpt: BlockPaymentOption[];
+  merchantDefinedField: any;
+  displayBillingName: boolean;
+  displayBillingAddress: boolean;
+  programGroupName: string; 
+}
+

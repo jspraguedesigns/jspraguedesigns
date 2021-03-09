@@ -1,0 +1,12 @@
+<div *ngIf="filteredMerchantData.length > 0" class="merchant-fields-container col-12 light-blue card">
+        <div class="card-body">
+                <form class="merch-fields">
+                        <div *ngFor="let fieldData of filteredMerchantData">
+                                <div *ngIf="fieldData.displayMerchantDefinedField">
+                                        <label class="{{fieldData.merchantDefinedFieldRequired ? 'required': ''}}">{{fieldData.merchantDefinedFieldName}}</label>
+                                        <input *ngIf="fieldData.editMerchantDefinedField" class="form-control input-text" aria-label="expiration date" />
+                                </div>
+                        </div>
+                </form>
+        </div>
+</div>

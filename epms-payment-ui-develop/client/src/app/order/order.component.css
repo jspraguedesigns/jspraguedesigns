@@ -1,0 +1,71 @@
+
+.btn-primary{
+    color:#003082;
+    background-color: #fff;
+    border-radius: 15px;
+    border: 2px solid #003082;
+    margin-right: 15px;
+    font-size:20px;
+    padding: 1.5em;
+    font-family: 'Open Sans', sans-serif;
+    width: 250px;
+}
+.btn-primary:hover{
+    color:#fff;
+    background-color: #003082;
+
+}
+fa-icon{
+    margin-right: 10px;
+}
+
+.paypal-logo{
+    width: 130px;
+}
+
+.changestyle{
+    background-color: rgba(38, 79, 149, 1);
+    border-color: 2px solid #003082;
+    color: #fff;
+}
+
+@media (max-width: 992px) { 
+
+    .btn-primary{
+
+        padding: .5em;
+        font-family: 'Open Sans', sans-serif;
+        width: 200px;
+    }
+ }
+
+@media (max-width: 768) { 
+
+.btn-primary{
+
+    padding: .5em;
+    font-family: 'Open Sans', sans-serif;
+    width: 200px;
+}
+}
+@media (max-width: 576px) { 
+
+
+    .btn-primary {
+        color: #003082;
+        background-color: #fff;
+        border-radius: 16px;
+        border: 2px solid #003082;
+        margin-right: 0;
+        font-size: 15px;
+        padding: 10px 0;
+        width: 100%;
+        margin-bottom: 1em;
+        padding: .25;
+        font-family: 'Open Sans', sans-serif;
+    }
+ 
+    
+
+
+ }

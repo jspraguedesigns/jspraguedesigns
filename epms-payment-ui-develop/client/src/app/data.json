@@ -1,0 +1,87 @@
+{
+  "epmsOrderId": "00011847",
+  "storeId": "ets",
+  "oscSessionId": "xxx",
+  "resourceText": 22,
+  "glProductText": 0,
+  "glActivityText": 0,
+  "modeOfReceipt": "N",
+  "merchantDefinedField1": "xxx",
+  "merchantDefinedField2": "xxx",
+  "merchantDefinedField3": "xxx",
+  "merchantDefinedField4": "xxx",
+  "shippingAddress": {
+    "name": "Customer-First",
+    "addressLine1": "600 Rosedale Road",
+    "addressLine2": "Street 2",
+    "company": "Educational Testing",
+    "city": "Princeton",
+    "region": "N",
+    "postalCode": "08541",
+    "country": "US"
+  },
+  "shippingContact": {
+    "phoneNumber": "6097346000",
+    "mobilePhoneNumber": "7098487000",
+    "email": "STcustomer@ets.org",
+    "fax": "13235551234"
+  },
+  "transactions": [
+    {
+      "orderTransactionId": "b0c2cc7c-e260-473b-99fd-eb319ed1e575",
+      "serviceCode": "xxx",
+      "programDefinedDate": 1596495914.745,
+      "programSpecificKey": "xxx",
+      "merchantDescriptor": null,
+      "gatewayReferenceId": null,
+      "amountDetail": {
+        "amountDetailId": 174831,
+        "vatAmount": 2.5,
+        "taxAmount": 12.6,
+        "shippingAmount": 340.8,
+        "subtotalAmount": 112.8,
+        "baseCurrencyAmount": 202.8,
+        "foreignCurrencyAmount": 56.8,
+        "foreignCurrencyCode": "AUD",
+        "exchangeRate": 1.2968,
+        "inquiryRateId": "79168513",
+        "dccopted": true
+      },
+      "lineItems": [
+        {
+          "lineItemId": 18494,
+          "lineNumber": 0,
+          "productCode": "101",
+          "productName": "GRE",
+          "productSKU": "1001",
+          "quantity": 0,
+          "taxAmount": 0,
+          "unitPrice": 0,
+          "foreignCurrencyUnitPrice": 0,
+          "foreignCurrencyTaxAmount": 0
+        }
+      ],
+      "billingAddress": null,
+      "agentId": null,
+      "responseCode": null,
+      "approvalCode": null,
+      "referenceNumber": null,
+      "billingContact": null,
+      "order": "00011847",
+      "transactionStatus": "initiated",
+      "amount": 202.8,
+      "paymentMethodCode": null,
+      "transactionTypeCode": null,
+      "fraudDetail": null,
+      "paymentMethodDetail": null,
+      "paidWithSubscription": null,
+      "authenticationDetail": null
+    }
+  ],
+  "programSpecificKey": "xxx",
+  "customerID": "12345",
+  "glProjectText": 0,
+  "orderAmount": 202.8,
+  "orderStatus": "initiated",
+  "attemptCounter": 0
+}

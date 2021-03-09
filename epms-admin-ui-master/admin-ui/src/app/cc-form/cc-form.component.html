@@ -1,0 +1,203 @@
+<form [formGroup]="ccForm" class="mt-4">
+    <div class="row d-flex">
+        <div class="ml-auto mr-4">
+          <p> <span class="required-asterisk">*</span>Required
+        </div>
+      </div>
+  <div class="row">
+    <div class="col-2 form-group">
+        <label class="form-label"><span class="required-asterisk">*</span> Card Type</label>
+          <select class="form-select">
+              <option disabled [value]="null">- Select -</option>
+              <option value="Visa">Visa</option>
+              <option value="MasterCard">MasterCard</option>
+              <option value="Amex">American Express</option>
+              <option value="JCB">JCB</option>
+              <option value="Discover">Discover</option>
+              <option value="UnionPay">UnionPay</option>
+              <option value="Diners Club">Diners Club International</option>
+              <option value="Rupay">RuPay Global</option>
+          </select>
+     
+    </div>  
+  </div>
+  <div class="row">
+      <div class="col-md-6 form-group">
+          <label class="form-label"><span class="required-asterisk">*</span> Credit Card Number</label>
+          <input type="text"  class="form-control" formControlName="ccNumber">
+          <span 
+          *ngIf="!ccForm.get('ccNumber').valid && ccForm.get('ccNumber').touched"
+          class="tip">You must enter a valid card number.</span>
+      </div>
+
+      <div class="col-md-2 form-group">
+          <label class="form-label"><span class="required-asterisk">*</span> Exp Date</label>
+          <input type="text"  class="form-control"formControlName="ccExpiration">       
+          <span 
+          *ngIf="!ccForm.get('ccExpiration').valid && ccForm.get('ccExpiration').touched"
+          class="tip">You must enter card expiration date.</span>
+      </div>
+
+      <div class="col-md-2 form-group">
+          <label class="form-label"><span class="required-asterisk">*</span> CVV </label>
+          <input type="text" class="form-control" formControlName="ccCVV">  
+          <span 
+          *ngIf="!ccForm.get('ccCVV').valid && ccForm.get('ccCVV').touched"
+          class="tip">You must enter card CVV number.</span>     
+      </div>
+  </div>
+  <div class="row">
+      <div class="col-lg-6 form-group">
+          <label class="form-label"><span class="required-asterisk">*</span> Cardholder Name </label>
+            <input type="text" class="form-control" formControlName="ccCardName">
+            <span 
+          *ngIf="!ccForm.get('ccCardName').valid && ccForm.get('ccCardName').touched"
+          class="tip">Card Holder Name is required. Do not include special characters.</span>  
+      </div>  
+  </div>
+       
+      <strong>Billing Address</strong>
+      <div class="mb-2">
+        <input class="mr-2" type="checkbox" 
+        aria-label="Address is the same as Shipping/Contact information">
+        <label for="cc-shipping-billing-same"> Same as Shipping/Contact Information</label>
+      </div>
+
+    <div class="row">
+        <div class="col-lg-4 form-group">
+            <label class="form-label"><span class="required-asterisk">*</span>Street Address 1</label>
+                <input type="text" class="form-control" formControlName="ccStreetAddress1">
+                <span 
+          *ngIf="!ccForm.get('ccStreetAddress1').valid && ccForm.get('ccStreetAddress1').touched"
+          class="tip">You must enter an address.</span>  
+        </div>
+        <div class="col-lg-4 form-group">
+            <label>Street Address 2</label>
+                <input type="text" class="form-control" formControlName="ccStreetAddress2">
+        </div>
+        <div class="col-lg-4 form-group">
+            <label class="form-label"><span class="required-asterisk">*</span> City</label>
+            <input type="text" class="form-control"  formControlName="ccCity">
+            <span 
+          *ngIf="!ccForm.get('ccCity').valid && ccForm.get('ccCity').touched"
+          class="tip">You must enter a city.</span>  
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-4 form-group">
+            <label class="form-label"><span class="required-asterisk">*</span> Country </label>
+            <select id="inputState" 
+            class="form-select"
+            formControlName="ccCountry">
+            <option disabled [value]="null">- Select -</option>
+            <option *ngFor="let country of countryList" [value]="country.id">{{country.name}}</option>
+              </select>
+             
+        </div>
+        <div class="col-lg-4 form-group">
+            <label class="form-label"><span class="required-asterisk">*</span> State</label>
+            <select id="inputState" 
+            formControlName="ccState"
+            class="form-select">
+            <option disabled [value]="null">- Select -</option>
+            <option *ngFor="let region of regionList" [value]="region.id">{{region.name}}</option>
+              </select>
+           
+        </div>
+        <div class="col-lg-4 form-group">
+            <label class="form-label"><span class="required-asterisk">*</span> Zip Code</label>
+                <input type="text" class="form-control" formControlName="ccZipCode">   
+             <span 
+                *ngIf="!ccForm.get('ccZipCode').valid && ccForm.get('ccZipCode').touched"
+                class="tip">You must enter a city.</span>  
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-4 form-group">
+            <label class="form-label">Company</label>
+                <input type="text"class="form-control" formControlName="ccCompany">   
+        </div>       
+        <div class="col-lg-4 form-group">
+            <label class="form-label">Phone Number</label>
+                <input type="text" class="form-control" formControlName="ccPhoneNumber">   
+        </div> 
+        <div class="col-lg-4 form-group">
+            <label class="form-label">Email</label>
+                <input type="text" class="form-control" formControlName="ccEmail">   
+                <span 
+                *ngIf="!ccForm.get('ccEmail').valid && ccForm.get('ccEmail').touched"
+                class="tip">Email is optional. You must enter a valid email address.</span>  
+      </div>    
+    </div>
+
+
+    <div class="row mt-4  pr-2 pl-2">
+        <div class="col-md-12 border-top">
+          <small>Depending on the credit card account number entered, you may be given the option to select a currency
+            after selecting "Process Payment."</small>
+        </div>
+      </div>
+      <div class="row mt-3">
+          <div class="col-12 d-flex">
+              <button id="submit" class="btn--primary" (click)="opendcc(dccModal)" [disabled]="!ccForm.valid" type="submit">Process Payment</button>
+              <div class="icons ml-auto">
+                  <div class="credit-card">
+                    <img class="img-fluid" src="../../assets/img/secure-120x120-visa-secure.png"
+                      alt="Visa Secure" />
+                  </div>
+                  <div class="credit-card">
+                    <img class="img-fluid" src="../../assets/img/secure-120x120-mc-securecode.png"
+                      alt="MasterCard Secure" />
+                  </div>
+                  <div class="credit-card">
+                    <img class="img-fluid" src="../../assets/img/secure-120x120-amex-safekey.png"
+                      alt="American Express SafeKey" />
+                  </div>
+                  <div class="credit-card">
+                    <img class="img-fluid" src="../../assets/img/secure-120x120-discover-protectbuy.png"
+                      alt="Discover Protect Buy" />
+                  </div>
+                </div>
+          </div>
+      </div>
+     
+      </form>
+  
+
+      <!-- DCC Confirmation-->
+<ng-template #dccModal>
+    <div class="modal-header">
+      <h3>Select Your Choice of Currency</h3>
+    </div>
+    <div class="inner-modal">
+      <table class="dcc">
+        <tr>
+          <td>
+            <div class="flag pr-4"><img class="img-fluid" src="../../assets/img/u3579.png" alt="US Flag" />
+            </div>
+          </td>
+          <td>
+            <div class="amount"><strong class="pr-2">dccResponse.currency</strong>
+              <strong>dccResponse.grandTotalAmount</strong></div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div class="flag pr-4"><img class="img-fluid"
+                src="../../assets/img/EUR.png"
+                alt="EUR Flag" /> </div>
+          </td>
+          <td>
+            <div class="amount"><strong class="pr-2">dccResponse.foreignCurrency</strong>
+              <strong>dccResponse.foreignCurrencyGrandTotalAmount</strong><br />
+              <span class="smaller">1 dccResponse.currency = dccResponse.exchangeRate dccResponse.foreignCurrency Includes
+                dccResponse.marginRatePercentage% margin</span></div>
+          </td>
+        </tr>
+      </table>
+      <div class="d-flex justify-content-between">
+        <button class="btn--primary"(click)="submitcc(dccModal)" >Pay in dccResponse.currency</button>
+        <button class="btn--primary" >Pay in dccResponse.foreignCurrency</button>
+      </div>
+    </div>
+  </ng-template>

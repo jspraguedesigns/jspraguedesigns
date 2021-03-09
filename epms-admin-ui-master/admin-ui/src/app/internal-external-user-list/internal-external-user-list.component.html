@@ -1,0 +1,51 @@
+<div class="row mt-2 mb-4">
+    <div class="col-12 d-flex justify-content-between">
+        <button class="btn-primary btn" (click)="onAssign()">
+            Assign Business
+        </button>
+
+        <button  class="btn-primary btn" >Export to Excel</button>
+    </div>
+</div>
+<div class="row">
+    <kendo-grid-checkbox-column
+[width]="45"
+[headerClass]="{'text-center': true}"
+[class]="{'text-center': true}"
+[resizable]="false"
+[columnMenu]="false"
+showSelectAll="true"
+></kendo-grid-checkbox-column>
+<kendo-grid 
+[kendoGridBinding]="gridView"
+            kendoGridSelectBy="id"
+            [selectedKeys]="mySelection"
+            [pageSize]="20"
+            [pageable]="true"
+            [sortable]="true"
+            [groupable]="true"
+            [reorderable]="true"
+            [resizable]="true"
+            [height]="480"
+            [columnMenu]="{ filter: true }"
+>
+<kendo-grid-column field="orderID" title="User Id" width="120">
+</kendo-grid-column>
+<kendo-grid-column field="firstName" title="First Name" width="120">
+</kendo-grid-column>
+<kendo-grid-column field="lastName" title="Last Name" width="120">
+</kendo-grid-column>
+<kendo-grid-column field="programGroup" title="Program Group">
+</kendo-grid-column>
+<kendo-grid-column field="osc" title="OSC" >
+</kendo-grid-column>
+<kendo-grid-column field="role" title="Role" width="120">
+</kendo-grid-column>
+<kendo-grid-column field="userAccountType" title="User Account Type"  >
+</kendo-grid-column>
+<kendo-grid-column field="createdDate" title="Create Date">
+</kendo-grid-column>
+</kendo-grid>   
+
+</div>
+

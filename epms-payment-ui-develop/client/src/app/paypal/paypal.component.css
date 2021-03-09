@@ -1,0 +1,10 @@
+.rounded-card {
+    border-radius: 10px;
+    filter: drop-shadow(4px 4px 4px #ddd);
+  }
+
+  .paypal-buttons{
+      width: 400px;
+      display: block;
+    margin: 0 auto;
+  }

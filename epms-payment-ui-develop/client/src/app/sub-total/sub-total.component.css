@@ -1,0 +1,29 @@
+
+.light-blue{
+    background-color:rgba(229, 245, 252, 1); 
+}
+.card-footer{
+    background-color:rgba(0, 51, 86, 1);
+    color: #fff;
+}
+
+
+.rounded-card{
+    border-top: #003082 6px solid;
+    border-radius: 10px;
+    filter: drop-shadow(4px 4px 4px  #ddd);
+}
+
+.amount{
+    width: 50px;
+}
+
+h1, h2, h3, h4{
+    font-family: 'Open Sans', sans-serif;
+}
+
+    h3{
+        font-size: 2em;
+        font-weight: 400;
+        color: #003356;
+    }

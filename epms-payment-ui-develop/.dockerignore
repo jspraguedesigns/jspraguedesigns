@@ -1,0 +1,7 @@
+.editorconfig
+/node_modules
+client/node_modules
+client/e2e
+.gitignore
+*.zip
+client/*.md

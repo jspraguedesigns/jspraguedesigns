@@ -1,0 +1,108 @@
+<div class="mb-2">
+    <input class="mr-2" type="checkbox"  aria-label="Address is the same as Shipping/Contact information"  id="cc-shipping-billing-same" (change)="sameadrchkchange($event)" >
+    <label for="cc-shipping-billing-same"> Same as Shipping/Contact Information</label>
+</div>
+<fieldset ngModelGroup="address">
+    <div class="row">
+        <div class="col-lg-4 form-group">
+            <label for="streetAddress1"><span class="required-asterisk">*</span>Street Address 1</label>
+            <input name="streetAddress1" id="streetAddress1" required (change)="onAddressChange()" class="form-control"
+                [(ngModel)]="userAddressDetails.streetAddress1" #streetAddress1="ngModel" aria-label="Street Address 1">
+            <div *ngIf="(streetAddress1.touched || streetAddress1.dirty) && streetAddress1.invalid" class="alert alert-danger">
+                <div *ngIf="streetAddress1.errors.required">You must enter your address.</div>
+            </div>
+        </div>
+        <div class="col-lg-4 form-group">
+            <label for="streetAddress2">Street Address 2</label>
+            <input name="streetAddress2" id="streetAddress2" placeholder="(optional)" (change)="onAddressChange()" class="form-control"
+                [(ngModel)]="userAddressDetails.streetAddress2" #streetAddress2="ngModel" aria-label="Street Address 2">
+        </div>
+        <div class="col-lg-4 form-group">
+            <label for="city"><span class="required-asterisk">*</span>City</label>
+            <input name="city" id="city" required [(ngModel)]="userAddressDetails.city" 
+                #city="ngModel" aria-label="City" (change)="onAddressChange()" class="form-control">
+            <div *ngIf="city.touched && city.invalid" class="invalid-feedback">
+                <div *ngIf="city.errors.required">You must enter your city.</div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-4 form-group">
+            <label for="country"><span class="required-asterisk">*</span>Country</label>
+            <select class="form-control" name="country" id="country" required [(ngModel)]="userAddressDetails.country"
+                #country="ngModel" (change)="changeCountry($event);onAddressChange();">
+                <option *ngFor="let country of countryList" [value]="country.id">{{country.name}}</option>
+            </select>
+            <div *ngIf="country.touched && country.invalid" class="invalid-feedback">
+                <div *ngIf="country.errors.required">You must enter your country.</div>
+            </div>
+        </div>
+        <div *ngIf="selectedCountry === 'US' || selectedCountry === 'CA' ; else region" class="col-lg-4 form-group">
+            <label *ngIf="selectedCountry === 'US'" for="region"> <span
+                    class="required-asterisk">*</span>State</label>
+            <div *ngIf="selectedCountry === 'US'">
+                <select class="form-control" name="region" id="region" required [(ngModel)]="userAddressDetails.region"
+                    #region="ngModel" [ngClass]="{ 'is-invalid': region.touched && region.invalid }"
+                    (change)="changeRegion($event);onAddressChange();">
+                    <option disabled>- Select -</option>
+                    <option *ngFor="let region of regionList" [value]="region.id">{{region.name}}</option>
+                </select>
+                <div *ngIf="region.touched && region.invalid" class="invalid-feedback">
+                    <div *ngIf="region.errors.required">You must enter your state.</div>
+                </div>
+            </div>
+            <label *ngIf="selectedCountry === 'CA'" for="province"><span
+                class="required-asterisk">*</span>Province</label>
+            <div *ngIf="selectedCountry === 'CA'">
+                <select class="form-control" name="province" id="province" required [(ngModel)]="userAddressDetails.province"
+                    #region="ngModel" (change)="changeProvince($event);onAddressChange();">
+                    <option disabled>- Select -</option>
+                    <option *ngFor="let province of provinceList" [value]="province.id">{{province.name}}</option>
+                </select>
+                <div *ngIf="region.touched && region.invalid" class="invalid-feedback">
+                    <div *ngIf="region.errors.required">You must enter your province.</div>
+                </div>
+            </div>
+        </div>
+        <ng-template #region>
+            <div class="col-lg-4 form-group">
+                <label for="postalcode">State/Province (optional)</label>
+                <div class="form-controls">
+                    <input name="postalcode" id="postalcode" aria-label="State/Province" (change)="onAddressChange()" class="form-control">
+                </div>
+            </div>
+        </ng-template>
+        <div *ngIf="selectedCountry === 'US' || selectedCountry === 'CA'; else postal" class="col-lg-4 form-group">
+            <label *ngIf="selectedCountry === 'US'" for="postalcode"><span class="required-asterisk">*</span>Zip
+                Code</label>
+            <label *ngIf="selectedCountry === 'CA'" for="postalcode"><span class="required-asterisk">*</span>Postal
+                Code</label>
+            <input name="postalcode" id="postalcode" required [(ngModel)]="userAddressDetails.postalcode"
+                #postalcode="ngModel" aria-label="Postal Code" (change)="onAddressChange()" class="form-control">
+        </div>
+        <ng-template #postal>
+            <div class="col-lg-4 form-group">
+                <label for="postalcode">Zip/Postal Code</label>
+                <input name="postalcode" id="postalcode" [(ngModel)]="userAddressDetails.postalcode" class="form-control"
+                    #postalcode="ngModel" aria-label="Zip/Postal Code" (change)="onAddressChange()">
+            </div>
+        </ng-template>
+    </div>
+    <div class="row">
+        <div class="col-lg-4 form-group">
+            <label for="company">Company</label>
+            <input name="company" id="company" placeholder="(optional)" [(ngModel)]="userAddressDetails.company" class="form-control"
+                aria-label="Zip/Postal Code" #company="ngModel" (change)="onAddressChange()">
+        </div>
+        <div class="col-lg-4 form-group">
+            <label for="phone">Phone Number</label>
+            <input type="tel" name="phone" id="phone" placeholder="(optional)" [(ngModel)]="userAddressDetails.phone" class="form-control"
+                aria-label="Phone Number" #phone="ngModel" (change)="onAddressChange()" class="form-control">
+        </div>
+        <div class="col-lg-4 form-group">
+            <label form="email">Email</label>
+            <input type="email" name="email" id="email" placeholder="Email" placeholder="(optional)" class="form-control"
+                aria-label="Email" [(ngModel)]="userAddressDetails.email" #email="ngModel" (change)="onAddressChange()">
+        </div>
+    </div>
+</fieldset>
