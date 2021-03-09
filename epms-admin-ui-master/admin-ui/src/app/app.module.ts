@@ -12,7 +12,7 @@ import { OSCHopConfigComponent } from './oschop-config/oschop-config.component';
 import { UserManagementComponent } from './user-management/user-management.component';
 import { FilterTableComponent } from './filter-table/filter-table.component';
 import { CVAToolComponent } from './cvatool/cvatool.component';
-import {ReactiveFormsModule} from '@angular/forms';
+import {FormsModule,ReactiveFormsModule} from '@angular/forms';
 import { SalePaymentComponent } from './sale-payment/sale-payment.component';
 import { OverrideRefundComponent } from './override-refund/override-refund.component';
 import { SalepaymentCheckoutComponent } from './salepayment-checkout/salepayment-checkout.component';
@@ -57,6 +57,7 @@ import {OSCFormComponent} from './assign-business/osc-form/osc-form.component';
 import {AssignOSCComponent} from './assign-business/osc-form/assign-osc/assign-osc.component';
 import {AssignProgramComponent} from './assign-business/osc-form/assign-program/assign-program.component';
 import { NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown';
+import {MasterGlobalConfigComponent} from './oschop-config/master-global-config/master-global-config.component'
 @NgModule({
 
   declarations: [
@@ -98,12 +99,14 @@ import { NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown';
     AssignBusinessComponent,
     OSCFormComponent,
     AssignOSCComponent,
-    AssignProgramComponent
+    AssignProgramComponent,
+    MasterGlobalConfigComponent
 
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    FormsModule,
     ReactiveFormsModule,
     FontAwesomeModule,
     CommonModule,

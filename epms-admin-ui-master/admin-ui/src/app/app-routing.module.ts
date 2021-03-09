@@ -12,6 +12,7 @@ import {OrderSearchDetailsComponent} from '../app/order-search-result/order-sear
 import {UserManagementComponent} from '../app/user-management/user-management.component';
 import {UserDetailsComponent} from '../app/user-details/user-details.component';
 import {AssignBusinessComponent} from '../app/assign-business/assign-business.component';
+import {MasterGlobalConfigComponent} from '../app/oschop-config/master-global-config/master-global-config.component';
 const routes: Routes = [
 { path: '', redirectTo: 'epms-admin-home', pathMatch: 'full'},
 { path: 'epms-admin-home', component:AdminHomeComponent },
@@ -26,6 +27,7 @@ const routes: Routes = [
 {path: 'user-management', component:UserManagementComponent},
 {path: 'user-details', component:UserDetailsComponent},
 {path: 'assign-business', component:AssignBusinessComponent},
+{path: 'master-global-config', component:MasterGlobalConfigComponent}
 ];
 
 @NgModule({

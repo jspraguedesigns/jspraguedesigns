@@ -40,9 +40,12 @@
                             <li class="nav-item ets-portal-item"
                             routerLinkActive="active"
                             [routerLinkActiveOptions]="{exact: true}"><a class="nav-link" [routerLink]="['/virtual-terminal']">Virtual Terminal</a></li>
-                            <li class="nav-item ets-portal-item"
-                            routerLinkActive="active"
-                            [routerLinkActiveOptions]="{exact: true}"><a class="nav-link" [routerLink]="['#']">OSC and Hop Configuation</a></li>
+                            <li class='nav-item btn-group ets-portal-item'   routerLinkActive="active" dropdown>
+                                <a class='nav-link dropdown-toggle'dropdownToggle aria-controls="dropdown-animated">OSC and HOP Configuration <span class="caret"></span></a>
+                                <ul id="dropdown-animated" *dropdownMenu class="dropdown-menu" role="menu" aria-labelledby="button-animated">
+                                  <li role="menuitem"><a class="nav-link" [routerLink]="['/master-global-config']">Master/Global Configuartion</a></li>
+                                </ul>
+                                </li>
                             <li class='nav-item btn-group ets-portal-item'   routerLinkActive="active" dropdown>
                                 <a class='nav-link dropdown-toggle'dropdownToggle aria-controls="dropdown-animated">Manage Users <span class="caret"></span></a>
                                 <ul id="dropdown-animated" *dropdownMenu class="dropdown-menu" role="menu" aria-labelledby="button-animated">

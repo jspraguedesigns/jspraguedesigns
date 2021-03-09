@@ -1,6 +1,6 @@
 
     import { FormBuilder, FormGroup } from '@angular/forms';
-    import { Component, OnInit } from '@angular/core';
+    import { Component, Input, OnInit } from '@angular/core';
     import { IDropdownSettings } from 'ng-multiselect-dropdown';
     import {Router} from '@angular/router'
     @Component({
@@ -10,7 +10,7 @@
     export class AssignOSCComponent implements OnInit {
         dropdownList = [];
         selectedItems = [];
-        dropdownSettings: any  = {};
+        @Input() dropdownSettings: {};
         myForm: FormGroup;
         constructor(private fb: FormBuilder,private router: Router) {}
         ngOnInit() {

@@ -1,0 +1,72 @@
+
+<div class="container-xl mt-4">
+    <div class="row">
+        <div class="col-12">
+            <h2>Master/Global Configuration</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor. Cum sociis natoque penatibus et magnis dis</p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <button class="btn btn-primary mt-4 mr-4">
+                Add Configuartion
+            </button>
+            <button class="btn btn-primary mt-4">
+                Edit Configuation
+            </button>
+        </div>
+    </div>
+    <div class="row mt-4">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-body">
+                    <h3>Payment Types</h3>
+                    <form [formGroup]="types">
+                        <div class="row mt-4">
+                            <div class="col-md-4">
+                                <div class="form-group form-check">
+                                    <input type="checkbox" formControlName="creditCard" id="creditCard" class="form-check-input" />
+                                    <label for="creditCard" class="form-check-label">Credit Card</label>
+                                </div>   
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group form-check">
+                                    <input type="checkbox" formControlName="eCheck" id="eCheck" class="form-check-input" />
+                                    <label for="eCheck" class="form-check-label">Electronic Check</label>
+                                </div>   
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group form-check">
+                                    <input type="checkbox" formControlName="payPal" id="payPal" class="form-check-input" />
+                                    <label for="payPal" class="form-check-label">PayPal</label>
+                                </div>   
+                            </div>
+                        </div>
+                        <div class="row mt-4">
+                            <div class="col-md-4">
+                                <div class="form-group form-check">
+                                    <input type="checkbox" formControlName="fraudDetect" id="fraudDetect" class="form-check-input" />
+                                    <label for="fraudDetect" class="form-check-label">Enable Fraud Detect</label>
+                                </div>   
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group form-check">
+                                    <input type="checkbox" formControlName="ThreeDS" id="ThreeDS" class="form-check-input" />
+                                    <label for="ThreeDS" class="form-check-label">Enable 3DS</label>
+                                </div>   
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group form-check">
+                                    <input type="checkbox" formControlName="dynamicCurrency" id="dynamicCurrency" class="form-check-input"/>
+                                    <label for="dynamicCurrency" class="form-check-label">Enable Dynamic Currency Conversion</label>
+                                </div>   
+                            </div>
+                        </div>
+
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
