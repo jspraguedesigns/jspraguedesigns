@@ -1,0 +1,87 @@
+@import '~@angular/material/prebuilt-themes/indigo-pink.css';
+
+@import '~@angular/material/theming';
+
+@import "../../node_modules/bootstrap/scss/bootstrap";
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,700;1,400;1,600&display=swap');
+
+h1 { margin: 0; font-family: 'Open Sans', sans-serif; }
+
+$grey: rgba(242, 242, 242, 1);
+$blue: #004b8d;
+$black: #333;
+
+.branding{
+    h1{
+        font-size: 22px;
+        font-weight: 700;
+        color: $black;
+    }
+    img{
+        height: 40px;
+        margin-right: 20px;
+    }
+
+}
+
+.bread-crumb{
+    background-color: $grey;
+    padding: 1em;
+
+}
+.down-arrow{
+    color: $blue;
+}
+
+span.menu{
+    color: $blue;
+    font-size: 12px;
+    font-weight:700;
+    text-align: center;
+}
+
+.help{
+    padding-right: 20px;
+    border-right: 2px solid $grey;
+}
+
+.sign-in{
+    padding-left: 20px;
+}
+
+li.nav-item{
+    a{
+        color: $black;
+    }
+    button{
+        padding-right: 0;
+        padding-left: 0;
+        border: none;
+        background-color: transparent;
+        a{
+            color: $black;
+        }
+
+    }
+}
+
+button.header{
+    font-size: 14px;
+    border: none;
+    background-color: transparent;
+
+    span.icon{
+        color:$blue;
+        margin-right: 10px;
+    }
+}
+
+.top-row{
+    box-shadow: 5px 5px 15px 9px rgba(51,51,51,0.19);
+}
+
+.navbar-expand-lg .navbar-nav .nav-link {
+    padding-right: 1.25rem;
+    padding-left: 1.25rem;
+}

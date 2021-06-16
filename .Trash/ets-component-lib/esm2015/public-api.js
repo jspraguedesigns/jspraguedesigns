@@ -1,0 +1,8 @@
+/*
+ * Public API Surface of ets-component-lib
+ */
+export * from './lib/ets-component-lib.service';
+export * from './lib/ets-component-lib.component';
+export * from './lib/ets-component-lib.module';
+export * from './lib/button/button.component';
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoicHVibGljLWFwaS5qcyIsInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzIjpbIi4uLy4uLy4uL3Byb2plY3RzL2V0cy1jb21wb25lbnQtbGliL3NyYy9wdWJsaWMtYXBpLnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBOztHQUVHO0FBRUgsY0FBYyxpQ0FBaUMsQ0FBQztBQUNoRCxjQUFjLG1DQUFtQyxDQUFDO0FBQ2xELGNBQWMsZ0NBQWdDLENBQUM7QUFDL0MsY0FBYywrQkFBK0IsQ0FBQSIsInNvdXJjZXNDb250ZW50IjpbIi8qXG4gKiBQdWJsaWMgQVBJIFN1cmZhY2Ugb2YgZXRzLWNvbXBvbmVudC1saWJcbiAqL1xuXG5leHBvcnQgKiBmcm9tICcuL2xpYi9ldHMtY29tcG9uZW50LWxpYi5zZXJ2aWNlJztcbmV4cG9ydCAqIGZyb20gJy4vbGliL2V0cy1jb21wb25lbnQtbGliLmNvbXBvbmVudCc7XG5leHBvcnQgKiBmcm9tICcuL2xpYi9ldHMtY29tcG9uZW50LWxpYi5tb2R1bGUnO1xuZXhwb3J0ICogZnJvbSAnLi9saWIvYnV0dG9uL2J1dHRvbi5jb21wb25lbnQnXG4iXX0=
